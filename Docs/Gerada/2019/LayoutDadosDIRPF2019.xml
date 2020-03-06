@@ -1,0 +1,1861 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<file tamtipo="2" raiz="" xsl="" xmltipos="">
+	<tipo nome="IR">
+		<campo nome="SISTEMA" obs="Identificador do Sistema - IRPF - Pessoa Física, com 4 espaços em branco na frente." formato="C" tam="8" />
+		<campo nome="EXERCICIO" obs="Exercicio do PGD" formato="N" tam="4" />
+		<campo nome="ANO_BASE" obs="Ano calendario" formato="N" tam="4" />
+		<campo nome="CODIGO_RECNET" obs="Código interno da declaração no sistema Receitanet: (2600) - Ajuste (2621) - Espólio (2620 ) - Saída" formato="N" tam="4" />
+		<campo nome="IN_RETIFICADORA" obs="Indicador se declaracao retificadora" formato="C" tam="1" />
+		<campo nome="NR_CPF" obs="CPF do contribuinte" formato="C" tam="11" />
+		<campo nome="FILLER" obs="Filler" formato="C" tam="3" />
+		<campo nome="TIPO_NI" obs="Indica o tipo de NI: 1 Pessoa Fisica (CPF)" formato="N" tam="1" />
+		<campo nome="NR_VERSAO" obs="Versao do Programa Gerador da declaracao: 100 (primeira versão)" formato="N" tam="3" />
+		<campo nome="NM_NOME" obs="nome do contribuinte" formato="A" tam="60" />
+		<campo nome="SG_UF" obs="UF - Domicilio do Contribuinte" formato="A" tam="2" />
+		<campo nome="NR_HASH" obs="Hash calculado sobre todos os registros da declaracao,exceto o Header da declaracao e todos os registros do recibo(Nr. Controle SRF)" formato="N" tam="10" />
+		<campo nome="IN_CERTIFICAVEL" obs="Indicativo se declaracao eh certificavel" formato="N" tam="1" />
+		<campo nome="DT_NASCIM" obs="Data de Nascimento (DDMMAAAA)" formato="N" tam="8" />
+		<campo nome="IN_COMPLETA" obs="Indicativo se declaracao completa" formato="C" tam="1" />
+		<campo nome="IN_RESULTADO_IMPOSTO" obs="Indicativo de resultado do imposto" formato="C" tam="1" />
+		<campo nome="IN_GERADA" obs="Indicativo se declaracao gerada" formato="C" tam="1" />
+		<campo nome="NR_RECIBO_ULTIMA_DEC_EX_ATUAL" obs="Número do recibo da declaração original ou retificadora do exercicio atual a ser retificada" formato="C" tam="10" />
+		<campo nome="IN_PLATAFORMAPGD" obs="Indicador do tipo de plataforma" formato="C" tam="1" />
+		<campo nome="nome_SO" obs="nome do Sistema Operacional" formato="C" tam="14" />
+		<campo nome="VERSAO_SO" obs="Numero da versao do Sistema Operacional(SO)" formato="C" tam="7" />
+		<campo nome="VERSAO_JVM" obs="Numero da versao do Java" formato="C" tam="9" />
+		<campo nome="NR_RECIBO_DECLARACAO_TRANSMITIDA" obs="Numero do recibo da última declaracao transmitida" formato="C" tam="10" />
+		<campo nome="CD_MUNICIP" obs="Codigo do municipio" formato="C" tam="4" />
+		<campo nome="NR_CONJ" obs="CPF do cônjuge" formato="C" tam="11" />
+		<campo nome="IN_OBRIGAT_ENTREGA" obs="Indicador de Obrigatoriedade de Entrega" formato="C" tam="1" />
+		<campo nome="VR_IMPDEVIDO" obs="Valor do Carnê-leão e Imposto Complementar dos dependentes." formato="N" tam="13" />
+		<campo nome="NR_RECIBO_ULTIMA_DEC_EX_ANTERIOR" obs="Numero do recibo da última do ano anterior" formato="C" tam="10" />
+		<campo nome="IN_SEGURANCA" obs="Indicador de segurança da declaração" formato="C" tam="1" />
+		<campo nome="IN_IMPOSTO_PAGO" obs="Indicador se teve imposto pago" formato="N" tam="2" />
+		<campo nome="IN_IMPOSTO_ANTECIPADO" obs="Indicador se teve imposto antecipado" formato="N" tam="1" />
+		<campo nome="IN_MUDA_ENDERECO" obs="Indicador de Mudança de Endereço" formato="N" tam="1" />
+		<campo nome="NR_CEP" obs="Número do CEP informado" formato="N" tam="8" />
+		<campo nome="IN_DEBITO_PRIMEIRA_QUOTA" obs="Indicador de Débito Automático da 1ª quota" formato="N" tam="1" />
+		<campo nome="NR_BANCO" obs="Número do Banco Informado" formato="N" tam="3" />
+		<campo nome="NR_AGENCIA" obs="Número da Agência Informada" formato="N" tam="4" />
+		<campo nome="FILLER" obs="Espaços em branco" formato="C" tam="1" />
+		<campo nome="DATA_TRANSITO_JULGADO_LAVRATURA" obs="Somente será gravada se a declaração for de espólio:No caso de decisão judicial, grava a data de trânsito julgado se esta for >= 01/03/[Ano Exercício] (formato AAAAMMDD) No caso de escrituração pública, grava a data de lavratura se esta for >= 01/03/[Ano Exercício] (formato AAAAMMDD)" formato="N" tam="8" />
+		<campo nome="VR_SOMA_IMPOSTO_PAGAR" obs="Valor do imposto a pagar(somatório do imposto a pagar da declaração + GCAP + Renda Variável + GCME Bens, Direitos e Aplic. Financeiras + GCME Espécie)" formato="N" tam="13" />
+		<campo nome="IN_OPCAO_TRIBUTACAO_BENEFICIARIO_UM_RRA" obs="Opção de tributação da maior fonte pagadora de RRA" formato="C" tam="1" />
+		<campo nome="CPF_BENEFICIARIO_UM_RRA" obs="CPF do maior beneficiário de RRA" formato="C" tam="11" />
+		<campo nome="IN_OPCAO_TRIBUTACAO_BENEFICIARIO_DOIS_RRA" obs="Opção de tributação da segunda maior fonte pagadora de RRA" formato="C" tam="1" />
+		<campo nome="CPF_BENEFICIARIO_DOIS_RRA" obs="CPF do segundo maior beneficiário de RRA" formato="C" tam="11" />
+		<campo nome="IN_OPCAO_TRIBUTACAO_BENEFICIARIO_TRES_RRA" obs="Opção de tributação da terceira maior fonte pagadora de RRA" formato="C" tam="1" />
+		<campo nome="CPF_BENEFICIARIO_TRES_RRA" obs="CPF do terceiro maior beneficiário de RRA" formato="C" tam="11" />
+		<campo nome="IN_OPCAO_TRIBUTACAO_BENEFICIARIO_QUATRO_RRA" obs="Opção de tributação do quarto maior beneficiário de RRA" formato="C" tam="1" />
+		<campo nome="CPF_BENEFICIARIO_QUATRO_RRA" obs="CPF do quarto maior beneficiário de RRA" formato="C" tam="11" />
+		<campo nome="VR_DOACAO_ECA" obs="Valor total das doações na declaração a fundos de Estatuto da Criança e do Adolescente" formato="N" tam="13" />
+		<campo nome="NR_BASE_FONTE_MAIOR" obs="CPF/CNPJ Base da Maior Fonte Pagadora" formato="C" tam="14" />
+		<campo nome="NR_BASE_FONTE_DOIS" obs="CPF/CNPJ Base da 2a Maior Fonte Pagadora" formato="C" tam="14" />
+		<campo nome="NR_BASE_FONTE_TRES" obs="CPF/CNPJ Base da 3a Maior Fonte Pagadora" formato="C" tam="14" />
+		<campo nome="NR_BASE_FONTE_QUATRO" obs="CPF/CNPJ Base da 4a Maior Fonte Pagadora" formato="C" tam="14" />
+		<campo nome="NR_CPF_DEPE_REND_MAIOR" obs="CPF de Dependente com maior Rend. Tributavel de PJ" formato="C" tam="11" />
+		<campo nome="DT_NASC_DEPE_REND_MAIOR" obs="Data Nascimento de Dependente com maior Rend. Tributável de PJ (DDMMAAAA)" formato="C" tam="8" />
+		<campo nome="NR_CPF_DEPE_REND_DOIS" obs="CPF de Dependente com 2a maior Rend. Tributavel de PJ" formato="C" tam="11" />
+		<campo nome="DT_NASC_DEPE_REND_DOIS" obs="Data Nascimento de Dependente com 2o maior Rend. Tributável de PJ (DDMMAAAA)" formato="C" tam="8" />
+		<campo nome="NR_CPF_DEPE_REND_TRES" obs="CPF de Dependente com 3a maior Rend. Tributavel de PJ" formato="C" tam="11" />
+		<campo nome="DT_NASC_DEPE_REND_TRES" obs="Data Nascimento de Dependente com 3o maior Rend. Tributável de PJ (DDMMAAAA)" formato="C" tam="8" />
+		<campo nome="NR_CPF_DEPE_REND_QUATRO" obs="CPF de Dependente com 4a maior Rend. Tributavel de PJ" formato="C" tam="11" />
+		<campo nome="DT_NASC_DEPE_REND_QUATRO" obs="Data Nascimento de Dependente com 4o maior Rend. Tributável de PJ (DDMMAAAA)" formato="C" tam="8" />
+		<campo nome="NR_CPF_DEPE_REND_CINCO" obs="CPF de Dependente com 5a maior Rend. Tributavel de PJ" formato="C" tam="11" />
+		<campo nome="DT_NASC_DEPE_REND_CINCO" obs="Data Nascimento de Dependente com 5o maior Rend. Tributável de PJ (DDMMAAAA)" formato="C" tam="8" />
+		<campo nome="NR_CPF_DEPE_REND_SEIS" obs="CPF de Dependente com 6a maior Rend. Tributavel de PJ" formato="C" tam="11" />
+		<campo nome="DT_NASC_DEPE_REND_SEIS" obs="Data Nascimento de Dependente com 6o maior Rend. Tributável de PJ (DDMMAAAA)" formato="C" tam="8" />
+		<campo nome="NR_BASE_BENEF_DESP_MED_MAIOR" obs="CPF/CNPJ Base do maior beneficiário de Despesas Médicas" formato="C" tam="14" />
+		<campo nome="NR_BASE_BENEF_DESP_MED_DOIS" obs="CPF/CNPJ Base do 2o maior beneficiário de Despesas Médicas" formato="C" tam="14" />
+		<campo nome="NR_CPF_DEST_PENSAO_ALIMENT_MAIOR" obs="CPF de destinatário com maior pensão alimentícia" formato="C" tam="11" />
+		<campo nome="NR_CPF_INVENTARIANTE" obs="CPF do inventariante" formato="C" tam="11" />
+		<campo nome="NM_MUNICIPIO" obs="nome do Município do Contribuinte" formato="A" tam="40" />
+		<campo nome="NM_CONTRIBUINTE" obs="nome do Contribuinte" formato="A" tam="60" />
+		<campo nome="FILLER" obs="Espaços em branco" formato="A" tam="11" />
+		<campo nome="ENDERECO_MAC" obs="Endereço físico da estação" formato="C" tam="12" />
+		<campo nome="DT_COND_NAO_RESIDENTE" obs="Data da condição de Não-Residente informada na ficha de Saída (formato AAAAMMDD)" formato="N" tam="8" />
+		<campo nome="NR_CPF_PROCURADOR" obs="CPF do Procurador - informado na ficha saída" formato="C" tam="11" />
+		<campo nome="IN_CRIT_OBRIGAT" obs="Critérios de obrigatoriedade nos quais incidiram a declaração" formato="N" tam="3" />
+		<campo nome="VR_TOTAL_RENDTRIB_PFPJ_TITDEP" obs="Valor total dos rendimentos tributáveis recebidos de pessoa jurídica e de pessoa física pelo titular e dependentes" formato="N" tam="13" />
+		<campo nome="CNPJ_PREV_COMPLEMENTAR_1" obs="CNPJ da entidade de previdência complementar com o maior total apresentado no campo valor pago para os códigos 36 e 38 da ficha de Pagamentos" formato="C" tam="14" />
+		<campo nome="CNPJ_PREV_COMPLEMENTAR_2" obs="CNPJ da entidade de previdência complementar com o maior total apresentado no campo valor pago para os códigos 36 e 38 da ficha de Pagamentos" formato="C" tam="14" />
+		<campo nome="VR_TOTISENTOS" obs="Valor total de rendimentos isentos" formato="N" tam="13" />
+		<campo nome="VR_TOTEXCLUSIVO" obs="Valor total de rendimentos sujeitos a tributação exclusiva" formato="N" tam="13" />
+		<campo nome="VR_TOTAL_PAGAMENTOS" obs="Valor total de pagamentos (somatório de todos os valores da ficha pagamentos)" formato="N" tam="13" />
+		<campo nome="NR_CONTA" obs="Numero da conta corrente para débito automático" formato="C" tam="13" />
+		<campo nome="NR_DV_CONTA" obs="Numero do Digito Verificador da Conta Corrente" formato="C" tam="2" />
+		<campo nome="IN_DV_CONTA" obs="Indicador para revalidar DV de conta corrente. 0 - Não revalidar; 1 - Revalidar" formato="N" tam="1" />
+		<campo nome="CD_NATUR" obs="Código da natureza da ocupação" formato="N" tam="2" />
+		<campo nome="NR_CPF_EMPREGADA_DOMESTICA_MAIOR" obs="CPF da Empregada Doméstica com maior contribuição patronal" formato="A" tam="11" />
+		<campo nome="NR_NIT_EMP_DOM_MAIOR" obs="NIT do empregado doméstico com maior contruibuição" formato="A" tam="11" />
+		<campo nome="NR_CPF_EMPREGADA_DOMESTICA_DOIS" obs="CPF da Empregada Doméstica com segunda maior contribuição patronal" formato="A" tam="11" />
+		<campo nome="NR_NIT_EMP_DOM_DOIS" obs="NIT do empregado doméstico com segunda maior contruibuição" formato="A" tam="11" />
+		<campo nome="NR_CPF_EMPREGADA_DOMESTICA_TRES" obs="CPF da Empregada Doméstica com terceira maior contribuição patronal" formato="A" tam="11" />
+		<campo nome="NR_NIT_EMP_DOM_TRES" obs="NIT do empregado doméstico com terceira maior contruibuição" formato="A" tam="11" />
+		<campo nome="TP_INICIADA" obs="de foi iniciada a declaração: 1-PGD; 2-m-IRPF ; 3-m-IRPF OnLine ; 4-Retificadora OnLine" tam="1" formato="C" />
+		<campo nome="IN_UTILIZOU_PGD" obs="Utilizou o PGD:0-Não ; 1-Sim" tam="1" formato="C" />
+		<campo nome="IN_UTILIZOU_APP" obs="Utilizou o m-IRPF APP:0-Não ; 1-Sim" tam="1" formato="C" />
+		<campo nome="IN_UTILIZOU_ONLINE" obs="Utilizou o m-IRPF Online:0-Não ; 1-Sim" tam="1" formato="C" />
+		<campo nome="IN_UTILIZOU_RASCUNHO" obs="Utilizou o Rascunho IRPF:0-Não ; 1-Sim" tam="1" formato="C" />
+		<campo nome="IN_UTILIZOU_PRE_PREENCHIDA" obs="Utilizou a Pré-Preenchida:0-Não ; 1-Sim" tam="1" formato="C" />
+		<campo nome="IN_UTILIZOU_ASSISTIDA_FONTE_PAGADORA" obs="Utilizou a Assistida das Fontes Pagadoras:0-Não ; 1-Sim" tam="1" formato="C" />
+		<campo nome="IN_UTILIZOU_ASSISTIDA_PLANO_SAUDE" obs="Utilizou a Assistida dos Planos de Saúde:0-Não ; 1-Sim" tam="1" formato="C" />
+		<campo nome="IN_UTILIZOU_SALVAR_RECUPERAR_ONLINE" obs="Utilizou o Salvar / Recuperar Online:0-Não ; 1-Sim" tam="1" formato="C" />
+		<campo nome="TP_TRANSMITIDA" obs="Em qual aplicativo foi realizada a transmissão: 1-PGD; 2-m-IRPF ; 3-m-IRPF OnLine; 4-Retificadora OnLine" tam="1" formato="C" />
+		<campo nome="NR_PAGAMENTO_DEDUTIVEL_MAIOR_UM" obs="CPF-CNPJ do maior pagamento dedutível (cod 01; 10 ; 11; 12; 13; 14; 21; 26; 30; 33; 36; 37; 38; 50)" tam="14" formato="C" />
+		<campo nome="NR_PAGAMENTO_DEDUTIVEL_MAIOR_DOIS" obs="CPF-CNPJ do 2 maior pagamento dedutível (cod 01; 10 ; 11; 12; 13; 14; 21; 26; 30; 33; 36; 37; 38; 50)" tam="14" formato="C" />
+		<campo nome="NR_PAGAMENTO_DEDUTIVEL_MAIOR_TRES" obs="CPF-CNPJ do 3 maior pagamento dedutível (cod 01; 10 ; 11; 12; 13; 14; 21; 26; 30; 33; 36; 37; 38; 50)" tam="14" formato="C" />
+		<campo nome="NR_PAGAMENTO_DEDUTIVEL_MAIOR_QUATRO" obs="CPF-CNPJ do 4 maior pagamento dedutível (cod 01; 10 ; 11; 12; 13; 14; 21; 26; 30; 33; 36; 37; 38; 50)" tam="14" formato="C" />
+		<campo nome="NR_PAGAMENTO_DEDUTIVEL_MAIOR_CINCO" obs="CPF-CNPJ do 5 maior pagamento dedutível (cod 01; 10 ; 11; 12; 13; 14; 21; 26; 30; 33; 36; 37; 38; 50)" tam="14" formato="C" />
+		<campo nome="NR_PAGAMENTO_DEDUTIVEL_MAIOR_SEIS" obs="CPF-CNPJ do 6 maior pagamento dedutível (cod 01; 10 ; 11; 12; 13; 14; 21; 26; 30; 33; 36; 37; 38; 50)" tam="14" formato="C" />
+		<campo nome="NR_PAGAMENTO_FUNPRESP" obs="CNPJ do maior pagamento da FUNPRESP (Cod 37 em pagamento)" tam="14" formato="C" />
+		<campo nome="VERSAOTESTEPGD" obs="Numero da versao de desenvolvimento do PGD. Esse campo irá compor o campo FILLER2, quando da versão final." formato="C" tam="3" />
+		<campo nome="NR_CONTROLE" obs="Número de controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_16">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NM_NOME" obs="nome do contribuinte" formato="A" tam="60" />
+		<campo nome="TIP_LOGRA" obs="formato do Logradouro" formato="A" tam="15" />
+		<campo nome="NM_LOGRA" obs="Endereço contribuinte: logradouro" formato="C" tam="40" />
+		<campo nome="NR_NUMERO" obs="Endereço contribuinte: número" formato="C" tam="6" />
+		<campo nome="NM_COMPLEM" obs="Endereço contribuinte: complemento" formato="C" tam="21" />
+		<campo nome="NM_BAIRRO" obs="Endereço contribuinte: bairro" formato="C" tam="19" />
+		<campo nome="NR_CEP" obs="Endereço contribuinte: CEP ou ZIPExterior" formato="C" tam="9" />
+		<campo nome="CD_MUNICIP" obs="Endereço contribuinte: código do município" formato="N" tam="4" />
+		<campo nome="NM_MUNICIP" obs="Endereço contribuinte: município" formato="C" tam="40" />
+		<campo nome="SG_UF" obs="Endereço contribuinte: UF" formato="A" tam="2" />
+		<campo nome="CD_EX" obs="Código do Exterior" formato="C" tam="3" />
+		<campo nome="CD_PAIS" obs="Código do país" formato="C" tam="3" />
+		<campo nome="NM_PAIS" obs="nome do país" formato="C" tam="40" />
+		<campo nome="NM_EMAIL" obs="Email - Correio Eletrônico" formato="C" tam="90" />		
+		<campo nome="NR_NITPISPASEP" obs="informação do NIT/PIS/PASEP informação constante na ficha de Pessoa Fisica no Exterior. Sem valor informado campo em branco." formato="C" tam="11" />
+		<campo nome="NR_CPF_CONJUGE" obs="CPF do conjuge" formato="C" tam="11" />
+		<campo nome="NR_DDD_TELEFONE" obs="Endereço contribuinte: Cod. área do telefone-DDI" formato="C" tam="4" />
+		<campo nome="FILLER1" obs="Espaços em branco" formato="A" tam="9" />
+		<campo nome="DT_NASCIM" obs="Data nascimento do contribuinte DD-MM-AAAA" formato="N" tam="8" />
+		<campo nome="NR_TITELEITOR" obs="Número do título de eleitor" formato="C" tam="13" />
+		<campo nome="CD_OCUP" obs="Código de ocupação" formato="A" tam="3" />
+		<campo nome="NM_OCUP" obs="" formato="C" tam="150" />
+		<campo nome="CD_NAT_OCUP" obs="Código natureza ocupação" formato="A" tam="2" />
+		<campo nome="NM_NAT_OCUP" obs="" formato="C" tam="130" />
+		<campo nome="NR_QUOTAS" obs="Quantidades de quotas" formato="N" tam="1" />
+		<campo nome="IN_COMPLETA" obs="Indicativo se declaração completa S - sim N - não" formato="C" tam="1" />
+		<campo nome="IN_RETIFICADORA" obs="Indicativo se declaração retificadora S - sim N - não" formato="C" tam="1" />
+		<campo nome="IN_GERADO" obs="Indicativo se a declaração foi gerada S - sim N - não" formato="C" tam="1" />
+		<campo nome="IN_ENDERECO" obs="Indicativo se houve mudança de endereço S - sim N - não" formato="C" tam="1" />
+		<campo nome="NR_CONTROLE_ORIGINAL" obs="Número do recibo da declaração original" formato="C" tam="12" />
+		<campo nome="NR_BANCO" obs="Código do Banco para restituição ou débito" formato="N" tam="3" />
+		<campo nome="NR_AGENCIA" obs="Número da Agência Bancária para restituição ou débito" formato="N" tam="4" />
+		<campo nome="IN_DOENCA_DEFICIENCIA" obs="Indicativo se um dos declarantes(titular ou dependentes) é pessoa com doença grave ou portadora de deficiência física ou mental (Valor 'S' ou 'N')" formato="C" tam="1" />
+		<campo nome="IN_PREPREENCHIDA" obs="Filler" formato="C" tam="1" />
+		<campo nome="NR_CONTA" obs="Número da conta corrente para depósito ou débito de imposto a restituir ou a pagar" formato="C" tam="13" />
+		<campo nome="NR_DV_CONTA" obs="Número do Dígito Verificador da Conta Corrente para restituição ou débito" formato="C" tam="2" />
+		<campo nome="IN_DEBITO_AUTOM" obs="Indicativo se o contribuinte autoriza o débito automático das quotas do imposto devido em sua conta corrente. S - sim N -não" formato="A" tam="1" />
+		<campo nome="IN_DEBITO_PRIMEIRA_QUOTA" obs="Indicativo se o débito automático é a partir da 1 Quota ou quota única - 1 - sim 0 -não" formato="N" tam="1" />
+		<campo nome="NR_FONTE_PRINCIPAL" obs="CPF-CNPJ da principal Fonte Pagadora" formato="C" tam="14" />
+		<campo nome="NR_RECIBO_ULTIMA_DEC_ANO_ANTERIOR" obs="Número do recibo da última declaração transmitida no ano anterior" formato="C" tam="10" />
+		<campo nome="IN_TIPODECLARACAO" obs="Indica se a declaração é do tipo Ajuste, Espólio ou Saída" formato="C" tam="1" />
+		<campo nome="NR_CPF_PROCURADOR" obs="CPF do procurador, caso a declaração seja de ajuste e o endereço no exterior" formato="C" tam="11" />
+		<campo nome="NR_REGISTRO_PROFISSIONAL" obs="Numero do registro profissional" formato="A" tam="20" />
+		<campo nome="NR_DDD_CELULAR" obs="Zeros - DDD do celular" formato="C" tam="2" />
+		<campo nome="NR_CELULAR" obs="Zeros - Celular" formato="C" tam="9" />
+		<campo nome="IN_CONJUGE" obs="S-Sim ; N-Não" formato="C" tam="1" />
+		<campo nome="NR_TELEFONE" obs="Endereço contribuinte: telefone" formato="C" tam="11" />
+		<campo nome="NR_CONTROLE" obs="Número de controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_17">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="VR_IMPCOMP" obs="Valor do Imposto Complementar do titular" formato="N" tam="13" />
+		<campo nome="VR_LUCROSTIT" obs="Lucros e Dividendos recebidos pelo Titular" formato="N" tam="13" />
+		<campo nome="VR_ISENTOS" obs="Demais Rendimentos isentos e não-tributáveis do titular exceto ativ. Rural, GC e GCME" formato="N" tam="13" />
+		<campo nome="VR_EXCLUSIVOS" obs="Valor dos Rendimentos sujeitos à  tributação exclusiva Exceto 13 salário,Renda Variável, GC e GCME do titular" formato="N" tam="13" />
+		<campo nome="VR_TOTAL13" obs="Valor do 13o. do Titular" formato="N" tam="13" />
+		<campo nome="VR_IRFONTELEI11033" obs="Valor Retido na Fonte Lei n 11.033-2004" formato="N" tam="13" />
+		<campo nome="VR_TOTAL13DEPEND" obs="Valor do 13o. do Dependente" formato="N" tam="13" />
+		<campo nome="VR_LUCROSDEPEND" obs="Lucros e Dividendos recebidos pelos Dependentes" formato="N" tam="13" />
+		<campo nome="VR_ISENTOSDEPEND" obs="Demais Rendimentos isentos e não-tributáveis dos dependentes" formato="N" tam="13" />
+		<campo nome="VR_EXCLUSIVOSDEPEND" obs="Valor dos Rendimentos sujeitos à  tributação exclusiva dos dependentes Exceto 13 salário" formato="N" tam="13" />
+		<campo nome="FILLER1" obs="Espaços em branco" formato="A" tam="13" />
+		<campo nome="FILLER2" obs="Espaços em branco" formato="A" tam="13" />
+		<campo nome="VR_RENDPF_TIT" obs="Total de Rendimentos Recebidos de PF pelo titular" formato="N" tam="13" />
+		<campo nome="VR_RENDPF_DEPEND" obs="Total de Rendimentos Recebidos de PF pelos dependentes" formato="N" tam="13" />
+		<campo nome="VR_RENDEXT_TIT" obs="Total de Rendimentos Recebidos do exterior pelo titular" formato="N" tam="13" />
+		<campo nome="VR_RENDEXT_DEPEND" obs="Total de Rendimentos Recebidos do exterior pelos dependentes" formato="N" tam="13" />
+		<campo nome="VR_CARNELEAO_TIT" obs="Valor pago Carnê-LeãoTitular" formato="N" tam="13" />
+		<campo nome="VR_CARNELEAO_DEPEND" obs="Valor pago Carnê-LeãoDependentes" formato="N" tam="13" />
+		<campo nome="VR_DEPEN" obs="Dedução com dependentes (Ficha Dependentes)" formato="N" tam="13" />
+		<campo nome="VR_TOT_PREVOFC_AC_TIT" obs="Total previdência oficial RRA - pelo titular (Ficha RRA - Titular - opção de tributação ajuste anual)" formato="N" tam="13" />
+		<campo nome="VR_TOT_PREVOFC_AC_DEP" obs="Total previdência oficial RRA - pelos dependentes (Ficha RRA - Dependentes - opção de tributação ajuste anual)" formato="N" tam="13" />
+		<campo nome="VR_TOT_PENSALI_AC_TIT" obs="Total Pensão Alimentícia RRA - pelo titular (Ficha RRA - Titular - opção de tributação ajuste anual)" formato="N" tam="13" />
+		<campo nome="VR_TOT_PENSALI_AC_DEP" obs="Total Pensão Alimentícia RRA - pelos dependentes (Ficha RRA - Dependentes - opção de tributação ajuste anual" formato="N" tam="13" />
+		<campo nome="VR_IMPEXT" obs="Valor do imposto pago exterior" formato="N" tam="13" />
+		<campo nome="VR_IMPDEVIDO_SEM_REND_EXT" obs="Imposto devido sem o rendimento no exterior" formato="N" tam="13" />
+		<campo nome="VR_LIMITE_IMP_PAGO_EXT" obs="Limite do imposto pago no exterior" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_18">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="VR_RENDTRIB" obs="Valor do Rendto+Rendto. Atividade Rural +PF+Exterior do Titular + dependente." formato="N" tam="13" />
+		<campo nome="VR_DESCSIMP" obs="Desconto Simplificado" formato="N" tam="13" />
+		<campo nome="VR_BASECALC" obs="Base de cálculo do imposto" formato="N" tam="13" />
+		<campo nome="VR_IMPDEVIDO" obs="Total do Imposto devido" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO" obs="Imposto retido na fonte-Titular e dependente" formato="N" tam="13" />
+		<campo nome="VR_IMPCOMP" obs="Imposto complementar. e pago no exterior-Titular e Dependente" formato="N" tam="13" />
+		<campo nome="VR_LEAO" obs="Carnê-leão, imposto complementar. e pago no exterior-Titular e Dependente" formato="N" tam="13" />
+		<campo nome="VR_IRFONTELEI11033" obs="Valor Retido na Fonte (Lei Nº 11.033/2004)-Titular e Dependente" formato="N" tam="13" />
+		<campo nome="VR_IMPRESTIT" obs="Saldo do imposto a restituir" formato="N" tam="13" />
+		<campo nome="VR_IMPPAGAR" obs="Saldo do Imposto a pagar" formato="N" tam="13" />
+		<campo nome="NR_QUOTAS" obs="Numero de quotas" formato="N" tam="1" />
+		<campo nome="VR_QUOTA" obs="Valor da quota" formato="N" tam="13" />
+		<campo nome="VR_TOTISENTO" obs="Rendimento Isentos e não tributáveis - Titular e dependente" formato="N" tam="13" />
+		<campo nome="VR_TOTEXCLUSIVO" obs="Rendimento sujeitos a Tributação exclusiva -Titular e dependente" formato="N" tam="13" />
+		<campo nome="FILLER" obs="FILLER" formato="N" tam="13" />
+		<campo nome="VR_RENDTRIBDEPENDENTE" obs="Valor do Rendimento PJ - Dependente" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTODEPENDENTE" obs="Imposto retido na fonte - Dependente" formato="N" tam="13" />
+		<campo nome="VR_IMPPAGARESPECIE" obs="Imposto a Pagar Ganhos de Capital - Moeda em Espécie" formato="N" tam="13" />
+		<campo nome="VR_TOTRENDTRIBPJTITULAR" obs="Total do rendimento Tributável PJ - Titular" formato="N" tam="13" />
+		<campo nome="VR_RENDTRIBARURAL" obs="Total do rendimento AR-Brasil e Ext.(Linha 7 da ficha Apuração do Resultado" formato="N" tam="13" />
+		<campo nome="VR_TOTFONTETITULAR" obs="Total do Imposto Retido na Fonte - Titular" formato="N" tam="13" />
+		<campo nome="VR_TOTBENSANOBASEANTERIOR" obs="Total dos bens do ano anterior ao ano base" formato="N" tam="13" />
+		<campo nome="VR_TOTBENSANOBASE" obs="Total dos bens do ano base" formato="N" tam="13" />
+		<campo nome="VR_RENDISENTOTITULAR" obs="Total Rend. isentos/Não tributáveis - Titular" formato="N" tam="13" />
+		<campo nome="VR_RENDISENTODEPENDENTES" obs="Total Rend. isentos/Não tributáveis - Depend." formato="N" tam="13" />
+		<campo nome="VR_TOTRENDEXCLUSTITULAR" obs="Total Rend. Tributação Exclusiva - Titular" formato="N" tam="13" />
+		<campo nome="VR_RENDEXCLUSDEPENDENTES" obs="Total Rend. Tributação Exclusiva - Depend." formato="N" tam="13" />
+		<campo nome="VR_RESNAOTRIB_AR" obs="Total Não Tributável(Linha 11 do Resultado da AR, se Brasil e Linha 10, se Exterior.)" formato="N" tam="13" />
+		<campo nome="VR_TOTDIVIDAANOBASEANTERIOR" obs="Total das dívidas do ano anterior ao ano base" formato="N" tam="13" />
+		<campo nome="VR_TOTDIVIDAANOBASE" obs="Total das dívidas do ano base" formato="N" tam="13" />
+		<campo nome="VR_TOTIRFONTELEI11033" obs="Valor Retido na Fonte (Lei Nº 11.033/2004) - Titular+Dependente+Renda Variável+Ganho de Capital em PS" formato="N" tam="13" />
+		<campo nome="VR_SUBTOTALISENTOTRANSPORTE" obs="Subtotal dos rendimentos isentos e não tributáveis" formato="N" tam="13" />
+		<campo nome="VR_SUBTOTALEXCLUSIVOTRANSPORTE" obs="Subtotal dos rendimentos sujeitos à  tributação exclusiva" formato="N" tam="13" />
+		<campo nome="VR_GANHOLIQUIDORVTRANSPORTE" obs="Ganhos líquidos em renda variável" formato="N" tam="13" />
+		<campo nome="VR_RENDISENTOGCTRANSPORTE" obs="Parcela isenta proveniente dos Ganhos de Capital" formato="N" tam="13" />
+		<campo nome="VR_RENDPFEXT" obs="Total de Rendimentos Recebidos de PF/exterior pelo titular" formato="N" tam="13" />
+		<campo nome="VR_RENDPFEXTDEPEN" obs="Total de Rendimentos Recebidos de PF/exterior pelos dependentes" formato="N" tam="13" />
+		<campo nome="VR_DOACOESCAMPANHA" obs="Total de Doacoes a Campanha Eleitoral" formato="N" tam="13" />
+		<campo nome="VR_TOTRENDPJ_EXIB_SUSPTITULAR" obs="Total de Rendimentos Recebidos de PF-exigibilidade suspensa pelo titular" formato="N" tam="13" />
+		<campo nome="VR_TOTRENDPJ_EXIB_SUSPDEPEN" obs="Total de Rendimentos Recebidos de PF-exigibilidade suspensa pelo dependente" formato="N" tam="13" />
+		<campo nome="VR_TOTDEPJUDIC_TITULAR" obs="Total de depósitos judiciais-exigibilidade suspensa pelo titular" formato="N" tam="13" />
+		<campo nome="VR_TOTDEPJUDIC_DEPENDEN" obs="Total de depósitos judiciais-exigibilidade suspensa pelos dependentes" formato="N" tam="13" />
+		<campo nome="VR_TOTREND_AC_TIT" obs="Total de Rendimentos Recebidos acumuladamente pelo titular" formato="N" tam="13" />
+		<campo nome="VR_TOT_IRF_AC_TIT" obs="Total IRF RRA - pelo titular" formato="N" tam="13" />
+		<campo nome="VR_TOT_IMPOSTO_RRA_TIT" obs="Total IMPOSTO RRA - pelo titular" formato="N" tam="13" />
+		<campo nome="VR_TOTREND_AC_DEP" obs="Total de Rendimentos Recebidos acumuladamente pelos dependentes" formato="N" tam="13" />
+		<campo nome="VR_TOT_IRF_AC_DEP" obs="Total IRF RRA - pelos dependentes" formato="N" tam="13" />
+		<campo nome="VR_TOT_IMPOSTO_RRA_DEP" obs="Total IMPOSTO RRA - pelos dependentes" formato="N" tam="13" />
+		<campo nome="VR_TOT_IMPOSTO_DEVIDO" obs="Total do Imposto devido (incluindo RRA)" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO_DIFERIDO_GCAP" obs="Imposto diferido GCAP" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO_DEVIDO_GCAP" obs="Imposto devido sobre ganho de capital" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO_GANHOLIQ_RVAR" obs="Imposto devido sobre ganho liquido em renda variável" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO_DEVIDO_GCME" obs="Imposto devido sobre ganho de capital moeda estrangeira - bens, direitos e aplicações financeiras" formato="N" tam="13" />
+		<campo nome="VR_IMPEXT" obs="Imposto pago no exterior(após cálculo do limite)" formato="N" tam="13" />
+		<campo nome="VR_ALIQUOTA_EFETIVA" obs="Calculo do imposto - valor da aliquota efetiva" formato="N" tam="5" />		
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_19">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_FONTE" obs="CNPJ-CPF principal fonte pagadora" formato="C" tam="14" />
+		<campo nome="VR_IMPEXT" obs="Valor do imposto pago exterior" formato="N" tam="13" />
+		<campo nome="VR_IMPCOMP" obs="Valor do imposto complementar pago" formato="N" tam="13" />
+		<campo nome="VR_IRFONTELEI11033" obs="Valor Retido na Fonte Lei n 11.033-2004" formato="N" tam="13" />
+		<campo nome="VR_RECEX_TIT" obs="Rendimentos recebidos do ExteriorTitular" formato="N" tam="13" />
+		<campo nome="VR_LIVCAIX_TIT" obs="Livro caixaTitular" formato="N" tam="13" />
+		<campo nome="VR_CARNELEAO_TIT" obs="Valor pago Carnê-LeãoTitular" formato="N" tam="13" />
+		<campo nome="VR_RECEX_DEP" obs="Rendimentos recebidos do ExteriorDependentes" formato="N" tam="13" />
+		<campo nome="VR_LIVCAIX_DEP" obs="Livro caixaDependentes" formato="N" tam="13" />
+		<campo nome="VR_CARNELEAO_DEP" obs="Valor pago Carnê-LeãoDependentes" formato="N" tam="13" />
+		<campo nome="VR_PREVPRIV" obs="Contribuição previdenciária privada" formato="N" tam="13" />
+		<campo nome="VR_FAPI" obs="Contribuição FAPI" formato="N" tam="13" />
+		<campo nome="VR_PREVOFTITULAR" obs="Total da contribuição previdenciária oficial do Titular (Exceto RRA)" formato="N" tam="13" />
+		<campo nome="VR_PREVOFDEPENDENTE" obs="Total da contribuição previdenciária oficial do Dependente (Exceto RRA)" formato="N" tam="13" />
+		<campo nome="VR_TOTAL13TITULAR" obs="Total do décimo terceiro salário do Titular" formato="N" tam="13" />
+		<campo nome="VR_TOTAL13DEPENDENTE" obs="Total do décimo terceiro salário do Dependente" formato="N" tam="13" />
+		<campo nome="NR_DEPENDENTE_DESP_INSTRUCAO" obs="Numero de Dependentes com despesa de instrução" formato="N" tam="5" />
+		<campo nome="NR_ALIMENTANDO_DESP_INSTRUCAO" obs="Numero de Alimentandos com despesa de instrução" formato="N" tam="5" />
+		<campo nome="VR_RENDPF_TIT" obs="Total de Rendimentos Recebidos de PF pelo titular" formato="N" tam="13" />
+		<campo nome="VR_RENDPF_DEPEND" obs="Total de Rendimentos Recebidos de PF pelos dependentes" formato="N" tam="13" />
+		<campo nome="VR_RENDEXT_TIT" obs="Total de Rendimentos Recebidos do exterior pelo titular" formato="N" tam="13" />
+		<campo nome="VR_RENDEXT_DEPEND" obs="Total de Rendimentos Recebidos do exterior pelos dependentes" formato="N" tam="13" />
+		<campo nome="VR_IMPDEVIDO_SEM_REND_EXT" obs="Imposto devido sem o rendimento do exterior" formato="N" tam="13" />
+		<campo nome="VR_LIMITE_IMP_PAGO_EXT" obs="Limite do imposto pago no exterior" formato="N" tam="13" />
+		<campo nome="VR_ATE_LIMITE_FUNPRESP" obs="Valor da FUNPRESP ate o limite do ente patrocionador" formato="N" tam="13" />
+		<campo nome="VR_ACIMA_LIMITE_FUNPRESP" obs="Valor da FUNPRESP acima do limite do ente patrocionador" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_20">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="VR_RENDJUR" obs="Rendimentos recebidos Pessoa JurídicaTitular" formato="N" tam="13" />
+		<campo nome="VR_RENDPFEXT" obs="Total de Rendimentos Recebidos de PF, aluguéis, outros e exterior pelo titular" formato="N" tam="13" />
+		<campo nome="VR_RENDPFEXTDEPEN" obs="Total de Rendimentos Recebidos de PF, aluguéis, outros e exterior pelos dependentes" formato="N" tam="13" />
+		<campo nome="VR_RESAR" obs="Resultado da Atividade Rural" formato="N" tam="13" />
+		<campo nome="VR_TOTTRIB" obs="Total de Rendimentos tributáveis" formato="N" tam="13" />
+		<campo nome="VR_PREVOF_FUNPRESP_LIMITE" obs="Contribuição previdenciária oficial + FUNPRESP (Ate o limite do Ente)" formato="N" tam="13" />
+		<campo nome="VR_TOTPRIVADA_FAPI_FUNPRESP" obs="Previdência privada + FAPI + FUNPRESP (acima do limite do ente) limitada a 12 Rend.Trib." formato="N" tam="13" />
+		<campo nome="VR_DEPEN" obs="Dedução com dependentes" formato="N" tam="13" />
+		<campo nome="VR_DESPINST" obs="Despesas com instrução" formato="N" tam="13" />
+		<campo nome="VR_DESPMEDIC" obs="Despesas médicas" formato="N" tam="13" />
+		<campo nome="VR_PENSAO" obs="Pensão Alimentícia Judicial" formato="N" tam="13" />
+		<campo nome="VR_PENSAO_CARTORIO" obs="Pensão Alimentícia por escritura pública" formato="N" tam="13" />
+		<campo nome="VR_LIVCAIX" obs="Livro caixaTitular + Dependente" formato="N" tam="13" />
+		<campo nome="VR_DEDUC" obs="Total das deduções" formato="N" tam="13" />
+		<campo nome="VR_BASECALC" obs="Base de cálculo do imposto" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO" obs="Valor do Imposto" formato="N" tam="13" />
+		<campo nome="VR_DEDIMPOSTO" obs="Dedução do impostodedução de incentivo limitada a 6 do valor do imposto" formato="N" tam="13" />
+		<campo nome="VR_IMPDEV1" obs="Imposto menos deduções de incentivo." formato="N" tam="13" />
+		<campo nome="VR_CONTRIBPREV" obs="Contribuição Prev. Social emp. doméstico" formato="N" tam="13" />
+		<campo nome="VR_IMPDEV2" obs="Imposto devido I menos Contribuição Prev. Social emp. doméstico." formato="N" tam="13" />
+		<campo nome="VR_IMPDEV3" obs="Imposto devido 2 mais imposto devido RRA" formato="N" tam="13" />
+		<campo nome="VR_IMPFONTE" obs="Imposto na fonte - Titular" formato="N" tam="13" />
+		<campo nome="VR_CARNELEAO" obs="Valor pago Carnê-LeãoTitular + Dependente" formato="N" tam="13" />
+		<campo nome="VR_IMPCOMPL" obs="Imposto complementar" formato="N" tam="13" />
+		<campo nome="VR_IMPEXT" obs="Imposto pago no exteriorapós cálculo do limite" formato="N" tam="13" />
+		<campo nome="VR_IRFONTELEI11033" obs="Valor Retido na Fonte Lei n 11.033-2004-Ficha Imposto Pago" formato="N" tam="13" />
+		<campo nome="VR_TOTIMPPAGO" obs="Total do imposto pago" formato="N" tam="13" />
+		<campo nome="VR_IMPREST" obs="Imposto a restituir" formato="N" tam="13" />
+		<campo nome="VR_IMPPAGAR" obs="Imposto a pagar" formato="N" tam="13" />
+		<campo nome="NR_QUOTAS" obs="Quantidade de quotas" formato="N" tam="1" />
+		<campo nome="VR_QUOTA" obs="Valor de cada quota" formato="N" tam="13" />
+		<campo nome="VR_BENSANT" obs="Total de Bens e Direitos do ano anterior" formato="N" tam="13" />
+		<campo nome="VR_BENSATUAL" obs="Total de Bens e Direitos do ano atual" formato="N" tam="13" />
+		<campo nome="VR_DIVIDAANT" obs="Total de Ônus e Dívidas do ano anterior" formato="N" tam="13" />
+		<campo nome="VR_DIVIDAATUAL" obs="Total de Ônus e Dívidas do ano atual" formato="N" tam="13" />
+		<campo nome="FILLER" obs="FILLER" formato="N" tam="13" />
+		<campo nome="VR_TOTISENTOS" obs="Total dos Rendimentos isentos -Titular e Dependente" formato="N" tam="13" />
+		<campo nome="VR_TOTEXCLUS" obs="Total dos Rendimentos exclusivos - Titular e Dependente" formato="N" tam="13" />
+		<campo nome="VR_IMPGC" obs="Imposto sobre Ganhos de Capital" formato="N" tam="13" />
+		<campo nome="VR_TOTIRFONTELEI11033" obs="Valor Retido na Fonte Lei n 11.033-2004-Ficha Outras InformaçõesImposto Pago + GC em PS + RV" formato="N" tam="13" />
+		<campo nome="VR_IMPRV" obs="Imposto sobre Renda Variável" formato="N" tam="13" />
+		<campo nome="VR_RENDJURDEPENDENTE" obs="Rendimentos recebidos Pessoa Jurídica - Dependente" formato="N" tam="13" />
+		<campo nome="VR_IMPFONTEDEPENDENTE" obs="Imposto na fonte - Dependente" formato="N" tam="13" />
+		<campo nome="VR_IMPPAGOVCBENS" obs="Imposto Pago Moeda Estrangeira-Bens,Dir e Aplic.Fin." formato="N" tam="13" />
+		<campo nome="VR_IMPPAGOVCESPECIE" obs="Imposto a Pagar Ganhos de Capital - Moeda em Espécie" formato="N" tam="13" />
+		<campo nome="VR_TOTRENDISENTOSITULAR" obs="Total de Rendimentos isentos do Titular" formato="N" tam="13" />
+		<campo nome="VR_TOTRENDISENTOSDEPENDENTE" obs="Total de Rendimentos isentos do Dependente" formato="N" tam="13" />
+		<campo nome="VR_TOTRENDEXCLTITULAR" obs="Total de Rendimentos exclusivos do Titular" formato="N" tam="13" />
+		<campo nome="VR_TOTRENDEXCLDEPENDENTE" obs="Total de Rendimentos exclusivos do Dependente" formato="N" tam="13" />
+		<campo nome="VR_TOTDOACOESCAMPANHA" obs="Total de doações da campanha eleitoral" formato="N" tam="13" />
+		<campo nome="VR_TOTRENDPJ_EXIB_SUSPTITULAR" obs="Total de Rendimentos Recebidos de PJ-exigibilidade suspensa pelo titular" formato="N" tam="13" />
+		<campo nome="VR_TOTRENDPJ_EXIB_SUSPDEPENDEN" obs="Total de Rendimentos Recebidos de PJ-exigibilidade suspensa pelos dependentes" formato="N" tam="13" />
+		<campo nome="VR_TOTDEPJUDIC_TITULAR" obs="Total de depósitos judiciais-exigibilidade suspensa pelo titular" formato="N" tam="13" />
+		<campo nome="VR_TOTDEPJUDIC_DEPENDEN" obs="Total de depósitos judiciais-exigibilidade suspensa pelos dependentes" formato="N" tam="13" />
+		<campo nome="VR_TOTREND_AC_TIT" obs="Total de Rendimentos Recebidos acumuladamente pelo titular" formato="N" tam="13" />
+		<campo nome="VR_TOT_PREVOFC_AC_TIT" obs="Total previdência oficial RRA - pelo titular" formato="N" tam="13" />
+		<campo nome="VR_TOT_PENSALI_AC_TIT" obs="Total Pensão Alimentícia RRA - pelo titular" formato="N" tam="13" />
+		<campo nome="VR_TOT_IRF_AC_TIT" obs="Total IRF RRA - pelo titular" formato="N" tam="13" />
+		<campo nome="VR_TOT_IMPOSTO_RRA_TIT" obs="Total IMPOSTO RRA - pelo titular" formato="N" tam="13" />
+		<campo nome="VR_TOTREND_AC_DEP" obs="Total de Rendimentos Recebidos acumuladamente pelos dependentes" formato="N" tam="13" />
+		<campo nome="VR_TOT_PREVOFC_AC_DEP" obs="Total previdência oficial RRA - pelos dependentes" formato="N" tam="13" />
+		<campo nome="VR_TOT_PENSALI_AC_DEP" obs="Total Pensão Alimentícia RRA - pelos dependentes" formato="N" tam="13" />
+		<campo nome="VR_TOT_IRF_AC_DEP" obs="Total IRF RRA - pelos dependentes" formato="N" tam="13" />
+		<campo nome="VR_TOT_IMPOSTO_RRA_DEP" obs="Total IMPOSTO RRA - pelos dependentes" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO_DIFERIDO_GCAP" obs="Imposto diferido GCAP" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO_DEVIDO_GCAP" obs="Imposto devido sobre ganho de capital" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO_GANHOLIQ_RVAR" obs="Imposto devido sobre ganho liquido em renda variável" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO_DEVIDO_GCME" obs="Imposto devido sobre ganho de capital moeda estrangeira - bens, direitos e aplicações financeiras" formato="N" tam="13" />
+		<campo nome="VR_ALIQUOTA_EFETIVA" obs="Calculo do imposto - valor da aliquota efetiva" formato="N" tam="5" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_21">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_PAGADOR" obs="CNPJ fonte pagadora" formato="N" tam="14" />
+		<campo nome="NM_PAGADOR" obs="nome fonte pagadora" formato="N" tam="60" />
+		<campo nome="VR_RENDTO" obs="Valor rendimento recebido" formato="C" tam="13" />
+		<campo nome="VR_CONTRIB" obs="Valor contribuição previdenciária oficial" formato="A" tam="13" />
+		<campo nome="VR_DECTERC" obs="Valor décimo terceiro salário" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO" obs="Valor imposto retido na fonte" formato="N" tam="13" />
+		<campo nome="DT_COMUNICACAO_SAIDA" obs="Data da comunicação de saída à  fonte pagadora" formato="C" tam="8" />
+		<campo nome="VR_IRRF13SALARIO" obs="Valor imposto retido na fonte sobre o 13 salario" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_22">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="E_DEPENDENTE" obs="Indicativo se registro de dependenteS ou TitularN" formato="I" tam="1" />
+		<campo nome="NR_CPF_DEPEN" obs="CPF do Dependente" formato="C" tam="11" />
+		<campo nome="NR_MES" obs="Mês de ocorrência" formato="N" tam="2" />
+		<campo nome="VR_RENDTO" obs="Valor rendimentos recebidos" formato="N" tam="13" />
+		<campo nome="VR_ALUGUEIS" obs="Valor rendimentos recebidos de alugueis" formato="N" tam="13" />
+		<campo nome="VR_OUTROS" obs="Valor rendimentos recebidos outros" formato="N" tam="13" />
+		<campo nome="VR_EXTER" obs="Valor rendimento recebido no exterior" formato="N" tam="13" />
+		<campo nome="VR_LIVCAIX" obs="Valor dedução livro-caixa" formato="N" tam="13" />
+		<campo nome="VR_ALIMENT" obs="Valor dedução com pensão alimentícia" formato="N" tam="13" />
+		<campo nome="VR_DEDUC" obs="Valor dedução com dependente" formato="N" tam="13" />
+		<campo nome="VR_PREVID" obs="Valor pago previdência" formato="N" tam="13" />
+		<campo nome="VR_BASECALCULO" obs="Valor Base de cálculo rendimentos - deduções" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO" obs="Valor imposto pagoCarnê-Leão" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_23">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_COD_ISENTO" obs="Código do rendimento isento e não tributavel" formato="N" tam="4" />
+		<campo nome="VR_VALOR" obs="Valor do rendimento" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_24">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_COD_EXCLUSIVO" obs="Código do rendimento de tributação exclusivo" formato="N" tam="4" />
+		<campo nome="VR_VALOR" obs="Valor do rendimento" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_25">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CHAVE" obs="Numero de chave do dependente" formato="N" tam="5" />
+		<campo nome="CD_DEPEND" obs="Código da relação de dependência" formato="C" tam="2" />
+		<campo nome="NM_DEPEND" obs="nome do dependente" formato="A" tam="60" />
+		<campo nome="DT_NASCIM" obs="Data de nascimento DDMMAAAA" formato="N" tam="8" />
+		<campo nome="NI_DEPEND" obs="CPF do dependente" formato="C" tam="11" />
+		<campo nome="IN_SAIDA" obs="Indicador de saída junto com o declarante" formato="N" tam="1" />
+		<campo nome="NR_NITPISPASEP" obs="informação do NIT/PIS/PASEP informação constante na ficha de Pessoa Fisica no Exterior. Sem valor informado campo em branco." formato="C" tam="11" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_26">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="CD_PAGTO" obs="Código de doações e pagamentos" formato="N" tam="2" />
+		<campo nome="NR_CHAVE_DEPEND" obs="Numero de chave do dependente" formato="N" tam="5" />
+		<campo nome="NR_BENEF" obs="CNPJ-CPF do beneficiário ou do Emp. Doméstico" formato="C" tam="14" />
+		<campo nome="NM_BENEF" obs="nome do beneficiário" formato="A" tam="60" />
+		<campo nome="NR_NIT_EMP_DOM" obs="NIT do empregado doméstico" formato="N" tam="11" />
+		<campo nome="VR_PAGTO" obs="Valor do pagamento ou doação" formato="N" tam="13" />
+		<campo nome="VR_REDUC" obs="Valor da parcela não dedutível ou reembolsada" formato="N" tam="13" />
+		<campo nome="VR_EFPC" obs="Contribuição EFPC" formato="N" tam="13" />
+		<campo nome="IN_TIPO_CPF_CNPJ" obs="Indicador se CPF ou CNPJ" formato="N" tam="1" />
+		<campo nome="IN_TIPO_PGTO" obs="formato de pagamento: T - Titular, D - Dependente, A - Alimentando" formato="C" tam="1" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_27">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="CD_BEM" obs="formato do bem ou direito" formato="N" tam="2" />
+		<campo nome="IN_EXTERIOR" obs="0 se imóvel no Brasil 1 se imóvel no Exterior" formato="N" tam="1" />
+		<campo nome="CD_PAIS" obs="Código do País, se bem no Exterior" formato="N" tam="3" />
+		<campo nome="NM_PAIS" obs="nome do País" formato="C" tam="40" />
+		<campo nome="TX_BEM" obs="Descrição do bem" formato="C" tam="512" />
+		<campo nome="VR_ANTER" obs="Valor em 31 de dezembro de 2009" formato="N" tam="13" />
+		<campo nome="VR_ATUAL" obs="Valor em 31 de dezembro de 2010" formato="N" tam="13" />
+		<campo nome="NM_LOGRA" obs="Endereço contribuinte: logradouro" formato="C" tam="40" />
+		<campo nome="NR_NUMERO" obs="Endereço contribuinte: número" formato="C" tam="6" />
+		<campo nome="NM_COMPLEM" obs="Endereço contribuinte: complemento" formato="C" tam="40" />
+		<campo nome="NM_BAIRRO" obs="Endereço contribuinte: bairro" formato="C" tam="40" />
+		<campo nome="NR_CEP" obs="Endereço contribuinte: CEP ou ZIP Exterior" formato="C" tam="9" />
+		<campo nome="SG_UF" obs="Endereço contribuinte: UF" formato="C" tam="2" />
+		<campo nome="CD_MUNICIP" obs="Endereço contribuinte: código do município" formato="N" tam="4" />
+		<campo nome="NM_MUNICIP" obs="Endereço contribuinte: município" formato="C" tam="40" />
+		<campo nome="NM_IND_REG_IMOV" obs="Indicador do tipo de imóveis" formato="N" tam="1" />
+		<campo nome="MATRIC_IMOV" obs="Matrícula do imóvel" formato="A" tam="40" />
+		<campo nome="FILLER1" obs="tipo do imóvel" formato="A" tam="40" />
+		<campo nome="AREA" obs="?ea do imóvel" formato="N" tam="11" />
+		<campo nome="NM_UNID" obs="Unidade de medida" formato="N" tam="1" />
+		<campo nome="NM_CARTORIO" obs="nome do cartorio" formato="A" tam="60" />
+		<campo nome="NR_CHAVE_BEM" obs="Chave de identificação do bem" formato="N" tam="5" />
+		<campo nome="DT_AQUISICAO" obs="" formato="N" tam="8" />
+		<campo nome="FILLER2" obs="" formato="C" tam="20" />
+		<campo nome="NR_NIRF" obs="" formato="N" tam="8" />
+		<campo nome="NR_RENAVAN" obs="" formato="C" tam="30" />
+		<campo nome="NR_DEP_AVIACAO_CIVIL" obs="" formato="C" tam="30" />
+		<campo nome="NR_CAPITANIA_PORTOS" obs="" formato="C" tam="30" />
+		<campo nome="NR_AGENCIA" obs="" formato="N" tam="4" />
+		<campo nome="NR_CONTA" obs="" formato="C" tam="13" />
+		<campo nome="NR_DV_CONTA" obs="" formato="C" tam="2" />
+		<campo nome="NM_CPFCNPJ" obs="" formato="C" tam="14" />
+		<campo nome="NR_IPTU" obs="" formato="C" tam="30" />
+		<campo nome="NR_CONTROLE" obs="no de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_28">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="CD_DIV" obs="formato da dívida" formato="N" tam="2" />
+		<campo nome="TX_DIV" obs="Descrição da dívida" formato="C" tam="512" />
+		<campo nome="VR_ANTER" obs="Valor em 31 de dezembro de 2009" formato="N" tam="13" />
+		<campo nome="VR_ATUAL" obs="Valor em 31 de dezembro de 2010" formato="N" tam="13" />
+		<campo nome="VR_PAGAMENTOANUAL" obs="Valor do pagamento anual" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_29">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CONJ" obs="CPF do cônjuge" formato="C" tam="11" />
+		<campo nome="VR_BASE" obs="Base de cálculo" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO" obs="Total do imposto" formato="N" tam="13" />
+		<campo nome="VR_ISENTO" obs="Rend. Isentos e não tributáveis" formato="N" tam="13" />
+		<campo nome="VR_EXCLUSIVO" obs="Rend. Tribut. Exclusivo Fonte" formato="N" tam="13" />
+		<campo nome="VR_RENDPJ_EXIB_SUSP" obs="Resultado dos (Rendimentos Recebidos de PJ [Imposto com Exigibilidade Suspensa] - Depósitos Judiciais do Imposto) do titular e dos dependentes" formato="N" tam="13" />
+		<campo nome="VR_TOTALCONJ" obs="Resultado total do cônjuge" formato="N" tam="13" />
+		<campo nome="IN_ENTREGOU" obs="Indicativo o cônjuge entregou S ou Não N declaração no periodo" formato="C" tam="1" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_30">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_INVENT" obs="CPF do inventariante" formato="C" tam="11" />
+		<campo nome="NM_INVENT" obs="nome do inventariante" formato="C" tam="60" />
+		<campo nome="NM_END_INVENT" obs="Endereço completo do inventariante" formato="C" tam="70" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_31">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CHAVE" obs="Chave de identificação da pensão, proventos de aposentadoria ou reforma por moléstia grave ou aposentadoria ou reforma por acidente em serviço" formato="N" tam="5" />
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do Titular ou do Dependente" formato="C" tam="1" />
+		<campo nome="NR_PAGADORA" obs="CPF/CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_NOME" obs="nome da fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_RECEB" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />
+		<campo nome="VR_13SALARIO" obs="Valor do 13 Salario" formato="N" tam="13" />
+		<campo nome="VR_IRRF" obs="Valor do IRRF" formato="N" tam="13" />
+		<campo nome="VR_IRRF13SALARIO" obs="Valor do IRRF sobre 13 Salario" formato="N" tam="13" />
+		<campo nome="VR_PREVIDENCIA" obs="valor da previdência oficial" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_32">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="CPF_BENEF" obs="CPF do Dependente" formato="C" tam="11" />
+		<campo nome="NR_PAGADOR" obs="CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_PAGADOR" obs="nome da fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_RENDTO" obs="Valor do rendimento recebido" formato="N" tam="13" />
+		<campo nome="VR_CONTRIB" obs="Valor contribuição previdenciária oficial" formato="N" tam="13" />
+		<campo nome="VR_DECTERC" obs="Valor décimo terceiro salário" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO" obs="Valor do imposto retido na fonte" formato="N" tam="13" />
+		<campo nome="DT_COMUNICACAO_SAIDA" obs="Data da comunicação de saída à  fonte pagadora" formato="C" tam="8" />
+		<campo nome="VR_IRRF13SALARIO" obs="Valor imposto retido na fonte sobre o 13 salario" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_33">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CHAVE" obs="Chave de identificação do Lucro" formato="N" tam="5" />
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do Titular ou do Dependente" formato="C" tam="1" />
+		<campo nome="NR_PAGADORA" obs="CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_NOME" obs="nome da fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_LUCRO" obs="Valor do Lucro ou Dividendo recebido" formato="N" tam="13" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_34">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_PARTIDO" obs="CNPJ do Partido ou Candidato" formato="C" tam="14" />
+		<campo nome="NM_PARTIDO" obs="nome do Partido ou Candidato" formato="C" tam="60" />
+		<campo nome="VR_DOACAO" obs="Valor da doação" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_35">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="INDICADOR_RESIDENCIA" obs="Indicador de residência do alimentando: 0-Brasil 1-Exterior" formato="C" tam="1" />
+		<campo nome="NR_CHAVE" obs="Identificador do alimentando" formato="N" tam="5" />
+		<campo nome="NM_NOME" obs="nome do alimentando" formato="C" tam="60" />
+		<campo nome="DT_NASCIM" obs="Data de nascimento DDMMAAAA" formato="C" tam="8" />
+		<campo nome="NI_ALIMENTANDO" obs="CPF do alimentando" formato="C" tam="11" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_36">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CHAVE" obs="Chave de identificação do rendimento recebido no exterior" formato="N" tam="5" />
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do Titular ou do Dependente" formato="C" tam="1" />
+		<campo nome="NR_PAGADORA" obs="CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_NOME" obs="nome da fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_RECEB" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_37">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CHAVE" obs="Chave de identificação da incorporação de reservas ao capital/bonificações em ações" formato="N" tam="5" />
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do Titular ou do Dependente" formato="C" tam="1" />
+		<campo nome="NR_PAGADORA" obs="CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_NOME" obs="nome da fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_RECEB" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_38">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_ANOOBITO" obs="Ano do óbito" formato="N" tam="4" />
+		<campo nome="FILLER" obs="FILLER" formato="C" tam="11" />
+		<campo nome="NR_CPF_INVENT" obs="CPF do inventariante" formato="C" tam="11" />
+		<campo nome="NM_INVENT" obs="nome do inventariante" formato="C" tam="60" />
+		<campo nome="NM_END_INVENT" obs="Endereço completo do inventariante" formato="C" tam="70" />
+		<campo nome="IN_TIPO_PROCESSO" obs="formato de processo: J - Judicial, C - Cartorio" formato="C" tam="1" />
+		<campo nome="NR_PROCESSOJUDICIAL" obs="Número do processo judicial" formato="C" tam="25" />
+		<campo nome="NR_VARACIVIL" obs="Identificação da vara civil" formato="C" tam="4" />
+		<campo nome="NM_COMARCA" obs="nome da Comarca" formato="C" tam="30" />
+		<campo nome="DT_DECJUDICIALPARTILHA" obs="Data da decisão judicial da partilha" formato="N" tam="8" />
+		<campo nome="DT_TRANSITOJULGADO" obs="Data do trânsito em julgado da decisão judicial da partilha" formato="N" tam="8" />
+		<campo nome="SG_UFCOMARCA" obs="UF da Comarca" formato="C" tam="2" />
+		<campo nome="NR_CNPJ_CARTORIO" obs="CNPJ do Cartório" formato="C" tam="14" />
+		<campo nome="NM_CARTORIO" obs="nome do Cartório" formato="C" tam="60" />
+		<campo nome="NM_LIVRO" obs="Número do Livro de tipo" formato="C" tam="7" />
+		<campo nome="NM_FOLHA" obs="Folhas do Livro de tipo" formato="C" tam="7" />
+		<campo nome="NM_MUNICIPIO" obs="nome do município do Cartório" formato="C" tam="40" />
+		<campo nome="SG_UFCARTORIO" obs="UF do Cartório" formato="C" tam="2" />
+		<campo nome="DT_LAVRATURA" obs="Data da lavratura da partilha" formato="N" tam="8" />
+		<campo nome="IN_MORTEAMBOSCONJUGES" obs="Morte de ambos os cônjuges e inventário único: 0 - Não, 1 - Sim, 2 - Não é morte de ambos" formato="C" tam="1" />
+		<campo nome="NM_CONJUGE" obs="nome do cônjuge ou companheiro" formato="A" tam="60" />
+		<campo nome="FILLER" obs="(CPF do cônjuge ou companheiro) informação constará apenas no registro de identificação REG 16" formato="C" tam="10" />
+		<campo nome="IN_MEEIRO" obs="indicador se meeiro 0 - Não, 1 - Sim" formato="C" tam="1" />
+		<campo nome="IN_INVENTARIOCONJUNTO" obs="Inventário único: 0 - Não, 1 - Sim" formato="C" tam="1" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_39">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_PROCURADOR" obs="CPF do Procurador" formato="C" tam="11" />
+		<campo nome="NM_PROCURADOR" obs="nome do Procurador" formato="A" tam="60" />
+		<campo nome="NM_END_PROCURADOR" obs="Endereço completo do Procurador" formato="C" tam="80" />
+		<campo nome="DT_NAORESIDENTE" obs="Data da caracterização da condição de não-residente" formato="N" tam="8" />
+		<campo nome="DT_RESIDENTE" obs="Data da caracterização da condição de residente no país" formato="N" tam="8" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_40">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="RV_MES" obs="Mês da operação" formato="N" tam="2" />
+		<campo nome="GC_COMUM_MVISTA_ACOES" obs="Operações Comuns - Mercado à  Vista - Ações" formato="N" tam="13" />
+		<campo nome="GC_COMUM_MVISTA_OURO" obs="Operações Comuns - Mercado à  Vista - Ouro" formato="N" tam="13" />
+		<campo nome="GC_COMUM_MVISTA_OUROFORA" obs="Operações Comuns - Mercado à  Vista - Ouro fora da bolsa" formato="N" tam="13" />
+		<campo nome="GC_COMUM_MOPC_ACOES" obs="Operações Comuns - Mercado do Opções - Ações" formato="N" tam="13" />
+		<campo nome="GC_COMUM_MOPC_OURO" obs="Operações Comuns - Mercado de Opções - Ouro" formato="N" tam="13" />
+		<campo nome="GC_COMUM_MOPC_OUROFORA" obs="Operações Comuns - Mercado de Opções - Ouro fora da bolsa" formato="N" tam="13" />
+		<campo nome="GC_COMUM_MOPC_OUTROS" obs="Operações Comuns - Mercado de Opções - Outros" formato="N" tam="13" />
+		<campo nome="GC_COMUM_MFUT_DOLAR" obs="Operações Comuns - Mercado Futuro - Dólar dos EUA" formato="N" tam="13" />
+		<campo nome="GC_COMUM_MFUT_INDICES" obs="Operações Comuns - Mercado Futuro - Índices" formato="N" tam="13" />
+		<campo nome="GC_COMUM_MFUT_JUROS" obs="Operações Comuns - Mercado Futuro - Juros" formato="N" tam="13" />
+		<campo nome="GC_COMUM_MFUT_OUTROS" obs="Operações Comuns - Mercado Futuro - Outros" formato="N" tam="13" />
+		<campo nome="GC_COMUM_MTERMO_ACOESOURO" obs="Operações Comuns - Mercado a Termo - Ações-Ouro" formato="N" tam="13" />
+		<campo nome="GC_COMUM_MTERMO_OUTROS" obs="Operações Comuns - Mercado a Termo - Outros" formato="N" tam="13" />
+		<campo nome="GC_DAYTR_MVISTA_ACOES" obs="Operações Day-Trade - Mercado à  Vista - Ações" formato="N" tam="13" />
+		<campo nome="GC_DAYTR_MVISTA_OURO" obs="Operações Day-Trade - Mercado à  Vista - Ouro" formato="N" tam="13" />
+		<campo nome="GC_DAYTR_MVISTA_OUROFORA" obs="Operações Day-Trade - Mercado à  Vista - Ouro fora da bolsa" formato="N" tam="13" />
+		<campo nome="GC_DAYTR_MOPC_ACOES" obs="Operações Day-Trade - Mercado do Opções - Ações" formato="N" tam="13" />
+		<campo nome="GC_DAYTR_MOPC_OURO" obs="Operações Day-Trade - Mercado de Opções - Ouro" formato="N" tam="13" />
+		<campo nome="GC_DAYTR_MOPC_OUROFORA" obs="Operações Day-Trade - Mercado de Opções - Ouro fora da bolsa" formato="N" tam="13" />
+		<campo nome="GC_DAYTR_MOPC_OUTROS" obs="Operações Day-Trade - Mercado de Opções - Outros" formato="N" tam="13" />
+		<campo nome="GC_DAYTR_MFUT_DOLAR" obs="Operações Day-Trade - Mercado Futuro - Dólar dos EUA" formato="N" tam="13" />
+		<campo nome="GC_DAYTR_MFUT_INDICES" obs="Operações Day-Trade - Mercado Futuro - Índices" formato="N" tam="13" />
+		<campo nome="GC_DAYTR_MFUT_JUROS" obs="Operações Day-Trade - Mercado Futuro - Juros" formato="N" tam="13" />
+		<campo nome="GC_DAYTR_MFUT_OUTROS" obs="Operações Day-Trade - Mercado Futuro - Outros" formato="N" tam="13" />
+		<campo nome="GC_DAYTR_MTERMO_ACOESOURO" obs="Operações Day-Trade - Mercado à  Termo - Ações-Ouro" formato="N" tam="13" />
+		<campo nome="GC_DAYTR_MTERMO_OUTROS" obs="Operações Day-Trade - Mercado à  Termo - Outros" formato="N" tam="13" />
+		<campo nome="VR_FONTE_DAYTRADE" obs="IR fonte de Day-Trade no mês" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTOPAGO" obs="Valor do imposto pago" formato="N" tam="13" />
+		<campo nome="VR_IMPRENDAFONTE" obs="Valor Retido na Fonte Lei n 11.033-2004" formato="N" tam="13" />
+		<campo nome="VRRESULT_NEG_MESANT_COMUM" obs="Resultado negativo até o mês anterior-Comuns" formato="N" tam="13" />
+		<campo nome="VRRESULT_NEG_MESANT_DAYTR" obs="Resultado negativo até o mês anterior-Day-Trade" formato="N" tam="13" />
+		<campo nome="VR_FONTE_DAYTRADEANTERIORJANEIRO" obs="IR fonte de Day-Trade-Esse campo só existe no mês de janeiro" formato="N" tam="13" />
+		<campo nome="VR_RESLIQUIDO_MES_OPCOMUNS" obs="Resultado Líquido do mês, para as operações comuns" formato="N" tam="13" />
+		<campo nome="VR_RESLIQUIDO_MES_DAYTRADE" obs="Resultado Líquido do mês, para as operações day-trade" formato="N" tam="13" />
+		<campo nome="VR_BASECALCULO_MES_OPCOMUNS" obs="Base de Cálculo do Imposto, para as operações comuns" formato="N" tam="13" />
+		<campo nome="VR_BASECALCULO_MES_DAYTRADE" obs="Base de Cálculo do Imposto, para as operações day-trade" formato="N" tam="13" />
+		<campo nome="VR_PREJACOMPENSAR_MES_OPCOMUNS" obs="Prejuízo a Compensar, para as operações comuns" formato="N" tam="13" />
+		<campo nome="VR_PREJACOMPENSAR_MES_DAYTRADE" obs="Prejuízo a Compensar, para as operações day-trade" formato="N" tam="13" />
+		<campo nome="VR_ALIQUOTA_IMPOSTO_OPCOMUNS" obs="Valor da alíquota15" formato="N" tam="3" />
+		<campo nome="VR_ALIQUOTA_IMPOSTO_DAYTRADE" obs="Valor da alíquota20" formato="N" tam="3" />
+		<campo nome="VR_IMPOSTODEVIDO_MES_OPCOMUNS" obs="Imposto Devido, para as operações comuns" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTODEVIDO_MES_DAYTRADE" obs="Imposto Devido, para as operações day-trade" formato="N" tam="13" />
+		<campo nome="VR_TOTAL_IMPDEVIDO" obs="Total do Imposto Devido" formato="N" tam="13" />
+		<campo nome="VR_IRFONTE_MESESANT_DAYTRADE" obs="IR Fonte de Day-trade meses anteriores" formato="N" tam="13" />
+		<campo nome="VR_IRFONTE_DAYTRADE_ACOMPENSAR" obs="IR Fonte de Day-trade a Compensar" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTOAPAGAR" obs="Imposto a Pagar" formato="N" tam="13" />
+		<campo nome="VR_IRF_MESESANT" obs="Valor Retido na Fonte Lei n 11.033-2004 meses anteriores" formato="N" tam="13" />
+		<campo nome="VR_IRF_COMPENSAR" obs="Valor Retido na Fonte Lei n 11.033-2004 meses anteriores" formato="N" tam="13" />
+		<campo nome="E_DEPENDENTE" obs="Indicativo se registro de dependente(S) ou Titular(N)" formato="I" tam="1" />
+		<campo nome="NR_CPF_DEPEN" obs="CPF do dependente" formato="C" tam="11" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_41">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="VR_TOTALANUALRESULTADOLIQUIDOSRENDAVARIAVEL_COMUNSDT" obs="Resultado Líquido do mês, para as operações comuns e day-trade nos meses de jan a dez" formato="N" tam="13" />
+		<campo nome="VR_TOTALANUALRESULTADONEGATIVOMESANTERIOR_COMUNSDT" obs="Resultado negativo até o mês anterior, para as operações comuns e day-trade do mês de Dezembro" formato="N" tam="13" />
+		<campo nome="VR_TOTALANUALBASECALCULOIMPOSTO_COMUNSDT" obs="Base de Cálculo do Imposto, para as operações comuns e day-trade nos meses de jan a dez" formato="N" tam="13" />
+		<campo nome="VR_TOTALANUALPREJUIZOCOMPENSAR_COMUNSDT" obs="Prejuízo a Compensar, para as operações comuns e day-trade do mês de Dezembro" formato="N" tam="13" />
+		<campo nome="VR_TOTALANUALIMPOSTODEVIDO_CCOMUNSDT" obs="Imposto Devido, para as operações comuns e day-trade nos meses de jan a dez" formato="N" tam="13" />
+		<campo nome="VR_TOTALANUALIMPOSTODEVIDOCONSOLIDACAO" obs="Total do Imposto Devido nos meses de jan a dez" formato="N" tam="13" />
+		<campo nome="VR_TOTALANUALFONTEDAYTRADEMESESANTERIOR" obs="IR Fonte de Day-trade meses anteriores do mês de Dezembro" formato="N" tam="13" />
+		<campo nome="VR_TOTALANUALFONTEDAYTRADECOMPENSAR" obs="IR Fonte de Day-trade a Compensar do mês de Dezembro" formato="N" tam="13" />
+		<campo nome="VR_TOTALANUALIRFONTELEI11033" obs="Imposto Retido na Fonte Lei 11.033 nos meses de jan a dez" formato="N" tam="13" />
+		<campo nome="VR_TOTALANUALIMPOSTOPAGAR" obs="Imposto a Pagar nos meses de jan a dez" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_42">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_MES" obs="Mês da operação" formato="N" tam="2" />
+		<campo nome="VR_RESLIQUIDO_MES" obs="Resultado Líquido do mês" formato="N" tam="13" />
+		<campo nome="VRRESULT_NEG_MESANT" obs="Resultado negativo até o mês anterior" formato="N" tam="13" />
+		<campo nome="VR_BASECALCULO_MES" obs="Base de Cálculo do Imposto" formato="N" tam="13" />
+		<campo nome="VR_PREJACOMPENSAR_MES_OPCOMUNS" obs="Prejuízo a Compensar" formato="N" tam="13" />
+		<campo nome="VR_ALIQUOTA_IMPOSTO_OPCOMUNS" obs="Valor da alíquota20" formato="N" tam="3" />
+		<campo nome="VR_IMPOSTODEVIDO_MES_OPCOMUNS" obs="Imposto Devido" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO_RETIDO_MESES_ANTERIORES" obs="Valor do Imposto Retido meses anteriores" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO_RETIDO_FONTE" obs="Valor do Imposto Retido no mês" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO_RETIDO_COMPENSAR" obs="Valor do Imposto a Compensar (Lei 11.033/2004)" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO_PAGAR" obs="Valor do Imposto a Pagar" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTOPAGO" obs="Valor do imposto pago" formato="N" tam="13" />
+		<campo nome="E_DEPENDENTE" obs="Indicativo se registro de dependente(S) ou Titular(N)" formato="I" tam="1" />
+		<campo nome="NR_CPF_DEPEN" obs="CPF do dependente" formato="C" tam="11" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_43">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="VR_TOTALANUALRESULTADOLIQUIDOSRENDAVARIAVEL_FII" obs="Resultado Líquido do mês, para as operações FII nos meses de jan a dez" formato="N" tam="13" />
+		<campo nome="VR_TOTALANUALRESULTADONEGATIVOMESANTERIOR_FII" obs="Resultado negativo até o mês anterior, para as operações FII do mês de Dezembro" formato="N" tam="13" />
+		<campo nome="VR_TOTALANUALBASECALCULOIMPOSTO_FII" obs="Base de Cálculo do Imposto, para as operações FII nos meses de jan a dez" formato="N" tam="13" />
+		<campo nome="VR_TOTALANUALPREJUIZOCOMPENSAR_FII" obs="Prejuízo a Compensar, para as operações FII do mês de Dezembro" formato="N" tam="13" />
+		<campo nome="VR_TOTALANUALIMPOSTODEVIDO_FII" obs="Imposto Devido, para as operações FII nos meses de jan a dez" formato="N" tam="13" />
+		<campo nome="VR_TOTALANUALIMPOSTOPAGAR" obs="Imposto a pagar para as operações FII nos meses de jan a dez" formato="N" tam="13" />
+		<campo nome="VR_TOTALANUALIMPOSTORETIDONAFONTE_FII" obs="Imposto retido lei 11033/2004 para as operações FII nos meses de jan a dez" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_45">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="CD_RRA_TITULAR" obs="Código de RRA Titular" formato="N" tam="2" />
+		<campo nome="NR_PAGADOR" obs="CPF ou CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_PAGADOR" obs="nome fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_RENDTO" obs="Valor rendimento recebido" formato="N" tam="13" />
+		<campo nome="VR_CONTRIB" obs="Valor contribuição previdenciária oficial" formato="N" tam="13" />
+		<campo nome="VR_PENSAO" obs="Valor da pensão alimenticia" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO" obs="Valor imposto retido na fonte" formato="N" tam="13" />
+		<campo nome="NR_MES_RECEBIMENTO" obs="Mês do recebimento" formato="N" tam="2" />
+		<campo nome="FILLER" obs="Espaços em branco" formato="C" tam="6" />
+		<campo nome="OPCAO_TRIBUTACAO" obs="Opção de tributação escolhida" formato="N" tam="1" />
+		<campo nome="NUM_MESES" obs="Numero de meses" formato="N" tam="4" />
+		<campo nome="IMPOSTO_RRA" obs="Imposto RRA" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_46">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="CD_RRA_TITULAR" obs="Código de RRA Titular" formato="N" tam="2" />
+		<campo nome="NR_CHAVE_ALIMENT" obs="Numero de chave do alimentando" formato="N" tam="5" />
+		<campo nome="VR_PAGTO" obs="Valor do pagamento de pensão" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_47">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="CD_RRA_DEPENDENTE" obs="Código de RRA Dependente" formato="N" tam="2" />
+		<campo nome="CPF_BENEF" obs="CPF do Dependente" formato="C" tam="11" />
+		<campo nome="NR_PAGADOR" obs="CPF ou CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_PAGADOR" obs="nome fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_RENDTO" obs="Valor rendimento recebido" formato="N" tam="13" />
+		<campo nome="VR_CONTRIB" obs="Valor contribuição previdenciária oficial" formato="N" tam="13" />
+		<campo nome="VR_PENSAO" obs="Valor da pensão alimenticia" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO" obs="Valor imposto retido na fonte" formato="N" tam="13" />
+		<campo nome="NR_MES_RECEBIMENTO" obs="Mês do recebimento" formato="N" tam="2" />
+		<campo nome="FILLER" obs="Espaços em branco" formato="C" tam="6" />
+		<campo nome="OPCAO_TRIBUTACAO" obs="Opção de tributação escolhida" formato="N" tam="1" />
+		<campo nome="NUM_MESES" obs="Numero de meses" formato="N" tam="4" />
+		<campo nome="IMPOSTO_RRA" obs="Imposto RRA" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_48">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="CD_RRA_DEPENDENTE" obs="Código de RRA Dependente" formato="N" tam="2" />
+		<campo nome="NR_CHAVE_ALIMENT" obs="Numero de chave do alimentando" formato="N" tam="5" />
+		<campo nome="VR_PAGTO" obs="Valor do pagamento de pensão" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_49">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF_TITULAR" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CPF_DEPENDENTE" obs="CPF dependente" formato="C" tam="11" />
+		<campo nome="NR_MES" obs="Mês de ocorrência" formato="N" tam="2" />
+		<campo nome="NR_CPF_TITULAR_PAGAMENTO" obs="CPF do titular do pagamento" formato="C" tam="11" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />
+		<campo nome="NR_VALOR" obs="valor do pagamento" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_50">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="IN_EXTERIOR" obs="0 se imóvel no Brasil - 1 se imóvel no Exterior" formato="N" tam="1" />
+		<campo nome="NR_INCRA" obs="Número do Imóvel na RFB" formato="C" tam="8" />
+		<campo nome="NM_IMOVEL" obs="nome do imóvel" formato="C" tam="60" />
+		<campo nome="NM_LOCAL" obs="Localização do imóvel" formato="C" tam="55" />
+		<campo nome="QT_AREA" obs="Área do imóvel ha" formato="N" tam="10" />
+		<campo nome="PC_PARTIC" obs="Percentual de participação no imóvel" formato="N" tam="5" />
+		<campo nome="CD_EXPLOR" obs="Código da condição de exploração" formato="C" tam="1" />
+		<campo nome="CD_ATIV" obs="Código atividade Rural Agricultura, pecuária , etc" formato="C" tam="2" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_51">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="IN_EXTERIOR" obs="Somente'0' - imóvel no Brasil" formato="N" tam="1" />
+		<campo nome="NR_MES" obs="Mês de ocorrência" formato="N" tam="2" />
+		<campo nome="VR_DESP" obs="Valor das despesas" formato="N" tam="13" />
+		<campo nome="VR_REC" obs="Valor das receitas" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_52">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="IN_EXTERIOR" obs="0 se imóvel no Brasil - 1 se imóvel no Exterior" formato="N" tam="1" />
+		<campo nome="VR_RECTOTAL" obs="Receita Bruta Total (L01-Ficha Apuração Resultado Tributável).Se imóvel no Exterior(1),será zerado." formato="N" tam="13" />
+		<campo nome="VR_DESPTOTAL" obs="Despesas de custeio e investimento (L02). Se imóvel no Exterior(1),será zerado." formato="N" tam="13" />
+		<campo nome="VR_RES1REAL" obs="Resultado 1 (L03 = L01 - L02)" formato="N" tam="13" />
+		<campo nome="VR_PREJEXERCANT" obs="Prejuízo do exercício anterior (L04)" formato="N" tam="13" />
+		<campo nome="VR_COMP_PREJ_EXERC_ANT" obs="Compensação de prejuízo(s) de exercício(s) anteriores (L05)" formato="N" tam="13" />
+		<campo nome="VR_OPCAO" obs="Limite de 20% sobre Rec. Bruta (L06)" formato="N" tam="13" />
+		<campo nome="VR_RESTRIB" obs="Resultado Tributável (L07)" formato="N" tam="13" />
+		<campo nome="VR_PREJUIZO" obs="Prejuízo a compensar (L08)" formato="N" tam="13" />
+		<campo nome="VR_RECVENDAFUTURA" obs="Receita recebida por conta de venda para entrega futura (L09)" formato="N" tam="13" />
+		<campo nome="VR_ADIANT" obs="Valor do adiantamento até 2002 referentes aos produtos entregues em 2004 do quadro apuração do resultado (L10 do programa)" formato="N" tam="13" />
+		<campo nome="VR_RESNAOTRIBAR" obs="Apuração do resultado da Ativ. Rural (L11 do programa e L10 do formulário)" formato="N" tam="13" />
+		<campo nome="VR_RES1DOLAR" obs="Resultado I - US$-Linha 01 da ficha Apuração do Resultado da A.R. no Exterior.(Quando imóvel no Brasil, será zerado)." formato="N" tam="13" />
+		<campo nome="IN_OPC_APURRESTRIB" obs="Opção pela forma de apuração de resultado tributável." formato="N" tam="1" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_53">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="IN_EXTERIOR" obs="0 se imóvel no Brasil - 1 se imóvel no Exterior" formato="N" tam="1" />
+		<campo nome="CD_ESPEC" obs="Código da espécie 1 a 5, sendo 5 = outros" formato="N" tam="1" />
+		<campo nome="QT_INIC" obs="Estoque Inicial" formato="N" tam="10" />
+		<campo nome="QT_COMPRA" obs="Compras" formato="N" tam="10" />
+		<campo nome="QT_NASCIM" obs="Nascimentos" formato="N" tam="10" />
+		<campo nome="QT_PERDA" obs="Perdas e consumo" formato="N" tam="10" />
+		<campo nome="QT_VENDA" obs="Vendas" formato="N" tam="10" />
+		<campo nome="QT_ESTFINAL" obs="Estoque final" formato="N" tam="10" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_54">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="IN_EXTERIOR" obs="0 se imovel no Brasil 1 se imovel no Exterior" formato="N" tam="1" />
+		<campo nome="CD_PAIS" obs="Codigo do Pais" formato="N" tam="3" />
+		<campo nome="NM_PAIS" obs="nome do Pais se bem no Exterior" formato="C" tam="40" />
+		<campo nome="CD_BEMAR" obs="formato do bem ou direito" formato="N" tam="2" />
+		<campo nome="TX_BEM" obs="obs do bem" formato="C" tam="512" />
+		<campo nome="VR_BEM" obs="Valor do bem" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_55">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="IN_EXTERIOR" obs="0 se imóvel no Brasil - 1 se imóvel no Exterior" formato="C" tam="1" />
+		<campo nome="TX_DIVIDA" obs="Discriminação da dívida" formato="C" tam="512" />
+		<campo nome="VR_DIVATE" obs="Valor da dívida até o ano anterior" formato="N" tam="13" />
+		<campo nome="VR_DIVATU" obs="Valor da dívida do ano-calendário" formato="N" tam="13" />
+		<campo nome="FILLER" obs="Em branco" formato="C" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_56">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="CD_PAIS" obs="Código do País" formato="N" tam="3" />
+		<campo nome="NM_PAIS" obs="nome do País" formato="C" tam="40" />
+		<campo nome="RECBRUTA" obs="Receita Bruta Anual - Moeda Original" formato="N" tam="13" />
+		<campo nome="DESPCUSTEIO" obs="Despesas de Custeio-Investimento- Moeda Original" formato="N" tam="13" />
+		<campo nome="RESORIGINAL" obs="Resultado I - Moeda original" formato="N" tam="13" />
+		<campo nome="RESDOLAR" obs="Resultado I - US$" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_58">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CHAVE_HERDEIRO" obs="Chave de identificação do herdeiro" formato="N" tam="5" />
+		<campo nome="NM_NOME" obs="nome Herdeiro" formato="C" tam="60" />
+		<campo nome="NR_CPF_CNPJ" obs="CPF/CNPJ Herdeiro" formato="C" tam="14" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_59">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CHAVE_BEM" obs="Chave de identificação do bem" formato="N" tam="5" />
+		<campo nome="NR_CHAVE_HERDEIRO" obs="Chave de identificação do herdeiro" formato="N" tam="5" />
+		<campo nome="VR_PERCENTUAL" obs="Percentual" formato="N" tam="5" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<!-- GANHO CAPITAL-->
+      <tipo nome="_60">
+          <campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+          <campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+          <campo nome="NR_CPF_BENEFICIARIO" obs="CPF declarante do GCAP" formato="C" tam="11" />
+          <campo nome="NR_IDENTIFICACAO" obs="Identificação da declaração" formato="N" tam="8" />
+          <campo nome="DT_INICIO" obs="Data início permanência (DDMMAAAA)" formato="N" tam="8" />
+          <campo nome="DT_FIM" obs="Data fim permanência(DDMMAAAA)" formato="N" tam="8" />
+          <campo nome="CD_PAIS" obs="Código do país" formato="N" tam="3" />
+          <campo nome="NM_PAIS" obs="Identificação da declaração" formato="C" tam="60" />
+          <campo nome="GC_TRANSP_VR_EXCLUSIVO" obs="Somatório do rendimento sujeito à tributação exclusiva da ficha Cálculo do imposto , à vista e a prazo, de imóvel, móvel e participação societária, importados do Programa Ganhos de Capital." formato="N" tam="13"  />
+          <campo nome="GC_TRANSP_VR_PEQUENO" obs="Este valor e transportado para Rendimento do tipo 5 da ficha Rendimentos Isentos e Não Tributáveis, importado do Programa Ganhos de Capital." formato="N" tam="13"  />
+          <campo nome="GC_TRANSP_VR_UNICOIMOVEL" obs="Este valor e transportado para Rendimento do tipo 6 da ficha Rendimentos Isentos e Não Tributáveis, importado do Programa Ganhos de Capital." formato="N" tam="13"  />
+          <campo nome="GC_TRANSP_VR_REDUCAO" obs="Este valor e transportado para Rendimento do tipo 7 da ficha Rendimentos Isentos e Não Tributáveis, importado do Programa Ganhos de Capital, excluídos os valores referentes ao GCME." formato="N" tam="13"  />
+          <campo nome="GC_TRANSP_VR_IMPOSTOPAGO" obs="Somatório do imposto pago da ficha Cálculo do imposto , à vista e a prazo, de imóvel, móvel e participação societária, importados do Programa Ganhos de Capital." formato="N" tam="13"  />
+          <campo nome="GC_TRANSP_VR_IMPOSTODEVIDO" obs="Somatório do imposto devido de imóvel, móvel e participação societária, importados do Programa Ganhos de Capital." formato="N" tam="13"  />
+          <campo nome="GC_TRANSP_VR_ISENTRIB" obs="Somatório do VR_PEQUENO, VR_ÚNICO_IMOVEL e VR_REDUCAO" formato="N" tam="13"  />
+          <campo nome="GC_TRANSP_VR_IMPOSTODIFERIDOANOSPOSTERIORES" obs="Valor do imposto diferido anos posteriores" formato="N" tam="13"  />
+          <campo nome="GC_GCAP_MOEDA" obs="Ganho de capital total de moeda especie" formato="N" tam="13"  />
+          <campo nome="GC_IMPOSTO_DEVIDO_MOEDA" obs="Valor do imposto devido em moeda" formato="N" tam="13"  />
+          <campo nome="GC_MOEDA_ALIQUOTA_MEDIA" obs="Valor da aliquota media em moeda" formato="N" tam="9"  />
+          <campo nome="GC_TRANSP_VR_EXCLUSIVO_EXTERIOR" obs="Somatório do rendimento sujeito à tributação exclusiva da ficha 'Consolidado' , à vista e a prazo, de imóvel, móvel, importados do Programa Ganhos de Capital. Apenas Exterior" formato="N" tam="13" />
+          <campo nome="GC_TRANSP_VR_IMPOSTOPAGO_EXTERIOR" obs="Somatório do imposto pago da ficha 'Consolidado' , à vista e a prazo, de imóvel, móvel, importados do Programa Ganhos de Capital. Apenas Exterior" formato="N" tam="13"  />
+          <campo nome="GC_TRANSP_VR_ISENTO_EXTERIOR" obs="Somatório do rendimento isento da ficha 'Consolidado', à vista e a prazo, de imóvel, móvel, importados do Programa Ganhos de Capital. Apenas Exterior" formato="N" tam="13" />
+          <campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+    </tipo >
+    <tipo nome="_61">
+          <campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+          <campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+          <campo nome="NR_CPF_BENEFICIARIO" obs="CPF declarante do GCAP" formato="C" tam="11" />
+          <campo nome="NR_IDENTIFICACAO" obs="Identificação da declaração" formato="N" tam="8" />
+          <campo nome="NR_OPERACAO" obs="Chave de Identificação da operação" formato="N" tam="4" />
+          <campo nome="IN_BRASIL_EXTERIOR" obs="Indicação de brasil exterior" formato="N" tam="1" />
+          <campo nome="NM_IMOVEL_DESCRICAO" obs="Descrição do bem alienado (Especificação)" formato="C" tam="152" />
+          <campo nome="END_TIPO_LOGRADOURO" obs="Endereço do bem: tipo de logradouro" formato="C" tam="15" />
+          <campo nome="END_LOGRADOURO" obs="Endereço do bem: logradouro" formato="C" tam="40" />
+          <campo nome="END_NUMERO" obs="Endereço do bem: número " formato="C" tam="6" />
+          <campo nome="END_COMPLEMENTO" obs="Endereço do bem: complemento" formato="C" tam="21" />
+          <campo nome="END_BAIRRO" obs="Endereço do bem: bairro" formato="C" tam="20" />
+          <campo nome="END_CEP" obs="Endereço do bem: CEP (Brasil) ou ZIPExterior (Exterior)" formato="C" tam="9" />
+          <campo nome="END_CD_MUNICIPIO" obs="Endereço do bem: código do município (Brasil) ; Exterior em branco" formato="N" tam="4" />
+          <campo nome="END_MUNICIPIO" obs="Endereço do bem: município (Brasil) ; Cidade (Exterior)" formato="C" tam="40" />
+          <campo nome="END_UF" obs="Endereço do bem: UF (Brasil) ; Exterior em branco" formato="C" tam="2" />
+          <campo nome="END_COD_PAIS" obs="Endereço do bem: (Brasil) em Branco ; Exterior código do país" formato="C" tam="3" />
+          <campo nome="END_NOME_PAIS" obs="Endereço do bem: (Brasil) em Branco ; Exterior nome do país" formato="C" tam="60" />
+          <campo nome="DT_AQUISICAO" obs="Data aquisição" formato="N" tam="8" />
+          <campo nome="VR_AQUISICAO" obs="Valor de aquisição" formato="N" tam="13"  />
+          <campo nome="IN_REFORMA" obs="indicador de reforma ou ampliação" formato="C" tam="1" />
+          <campo nome="IN_PEQUENO_VALOR" obs="Perguntas se o bem é maior que 35000,00" formato="C" tam="1" />
+          <campo nome="IN_PROPR_OUTRO_IMOVEL" obs="Pergunta sobre propriedade de outro imóvel para imóvel com valor de alienação entre 35.000,00 e  440.000,00" formato="C" tam="1" />
+          <campo nome="IN_OUTRA_ALIENACAO" obs="Indicador de outra alienação nos últimos 05 anos" formato="C" tam="1" />
+          <campo nome="IN_RESIDENCIAL" obs="Se imoveil é residencial ou comercial" formato="C" tam="1" />
+          <campo nome="IN_UTILIZAZAOOUTROIMOVEL" obs="C" formato="C" tam="1" />
+          <campo nome="VR_UTILIZAZAOOUTROIMOVEL" obs="Pergunta se o valor vai ser aplicado na compra do outro imovel." formato="N" tam="13"  />
+          <campo nome="CD_OPERACAO" obs="Código da Natureza da Operação" formato="N" tam="2" />
+          <campo nome="NM_OPERACAO" obs="Descrição da Natureza da Operação" formato="C" tam="70" />
+          <campo nome="IN_DECISAO_JUDICIAL" obs="indicador de decisão judicial ou escritura publica" formato="C" tam="1" />
+          <campo nome="DT_ALIENACAO" obs="Data de alienação" formato="N" tam="8" />
+          <campo nome="DT_DECISAO_JUDICIAL" obs="Data da decisão judicial" formato="N" tam="8" />
+          <campo nome="DT_LAVRATURA" obs="Data da lavratura" formato="N" tam="8" />
+          <campo nome="DT_TRANSITO_JULGADO" obs="Data do trânsito julgado" formato="N" tam="8" />
+          <campo nome="IN_ALIENPRAZO" obs="Indicador de alienação à prazo" formato="C" tam="1" />
+          <campo nome="VR_OPERACAO" obs="Valor da operação" formato="N" tam="13"  />
+          <campo nome="VR_CORRETAGEM" obs="Custo de corretagem" formato="N" tam="13"  />
+          <campo nome="VR_TORNA" obs="valor da torna" formato="N" tam="13"  />
+          <campo nome="IN_GCAP_ANTERIOR" obs="indicador de alienação parcial anterior" formato="C" tam="1" />
+          <campo nome="VR_GCAP_ANTERIOR" obs="valor da alienação parcial anterior" formato="N" tam="13"  />
+          <campo nome="VR_OPERACAO_BRUTO_ANT" obs="(Seção Calculo do imposto) Valor bruto da operação de anos anteriores." formato="N" tam="13"  />
+          <campo nome="VR_CORRETAGEM_ANT" obs="(Seção Calculo do imposto) Valor bruto da corretagem de anos anteriores." formato="N" tam="13"  />
+          <campo nome="VR_GCAP_CI_ANT_LIGUIDO" obs="(Seção Calculo do imposto) Valor Líquido da operação de anos anteriores." formato="N" tam="13"  />
+          <campo nome="VR_GCAP_CI" obs="(Seção Calculo do Imposto) ganho de capital a ser considerado para calculo do imposto." formato="N" tam="13"  />
+          <campo nome="VR_ALIQUOTA_MEDIA_CI" obs="(Seção Calculo do Imposto) A vista: Aliquota Média porcentagem." formato="N" tam="9"  />
+          <campo nome="VR_IMPOSTO_DEVIDO_CI" obs="Imposto devido" formato="N" tam="13"  />
+          <campo nome="VR_IMPOSTO_PAGO_CI" obs="imposto pago" formato="N" tam="13"  />
+          <campo nome="VR_RECEBIDO_CL" obs="(Seção Calculo do Imposto) A vista: Valor zerado. A prazo:Total Recebido das parcela" formato="N" tam="13"  />
+          <campo nome="VR_CORRETAGEM_CL" obs="(Seção Calculo do Imposto) A vista: Valor zerado. A prazo:Total da corretagem das parcelas" formato="N" tam="13"  />
+          <campo nome="VR_VALOR_LIQUIDO" obs="(Seção Calculo do Imposto) A vista: Valor zerado. A prazo:Total liquido das parcelas" formato="N" tam="13"  />
+          <campo nome="VR_AQUISICAO_PROPORCIONAL_CL" obs="(Seção Calculo do Imposto) A vista: Valor zerado. A prazo:Total aquisição das parcelas" formato="N" tam="13"  />
+          <campo nome="VR_DIFERIDO_ANTERIORES_CB" obs="(Seção Consolidação) Valor do imposto diferido de anos anteriores" formato="N" tam="13"  />
+          <campo nome="VR_EXERCICIO_CB" obs="(Seção Consolidação) Valor do imposto referente ao exercicio" formato="N" tam="13"  />
+          <campo nome="VR_TOTAL_CB" obs="(Seção Consolidação) total do imposto" formato="N" tam="13"  />
+          <campo nome="VR_IR_CB" obs="(Seção Consolidação) Ir na fonte Lei 11033/2004" formato="N" tam="13"  />
+          <campo nome="VR_IR_DEVIDO_CB" obs="(Seção Consolidação) imposto devido no exercicio" formato="N" tam="13"  />
+          <campo nome="VR_DIFERIDO_POSTERIOR_CB" obs="(Seção Consolidação) Valor do imposto diferido para anos posteriores" formato="N" tam="13"  />
+          <campo nome="VR_IMPOSTO_PAGO_CB" obs="(Seção Consolidação) Imposto pago" formato="N" tam="13"  />
+          <campo nome="VR_ISENTO_CB" obs="(Seção Consolidação) Rendimento isento e não tributável" formato="N" tam="13"  />
+          <campo nome="VR_EXCLUSIVO_CB" obs="(Seção Consolidação)  Rendimento exclusivo e não tributável" formato="N" tam="13"  />
+          <campo nome="DT_DATA_DARF_TCM" obs="Data de vencimento do darf quanto se trata de TCM" formato="N" tam="8" />
+          <campo nome="DT_DATA_ULTIMA_PARCELA" obs="Data de vencimento da ultima parcela" formato="N" tam="8" />
+          <campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+    </tipo>
+    <tipo nome="_62">
+          <campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+          <campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+          <campo nome="NR_CPF_BENEFICIARIO" obs="CPF declarante do GCAP" formato="C" tam="11" />
+          <campo nome="NR_IDENTIFICACAO" obs="Identificação da declaração" formato="N" tam="8" />
+          <campo nome="NR_OPERACAO" obs="Chave de Identificação da operação" formato="N" tam="4" />
+          <campo nome="IN_BRASIL_EXTERIOR" obs="Indicação de brasil exterior" formato="N" tam="1" />
+          <campo nome="NM_MOVEL_DESCRICAO" obs="Descrição do bem alienado (Especificação)" formato="C" tam="152" />
+          <campo nome="IN_REGISTRO_PUBLICO" obs="Indicador de Possui registro público" formato="C" tam="1" />
+          <campo nome="DT_AQUISICAO" obs="Data de aquisição" formato="N" tam="8" />
+          <campo nome="VR_AQUISICAO" obs="Valor de aquisição" formato="N" tam="13"  />
+          <campo nome="IN_PEQUENO_VALOR" obs="Indicador  o conjunto de bens ou direitos da mesma natureza alienados é superior a  35.000,00" formato="C" tam="1" />
+          <campo nome="CD_OPERACAO" obs="Código da Natureza da Operação" formato="N" tam="2" />
+          <campo nome="NM_OPERACAO" obs="Descrição da Natureza da Operação" formato="C" tam="70" />
+          <campo nome="IN_DECISAO_JUDICIAL" obs="indicador de decisão judicial ou escritura publica" formato="C" tam="1" />
+          <campo nome="DT_ALIENACAO" obs="Data de alienação" formato="N" tam="8" />
+          <campo nome="DT_DECISAO_JUDICIAL" obs="Data da decisão judicial" formato="N" tam="8" />
+          <campo nome="DT_LAVRATURA" obs="Data da lavratura" formato="N" tam="8" />
+          <campo nome="DT_TRANSITO_JULGADO" obs="Data do trânsito julgado" formato="N" tam="8" />
+          <campo nome="IN_ALIENPRAZO" obs="Indicador de alienação à prazo" formato="C" tam="1" />
+          <campo nome="VR_OPERACAO" obs="Valor da operação" formato="N" tam="13"  />
+          <campo nome="VR_CORRETAGEM" obs="custo de corretagem" formato="N" tam="13"  />
+          <campo nome="IN_GCAP_ANTERIOR" obs="Indicador de alienação parcial anterior" formato="C" tam="1" />
+          <campo nome="VR_GCAP_ANTERIOR" obs="valor da alienação parcial anterior" formato="N" tam="13"  />
+          <campo nome="VR_OPERACAO_BRUTO_ANT" obs="(Seção Calculo do imposto) Valor bruto da operação de anos anteriores." formato="N" tam="13"  />
+          <campo nome="VR_CORRETAGEM_ANT" obs="(Seção Calculo do imposto) Valor bruto da corretagem de anos anteriores." formato="N" tam="13"  />
+          <campo nome="VR_GCAP_CI_ANT_LIGUIDO" obs="(Seção Calculo do imposto) Valor Líquido da operação de anos anteriores." formato="N" tam="13"  />
+          <campo nome="VR_GCAP_CI" obs="(Seção Calculo do Imposto) ganho de capital a ser considerado para calculo do imposto." formato="N" tam="13"  />
+          <campo nome="VR_ALIQUOTA_MEDIA_CI" obs="(Seção Calculo do Imposto) A vista: Aliquota Média porcentagem." formato="N" tam="9"  />
+          <campo nome="VR_IMPOSTO_DEVIDO_CI" obs="imposto devido" formato="N" tam="13"  />
+          <campo nome="VR_IMPOSTO_PAGO_CI" obs="imposto pago" formato="N" tam="13"  />
+          <campo nome="VR_RECEBIDO_CL" obs="(Seção Calculo do Imposto) A vista: Valor zerado. A prazo:Total Recebido das parcela" formato="N" tam="13"  />
+          <campo nome="VR_CORRETAGEM_CL" obs="(Seção Calculo do Imposto) A vista: Valor zerado. A prazo:Total da corretagem das parcelas" formato="N" tam="13"  />
+          <campo nome="VR_VALOR_LIQUIDO" obs="(Seção Calculo do Imposto) A vista: Valor zerado. A prazo:Total liquido das parcelas" formato="N" tam="13"  />
+          <campo nome="VR_AQUISICAO_PROPORCIONAL_CL" obs="(Seção Calculo do Imposto) A vista: Valor zerado. A prazo:Total aquisição das parcelas" formato="N" tam="13"  />          
+          <campo nome="VR_DIFERIDO_ANTERIORES_CB" obs="(Seção Consolidação) Valor do imposto diferido de anos anteriores" formato="N" tam="13"  />
+          <campo nome="VR_EXERCICIO_CB" obs="(Seção Consolidação) Valor do imposto referente ao exercicio" formato="N" tam="13"  />
+          <campo nome="VR_TOTAL_CB" obs="(Seção Consolidação) total do imposto" formato="N" tam="13"  />
+          <campo nome="VR_IR_CB" obs="(Seção Consolidação) Ir na fonte Lei 11033/2004" formato="N" tam="13"  />
+          <campo nome="VR_IR_DEVIDO_CB" obs="(Seção Consolidação) imposto devido no exercicio" formato="N" tam="13"  />
+          <campo nome="VR_DIFERIDO_POSTERIOR_CB" obs="(Seção Consolidação) Valor do imposto diferido para anos posteriores" formato="N" tam="13"  />
+          <campo nome="VR_IMPOSTO_PAGO_CB" obs="(Seção Consolidação) Imposto pago" formato="N" tam="13"  />
+          <campo nome="VR_ISENTO_CB" obs="(Seção Consolidação) Rendimento isento e não tributável" formato="N" tam="13"  />
+          <campo nome="VR_EXCLUSIVO_CB" obs="(Seção Consolidação)  Rendimento exclusivo e não tributável" formato="N" tam="13"  />
+          <campo nome="DT_DATA_DARF_TCM" obs="Data de vencimento do darf quanto se trata de TCM" formato="N" tam="8" />
+          <campo nome="DT_DATA_ULTIMA_PARCELA" obs="Data de vencimento da ultima parcela" formato="N" tam="8" />
+          <campo nome="NR_CONTROLE" obs="Número de controle" formato="N" tam="10" />
+    </tipo>
+    <tipo nome="_63">
+          <campo nome="NR_REG" obs="Número do registro" formato="N" tam="2" />
+          <campo nome="NR_CPF" obs="cpf do contribuinte" formato="N" tam="11" />
+          <campo nome="NR_CPF_BENEFICIARIO" obs="cpf do declarante do gcap" formato="N" tam="11" />
+          <campo nome="NR_IDENTIFICACAO" obs="Identificação da declaração" formato="N" tam="8" />
+          <campo nome="NR_OPERACAO" obs="Chave de Identificação da operação" formato="N" tam="4" />
+          <campo nome="NM_SOCIEDADE" obs="nome da sociedade" formato="C" tam="152" />
+          <campo nome="NR_CNPJ" obs="cnpj da sociedade" formato="N" tam="14" />
+          <campo nome="CD_MUNICIPIO" obs="código do município" formato="N" tam="4" />
+          <campo nome="NM_MUNICIPIO" obs="nome do município" formato="C" tam="40" />
+          <campo nome="NM_UF" obs="UF" formato="C" tam="2" />
+          <campo nome="CD_OPERACAO" obs="Código da natureza" formato="N" tam="2" />
+          <campo nome="NM_OPERACAO" obs="Descrição da natureza" formato="C" tam="70" />
+          <campo nome="CD_ESPECIE" obs="código da espécie de participação" formato="C" tam="1" />
+          <campo nome="NM_ESPECIE" obs="descrição da espécie de participação" formato="C" tam="90" />
+          <campo nome="IN_DECISAO_JUDICIAL" obs="flag que indica se TCM é por decisão judicial" formato="C" tam="1" />
+          <campo nome="DT_ALIENACAO" obs="data de alienação" formato="N" tam="8" />
+          <campo nome="DT_DECISAO_JUDICIAL" obs="data da decisão judicial" formato="N" tam="8" />
+          <campo nome="DT_LAVRATURA" obs="data da lavratura" formato="N" tam="8" />
+          <campo nome="DT_TRANSITO_JULGADO" obs="data do trânsito julgado" formato="N" tam="8" />
+          <campo nome="IN_ALIENPRAZO" obs="flag de alienação a prazo" formato="C" tam="1" />
+          <campo nome="VR_OPERACAO" obs="Valor da operação" formato="N" tam="13"  />
+          <campo nome="VR_CORRETAGEM" obs="custo de corretagem" formato="N" tam="13"  />
+          <campo nome="IN_PEQUENO_VALOR" obs="Indicador  o conjunto de bens ou direitos da mesma natureza alienados é superior a  20.000,00" formato="C" tam="1" />
+          <campo nome="IN_GCAP_ANTERIOR" obs="flag de alienação parcial anterior" formato="C" tam="1" />
+          <campo nome="VR_GCAP_ANTERIOR" obs="valor da alienação parcial anterior" formato="N" tam="13"  />
+          <campo nome="VR_VALOR_ALIENACAO_AP" obs="Seção Apuração) valor da alienação" formato="N" tam="13"  />
+          <campo nome="VR_CUSTO_CORRETAGEM_AP" obs="Seção Apuração) custo de corretagem" formato="N" tam="13"  />
+          <campo nome="VR_LIGUIDO_ALIENACAO_AP" obs="Seção Apuração) valor líquido" formato="N" tam="13"  />
+          <campo nome="VR_CUSTO_AQUISICAO_AP" obs="Seção Apuração) custo de aquisição" formato="N" tam="13"  />
+          <campo nome="VR_GCAP_AP" obs="Seção Apuração) ganho de capital" formato="N" tam="13"  />
+          <campo nome="VR_OPERACAO_BRUTO_ANT" obs="(Seção Calculo do imposto) Valor bruto da operação de anos anteriores." formato="N" tam="13"  />
+          <campo nome="VR_CORRETAGEM_ANT" obs="(Seção Calculo do imposto) Valor bruto de corretagem de anos anteriores." formato="N" tam="13"  />
+          <campo nome="VR_GCAP_CI_ANT_LIGUIDO" obs="(Seção Calculo do imposto) Valor líquido da operação de anos anteriores." formato="N" tam="13"  />
+          <campo nome="VR_GCAP_CI" obs="(Seção Calculo do Imposto) ganho de capital" formato="N" tam="13"  />
+          <campo nome="VR_ALIQUOTA_MEDIA_CI" obs="(Seção Calculo do Imposto) alíquota média" formato="N" tam="9"  />
+          <campo nome="VR_IMPOSTO_DEVIDO_CI" obs="(Seção Calculo do Imposto) imposto devido" formato="N" tam="13"  />
+          <campo nome="VR_IRRF_CI" obs="(Seção Calculo do Imposto) imposto retido na fonte" formato="N" tam="13" />
+          <campo nome="VR_IMPOSTO_DEVIDO_APOS_COMPENSACAO_CI" obs="(Seção Calculo do Imposto) imposto devido após compensação" formato="N" tam="13" />
+          <campo nome="VR_IMPOSTO_PAGO_CI" obs="(Seção Calculo do Imposto) imposto pago" formato="N" tam="13"  />
+          <campo nome="VR_RECEBIDO_CL" obs="(Seção Calculo do Imposto) A vista: Valor zerado. A prazo:Total Recebido das parcela" formato="N" tam="13"  />
+          <campo nome="VR_CORRETAGEM_CL" obs="(Seção Calculo do Imposto) A vista: Valor zerado. A prazo:Total da corretagem das parcelas" formato="N" tam="13"  />
+          <campo nome="VR_VALOR_LIQUIDO" obs="(Seção Calculo do Imposto) A vista: Valor zerado. A prazo:Total liquido das parcelas" formato="N" tam="13"  />
+          <campo nome="VR_AQUISICAO_PROPORCIONAL_CL" obs="(Seção Calculo do Imposto) A vista: Valor zerado. A prazo:Total aquisição das parcelas" formato="N" tam="13"  />
+          <campo nome="VR_DIFERIDO_ANTERIORES_CB" obs="(Seção Consolidação) Valor do imposto diferido de anos anteriores" formato="N" tam="13"  />
+          <campo nome="VR_EXERCICIO_CB" obs="(Seção Consolidação) Valor do imposto referente ao exercício" formato="N" tam="13"  />
+          <campo nome="VR_TOTAL_CB" obs="(Seção Consolidação) total do imposto" formato="N" tam="13"  />
+          <campo nome="VR_IR_CB" obs="(Seção Consolidação) IR na fonte Lei 11033/2004" formato="N" tam="13"  />
+          <campo nome="VR_IR_DEVIDO_CB" obs="(Seção Consolidação) imposto devido no exercício após Lei 11033/2004" formato="N" tam="13"  />
+          <campo nome="VR_DIFERIDO_POSTERIOR_CB" obs="(Seção Consolidação) Valor do imposto diferido para anos posteriores" formato="N" tam="13"  />
+          <campo nome="VR_IMPOSTO_PAGO_CB" obs="(Seção Consolidação) Imposto pago" formato="N" tam="13"  />
+          <campo nome="VR_ISENTO_CB" obs="(Seção Consolidação) Rendimento isento e não tributável" formato="N" tam="13"  />
+          <campo nome="VR_EXCLUSIVO_CB" obs="(Seção Consolidação)  Rendimento exclusivo e tributação definitiva" formato="N" tam="13"  />
+          <campo nome="VR_CUSTO_TOTAL_AQUISICAO" obs="(Seção Apuração do custo de aquisição) Valor do custo total consolidado " formato="N" tam="13"  />
+          <campo nome="DT_DATA_DARF_TCM" obs="Data de vencimento do darf quanto se trata de TCM" formato="N" tam="8" />
+          <campo nome="DT_DATA_ULTIMA_PARCELA" obs="Data de vencimento da ultima parcela" formato="N" tam="8" />
+          <campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+    </tipo>
+    <tipo nome="_64">
+          <campo nome="NR_REG" obs="Número do registro" formato="N" tam="2" />
+          <campo nome="NR_CPF" obs="cpf do contribuinte" formato="N" tam="11" />
+          <campo nome="NR_CPF_BENEFICIARIO" obs="cpf do declarante do gcap" formato="N" tam="11" />
+          <campo nome="NR_IDENTIFICACAO" obs="Identificação da declaração" formato="N" tam="8" />
+          <campo nome="NR_OPERACAO" obs="Chave de Identificação da operação" formato="N" tam="4" />
+          <campo nome="IN_TIPO" obs="flag de alienação a prazo" formato="C" tam="1" />
+          <campo nome="VR_COTACAO_OP" obs="cotaçaõ do dolar na operação" formato="N" tam="13"  />
+          <campo nome="VR_OPERACAO_DOLAR" obs="(Seção Operação) Valor nominal da operação" formato="N" tam="13"  />
+          <campo nome="VR_CORRETAGEM_DOLAR" obs="(Seção Operação) custo corretagem da operação" formato="N" tam="13"  />
+          <campo nome="VR_TORNA_ME_DOLAR" obs="(Seção Operação) Custo de Torna ME" formato="N" tam="13"  />
+          <campo nome="VR_TORNA_MN_DOLAR" obs="(Seção Operação) Custo de Torna MN" formato="N" tam="13"  />
+          <campo nome="VR_VALOR_ALIENACAO_AP_AMBAS" obs="(Seção Apuração) valor da alienação independente da moeda" formato="N" tam="13"  />
+          <campo nome="VR_CUSTO_CORRETAGEM_AP_AMBAS" obs="(Seção Apuração) valor da corretagem independente da moeda" formato="N" tam="13"  />
+          <campo nome="VR_LIQUIDO_ALIENACAO_AP_AMBAS" obs="(Seção Apuração) valor da corretagem independente da moeda" formato="N" tam="13"  />
+		  <campo nome="VR_GCAP_TOTAL_AP_AMBAS" obs="(Seção Apuração) GCAP total em ambas as moedas" formato="N" tam="13"  />
+          <campo nome="IN_ORIGEM_REND" obs="flag de alienação a prazo" formato="C" tam="1" />
+          <campo nome="NM_ORIGEM_REND_DESC" obs="nome da origem dos rendimentos" formato="C" tam="60" />
+          <campo nome="VR_COTACAO_AQUISICAO" obs="Seção Aquisição contação do dolar na data de aquisição" formato="N" tam="13"  />
+          <campo nome="VR_BEM_AQUISICAO_DOLAR" obs="(Seção Aquisição) sem reforma: Valor em Dolar - com reforma: Totalizador do bem" formato="N" tam="13"  />
+          <campo nome="VR_BEM_AQUISICAO_RMN" obs="Seção Aquisição Ambas as moedas - valor total das parcela em moeda nacional  (Dolar)" formato="N" tam="13"  />
+          <campo nome="FT_BEM_AQUISICAO_RMN" obs="Seção Aquisição Porcentagem do bem originado de moeda nacional quando ambas as moedas" formato="N" tam="5"  />
+          <campo nome="VR_BEM_AQUISICAO_RME" obs="Seção Aquisição Ambas as moedas - valor total das parcela em moeda estrangeira  (Dolar)" formato="N" tam="13"  />
+          <campo nome="FT_BEM_AQUISICAO_RME" obs="Seção Aquisição Porcentagem do bem originado de moeda estrangeira quando ambas as moedas" formato="N" tam="5"  />
+          <campo nome="COD_PAIS_ACORDO" obs="Código do país" formato="N" tam="3" />
+          <campo nome="NM_COD_PAIS_ACORDO" obs="Identificação da declaração" formato="C" tam="60" />
+          <campo nome="VR_IMPOSTO_REAL_ACORDO" obs="Seção Identificação Valor do imposto acordo em reais" formato="N" tam="13"  />
+          <campo nome="VR_GCAP_TOTAL_AJUSTE" obs="(Seção Ajuste) ganho de capital total relativo ao ajuste" formato="N" tam="13"  />
+          <campo nome="FT_ALIQUOTA_MEDIA_AJUSTE" obs="(Seção Ajuste) aliquota média do ajuste" formato="N" tam="9"  />
+          <campo nome="VR_IMPOSTO_TOTAL_AJUSTE" obs="(Seção Ajuste) imposto total devido" formato="N" tam="13"  />
+          <campo nome="VR_IMPOSTO_PAGO_COMPENSACAO" obs="(Seção Ajuste) imposto pago no exterior passivel de compensação" formato="N" tam="13"  />
+          <campo nome="VR_SALDO_IMPOSTO_DEVIDO" obs="(Seção Ajuste) saldo do imposto devido no Brasil" formato="N" tam="13"  />
+          <campo nome="VR_IMPOSTO_PARCELA_AJUSTE" obs="(Seção Ajuste) Imposto devido relativo as parcelas" formato="N" tam="13"  />
+          <campo nome="VR_SALDO_IMPOSTO_AJUSTE" obs="(Seção Ajuste) saldo do imposto devido na ultima parcela" formato="N" tam="13"  />
+          <campo nome="VR_IMPOSTO_PAGO_AJUSTE" obs="(Seção Ajuste) imposto pago brasil realtivo ao ajuste" formato="N" tam="13"  />
+          <campo nome="IN_COBRANCA" obs="flag de envio de cobrança ao CCPF" formato="C" tam="1" />
+          <campo nome="VR_TOTAL_RECEBIDO_DOLAR" obs="somatório do valor recebido das parcelas em dolar" formato="N" tam="13" />
+          <campo nome="VR_TOTAL_CUSTO_CORRETAGEM_DOLAR" obs="somatório do custo de corretagem das parcelas em dolar" formato="N" tam="13" />
+          <campo nome="VR_TOTAL_LIQUIDO_RECEBIDO_DOLAR" obs="somatório do valor líquido das parcelas em dolar" formato="N" tam="13" />
+          <campo nome="VR_TOTAL_LIQUIDO_RECEBIDO_REAL" obs="somatório do valor líquido das parcelas em real" formato="N" tam="13" />
+          <campo nome="VR_TOTAL_AQUISICAO_DOLAR" obs="somatório do custo de aquisição das parcelas em dolar" formato="N" tam="13"  />
+          <campo nome="VR_TOTAL_AQUISICAO_REAL" obs="somatório do custo de aquisição das parcelas em real" formato="N" tam="13"  />
+          <campo nome="VR_TOTAL_AQUISICAO_TORNA_DOLAR" obs="somatório do custo de aquisição torna das parcelas em dolar" formato="N" tam="13"  />
+          <campo nome="VR_TOTAL_AQUISICAO_TORNA_REAL" obs="somatório do custo de aquisição torna das parcelas em real" formato="N" tam="13"  />
+          <campo nome="VR_TOTAL_RESULTADO1" obs="somatório do ganho 1 das parcelas" formato="N" tam="13"  />
+          <campo nome="VR_TOTAL_REDUCAO" obs="somatório do das reduções das parcelas" formato="N" tam="13" />
+          <campo nome="VR_TOTAL_GCAP_DOLAR" obs="somatório do ganho de capital final das parcelas" formato="N" tam="13"  />
+          <campo nome="VR_TOTAL_IR" obs="somatório do imposto devido das parcelas" formato="N" tam="13" />
+          <campo nome="VR_TOTAL_IR_PAGO" obs="somatório do imposto pago das parcelas" formato="N" tam="13"  />
+		  <campo nome="NM_MENSAGEM" obs="Texto. Em branco quando não existe alteração inicial de cobrança/isenção ou de isenção/cobrança." formato="C" tam="200" />	
+          <campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+    </tipo>
+    <tipo nome="_65">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CPF_BENEFICIARIO" obs="CPF do beneficiário seja titular ou dependente" formato="C" tam="11" />
+		<campo nome="NR_IDENTIFICACAO" obs="Identificação da declaração.Originado do REG 60 campo NR_IDENTIFICACAO ( Concatenação de dia/ mês dos campos DT_INICIO + DT_FIM )" formato="N" tam="8" />
+		<campo nome="NR_OPERACAO" obs="Chave de Identificação da operação" formato="N" tam="4" />
+		<campo nome="IN_TIPO" obs="formato do bem: 1-Imovel; 2-Movel; 3-Participação Societaria" formato="N" tam="1" />
+		<campo nome="NR_CPFCNPJ" obs="CPF / CNPJ do adquirente" formato="C" tam="14" />
+		<campo nome="NR_nome" obs="nome do adquirente" formato="C" tam="60" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+    </tipo>
+    <tipo nome="_66">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CPF_BENEFICIARIO" obs="CPF do beneficiário seja titular ou dependente" formato="C" tam="11" />
+		<campo nome="NR_IDENTIFICACAO" obs="Identificação da declaração.Originado do 'REG 60' campo 'NR_IDENTIFICACAO' ( Concatenação de dia/ mês dos campos DT_INICIO + DT_FIM )" formato="N" tam="8" />
+		<campo nome="NR_OPERACAO" obs="Chave de Identificação da operação" formato="N" tam="4" />
+		<campo nome="DT_DATA" obs="Data da ampliação /reforma - DD/MM/AAAA" formato="N" tam="8" />
+		<campo nome="VR_VALOR_REAIS" obs="Valor da parcela reais: Brasil -> valor da parcela; Exterior Moeda Nacional - Valor em reais da parcela; Exterior Ambas as Moedas - Valor em reais de RMN" formato="N" tam="13"  />
+		<campo nome="VR_PORCENTAGEM_PARCELA" obs="Custo unitario em comparação com o total %" formato="N" tam="9"  />
+		<campo nome="VR_VALOR_REDUCAO" obs="Valor passivel de redução" formato="N" tam="13" />
+		<campo nome="VR_PORCENTAGEM_RED7713" obs="Valor da porcentagem da redução da lei 7.713" formato="N" tam="9" />
+		<campo nome="VR_PORCENTAGEM_REDFR1" obs="Valor da porcentagem da redução FR1" formato="N" tam="9" />
+		<campo nome="VR_PORCENTAGEM_REDFR2" obs="Valor da porcentagem da redução FR2" formato="N" tam="9" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+    </tipo>
+    <tipo nome="_67">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CPF_BENEFICIARIO" obs="CPF do beneficiário seja titular ou dependente" formato="C" tam="11" />
+		<campo nome="NR_IDENTIFICACAO" obs="Identificação da declaração.Originado do REG 60 campo NR_IDENTIFICACAO (Concatenação de dia/ mês dos campos DT_INICIO + DT_FIM)" formato="N" tam="8" />
+		<campo nome="NR_OPERACAO" obs="Chave de Identificação da operação" formato="N" tam="4" />
+		<campo nome="DT_DATA" obs="Data da ampliação /reforma - DD/MM/AAAA" formato="N" tam="8" />
+		<campo nome="VR_VALOR_RMN_REAIS" obs="Valor da parcela reais: Moeda Nacional (Valor em reais da parcela).  Ambas as Moedas (Valor em reais de RMN)" formato="N" tam="13"  />
+		<campo nome="VR_PORCENTAGEM_PARCELA_RMN" obs="Valor em porcentagem, obtido mediante a comparação entre o 'Custo unitario' e o 'Custo total'" formato="N" tam="9"  />
+		<campo nome="VR_COTACAO_AMPLIACAO" obs="Cotação do dolar da parcela de ampliação/reforma: Moeda nacional (valor > 0). Moeda Estrangeira (valor = 0). Ambas as Moedas (valor > 0)." formato="N" tam="13"  />
+		<campo nome="VR_VALOR_RMN_DOLAR" obs="Valor da parcela de aquisicao para RMN em Dolar: Moeda Nacional (valor em Dolar da parcela). Moeda Estrangeira (valor = 0). Ambas Moedas (valor em dolar da Parcela RMN)" formato="N" tam="13"  />
+		<campo nome="VR_VALOR_RME_DOLAR" obs="Valor da parcela de aquisicao para RME em Dolar: Moeda Nacional (valor = 0). Moeda Estrangeira (valor em Dolar da parcela). Ambas Moedas (valor em Dolar da parcela RME)." formato="N" tam="13"  />
+		<campo nome="VR_TOTAL_PARCELA_DOLAR" obs="Valor total da parcela de aquisicao em Dolar: Ambas as Moedas (valor =  VR_VALOR_RMN_DOLAR + VR_VALOR_RME_DOLAR)." formato="N" tam="13"  />
+		<campo nome="VR_PORCENTAGEM_PARCELA_RME" obs="Valor em porcentagem, obtido mediante a comparação entre o 'Custo unitario' e o 'Custo total' para RME" formato="N" tam="9"  />
+		<campo nome="VR_VALOR_REDUCAO_RMN" obs="Valor passivel de redução RMN" formato="N" tam="13" />
+		<campo nome="VR_VALOR_REDUCAO_RME" obs="Valor passivel de redução RME" formato="N" tam="13" />
+		<campo nome="VR_PORCENTAGEM_RED7713" obs="Valor da porcentagem da redução da lei 7.713" formato="N" tam="9" />
+		<campo nome="VR_PORCENTAGEM_REDFR1" obs="Valor da porcentagem da redução FR1" formato="N" tam="9" />
+		<campo nome="VR_PORCENTAGEM_REDFR2" obs="Valor da porcentagem da redução FR2" formato="N" tam="9" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+    </tipo>
+    <tipo nome="_68">
+          <campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+          <campo nome="NR_CPF" obs="cpf do contribuinte" formato="N" tam="11" />
+          <campo nome="NR_CPF_BENEFICIARIO" obs="cpf do declarante do gcap" formato="N" tam="11" />
+          <campo nome="NR_IDENTIFICACAO" obs="Identificação da declaração" formato="N" tam="8" />
+          <campo nome="NR_OPERACAO" obs="Chave de Identificação da operação" formato="N" tam="4" />
+          <campo nome="NR_TIPO_APURACAO" obs="formato de Apuração" formato="N" tam="1" />
+          <campo nome="VR_VALOR" obs="Valor de alienação" formato="N" tam="13"  />
+          <campo nome="VR_CORRETAGEM" obs="custo de corretagem" formato="N" tam="13"  />
+          <campo nome="VR_LIQUIDO_APURACAO" obs="valor líquido de alienação em reais" formato="N" tam="13"  />
+          <campo nome="VR_LIQUIDO_APURACAO_DOLAR" obs="valor líquido de alienação em dólar" formato="N" tam="13"  />
+          <campo nome="VR_CUSTO_APURACAO" obs="custo de aquisição" formato="N" tam="13"  />
+          <campo nome="VR_RESULTADO_1_APURACAO" obs="ganho de capital 1 em reais" formato="N" tam="13"  />
+          <campo nome="VR_RESULTADO_1_APURACAO_DOLAR" obs="ganho de capital 1 em dólar" formato="N" tam="13"  />
+          <campo nome="FT_REDUCAO_LEI7713_APURACAO" obs="percentual redução lei 7713" formato="N" tam="9"  />
+          <campo nome="VR_REDUCAO_LEI7713_APURACAO" obs="valor de redução lei 7713" formato="N" tam="13"  />
+          <campo nome="VR_RESULTADO_2_APURACAO" obs="ganho de capital 2" formato="N" tam="13"  />
+          <campo nome="FT_REDUCAO_LEI11196FR1" obs="percentual redução fr1" formato="N" tam="9"  />
+          <campo nome="VR_REDUCAO_LEI11196FR1" obs="valor de redução fr1" formato="N" tam="13"  />
+          <campo nome="VR_RESULTADO_3_APURACAO" obs="ganho de capital 3" formato="N" tam="13"  />
+          <campo nome="FT_REDUCAO_LEI11196FR2" obs="percentual redução fr2" formato="N" tam="9"  />
+          <campo nome="VR_REDUCAO_LEI11196FR2" obs="valor de redução fr2" formato="N" tam="13"  />
+          <campo nome="VR_RESULTADO_4_APURACAO" obs="ganho de capital 4" formato="N" tam="13"  />
+          <campo nome="FT_APLICA_OUTRO_APURACAO" obs="percentual redução aplicação ontro imóvel" formato="N" tam="9"  />
+          <campo nome="VR_APLICA_OUTRO_APURACAO" obs="valor de redução  aplicação ontro imóvel" formato="N" tam="13"  />
+          <campo nome="FT_APLICA_PEQUENO_APURACAO" obs="percentual redução pequeno valor" formato="N" tam="9"  />
+          <campo nome="VR_APLICA_PEQUENO_APURACAO" obs="valor de redução pequeno valor" formato="N" tam="13"  />
+          <campo nome="FT_APLICA_UNICO_APURACAO" obs="percentual redução único imóvel" formato="N" tam="9"  />
+          <campo nome="VR_APLICA_UNICO_APURACAO" obs="valor de redução único imóvel" formato="N" tam="13"  />
+          <campo nome="VR_RESULTADO_5_APURACAO" obs="ganho de capital 5" formato="N" tam="13"  />
+          <campo nome="VR_COTACAO_APURACAO" obs="cotação do dolar da operação" formato="N" tam="13"  />
+          <campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+    </tipo>
+    <tipo nome="_69">
+          <campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+          <campo nome="NR_CPF" obs="cpf do contribuinte" formato="N" tam="11" />
+          <campo nome="NR_CPF_BENEFICIARIO" obs="cpf do declarante do gcap" formato="N" tam="11" />
+          <campo nome="NR_IDENTIFICACAO" obs="Identificação da declaração" formato="N" tam="8" />
+          <campo nome="NR_OPERACAO" obs="Chave de Identificação da operação" formato="N" tam="4" />
+          <campo nome="NR_TIPO_APURACAO" obs="formato de Apuração" formato="N" tam="1" />
+          <campo nome="VR_VALOR" obs="Valor de alienação" formato="N" tam="13"  />
+          <campo nome="VR_CORRETAGEM" obs="custo de corretagem" formato="N" tam="13"  />
+          <campo nome="VR_LIQUIDO_APURACAO" obs="valor líquido de alienação em reais" formato="N" tam="13"  />
+          <campo nome="VR_LIQUIDO_APURACAO_DOLAR" obs="valor líquido de alienação em dólar" formato="N" tam="13"  />
+          <campo nome="VR_CUSTO_APURACAO" obs="custo de aquisição" formato="N" tam="13"  />
+          <campo nome="VR_RESULTADO_1_APURACAO" obs="ganho de capital 1 em reais" formato="N" tam="13"  />
+          <campo nome="VR_RESULTADO_1_APURACAO_DOLAR" obs="ganho de capital 1 em dólar" formato="N" tam="13"  />
+          <campo nome="VR_COTACAO_APURACAO" obs="cotação do dolar da operação" formato="N" tam="13"  />
+          <campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+    </tipo>
+    <tipo nome="_70">
+          <campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+          <campo nome="NR_CPF" obs="cpf do contribuinte" formato="N" tam="11" />
+          <campo nome="NR_CPF_BENEFICIARIO" obs="cpf do declarante do gcap" formato="N" tam="11" />
+          <campo nome="NR_IDENTIFICACAO" obs="Identificação da declaração" formato="N" tam="8" />
+          <campo nome="NR_OPERACAO" obs="Chave de Identificação da operação" formato="N" tam="4" />
+          <campo nome="IN_TIPO" obs="Indicação se é movel ou imóvel" formato="N" tam="1" />
+		  <campo nome="DT_PARCELA" Descricao="Data da  parcela" formato="N" tam="8" /> 	
+          <campo nome="VR_VALOR" obs="Valor de alienação em dólar" formato="N" tam="13"  />
+          <campo nome="VR_CORRETAGEM" obs="custo de corretagem em dólar" formato="N" tam="13"  />
+          <campo nome="VR_LIQUIDO" obs="valor líquido de alienação em dólar" formato="N" tam="13"  />
+		  <campo nome="VR_APLICA_OUTRO_INFORMADO_PARCELA" obs="(Seção Parcela) Valor reaplicado em outro imóvel em reais" formato="N" tam="13" />
+          <campo nome="VR_GCAP_TOTAL" obs="ganho de capital Total em reais" formato="N" tam="13"  />
+          <campo nome="VR_IMPOSTO_DEVIDO_PARCELA" obs="Imposto Devido" formato="N" tam="13" />
+          <campo nome="VR_IMPOSTO_PAGO_COMPENSACAO" obs="Imposto pago no exterior parssivel de compensação" formato="N" tam="13"  />
+          <campo nome="VR_IMPOSTO_DEVIDO_BRASIL" obs="Imposto devido no brasil" formato="N" tam="13"  />
+          <campo nome="VR_IMPOSTO_PAGO_PARCELA_BRASIL" obs="Imposto pago no Brasil" formato="N" tam="13" />
+		  <campo nome="VR_TOTAL_REDUCAO" obs="Total do somatório das reduções" formato="N" tam="13" />
+          <campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+    </tipo>
+    <tipo nome="_71">
+          <campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+          <campo nome="NR_CPF" obs="cpf do contribuinte" formato="N" tam="11" />
+          <campo nome="NR_CPF_BENEFICIARIO" obs="cpf do declarante do gcap" formato="N" tam="11" />
+          <campo nome="NR_IDENTIFICACAO" obs="Identificação da declaração" formato="N" tam="8" />
+          <campo nome="NR_OPERACAO" obs="Chave de Identificação da operação" formato="N" tam="4" />
+          <campo nome="NR_TIPO_PARCELA" obs="formato de parcela" formato="N" tam="1" />
+          <campo nome="IN_ULTIMA_PARCELA" obs="indicador de ultima parcela" formato="C" tam="1" />
+          <campo nome="DT_PARCELA" obs="data de recebimento da ultima parcela" formato="N" tam="8" />
+          <campo nome="VR_LIQUIDO_PARCELA_AMBAS" obs="Valor de líquido da parcela somando MN e ME" formato="N" tam="13"  />
+          <campo nome="VR_VALOR" obs="Valor de alienação" formato="N" tam="13"  />
+          <campo nome="VR_CORRETAGEM" obs="custo de corretagem" formato="N" tam="13"  />
+          <campo nome="VR_LIQUIDO_PARCELA" obs="valor líquido da parcela em reais" formato="N" tam="13"  />
+          <campo nome="VR_LIQUIDO_PARCELA_DOLAR" obs="valor líquido da parcela em dólar" formato="N" tam="13"  />
+          <campo nome="VR_CUSTO_PARCELA" obs="custo de aquisição" formato="N" tam="13"  />
+          <campo nome="VR_RESULTADO_1_PARCELA" obs="ganho de capital 1 em reais" formato="N" tam="13"  />
+          <campo nome="VR_RESULTADO_1_PARCELA_DOLAR" obs="ganho de capital 1 em dólar" formato="N" tam="13"  />
+          <campo nome="FT_REDUCAO_LEI7713_PARCELA" obs="percentual redução lei 7713" formato="N" tam="9"  />
+          <campo nome="VR_REDUCAO_LEI7713_PARCELA" obs="valor de redução lei 7713" formato="N" tam="13"  />
+          <campo nome="VR_RESULTADO_2_PARCELA" obs="ganho de capital 2" formato="N" tam="13"  />
+          <campo nome="FT_REDUCAO_LEI11196FR1" obs="percentual redução fr1" formato="N" tam="9"  />
+          <campo nome="VR_REDUCAO_LEI11196FR1" obs="valor de redução fr1" formato="N" tam="13"  />
+          <campo nome="VR_RESULTADO_3_PARCELA" obs="ganho de capital 3" formato="N" tam="13"  />
+          <campo nome="FT_REDUCAO_LEI11196FR2" obs="percentual redução fr2" formato="N" tam="9"  />
+          <campo nome="VR_REDUCAO_LEI11196FR2" obs="valor de redução fr2" formato="N" tam="13"  />
+          <campo nome="VR_RESULTADO_4_PARCELA" obs="ganho de capital 4" formato="N" tam="13"  />
+          <campo nome="VR_APLICA_OUTRO_INFORMADO_PARCELA" obs="valor informado de redução aplicação ontro imóvel" formato="N" tam="13"  />
+          <campo nome="FT_APLICA_OUTRO_PARCELA" obs="percentual redução aplicação ontro imóvel" formato="N" tam="9"  />
+          <campo nome="VR_APLICA_OUTRO_PARCELA" obs="valor de redução  aplicação ontro imóvel" formato="N" tam="13"  />
+          <campo nome="FT_APLICA_PEQUENO_PARCELA" obs="percentual redução pequeno valor" formato="N" tam="9"  />
+          <campo nome="VR_APLICA_PEQUENO_PARCELA" obs="valor de redução pequeno valor" formato="N" tam="13"  />
+          <campo nome="FT_APLICA_UNICO_PARCELA" obs="percentual redução único imóvel" formato="N" tam="9"  />
+          <campo nome="VR_APLICA_UNICO_PARCELA" obs="valor de redução único imóvel" formato="N" tam="13"  />
+          <campo nome="VR_RESULTADO_5_PARCELA" obs="ganho de capital 5" formato="N" tam="13"  />
+		  <campo nome="VR_TOTAL_REDUCAO" obs="somatório das reduções da parcela" formato="N" tam="13" />	
+          <campo nome="VR_ALIQUOTA_MEDIA_PARCELA" obs="aliquota de imposto" formato="N" tam="9"  />
+          <campo nome="VR_IMPOSTO_DEVIDO_PARCELA" obs="imposto devido total" formato="N" tam="13"  />
+          <campo nome="VR_IMPOSTO_PAGO_COMPENSACAO" obs="imposto pago no exterior" formato="N" tam="13"  />
+          <campo nome="VR_IMPOSTO_DEVIDO_BRASIL" obs="imposto devido brasil" formato="N" tam="13"  />
+          <campo nome="VR_IMPOSTO_PAGO_PARCELA_BRASIL" obs="imposto pago brasil" formato="N" tam="13"  />
+          <campo nome="VR_COTACAO_PARCELA" obs="cotação do dolar da operação" formato="N" tam="13"  />
+          <campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+    </tipo>
+    <tipo nome="_72">
+          <campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+          <campo nome="NR_CPF" obs="cpf do contribuinte" formato="N" tam="11" />
+          <campo nome="NR_CPF_BENEFICIARIO" obs="cpf do declarante do gcap" formato="N" tam="11" />
+          <campo nome="NR_IDENTIFICACAO" obs="Identificação da declaração" formato="N" tam="8" />
+          <campo nome="NR_OPERACAO" obs="Chave de Identificação da operação" formato="N" tam="4" />
+          <campo nome="IN_TIPO" obs="se é móvel ou participação societaria" formato="N" tam="1" />
+          <campo nome="NR_TIPO_PARCELA" obs="formato de parcela" formato="N" tam="1" />
+          <campo nome="IN_ULTIMA_PARCELA" obs="indicador de ultima parcela" formato="C" tam="1" />
+          <campo nome="DT_PARCELA" obs="data de recebimento da ultima parcela" formato="N" tam="8" />
+          <campo nome="VR_LIQUIDO_PARCELA_AMBAS" obs="Valor de líquido da parcela somando MN e ME" formato="N" tam="13"  />
+          <campo nome="VR_VALOR" obs="Valor de alienação" formato="N" tam="13"  />
+          <campo nome="VR_CORRETAGEM" obs="custo de corretagem" formato="N" tam="13"  />
+          <campo nome="VR_LIQUIDO_PARCELA" obs="valor líquido da parcela em reais" formato="N" tam="13"  />
+          <campo nome="VR_LIQUIDO_PARCELA_DOLAR" obs="valor líquido da parcela em dólar" formato="N" tam="13"  />
+          <campo nome="VR_CUSTO_PARCELA" obs="custo de aquisição" formato="N" tam="13"  />
+          <campo nome="VR_RESULTADO_1_PARCELA" obs="ganho de capital 1 em reais" formato="N" tam="13"  />
+          <campo nome="VR_RESULTADO_1_PARCELA_DOLAR" obs="ganho de capital 1 em dólar" formato="N" tam="13"  />
+          <campo nome="VR_ALIQUOTA_MEDIA_PARCELA" obs="aliquota de imposto" formato="N" tam="9"  />
+          <campo nome="VR_IMPOSTO_DEVIDO_PARCELA" obs="imposto devido total" formato="N" tam="13"  />
+          <campo nome="VR_IMPOSTO_PAGO_COMPENSACAO" obs="imposto pago no exterior" formato="N" tam="13"  />
+          <campo nome="VR_IMPOSTO_DEVIDO_BRASIL" obs="imposto devido brasil" formato="N" tam="13"  />
+          <campo nome="VR_IMPOSTO_PAGO_PARCELA_BRASIL" obs="imposto pago brasil" formato="N" tam="13"  />
+          <campo nome="VR_COTACAO_PARCELA" obs="cotação do dolar da operação" formato="N" tam="13"  />
+          <campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+    </tipo>
+    <tipo nome="_73">
+	    <campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CPF_BENEFICIARIO" obs="CPF do beneficiário seja titular ou dependente" formato="C" tam="11" />
+		<campo nome="NR_IDENTIFICACAO" obs="Identificação da declaração.Originado do REG 60 campo NR_IDENTIFICACAO ( Concatenação de dia/ mês dos campos DT_INICIO + DT_FIM )" formato="N" tam="8" />
+		<campo nome="NR_OPERACAO" obs="Chave de Identificação da operação" formato="N" tam="4" />
+		<campo nome="NR_ITEM" obs="Chave de Identificação da operação da ficha apuração do custo" formato="C" tam="4" />
+		<campo nome="IN_ESPECIE" obs="formato da Especie de participação: 1.Ação preferencial nominativa; 2.Ação ordinária nominativa; 3.Quotas; 4.Outras;" formato="N" tam="1" />
+		<campo nome="NM_DESCRICAO_ESPECIE" obs="Descrição da espécie de participação" formato="C" tam="60" />
+		<campo nome="VR_QUANTIDADE_ALIENADA" obs="(Sessão apuração do custo de aquisição) quantidade de itens alienados" formato="N" tam="11" />
+		<campo nome="VR_CUSTO_MEDIO" obs="(Sessão apuração do custo de aquisição) Valor do custo medio ponderado" formato="N" tam="17"  />
+		<campo nome="VR_CUSTO_TOTAL" obs="(Sessão apuração do custo de aquisição) Custo Total" formato="N" tam="13"  />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+    </tipo>
+    <tipo nome="_74">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CPF_BENEFICIARIO" obs="CPF do beneficiário seja titular ou dependente" formato="C" tam="11" />
+		<campo nome="NR_IDENTIFICACAO" obs="Identificação da declaração.Originado do REG 60 campo NR_IDENTIFICACAO ( Concatenação de dia/ mês dos campos DT_INICIO + DT_FIM )" formato="N" tam="8" />
+		<campo nome="NR_ITEM" obs="Chave de Identificação da operação das vendas de moeda" formato="C" tam="4" />
+		<campo nome="PAIS" obs="Identifica a moeda " formato="C" tam="7" />
+		<campo nome="NM_MOEDA" obs="nome da moeda alienada" formato="C" tam="40" />
+		<campo nome="TIPO_OPERACAO" obs="Código do tipo de operação. 1- Saldo inicial; 2 - Compra; 3 - Venda" formato="C" tam="1" />
+		<campo nome="NM_OPERACAO" obs="nome do tipo de operação. Saldo inicial; Compra; Venda" formato="C" tam="15" />
+		<campo nome="NM_ADQUIR" obs="nome do adquirente" formato="C" tam="60" />
+		<campo nome="NR_ADQUIR" obs="CNPJ-CPF do adquirente" formato="C" tam="14" />
+		<campo nome="DT_OPERACAO" obs="Data da aquisicao/alienação" formato="N" tam="8" />
+		<campo nome="VR_OPERACAO" obs="Valor da aquisicao/alienação" formato="N" tam="13"  />
+		<campo nome="NR_QUANTIDADE" obs="Quantidade de moeda adquirida/alienada" formato="N" tam="13"  />
+		<campo nome="VR_CUSTO" obs="Custo médio / cotação média" formato="N" tam="17"  />
+		<campo nome="VR_CUSTOTOTAQUIS" obs="Custo total" formato="N" tam="13"  />
+		<campo nome="VR_GANHOCAPITAL" obs="Valor do Ganho de Capital" formato="N" tam="13"  />
+		<campo nome="VR_SALDO_REAIS" obs="Saldo em  reais" formato="N" tam="13"  />
+		<campo nome="VR_SALDO_ME" obs="Saldo em moeda estrangeira" formato="N" tam="13"  />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+    </tipo>
+	<tipo nome="_75">
+          <campo nome="NR_REG" obs="Tipo do registro" formato="N" tam="2" />
+          <campo nome="NR_CPF" obs="cpf do contribuinte" formato="N" tam="11" />
+          <campo nome="NR_CPF_BENEFICIARIO" obs="cpf do declarante do gcap" formato="N" tam="11" />
+          <campo nome="NR_IDENTIFICACAO" obs="Identificação da declaração" formato="N" tam="8" />
+          <campo nome="NR_OPERACAO" obs="Chave de Identificação da operação" formato="N" tam="4" />
+          <campo nome="IN_TIPO" obs="se é imóvel, móvel ou participação societaria" formato="N" tam="1" />
+          <campo nome="IN_APURACAO" obs="se é baseado na apuração ou na apuração final" formato="N" tam="1" />
+          <campo nome="VR_FAIXA1_TOTAL" obs="Ganho total tributável da primeira faixa de imposto" formato="N" tam="13" />
+          <campo nome="VR_FAIXA1_ANTERIOR" obs="Ganho anterior tributável da primeira faixa de imposto" formato="N" tam="13" />
+          <campo nome="VR_FAIXA1_ATUAL" obs="Ganho atual tributável da primeira faixa de imposto" formato="N" tam="13" />
+          <campo nome="VR_FAIXA2_TOTAL" obs="Ganho total tributável da segunda faixa de imposto" formato="N" tam="13" />
+          <campo nome="VR_FAIXA2_ANTERIOR" obs="Ganho anterior tributável da segunda faixa de imposto" formato="N" tam="13" />
+          <campo nome="VR_FAIXA2_ATUAL" obs="Ganho atual tributável da segunda faixa de imposto" formato="N" tam="13" />
+          <campo nome="VR_FAIXA3_TOTAL" obs="Ganho total tributável da terceira faixa de imposto" formato="N" tam="13" />
+          <campo nome="VR_FAIXA3_ANTERIOR" obs="Ganho anterior tributável da terceira faixa de imposto" formato="N" tam="13" />
+          <campo nome="VR_FAIXA3_ATUAL" Descricao="Ganho atual tributável da terceira faixa de imposto" formato="N" tam="13" />
+          <campo nome="VR_FAIXA4_TOTAL" Descricao="Ganho total tributável da quarta faixa de imposto" formato="N" tam="13" />
+          <campo nome="VR_FAIXA4_ANTERIOR" obs="Ganho anterior tributável da quarta faixa de imposto" formato="N" tam="13" />
+          <campo nome="VR_FAIXA4_ATUAL" obs="Ganho atual tributável da quarta faixa de imposto" formato="N" tam="13" />
+          <campo nome="VR_FAIXAT_TOTAL" obs="Ganho total tributável do quadro de fatiamento de faixas de imposto" formato="N" tam="13" />
+          <campo nome="VR_FAIXAT_ANTERIOR" obs="Ganho anterior tributável do quadro de fatiamento de faixas de imposto" formato="N" tam="13" />
+          <campo nome="VR_FAIXAT_ATUAL" obs="Ganho atual tributável do quadro de fatiamento de faixas de imposto" formato="N" tam="13" />
+          <campo nome="NR_CONTROLE" obs="Número de Controle" Tipo="N" tam="10" />
+	</tipo>
+    <!-- FIM GANHO CAPITAL-->
+	<tipo nome="_76">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="PAIS" obs="Identifica a moeda (utilizado para relacionar com o registro 77)" formato="C" tam="7" />
+		<campo nome="NM_MOEDA" obs="nome da moeda alienada" formato="C" tam="40" />
+		<campo nome="FILLER" obs="Filler" formato="C" tam="2" />
+		<campo nome="TIPO_OPERACAO" obs="Código do tipo de operação" formato="C" tam="1" />
+		<campo nome="NM_ADQUIR" obs="nome do adquirente" formato="C" tam="60" />
+		<campo nome="NR_ADQUIR" obs="CNPJ-CPF do adquirente" formato="C" tam="14" />
+		<campo nome="DTA_ALIEN" obs="Data da alienação" formato="N" tam="8" />
+		<campo nome="VR_ALIEN" obs="Valor da alienação" formato="N" tam="13" />
+		<campo nome="NR_QUANTIDADE" obs="Quantidade de moeda alienada" formato="N" tam="13" />
+		<campo nome="VR_CUSTO" obs="Custo médio cotação média" formato="N" tam="13" />
+		<campo nome="VR_CUSTO_ANTERIOR" obs="Valor do custo médio anterior" formato="N" tam="13" />
+		<campo nome="VR_CUSTOTOTAQUIS" obs="Custo total" formato="N" tam="13" />
+		<campo nome="VR_GANHOCAPITAL" obs="Valor do Ganho de Capital" formato="N" tam="13" />
+		<campo nome="VR_SALDO_REAIS" obs="Saldo em reais" formato="N" tam="13" />
+		<campo nome="VR_SALDO_REAIS_ANT" obs="Saldo anterior em reais" formato="N" tam="13" />
+		<campo nome="VR_ME" obs="Saldo em moeda estrangeira" formato="N" tam="13" />
+		<campo nome="VR_ME_ANT" obs="Saldo anterior em moeda estrangeira" formato="N" tam="13" />
+		<campo nome="NR_ITEM" obs="Número do Item" formato="N" tam="4" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_77">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="FILLER" obs="Filler" formato="C" tam="2" />
+		<campo nome="PAIS_MOEDA" obs="Pais origem da moeda" formato="N" tam="7" />
+		<campo nome="NM_MOEDA" obs="nome da moeda alienada" formato="C" tam="40" />
+		<campo nome="VR_GANHOCAPITAL" obs="Vlr G Capital consolidado das alien. da moeda" formato="N" tam="13" />
+		<campo nome="VR_IMPOSTO" obs="Vlr imposto devido das alien. da moeda" formato="N" tam="13" />
+		<campo nome="NR_ITEM" obs="Numero do item" formato="N" tam="4" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_78">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="VR_BENSISENTO" obs="Vlr isentos e não-tributáveis, de bens ou direitos" formato="N" tam="13" />
+		<campo nome="VR_BENSIMPOSTO" obs="Vlr imposto pago, de bens ou direitos" formato="N" tam="13" />
+		<campo nome="VR_BENSEXCLUSIVO" obs="Vlr rend. tributação exclusiva, de bens ou direitos" formato="N" tam="13" />
+		<campo nome="VR_ESPIMPOSTO" obs="Vr imposto devido, de espécie" formato="N" tam="13" />
+		<campo nome="VR_ESPEXCLUSIVO" obs="Vr rend. tributação exclusiva, de espécie" formato="N" tam="13" />
+		<campo nome="TRANSPORTEVC_VR_IMPOSTODEVIDO" obs="Valor do imposto devido" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_80">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_PAGADOR" obs="CNPJ fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_PAGADOR" obs="nome fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_RENDTO" obs="Valor rendimento recebido" formato="N" tam="13" />
+		<campo nome="VR_DEP_JUDICIAL" obs="Valor depósito judicial" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_81">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="CPF_BENEF" obs="CPF do Dependente" formato="C" tam="11" />
+		<campo nome="NR_PAGADOR" obs="CNPJ fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_PAGADOR" obs="nome fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_RENDTO" obs="Valor rendimento recebido" formato="N" tam="13" />
+		<campo nome="VR_DEP_JUDICIAL" obs="Valor depósito judicial" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_82">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CHAVE" obs="Chave de identificação da transferência patrimonial" formato="N" tam="5" />
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do titular ou do dependente" formato="C" tam="1" />
+		<campo nome="NR_PAGADORA" obs="CPF/CNPJ do doador/espólio" formato="C" tam="14" />
+		<campo nome="NM_NOME" obs="nome do doador/espólio" formato="C" tam="60" />
+		<campo nome="VR_RECEB" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_83" obs="Detalhes dos Médicos Residentes da ficha Rendimentos Isentos">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do titular ou do dependente" formato="C" tam="1" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />
+		<campo nome="NR_COD" obs="" formato="N" tam="4" />
+		<campo nome="VR_VALOR" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_84" obs="Detalhes dos Voluntários da Copa da ficha Rendimentos Isentos">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />		
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do titular ou do dependente" formato="C" tam="1" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF contribuinte" formato="C" tam="11" />				
+		<campo nome="NR_COD" obs="" formato="N" tam="4" />
+		<campo nome="NR_PAGADORA" obs="CPF/CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_NOME" obs="nome da fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_VALOR" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_85" obs="Detalhes da Meação e Dissolução da ficha Rendimentos Isentos">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do titular ou do dependente" formato="C" tam="1" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />
+		<campo nome="NR_COD" obs="" formato="N" tam="4" />
+		<campo nome="NR_PAGADORA" obs="CPF/CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_NOME" obs="nome da fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_RECEB" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="VR_13SALARIO" obs="Valor do 13 Salario" formato="N" tam="13" />
+		<campo nome="VR_IRRF" obs="Valor do IRRF" formato="N" tam="13" />
+		<campo nome="VR_IRRF13SALARIO" obs="Valor do IRRF sobre 13 Salario" formato="N" tam="13" />
+		<campo nome="VR_PREVIDENCIA" obs="Contribuição previdenciária oficial" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_86" obs="Detalhes do Ganho com Ações da ficha Rendimentos Isentos">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />		
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do titular ou do dependente" formato="C" tam="1" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />
+		<campo nome="NR_COD" obs="" formato="N" tam="4" />
+		<campo nome="NR_PAGADORA" obs="CPF/CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_NOME" obs="nome da fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_VALOR" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="NM_DESCRICAO" obs="Descrição" formato="C" tam="60" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_87" obs="Detalhes do Ganho com Ouro da ficha Rendimentos Isentos">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_COD" obs="" formato="N" tam="4" />
+		<campo nome="VR_VALOR" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="VR_VALORGCAP" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_88" obs="Detalhes da Parcela Isenta da Aposentadoria da ficha Rendimentos Isentos">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do titular ou do dependente" formato="C" tam="1" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />
+		<campo nome="NR_COD" obs="" formato="N" tam="4" />
+		<campo nome="NR_PAGADORA" obs="CPF/CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_NOME" obs="nome da fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_VALOR" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_89" obs="Detalhes do Rendimento de Sócio ou Titular de Microempresa da ficha Rendimentos Isentos">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do titular ou do dependente" formato="C" tam="1" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />		
+		<campo nome="NR_COD" obs="" formato="N" tam="4" />
+		<campo nome="NR_PAGADORA" obs="CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_NOME" obs="nome da fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_VALOR" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="NM_DESCRICAO" obs="nome da fonte pagadora" formato="C" tam="60" />		
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_90" obs="Relacao de doações efetuadas">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="CD_DOACAO" obs="Codigo de doação" formato="N" tam="2" />
+		<campo nome="NR_BENEF" obs="CNPJ/CPF do beneficiário" formato="C" tam="14" />
+		<campo nome="NM_BENEF" obs="nome do beneficiario" formato="A" tam="60" />
+		<campo nome="VR_DOACAO" obs="Valor da doação" formato="N" tam="13" />
+		<campo nome="VR_PARC_NAO_DEDUT" obs="Valor da parcela não dedutível ou reembolsada" formato="N" tam="13" />
+		<campo nome="IN_TIPO_CPF_CNPJ" obs="Indicador se CPF ou CNPJ" formato="N" tam="1" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_91" obs="Relacao de doações na declaração - Estatuto da Criança e do Adolescente">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="IN_TIPO_FUNDO" obs="formato do fundo: (N)acional, (E)stadual ou (M)unicipal" formato="C" tam="1" />
+		<campo nome="SG_UF" obs="Sigla da UF" formato="C" tam="2" />
+		<campo nome="NOME_UF" obs="NOME da UF" formato="C" tam="30" />
+		<campo nome="NOME_MUNICIPIO" obs="nome do município" formato="A" tam="40" />
+		<campo nome="VR_DOACAO" obs="Valor da doação" formato="N" tam="13" />
+		<campo nome="NR_CNPJ_FUNDO" obs="CNPJ do fundo" formato="C" tam="14" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_92" obs="Detalhes de bolsa de estudos para não médicos da ficha Rendimentos Isentos">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CHAVE" obs="Chave de identificação da bolsa de estudos para não médico" formato="N" tam="5" />
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do titular ou do dependente" formato="C" tam="1" />
+		<campo nome="NR_PAGADORA" obs="CPF/CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_NOME" obs="nome da fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_RECEB" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_93" obs="Detalhes de indenizações da ficha Rendimentos Isentos">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CHAVE" obs="Chave de identificação da indenização" formato="N" tam="5" />
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do titular ou do dependente" formato="C" tam="1" />
+		<campo nome="NR_PAGADORA" obs="CPF/CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_NOME" obs="nome da fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_RECEB" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_94" obs="Detalhes de IRRF anos anteriores da ficha Rendimentos Isentos">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CHAVE" obs="Chave de identificação do IRRF ano anterior" formato="N" tam="5" />
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do titular ou do dependente" formato="C" tam="1" />
+		<campo nome="NR_PAGADORA" obs="CPF/CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_NOME" obs="nome da fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_RECEB" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_95" obs="Detalhes de juros sobre capital próprio da ficha Rendimentos com tributação exclusiva">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CHAVE" obs="Chave de identificação do IRRF ano anterior" formato="N" tam="5" />
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do titular ou do dependente" formato="C" tam="1" />
+		<campo nome="NR_PAGADORA" obs="CPF/CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_NOME" obs="nome da fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_RECEB" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_96" obs="Detalhes de participação em lucros e resultados da ficha Rendimentos com tributação exclusiva">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CHAVE" obs="Chave de identificação do IRRF ano anterior" formato="N" tam="5" />
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do titular ou do dependente" formato="C" tam="1" />
+		<campo nome="NR_PAGADORA" obs="CPF/CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_NOME" obs="nome da fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_RECEB" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_97" obs="Detalhes de outros rendimentos das fichas Rendimentos isentos e Rendimentos com tributação exclusiva">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CHAVE" obs="Chave de identificação do rendimento" formato="N" tam="5" />
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do titular ou do dependente" formato="C" tam="1" />
+		<campo nome="NR_PAGADORA" obs="CPF/CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_NOME" obs="nome da fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_RECEB" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />
+		<campo nome="IN_FICHA" obs="Indicador se o registro é da ficha Rend. Isentos (1) ou Rend. Tributação Exclusiva (2)" formato="C" tam="1" />
+		<campo nome="NM_RENDIMENTO" obs="Descrição do rendimento" formato="C" tam="60" />
+		<campo nome="NR_CONTROLE" obs="Número de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_98" obs="Detalhes do Rendimento de Caderneta de Poupança e Letras Hipotecárias da ficha Rendimentos Isentos">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CHAVE" obs="Chave de identificação do rendimento de caderneta de poupança e letras hipotecárias" formato="N" tam="5" />
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do titular ou do dependente" formato="C" tam="1" />
+		<campo nome="NR_PAGADORA" obs="CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_NOME" obs="nome da fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_RECEB" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />
+		<campo nome="NR_CONTROLE" obs="Numero de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="_99" obs="Detalhes dos Rendimentos de Aplicações Financeiras da ficha Rendimentos Suj. Tributação Exclusiva">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="NR_CHAVE" obs="Chave de identificação do rendimento de aplicações financeiras" formato="N" tam="5" />
+		<campo nome="IN_TIPO" obs="Indicador se o registro é do titular ou do dependente" formato="C" tam="1" />
+		<campo nome="NR_PAGADORA" obs="CNPJ da fonte pagadora" formato="C" tam="14" />
+		<campo nome="NM_NOME" obs="nome da fonte pagadora" formato="C" tam="60" />
+		<campo nome="VR_RECEB" obs="Valor do recebimento" formato="N" tam="13" />
+		<campo nome="NR_CPF_BENEFIC" obs="CPF do beneficiário" formato="C" tam="11" />
+		<campo nome="NR_CONTROLE" obs="Numero de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="FR">
+		<campo nome="NR_REG" obs="formato do registro" formato="N" tam="2" />
+		<campo nome="nome_DEC" obs="nome da declaracao" formato="C" tam="5" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="ND_DEC" obs="ND da declaracao" formato="C" tam="10" />
+		<campo nome="DT_ENTREGA" obs="Data da entrega" formato="C" tam="10" />
+		<campo nome="HR_ENTREGA" obs="Hora da entrega" formato="C" tam="8" />
+		<campo nome="MEIO_ENTREGA" obs="Meio de Entrega" formato="C" tam="10" />
+		<campo nome="TIPO_DEC" obs="formato Completa ou Simplificada" formato="C" tam="12" />
+		<campo nome="SIT_DEC" obs="Situacao da declaracao" formato="C" tam="63" />
+		<campo nome="IN_CERT" obs="Indicador Certificado" formato="C" tam="3" />
+		<campo nome="CERT_DEC" obs="Certificado da declaracao" formato="C" tam="14" />
+		<campo nome="OBSERVACAO" obs="Observação" formato="C" tam="86" />
+		<campo nome="TIPO" obs="Original ou Retificadora" formato="C" tam="12" />
+		<campo nome="ND_FAR" obs="ND do FAR" formato="C" tam="10" />
+	</tipo>
+	<tipo nome="T9">
+		<campo nome="NR_REG" obs="formato do registro" formato="C" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="N" tam="11" />
+		<campo nome="QT_TOTAL" obs="Total de registros" formato="N" tam="6" />
+		<campo nome="QT_R16" obs="Total de registros tipo 16" formato="N" tam="5" />
+		<campo nome="QT_R17" obs="Total de registros tipo 17" formato="N" tam="5" />
+		<campo nome="QT_R18" obs="Total de registros tipo 18" formato="N" tam="5" />
+		<campo nome="QT_R19" obs="Total de registros tipo 19" formato="N" tam="5" />
+		<campo nome="QT_R20" obs="Total de registros tipo 20" formato="N" tam="5" />
+		<campo nome="QT_R21" obs="Total de registros tipo 21" formato="N" tam="5" />
+		<campo nome="QT_R22" obs="Total de registros tipo 22" formato="N" tam="5" />
+		<campo nome="QT_R23" obs="Total de registros tipo 23" formato="N" tam="5" />
+		<campo nome="QT_R24" obs="Total de registros tipo 24" formato="N" tam="5" />
+		<campo nome="QT_R25" obs="Total de registros tipo 25" formato="N" tam="5" />
+		<campo nome="QT_R26" obs="Total de registros tipo 26" formato="N" tam="5" />
+		<campo nome="QT_R27" obs="Total de registros tipo 27" formato="N" tam="5" />
+		<campo nome="QT_R28" obs="Total de registros tipo 28" formato="N" tam="5" />
+		<campo nome="Filler" obs="Filler" formato="N" tam="5" />
+		<campo nome="QT_R30" obs="Total de registros tipo 30" formato="N" tam="5" />
+		<campo nome="Filler" obs="Filler" formato="N" tam="5" />		
+		<campo nome="QT_R32" obs="Total de registros tipo 32" formato="N" tam="5" />
+		<campo nome="Filler" obs="Filler" formato="C" tam="5" />
+		<campo nome="QT_R34" obs="Total de registros tipo 34" formato="N" tam="5" />
+		<campo nome="QT_R35" obs="Total de registros tipo 35" formato="N" tam="5" />
+		<campo nome="Filler" obs="Filler" formato="C" tam="5" />
+		<campo nome="Filler" obs="Filler" formato="C" tam="5" />
+		<campo nome="QT_R38" obs="Total de registros tipo 38" formato="N" tam="5" />
+		<campo nome="QT_R39" obs="Total de registros tipo 39" formato="N" tam="5" />
+		<campo nome="QT_R40" obs="Total de registros tipo 40" formato="N" tam="5" />
+		<campo nome="QT_R41" obs="Total de registros tipo 41" formato="N" tam="5" />
+		<campo nome="QT_R42" obs="Total de registros tipo 42" formato="N" tam="5" />
+		<campo nome="QT_R43" obs="Total de registros tipo 43" formato="N" tam="5" />
+		<campo nome="Filler" obs="Filler" formato="C" tam="5" />
+		<campo nome="QT_R45" obs="Total de registros tipo 45" formato="N" tam="5" />
+		<campo nome="QT_R46" obs="Total de registros tipo 46" formato="N" tam="5" />
+		<campo nome="QT_R47" obs="Total de registros tipo 47" formato="N" tam="5" />
+		<campo nome="QT_R48" obs="Total de registros tipo 48" formato="N" tam="5" />
+		<campo nome="QT_R49" obs="Total de registros tipo 49" formato="N" tam="5" />
+		<campo nome="QT_R50" obs="Total de registros tipo 50" formato="N" tam="5" />
+		<campo nome="QT_R51" obs="Total de registros tipo 51" formato="N" tam="5" />
+		<campo nome="QT_R52" obs="Total de registros tipo 52" formato="N" tam="5" />
+		<campo nome="QT_R53" obs="Total de registros tipo 53" formato="N" tam="5" />
+		<campo nome="QT_R54" obs="Total de registros tipo 54" formato="N" tam="5" />
+		<campo nome="QT_R55" obs="Total de registros tipo 55" formato="N" tam="5" />
+		<campo nome="QT_R56" obs="Total de registros tipo 56" formato="N" tam="5" />
+		<campo nome="QT_R58" obs="Total de registros tipo 58" formato="N" tam="5" />
+		<campo nome="QT_R59" obs="Total de registros tipo 59" formato="N" tam="5" />		
+		<campo nome="QT_R60" obs="Total de registros tipo 60" formato="N" tam="5" />
+		<campo nome="QT_R61" obs="Total de registros tipo 61" formato="N" tam="5" />
+		<campo nome="QT_R62" obs="Total de registros tipo 62" formato="N" tam="5" />
+		<campo nome="QT_R63" obs="Total de registros tipo 63" formato="N" tam="5" />
+		<campo nome="QT_R65" obs="Total de registros tipo 65" formato="N" tam="5" />
+		<campo nome="QT_R66" obs="Total de registros tipo 66" formato="N" tam="5" />
+		<campo nome="QT_R67" obs="Total de registros tipo 67" formato="N" tam="5" />
+		<campo nome="QT_R68" obs="Total de registros tipo 68" formato="N" tam="5" />
+		<campo nome="QT_R69" obs="Total de registros tipo 69" formato="N" tam="5" />
+		<campo nome="QT_R70" obs="Total de registros tipo 70" formato="N" tam="5" />
+		<campo nome="QT_R71" obs="Total de registros tipo 71" formato="N" tam="5" />
+		<campo nome="QT_R72" obs="Total de registros tipo 72" formato="N" tam="5" />
+		<campo nome="Filler" obs="Filler" formato="C" tam="5" />
+		<campo nome="QT_R80" obs="Total de registros tipo 80" formato="N" tam="5" />
+		<campo nome="QT_R81" obs="Total de registros tipo 81" formato="N" tam="5" />
+		<campo nome="Filler" obs="Filler" formato="C" tam="5" />
+		<campo nome="QT_R83" obs="Total de registros tipo 83" formato="N" tam="5" />
+		<campo nome="QT_R84" obs="Total de registros tipo 84" formato="N" tam="5" />
+		<campo nome="QT_R85" obs="Total de registros tipo 85" formato="N" tam="5" />
+		<campo nome="QT_R86" obs="Total de registros tipo 86" formato="N" tam="5" />
+		<campo nome="QT_R87" obs="Total de registros tipo 87" formato="N" tam="5" />
+		<campo nome="QT_R88" obs="Total de registros tipo 88" formato="N" tam="5" />
+		<campo nome="QT_R89" obs="Total de registros tipo 89" formato="N" tam="5" />
+		<campo nome="QT_R90" obs="Total de registros tipo 90" formato="N" tam="5" />
+		<campo nome="QT_R91" obs="Total de registros tipo 91" formato="N" tam="5" />
+		<campo nome="Filler" obs="Filler" formato="C" tam="5" />
+		<campo nome="NR_CONTROLE" obs="Numero de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="HR" obs="Header do Recibo">
+		<campo nome="NR_REG" obs="formato do registro" formato="C" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="FILLER" obs="Espaco reservado" formato="C" tam="3" />
+		<campo nome="NR_CONTROLE" obs="Numero de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="DR" obs="Recibo de entrega da declaracao">
+		<campo nome="NR_REG" obs="formato do registro" formato="C" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="FILLER" obs="Espaco em branco" formato="C" tam="3" />
+		<campo nome="IN_COMPLETA" obs="Indicativo dec. Completa(S)/simplificada(N)" formato="C" tam="1" />
+		<campo nome="NM_NOME" obs="nome do contribuinte" formato="A" tam="60" />
+		<campo nome="TIP_LOGRA" obs="formato do Logradouro" formato="A" tam="15" />
+		<campo nome="NM_LOGRA" obs="Endereco contribuinte: logradouro" formato="C" tam="40" />
+		<campo nome="NR_NUMERO" obs="Endereco contribuinte: numero" formato="C" tam="6" />
+		<campo nome="NM_COMPLEM" obs="Endereco contribuinte: complemento" formato="C" tam="21" />
+		<campo nome="NM_BAIRRO" obs="Endereco contribuinte: bairro" formato="C" tam="19" />
+		<campo nome="NR_CEP" obs="Endereco contribuinte: CEP/ZIP" formato="C" tam="9" />
+		<campo nome="CD_MUNICIP" obs="Codigo municipio" formato="N" tam="4" />
+		<campo nome="NM_MUNICIP" obs="Endereco contribuinte: municipio" formato="C" tam="40" />
+		<campo nome="SG_UF" obs="Endereco contribuinte: UF" formato="A" tam="2" />
+		<campo nome="FILLER1" obs="Espaços em branco (Endereço contribuinte: Email - Correio Eletrônico)" formato="C" tam="100" />
+		<campo nome="FILLER2" obs="Endereco contribuinte: DDD do FAX" formato="C" tam="4" />
+		<campo nome="FILLER3" obs="Endereco contribuinte: FAX" formato="C" tam="8" />
+		<campo nome="NR_DDD_TELEFONE" obs="Endereco contribuinte: DDD do telefone" formato="C" tam="4" />
+		<campo nome="FILLER4" obs="FILLER" formato="C" tam="9" />
+		<campo nome="IN_RETIFICADORA" obs="Indicativo se declaracao retificadora" formato="C" tam="1" />
+		<campo nome="VR_TOTTRIB" obs="Valor dos rendimentos tributaveis" formato="N" tam="13" />
+		<campo nome="VR_IMPDEV" obs="Valor do imposto devido" formato="N" tam="13" />
+		<campo nome="VR_IMPREST" obs="Valor do imposto a restituir" formato="N" tam="13" />
+		<campo nome="VR_IMPPAGAR" obs="Valor do imposto a pagar" formato="N" tam="13" />
+		<campo nome="NR_QUOTAS" obs="Quantidades de quotas" formato="N" tam="1" />
+		<campo nome="VR_QUOTA" obs="Valor da quota" formato="N" tam="13" />
+		<campo nome="NR_BANCO" obs="Codigo do Banco" formato="N" tam="3" />
+		<campo nome="NR_AGENCIA" obs="Numero da Agencia Bancaria" formato="N" tam="4" />
+		<campo nome="FILLER" obs="Filler" formato="C" tam="1" />
+		<campo nome="IN_DEBITO_PRIMEIRA_QUOTA" obs="Indicador de Débito Automático da 1ª quota" formato="N" tam="1" />
+		<campo nome="VR_GCIMPOSTOPAGO" obs="Valor do Imposto pago do Ganho de Capital" formato="N" tam="13" />
+		<campo nome="NR_CONTA" obs="Numero da conta corrente para deposito de IAR" formato="C" tam="13" />
+		<campo nome="NR_DV_CONTA" obs="Numero do Digito Verificador da Conta Corrente" formato="C" tam="2" />
+		<campo nome="VR_VCMOEDAEST" obs="Imposto sobre alienacao de ME em especie" formato="N" tam="13" />
+		<campo nome="NR_TELEFONE" obs="Endereco contribuinte: telefone" formato="C" tam="11" />
+		<campo nome="NR_CONTROLE" obs="Numero de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="R9" obs="Trailler do Recibo">
+		<campo nome="NR_REG" obs="formato do registro" formato="C" tam="2" />
+		<campo nome="NR_CPF" obs="CPF contribuinte" formato="C" tam="11" />
+		<campo nome="FILLER" obs="Espaco reservado" formato="C" tam="3" />
+		<campo nome="NR_HASH" obs="Hash calculado sobre todos os registros da dec.,exceto o Header e o Trailler do recibo" formato="N" tam="10" />
+		<campo nome="NR_CONTROLE" obs="Numero de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="HC" obs="Header do complemento do recibo">
+		<campo nome="NR_REG" obs="formato de registro" formato="A" tam="2" />
+		<campo nome="NR_CPFCNPJ" obs="CPF/CNPJ do Contribuinte" formato="C" tam="11" />
+		<campo nome="FILLER" obs="Espaco reservado" formato="C" tam="3" />
+		<campo nome="NR_CONTROLE" obs="Numero de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="RC" obs="Detalhes do complemento do recibo">
+		<campo nome="NR_REG" obs="formato de registro" formato="A" tam="2" />
+		<campo nome="NR_CPFCNPJ" obs="CPF/CNPJ do Contribuinte" formato="C" tam="11" />
+		<campo nome="FILLER1" obs="Espaço em branco" formato="C" tam="3" />
+		<campo nome="DIAREC" obs="Data de recepcao: dia" formato="N" tam="2" />
+		<campo nome="MESREC" obs="Data de recepcao: mes" formato="N" tam="2" />
+		<campo nome="ANOREC" obs="Data de recepcao: ano" formato="N" tam="4" />
+		<campo nome="HORAREC" obs="Horario : hora" formato="N" tam="2" />
+		<campo nome="MINREC" obs="Horario : minutos" formato="N" tam="2" />
+		<campo nome="SEGREC" obs="Horario : segundos" formato="N" tam="2" />
+		<campo nome="LOCALREC" obs="Local de recepcao" formato="C" tam="25" />
+		<campo nome="NR_REMESSA" obs="N. da remessa" formato="C" tam="4" />
+		<campo nome="ASSINATURA" obs="Assinatura" formato="C" tam="10" />
+		<campo nome="IN_GATEWAY" obs="Indicador gateway" formato="N" tam="1" />
+		<campo nome="FILLER2" obs="campo reservado" formato="C" tam="1" />
+		<campo nome="IN_APLIC_TRANSMISSAO" obs="Indica o aplicativo de transmissão: 1- Receitanet; 2-ReceitanetWEB" formato="N" tam="1" />
+		<campo nome="APLIC_TRANSMISSAO" obs="Indica a expressão associada ao aplicativo de transmissão :RW - se ReceitanetWEB; RN - se Receitanet" formato="C" tam="2" />
+		<campo nome="COD_AG_TRANSMISSOR" obs="Agente transmissor" formato="C" tam="3" />
+		<campo nome="NI_ASSINATURA_DECL" obs="NI assinante" formato="C" tam="14" />
+		<campo nome="CONTROLE_SRF" obs="Número do controle SRF da declaração criptografado. OBS: Essa informação somente deve ser utilizada para a validação do recibo para os PGD versão Java." formato="C" tam="10" />
+		<campo nome="FILLER3" obs="Espaco reservado" formato="C" tam="20" />
+		<campo nome="NR_CONTROLE" obs="Numero de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="NC" obs="NOTIFICACAO DE MULTA">
+		<campo nome="NR_REG" obs="formato de registro" formato="A" tam="2" />
+		<campo nome="IN_ACAO_FISCAL" obs="formato de registro" formato="N" tam="1" />
+		<campo nome="NM_DELEGADO" obs="nome do Delegado da SRF" formato="C" tam="60" />
+		<campo nome="NR_MATRIC_DELEGADO" obs="Numero da Matricula do Delegado" formato="C" tam="8" />
+		<campo nome="NR_CARGO" obs="Cargo do Delegado( 1 - AFRF 2 - TRF)" formato="N" tam="1" />
+		<campo nome="NR_UA" obs="Código da Unidade de Atendimento" formato="C" tam="7" />
+		<campo nome="NM_UA" obs="nome da Unidade de Atendimento" formato="C" tam="50" />
+		<campo nome="DT_VENCIMENTO" obs="Data de Vencimento da Multa(Formato AAAAMMDD)" formato="N" tam="8" />
+		<campo nome="QT_MESES" obs="Qtd. Meses de atraso" formato="N" tam="2" />
+		<campo nome="VR_MULTA" obs="Valor da Multa" formato="N" tam="13" />
+		<campo nome="NR_DISTRIBUICAO" obs="Código da Notificação - XHHHHHHHHHHY - DD onde: X - identificador do sistema que está cobrando a multa. Para o IRPF, X = 5 HHHHHHHHHH - é o hashcode da declaração Y - é a primeira posição do dígito verificador do CPF DD - é o DV módulo 11 com 2 posições de DV" formato="C" tam="14" />
+		<campo nome="IN_OBRIGATORIEDADE" obs="Indicador de obrigatoriedade de entrega atualizado" formato="C" tam="1" />
+		<campo nome="TP_DELEGACIA" obs="formato da Delegacia" formato="C" tam="57" />
+		<campo nome="IN_CRIT_OBRIG" obs="Criterio de obrigatoriedade verificado pelo validador" formato="N" tam="3" />
+		<campo nome="FILLER" obs="Espaco em branco" formato="C" tam="25" />
+		<campo nome="NR_CONTROLE" obs="Numero de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="VC" obs="DADOS DO VALIDADOR">
+		<campo nome="TP_REG" obs="formato do tipo" formato="A" tam="2" />
+		<campo nome="IN_PENDENCIA" obs="Indicador de pendência dos anos anteriores." formato="N" tam="5" />
+		<campo nome="QTD_RETIFICADORAS" obs="Quantidade de Retificadoras (já entregues anteriormente)" formato="N" tam="3" />
+		<campo nome="IN_DEBITO" obs="Indicador de débito com a RFB" formato="A" tam="1" />
+		<campo nome="DATA_MENSAGEM" obs="Data de geração da mensagem" formato="N" tam="8" />
+		<campo nome="IN_SALDO_RESTITUICAO" obs="Indicador de existência de saldo de restituição de IRPF não resgatado" formato="A" tam="1" />
+		<campo nome="DATA_SALDO_RESTITUICAO" obs="Data (formato AAAAMMDD) da apuração da existência de saldo de restituição de IRPF não resgatado" formato="N" tam="8" />
+		<campo nome="NR_CONTROLE" obs="Numero de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="MC" obs="MENSAGEM">
+		<campo nome="TP_REG" obs="formato do tipo" formato="A" tam="2" />
+		<campo nome="DES_MENSAGEM" obs="Descrição da mensagem enviada pelo Validador para o PGD" formato="A" tam="240" />
+		<campo nome="NR_CONTROLE" obs="Numero de Controle" formato="N" tam="10" />
+	</tipo>
+	<tipo nome="TC" obs="Trailler do complemento do recibo">
+		<campo nome="NR_REG" obs="formato de registro" formato="A" tam="2" />
+		<campo nome="NR_CPFCNPJ" obs="CPF/CNPJ do Contribuinte" formato="C" tam="11" />
+		<campo nome="FILLER" obs="Espaco reservado" formato="C" tam="3" />
+		<campo nome="SIGNET" obs="Assinatura MD5" formato="C" tam="32" />
+		<campo nome="NR_CONTROLE" obs="Numero de Controle" formato="N" tam="10" />
+	</tipo>
+</file>

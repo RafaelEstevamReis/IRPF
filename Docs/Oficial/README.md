@@ -1,5 +1,7 @@
 # Documentação Oficial
 
+Exceto quando explicitamente definido, todos os arquivos são de propriedade da RFB e a licença deste repositório não se aplica à eles
+
 ## Links e Sites:
 
 Boa parte dos arquivos deste diretório são os mesmos que estão disponíveis em no site do [projeto IRPF](http://receita.economia.gov.br/orientacao/tributaria/declaracoes-e-demonstrativos/dirpf/entrega-da-declaracao-do-irpf/projeto-irpf-leiautes) em `Leiautes`
