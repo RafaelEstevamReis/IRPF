@@ -29,7 +29,8 @@ Os arquivos deste repositório estarão separados entre:
   a. A principal (primeira?) biblioteca será em C# pois é o que tenho afinidade
   b. Bibliotecas em outras linguages são bem vindas, faça um PR =)
 3. Programa Principal \
- O objetivo não é refazer de forma OpenSource todo o software, é apenas gerar bibliotecas para documentar e criar um ecossistema
+  a. O objetivo não é refazer de forma OpenSource todo o software, é apenas gerar bibliotecas para documentar e criar um ecossistema
+  b. Infelizmente é pouco provável que tenhamos todo o software [liberado como OpenSource](https://tiinside.com.br/12/06/2012/justica-nega-recurso-a-ativista-do-software-livre-para-declaracao-do-ir/)
 
 Da licença
 
