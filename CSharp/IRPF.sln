@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRPFTests", "IRPFTests\IRPFTests.csproj", "{92D21F4A-9E46-4C83-99F7-3AAD824540C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRPF.Lib", "IRPF.Lib\IRPF.Lib.csproj", "{16764528-9A28-4876-812F-7ABF68D3CE94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92D21F4A-9E46-4C83-99F7-3AAD824540C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92D21F4A-9E46-4C83-99F7-3AAD824540C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92D21F4A-9E46-4C83-99F7-3AAD824540C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92D21F4A-9E46-4C83-99F7-3AAD824540C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16764528-9A28-4876-812F-7ABF68D3CE94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16764528-9A28-4876-812F-7ABF68D3CE94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16764528-9A28-4876-812F-7ABF68D3CE94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16764528-9A28-4876-812F-7ABF68D3CE94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

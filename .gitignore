@@ -1,0 +1,5 @@
+.svn
+CSharp/Docs
+bin
+obj
+*.suo
