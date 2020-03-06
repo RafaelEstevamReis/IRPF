@@ -22,15 +22,15 @@ Imposto de Renda de Pessoa Física
 Minha motivação para este projeto é a falta de transparência e documentação de um projeto financiado com dinheiro público
 
 Os arquivos deste repositório estarão separados entre:
-1. Documentação
-  a. Oficial, que apesar de escassa há alguma coisa
-  b. Gerada a aprtir de observações dos arquivos, do comportamento do software, ou por inferência da documentação
-2. Bibliotecas
-  a. A principal (primeira?) biblioteca será em C# pois é o que tenho afinidade
-  b. Bibliotecas em outras linguages são bem vindas, faça um PR =)
+1. Documentação \
+   a. Oficial, que apesar de escassa há alguma coisa \
+   b. Gerada a aprtir de observações dos arquivos, do comportamento do software, ou por inferência da documentação
+2. Bibliotecas \
+   a. A principal (primeira?) biblioteca será em C# pois é o que tenho afinidade \
+   b. Bibliotecas em outras linguages são bem vindas, faça um PR =)
 3. Programa Principal \
-  a. O objetivo não é refazer de forma OpenSource todo o software, é apenas gerar bibliotecas para documentar e criar um ecossistema
-  b. Infelizmente é pouco provável que tenhamos todo o software [liberado como OpenSource](https://tiinside.com.br/12/06/2012/justica-nega-recurso-a-ativista-do-software-livre-para-declaracao-do-ir/)
+   a. O objetivo não é refazer de forma OpenSource todo o software, é apenas gerar bibliotecas para documentar e criar um ecossistema \
+   b. Infelizmente é pouco provável que tenhamos todo o software [liberado como OpenSource](https://tiinside.com.br/12/06/2012/justica-nega-recurso-a-ativista-do-software-livre-para-declaracao-do-ir/)
 
 Da licença
 
