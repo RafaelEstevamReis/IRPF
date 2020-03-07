@@ -11,7 +11,14 @@ namespace IRPF.Tests
     class Program
     {
         static void Main(string[] args)
-        {
+        {            
+            string path = "Exemplo\\11111111030-IRPF-A-2020-2019-ORIGI.DBK";//"Exemplo\\11___-IRPF-A-2020-2019-ORIGI.DEC";
+
+            var dec = Lib.Files.DEC_Intermediate.FromFile(path);
+
+            dec = dec;
+        }
+        static void testeCarrega_REG_17(string[] args){
             string path = "Exemplo\\10___-IRPF-A-2020-2019-ORIGI.DEC";
             var lines = File.ReadAllLines(path);
 
