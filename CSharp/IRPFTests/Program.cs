@@ -12,6 +12,70 @@ namespace IRPF.Tests
     {
         static void Main(string[] args)
         {
+            string path = "Exemplo\\10___-IRPF-A-2020-2019-ORIGI.DEC";
+            var lines = File.ReadAllLines(path);
+
+            var decExemplo = new Lib.Classes.R17_DemaisRendimentosImpostoPago();
+            var result = decExemplo.Deserialize(lines[2]);
+
+            using (var ms = new MemoryStream())
+            {
+                var sw = new StreamWriter(ms);
+                decExemplo.Serialize(sw);
+
+                ms.Position = 0;
+                StreamReader sr = new StreamReader(ms);
+                var l2 = sr.ReadLine();
+
+                if (l2 != lines[2]) throw new Exception("Fuck");
+            }
+            Console.ReadKey();
+        }
+        static void testeCarrega_REG_16(string[] args)
+        {
+            string path = "Exemplo\\11111111030-IRPF-A-2020-2019-ORIGI.DBK";//"Exemplo\\11___-IRPF-A-2020-2019-ORIGI.DEC";
+            var lines = File.ReadAllLines(path);
+
+            var decExemplo = new Lib.Classes.R16_Declarante();
+            var result = decExemplo.Deserialize(lines[1]);
+
+            using (var ms = new MemoryStream())
+            {
+                var sw = new StreamWriter(ms);
+                decExemplo.Serialize(sw);
+
+                ms.Position = 0;
+                StreamReader sr = new StreamReader(ms);
+                var l2 = sr.ReadLine();
+
+                if (l2 != lines[1]) throw new Exception("Fuck");
+            }
+            Console.ReadKey();
+        }
+        static void testeCarrega_REG_IR(string[] args)
+        {
+            string path = "Exemplo\\11111111030-IRPF-A-2020-2019-ORIGI.DBK";//"Exemplo\\11___-IRPF-A-2020-2019-ORIGI.DEC";
+            var lines = File.ReadAllLines(path);
+
+            var decExemplo = new Lib.Classes.IR_RegistroHeader();
+            var result = decExemplo.Deserialize(lines[0]);
+
+            using (var ms = new MemoryStream())
+            {
+                var sw = new StreamWriter(ms);
+                decExemplo.Serialize(sw);
+
+                ms.Position = 0;
+                StreamReader sr = new StreamReader(ms);
+                var l2 = sr.ReadLine();
+
+                if (l2 != lines[0]) throw new Exception("Fuck");
+
+            }
+            Console.ReadKey();
+        }
+        static void testeSerializacao()
+        {
             var tSer = new testeSerializable()
             {
                 Campo1 = "A",
