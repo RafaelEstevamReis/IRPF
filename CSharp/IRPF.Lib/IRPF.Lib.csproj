@@ -42,8 +42,10 @@
     <Compile Include="Classes\R17_DemaisRendimentosImpostoPago.cs" />
     <Compile Include="Classes\IR_RegistroHeader.cs" />
     <Compile Include="Classes\R16_Declarante.cs" />
+    <Compile Include="Classes\R18_TotaisDeclaracaoDescontoSimplificado.cs" />
     <Compile Include="Classes\R19_Completa.cs" />
     <Compile Include="Files\DEC_Intermediate.cs" />
+    <Compile Include="Files\Mapeamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serialization\Attributes.cs" />
     <Compile Include="Serialization\Formatter.cs" />
