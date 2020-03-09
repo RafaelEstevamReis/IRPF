@@ -19,7 +19,8 @@ namespace IRPF.Lib.Files
 
         #region Simplificada
         public R17_DemaisRendimentosImpostoPago DemaisRendimentosEImpostoPago { get; private set; }
-        
+        public R18_TotaisDeclaracaoDescontoSimplificado TotaisDeclaracaoSimplificada { get; private set; }
+
         #endregion
 
         #region Completa
@@ -57,7 +58,8 @@ namespace IRPF.Lib.Files
                     dec.DemaisRendimentosEImpostoPago.Deserialize(linha);
                     return;
                 case "18":
-                    throw new NotImplementedException();
+                    dec.TotaisDeclaracaoSimplificada = new R18_TotaisDeclaracaoDescontoSimplificado();
+                    dec.TotaisDeclaracaoSimplificada.Deserialize(linha);
                     return;
 
 
