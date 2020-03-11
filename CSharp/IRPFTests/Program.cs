@@ -62,30 +62,119 @@ namespace IRPF.Tests
         {
             var map = Lib.Files.Mapeamento.fromFile("mapeamentoTxt.xml");
             var txtIrpf = map.Items.First(o => o.TipoArquivo == "ARQ_IRPF");
-            txtIrpf = txtIrpf;
             var classe = geraTemplateClasse(txtIrpf["18"]);
             classe = classe;
         }
         private static string geraTemplateClasse(Lib.Files.MapeamentoDeclaracaoTXTRegistro item)
         {
-            item = item;
             StringBuilder sb = new StringBuilder();
-
             for (int i = 0; i < item.Campos.Length; i++)
             {
+                string nome = templateAjustaNome(item.Campos[i].Nome);
+                string prefix = nome.Split('_')[0];
                 var typeName = item.Campos[i].Tipo;
                 var len = item.Campos[i].AtributoLen();
                 var type = "string";
-
                 if (typeName == "N" && len == "Length(13,2)") type = "decimal";
+
+                switch (prefix)
+                {
+                    case "NR":
+                        if (typeName == "N") type = "int";
+                        break;
+                    case "VR":
+                        break;
+                    default:
+                        break;
+                }
 
                 sb.AppendFormat("[Index({0}), Type(TipoRegistro.{1}), {2}]", i + 1, typeName, len);
                 sb.AppendLine();
 
-                sb.AppendFormat("public {0} {1} {{get;set;}}", type ,item.Campos[i].Nome);
+                sb.AppendFormat("public {0} {1} {{get;set;}}", type, nome);
                 sb.AppendLine(); sb.AppendLine();
             }
             return sb.ToString();
+        }
+        private static string templateAjustaNome(string nome)
+        {
+            return string.Join("_", templateAjustaParteNome(nome.Split('_')));
+        }
+        private static IEnumerable<string> templateAjustaParteNome(string[] partes)
+        {
+            foreach (var part in partes)
+            {
+                string txt = part;
+                if (part.Length <= 2)
+                {
+                    yield return part;
+                    continue;
+                }
+
+                txt = txt.Replace("ESPECIE", "Especie");
+                txt = txt.Replace("REG", "Reg");
+                txt = txt.Replace("CPF", "Cpf");
+                txt = txt.Replace("CNPJ", "Cnpj");
+                txt = txt.Replace("RENDTO", "Rendto")
+                         .Replace("REND", "Rend");
+                txt = txt.Replace("CONTRIB", "Contrib") // junto pra forçar ordem
+                         .Replace("TRIB", "Trib");
+                txt = txt.Replace("DESC", "Desc");
+                txt = txt.Replace("SIMP", "Simp") // Isso bagunça com "SImp" -> Simplificado
+                         .Replace("IMPOSTO", "Imposto")
+                         .Replace("IMP", "Imp"); // junto pra forçar ordem
+                txt = txt.Replace("BASE", "Base");
+                txt = txt.Replace("CALCULO", "Calculo")
+                         .Replace("CALC", "Calc");
+                txt = txt.Replace("DEVIDO", "Devido");
+                txt = txt.Replace("COMP", "Comp");
+                txt = txt.Replace("LEI", "Lei");
+                txt = txt.Replace("FONTE", "Fonte");
+                txt = txt.Replace("LEAO", "Leao");
+                txt = txt.Replace("RESTIT", "Restit").Replace("RES", "Res");  // junto pra forçar ordem
+                txt = txt.Replace("TITULAR", "Titular").Replace("TIT", "Tit");
+                txt = txt.Replace("DEPENDENTES", "Dependentes")
+                         .Replace("DEPENDENTE", "Dependente")
+                         .Replace("DEPENDEN", "Dependen")
+                         .Replace("DEPEND", "Depend")
+                         .Replace("DEPEN", "Depen")
+                         .Replace("DEP", "Dep");  // junto pra forçar ordem
+                txt = txt.Replace("PAGAR", "Pagar");
+                txt = txt.Replace("ALIQUOTA", "Aliquota")
+                         .Replace("ALIQ", "Aliq")  // junto pra forçar ordem
+                         .Replace("QUOTAS", "Quotas")
+                         .Replace("QUOTA", "Quota");
+                txt = txt.Replace("ISENTO", "Isento");
+                txt = txt.Replace("EXCLUSIVO", "Exclusivo");
+                txt = txt.Replace("TOTAL", "Total").Replace("TOT", "Tot");
+                txt = txt.Replace("RURAL", "Rural");
+                txt = txt.Replace("GANHO", "Ganho");
+                txt = txt.Replace("LIQUIDO", "Liquido");
+                txt = txt.Replace("BENS", "Bens");
+                txt = txt.Replace("ANO", "Ano");
+                txt = txt.Replace("NAO", "Nao");
+                txt = txt.Replace("SUB", "Sub");
+                txt = txt.Replace("EXT", "Ext");
+                txt = txt.Replace("SUSP", "Susp");
+                txt = txt.Replace("DIFERIDO", "Diferido");
+                txt = txt.Replace("TRANSPORTE", "Transporte");
+                txt = txt.Replace("DIVIDA", "Divida");
+                txt = txt.Replace("JUDIC", "Judic");
+                txt = txt.Replace("ANTERIOR", "Anterior");
+                txt = txt.Replace("EFETIVA", "Efetiva");
+                txt = txt.Replace("CONTROLE", "Controle");
+                txt = txt.Replace("DOACOES", "Doacoes");
+                txt = txt.Replace("CAMPANHA", "Campanha");
+                txt = txt.Replace("EXCLUSIVO", "Exclusivo")
+                         .Replace("EXCLUS", "Exclus");
+                txt = txt.Replace("DEC", "Dec");
+                txt = txt.Replace("TERC", "Terc");
+                txt = txt.Replace("SALARIO", "Salario");
+                txt = txt.Replace("COMUNICACAO", "Comunicacao");
+                txt = txt.Replace("SAIDA", "Saida");
+
+                yield return txt;
+            }
         }
         static void testeCarrega_ArquivoDEC()
         {
