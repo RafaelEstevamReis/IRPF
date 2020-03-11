@@ -44,6 +44,9 @@
     <Compile Include="Classes\R16_Declarante.cs" />
     <Compile Include="Classes\R18_TotaisDeclaracaoDescontoSimplificado.cs" />
     <Compile Include="Classes\R19_Completa.cs" />
+    <Compile Include="Classes\R21_RendimentosPJ.cs" />
+    <Compile Include="Classes\R22_RendimentosPfExteriorLeao.cs" />
+    <Compile Include="Classes\R23_RendimentosIsentosNaoTributaveis.cs" />
     <Compile Include="Files\DEC_Intermediate.cs" />
     <Compile Include="Files\Mapeamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
