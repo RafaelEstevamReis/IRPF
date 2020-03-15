@@ -31,21 +31,25 @@ namespace IRPF.Lib.Files
         public R21_RendimentosPJ[] RendimentosPJ { get; private set; }
         public R22_RendimentosPfExteriorLeao[] RendimentosPfExteriorLeao { get; private set; }
         public R23_RendimentosIsentosNaoTributaveis[] RendimentosIsentosNaoTributaveis { get; private set; }
+        public R24_RendimentosTributacaoExclusiva[] RendimentosTributacaoExclusiva { get; private set; }
+        public R27_BensDireitos[] BensDireitos { get; private set; }
 
         public static DEC_Intermediate FromFile(string file)
         {
             DEC_Intermediate dec = new DEC_Intermediate();
             dec.lines = File.ReadAllLines(file);
-
+            // Id "IR"
             dec.Header = new IR_RegistroHeader();
             dec.Header.Deserialize(dec.lines[0]);
-
+            // Id "16"
             dec.Declarante = new R16_Declarante();
             dec.Declarante.Deserialize(dec.lines[1]);
 
             var lstR21 = new List<R21_RendimentosPJ>();
             var lstR22 = new List<R22_RendimentosPfExteriorLeao>();
             var lstR23 = new List<R23_RendimentosIsentosNaoTributaveis>();
+            var lstR24 = new List<R24_RendimentosTributacaoExclusiva>();
+            var lstR27 = new List<R27_BensDireitos>();
 
             for (int i = 2; i < dec.lines.Length; i++)
             {
@@ -83,11 +87,23 @@ namespace IRPF.Lib.Files
                         r23.Deserialize(linha);
                         lstR23.Add(r23);
                         continue;
+                    case "24":
+                        var r24 = new R24_RendimentosTributacaoExclusiva();
+                        r24.Deserialize(linha);
+                        lstR24.Add(r24);
+                        continue;
+                    case "27":
+                        var r27 = new R27_BensDireitos();
+                        r27.Deserialize(linha);
+                        lstR27.Add(r27);
+                        continue;
                 }
             }
             dec.RendimentosPJ = lstR21.ToArray();
             dec.RendimentosPfExteriorLeao = lstR22.ToArray();
             dec.RendimentosIsentosNaoTributaveis = lstR23.ToArray();
+            dec.RendimentosTributacaoExclusiva = lstR24.ToArray();
+            dec.BensDireitos = lstR27.ToArray();
 
             return dec;
         }
