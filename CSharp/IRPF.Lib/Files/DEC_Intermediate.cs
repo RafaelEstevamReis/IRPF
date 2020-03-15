@@ -32,7 +32,10 @@ namespace IRPF.Lib.Files
         public R22_RendimentosPfExteriorLeao[] RendimentosPfExteriorLeao { get; private set; }
         public R23_RendimentosIsentosNaoTributaveis[] RendimentosIsentosNaoTributaveis { get; private set; }
         public R24_RendimentosTributacaoExclusiva[] RendimentosTributacaoExclusiva { get; private set; }
+        public R26_RelacaoPagamentosEfetuados[] RelacaoPagamentosEfetuados { get; private set; }
         public R27_BensDireitos[] BensDireitos { get; private set; }
+
+        public R83_RendimentoIsento_Tipo2[] RendimentosIsentos_Tipo2 { get; private set; }
 
         public static DEC_Intermediate FromFile(string file)
         {
@@ -49,7 +52,9 @@ namespace IRPF.Lib.Files
             var lstR22 = new List<R22_RendimentosPfExteriorLeao>();
             var lstR23 = new List<R23_RendimentosIsentosNaoTributaveis>();
             var lstR24 = new List<R24_RendimentosTributacaoExclusiva>();
+            var lstR26 = new List<R26_RelacaoPagamentosEfetuados>();
             var lstR27 = new List<R27_BensDireitos>();
+            var lstR83 = new List<R83_RendimentoIsento_Tipo2>();
 
             for (int i = 2; i < dec.lines.Length; i++)
             {
@@ -92,10 +97,19 @@ namespace IRPF.Lib.Files
                         r24.Deserialize(linha);
                         lstR24.Add(r24);
                         continue;
+                    case "26":
+                        var r26 = new R26_RelacaoPagamentosEfetuados();
+                        r26.Deserialize(linha);
+                        lstR26.Add(r26);
+                        continue;
                     case "27":
                         var r27 = new R27_BensDireitos();
                         r27.Deserialize(linha);
                         lstR27.Add(r27);
+                        continue;
+
+                    case "83":
+                        lstR83.Add(carregarRegistro<R83_RendimentoIsento_Tipo2>(linha));
                         continue;
                 }
             }
@@ -103,9 +117,17 @@ namespace IRPF.Lib.Files
             dec.RendimentosPfExteriorLeao = lstR22.ToArray();
             dec.RendimentosIsentosNaoTributaveis = lstR23.ToArray();
             dec.RendimentosTributacaoExclusiva = lstR24.ToArray();
+            dec.RelacaoPagamentosEfetuados = lstR26.ToArray();
             dec.BensDireitos = lstR27.ToArray();
+            dec.RendimentosIsentos_Tipo2 = lstR83.ToArray();
 
             return dec;
+        }
+        public static T carregarRegistro<T>(string Linha) where T : IFixedLenLine
+        {
+            var inst = (T)Activator.CreateInstance(typeof(T));
+            inst.Deserialize(Linha);
+            return inst;
         }
         private static void processaLinha(int i, DEC_Intermediate dec)
         {

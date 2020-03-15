@@ -48,7 +48,9 @@
     <Compile Include="Classes\R22_RendimentosPfExteriorLeao.cs" />
     <Compile Include="Classes\R23_RendimentosIsentosNaoTributaveis.cs" />
     <Compile Include="Classes\R24_RendimentosTributacaoExclusiva.cs" />
+    <Compile Include="Classes\R26_RelacaoPagamentosEfetuados.cs" />
     <Compile Include="Classes\R27_BensDireitos.cs" />
+    <Compile Include="Classes\R83_RendimentoIsento_Tipo2.cs" />
     <Compile Include="Files\DEC_Intermediate.cs" />
     <Compile Include="Files\Mapeamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
