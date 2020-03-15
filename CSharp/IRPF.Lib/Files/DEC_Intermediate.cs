@@ -44,6 +44,10 @@ namespace IRPF.Lib.Files
         public R88_RendimentoExclusivo_Tipo2[] RendimentoExclusivo_Tipo2 { get; private set; }
         public R89_RendimentoExclusivo_Tipo3[] RendimentoExclusivo_Tipo3 { get; private set; }
 
+        public R90_RelacaoDoacoes[] RelacaoDoacoes { get; private set; }
+        public R91_DoacoesECA[] DoacoesECA { get; private set; }
+        public R92_DoacoesIdoso[] DoacoesIdoso { get; private set; }
+
         public static DEC_Intermediate FromFile(string file)
         {
             DEC_Intermediate dec = new DEC_Intermediate();
@@ -69,6 +73,10 @@ namespace IRPF.Lib.Files
 
             var lstR88 = new List<R88_RendimentoExclusivo_Tipo2>();
             var lstR89 = new List<R89_RendimentoExclusivo_Tipo3>();
+
+            var lstR90 = new List<R90_RelacaoDoacoes>();
+            var lstR91 = new List<R91_DoacoesECA>();
+            var lstR92 = new List<R92_DoacoesIdoso>();
 
             for (int i = 2; i < dec.lines.Length; i++)
             {
@@ -129,6 +137,16 @@ namespace IRPF.Lib.Files
                     case "89":
                         lstR89.Add(carregarRegistro<R89_RendimentoExclusivo_Tipo3>(linha));
                         continue;
+
+                    case "90":
+                        lstR90.Add(carregarRegistro<R90_RelacaoDoacoes>(linha));
+                        continue;
+                    case "91":
+                        lstR91.Add(carregarRegistro<R91_DoacoesECA>(linha));
+                        continue;
+                    case "92":
+                        lstR92.Add(carregarRegistro<R92_DoacoesIdoso>(linha));
+                        continue;
                 }
             }
             dec.RendimentosPJ = lstR21.ToArray();
@@ -144,6 +162,10 @@ namespace IRPF.Lib.Files
             dec.RendimentosIsentos_Tipo6 = lstR87.ToArray();
             dec.RendimentoExclusivo_Tipo2 = lstR88.ToArray();
             dec.RendimentoExclusivo_Tipo3 = lstR89.ToArray();
+
+            dec.RelacaoDoacoes = lstR90.ToArray();
+            dec.DoacoesECA = lstR91.ToArray();
+            dec.DoacoesIdoso = lstR92.ToArray();
 
             return dec;
         }
