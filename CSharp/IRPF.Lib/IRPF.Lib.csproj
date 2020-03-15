@@ -51,6 +51,10 @@
     <Compile Include="Classes\R26_RelacaoPagamentosEfetuados.cs" />
     <Compile Include="Classes\R27_BensDireitos.cs" />
     <Compile Include="Classes\R83_RendimentoIsento_Tipo2.cs" />
+    <Compile Include="Classes\R84_RendimentoIsento_Tipo3.cs" />
+    <Compile Include="Classes\R85_RendimentoIsento_Tipo4.cs" />
+    <Compile Include="Classes\R86_RendimentoIsento_Tipo5.cs" />
+    <Compile Include="Classes\R87_RendimentoIsento_Tipo6.cs" />
     <Compile Include="Files\DEC_Intermediate.cs" />
     <Compile Include="Files\Mapeamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

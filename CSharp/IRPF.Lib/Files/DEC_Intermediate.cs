@@ -36,6 +36,10 @@ namespace IRPF.Lib.Files
         public R27_BensDireitos[] BensDireitos { get; private set; }
 
         public R83_RendimentoIsento_Tipo2[] RendimentosIsentos_Tipo2 { get; private set; }
+        public R84_RendimentoIsento_Tipo3[] RendimentosIsentos_Tipo3 { get; private set; }
+        public R85_RendimentoIsento_Tipo4[] RendimentosIsentos_Tipo4 { get; private set; }
+        public R86_RendimentoIsento_Tipo5[] RendimentosIsentos_Tipo5 { get; private set; }
+        public R87_RendimentoIsento_Tipo6[] RendimentosIsentos_Tipo6 { get; private set; }
 
         public static DEC_Intermediate FromFile(string file)
         {
@@ -55,6 +59,10 @@ namespace IRPF.Lib.Files
             var lstR26 = new List<R26_RelacaoPagamentosEfetuados>();
             var lstR27 = new List<R27_BensDireitos>();
             var lstR83 = new List<R83_RendimentoIsento_Tipo2>();
+            var lstR84 = new List<R84_RendimentoIsento_Tipo3>();
+            var lstR85 = new List<R85_RendimentoIsento_Tipo4>();
+            var lstR86 = new List<R86_RendimentoIsento_Tipo5>();
+            var lstR87 = new List<R87_RendimentoIsento_Tipo6>();
 
             for (int i = 2; i < dec.lines.Length; i++)
             {
@@ -111,6 +119,18 @@ namespace IRPF.Lib.Files
                     case "83":
                         lstR83.Add(carregarRegistro<R83_RendimentoIsento_Tipo2>(linha));
                         continue;
+                    case "84":
+                        lstR84.Add(carregarRegistro<R84_RendimentoIsento_Tipo3>(linha));
+                        continue;
+                    case "85":
+                        lstR85.Add(carregarRegistro<R85_RendimentoIsento_Tipo4>(linha));
+                        continue;
+                    case "86":
+                        lstR86.Add(carregarRegistro<R86_RendimentoIsento_Tipo5>(linha));
+                        continue;
+                    case "87":
+                        lstR87.Add(carregarRegistro<R87_RendimentoIsento_Tipo6>(linha));
+                        continue;
                 }
             }
             dec.RendimentosPJ = lstR21.ToArray();
@@ -120,6 +140,10 @@ namespace IRPF.Lib.Files
             dec.RelacaoPagamentosEfetuados = lstR26.ToArray();
             dec.BensDireitos = lstR27.ToArray();
             dec.RendimentosIsentos_Tipo2 = lstR83.ToArray();
+            dec.RendimentosIsentos_Tipo3 = lstR84.ToArray();
+            dec.RendimentosIsentos_Tipo4 = lstR85.ToArray();
+            dec.RendimentosIsentos_Tipo5 = lstR86.ToArray();
+            dec.RendimentosIsentos_Tipo6 = lstR87.ToArray();
 
             return dec;
         }
