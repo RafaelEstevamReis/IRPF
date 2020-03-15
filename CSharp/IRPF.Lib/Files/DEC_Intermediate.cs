@@ -41,6 +41,9 @@ namespace IRPF.Lib.Files
         public R86_RendimentoIsento_Tipo5[] RendimentosIsentos_Tipo5 { get; private set; }
         public R87_RendimentoIsento_Tipo6[] RendimentosIsentos_Tipo6 { get; private set; }
 
+        public R88_RendimentoExclusivo_Tipo2[] RendimentoExclusivo_Tipo2 { get; private set; }
+        public R89_RendimentoExclusivo_Tipo3[] RendimentoExclusivo_Tipo3 { get; private set; }
+
         public static DEC_Intermediate FromFile(string file)
         {
             DEC_Intermediate dec = new DEC_Intermediate();
@@ -63,6 +66,9 @@ namespace IRPF.Lib.Files
             var lstR85 = new List<R85_RendimentoIsento_Tipo4>();
             var lstR86 = new List<R86_RendimentoIsento_Tipo5>();
             var lstR87 = new List<R87_RendimentoIsento_Tipo6>();
+
+            var lstR88 = new List<R88_RendimentoExclusivo_Tipo2>();
+            var lstR89 = new List<R89_RendimentoExclusivo_Tipo3>();
 
             for (int i = 2; i < dec.lines.Length; i++)
             {
@@ -116,6 +122,13 @@ namespace IRPF.Lib.Files
                     case "87":
                         lstR87.Add(carregarRegistro<R87_RendimentoIsento_Tipo6>(linha));
                         continue;
+
+                    case "88":
+                        lstR88.Add(carregarRegistro<R88_RendimentoExclusivo_Tipo2>(linha));
+                        continue;
+                    case "89":
+                        lstR89.Add(carregarRegistro<R89_RendimentoExclusivo_Tipo3>(linha));
+                        continue;
                 }
             }
             dec.RendimentosPJ = lstR21.ToArray();
@@ -129,6 +142,8 @@ namespace IRPF.Lib.Files
             dec.RendimentosIsentos_Tipo4 = lstR85.ToArray();
             dec.RendimentosIsentos_Tipo5 = lstR86.ToArray();
             dec.RendimentosIsentos_Tipo6 = lstR87.ToArray();
+            dec.RendimentoExclusivo_Tipo2 = lstR88.ToArray();
+            dec.RendimentoExclusivo_Tipo3 = lstR89.ToArray();
 
             return dec;
         }
