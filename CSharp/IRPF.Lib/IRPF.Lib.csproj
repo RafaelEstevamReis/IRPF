@@ -60,6 +60,7 @@
     <Compile Include="Classes\R90_RelacaoDoacoes.cs" />
     <Compile Include="Classes\R91_DoacoesECA.cs" />
     <Compile Include="Classes\R92_DoacoesIdoso.cs" />
+    <Compile Include="Classes\T9_Encerramento.cs" />
     <Compile Include="Files\DEC_Intermediate.cs" />
     <Compile Include="Files\Mapeamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

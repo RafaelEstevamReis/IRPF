@@ -48,6 +48,8 @@ namespace IRPF.Lib.Files
         public R91_DoacoesECA[] DoacoesECA { get; private set; }
         public R92_DoacoesIdoso[] DoacoesIdoso { get; private set; }
 
+        public T9_Encerramento Encerramento { get; private set; }
+
         public static DEC_Intermediate FromFile(string file)
         {
             DEC_Intermediate dec = new DEC_Intermediate();
@@ -147,6 +149,13 @@ namespace IRPF.Lib.Files
                     case "92":
                         lstR92.Add(carregarRegistro<R92_DoacoesIdoso>(linha));
                         continue;
+
+                    case "T9":
+                        dec.Encerramento = carregarRegistro<T9_Encerramento>(linha);
+                        continue;
+
+                    default:
+                        throw new NotImplementedException(); // Notifica que ainda não terminei
                 }
             }
             dec.RendimentosPJ = lstR21.ToArray();
