@@ -79,6 +79,11 @@ namespace IRPF.Tests
 
                 switch (prefix)
                 {
+                    case "IN":
+                        if (typeName == "N") type = "bool";
+                        break;
+                    case "CD":
+                    case "QT":
                     case "NR":
                         if (typeName == "N") type = "int";
                         break;
@@ -86,6 +91,14 @@ namespace IRPF.Tests
                         break;
                     default:
                         break;
+                }
+
+                if (type == "string") // exceções
+                {
+                    if (typeName == "N")
+                    {
+                        if (len.Contains(",")) type = "decimal";
+                    }
                 }
 
                 sb.AppendFormat("[Index({0}), Type(TipoRegistro.{1}), {2}]", i + 1, typeName, len);
@@ -113,13 +126,14 @@ namespace IRPF.Tests
 
                 txt = txt.Replace("ESPECIE", "Especie");
                 txt = txt.Replace("REG", "Reg");
-                txt = txt.Replace("CPF", "Cpf");
-                txt = txt.Replace("CNPJ", "Cnpj");
+                txt = txt.Replace("CPF", "Cpf")
+                         .Replace("CNPJ", "Cnpj");
                 txt = txt.Replace("RENDTO", "Rendto")
                          .Replace("REND", "Rend");
                 txt = txt.Replace("CONTRIB", "Contrib") // junto pra forçar ordem
                          .Replace("TRIB", "Trib");
-                txt = txt.Replace("DESC", "Desc");
+                txt = txt.Replace("DESCRICAO", "Descricao")
+                         .Replace("DESC", "Desc");
                 txt = txt.Replace("SIMP", "Simp") // Isso bagunça com "SImp" -> Simplificado
                          .Replace("IMPOSTO", "Imposto")
                          .Replace("IMP", "Imp"); // junto pra forçar ordem
@@ -129,8 +143,11 @@ namespace IRPF.Tests
                 txt = txt.Replace("DEVIDO", "Devido");
                 txt = txt.Replace("COMP", "Comp");
                 txt = txt.Replace("LEI", "Lei");
+                txt = txt.Replace("MUNICIPIO", "Municipio");
                 txt = txt.Replace("FONTE", "Fonte");
                 txt = txt.Replace("LEAO", "Leao");
+                txt = txt.Replace("FUNDO", "Fundo");
+                txt = txt.Replace("REDUC", "Reduc");
                 txt = txt.Replace("RESTIT", "Restit").Replace("RES", "Res");  // junto pra forçar ordem
                 txt = txt.Replace("TITULAR", "Titular").Replace("TIT", "Tit");
                 txt = txt.Replace("DEPENDENTES", "Dependentes")
@@ -139,7 +156,12 @@ namespace IRPF.Tests
                          .Replace("DEPEND", "Depend")
                          .Replace("DEPEN", "Depen")
                          .Replace("DEP", "Dep");  // junto pra forçar ordem
-                txt = txt.Replace("PAGAR", "Pagar");
+                txt = txt.Replace("BENEFIC", "Benefic")
+                         .Replace("BENEF", "Benef");
+                txt = txt.Replace("PAGADORA", "Pagadora")
+                         .Replace("PAGAR", "Pagar")
+                         .Replace("PGTO", "Pgto")
+                         .Replace("PAGTO", "Pagto");
                 txt = txt.Replace("ALIQUOTA", "Aliquota")
                          .Replace("ALIQ", "Aliq")  // junto pra forçar ordem
                          .Replace("QUOTAS", "Quotas")
@@ -151,10 +173,12 @@ namespace IRPF.Tests
                 txt = txt.Replace("GANHO", "Ganho");
                 txt = txt.Replace("LIQUIDO", "Liquido");
                 txt = txt.Replace("BENS", "Bens");
+                txt = txt.Replace("VALOR", "Valor");
                 txt = txt.Replace("ANO", "Ano");
                 txt = txt.Replace("NAO", "Nao");
                 txt = txt.Replace("SUB", "Sub");
-                txt = txt.Replace("EXT", "Ext");
+                txt = txt.Replace("EXTERIOR", "Exterior")
+                         .Replace("EXT", "Ext");
                 txt = txt.Replace("SUSP", "Susp");
                 txt = txt.Replace("DIFERIDO", "Diferido");
                 txt = txt.Replace("TRANSPORTE", "Transporte");
@@ -163,15 +187,24 @@ namespace IRPF.Tests
                 txt = txt.Replace("ANTERIOR", "Anterior");
                 txt = txt.Replace("EFETIVA", "Efetiva");
                 txt = txt.Replace("CONTROLE", "Controle");
-                txt = txt.Replace("DOACOES", "Doacoes");
+                txt = txt.Replace("DOACAO", "Doacao")
+                         .Replace("DOACOES", "Doacoes");
                 txt = txt.Replace("CAMPANHA", "Campanha");
                 txt = txt.Replace("EXCLUSIVO", "Exclusivo")
                          .Replace("EXCLUS", "Exclus");
+                txt = txt.Replace("CHAVE", "Chave");
                 txt = txt.Replace("DEC", "Dec");
+                txt = txt.Replace("TIPO", "Tipo");
+                txt = txt.Replace("NOME", "Nome");
                 txt = txt.Replace("TERC", "Terc");
+                txt = txt.Replace("PARC", "Parc");
+                txt = txt.Replace("DEDUT", "Dedut");
                 txt = txt.Replace("SALARIO", "Salario");
+                txt = txt.Replace("RECEB", "Receb");
+                txt = txt.Replace("PREVIDENCIA", "Previdencia");
                 txt = txt.Replace("COMUNICACAO", "Comunicacao");
                 txt = txt.Replace("SAIDA", "Saida");
+                txt = txt.Replace("COD", "Cod");
 
                 yield return txt;
             }
