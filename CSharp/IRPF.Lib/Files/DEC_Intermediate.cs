@@ -68,52 +68,37 @@ namespace IRPF.Lib.Files
             {
                 var linha = dec.lines[i];
                 if (linha.Length < 2) continue;
-                
+
                 switch (linha.Substring(0, 2))
                 {
                     case "17":
-                        dec.DemaisRendimentosEImpostoPago = new R17_DemaisRendimentosImpostoPago();
-                        dec.DemaisRendimentosEImpostoPago.Deserialize(linha);
+                        dec.DemaisRendimentosEImpostoPago = carregarRegistro<R17_DemaisRendimentosImpostoPago>(linha);
                         continue;
                     case "18":
-                        dec.TotaisDeclaracaoSimplificada = new R18_TotaisDeclaracaoDescontoSimplificado();
-                        dec.TotaisDeclaracaoSimplificada.Deserialize(linha);
+                        dec.TotaisDeclaracaoSimplificada = carregarRegistro<R18_TotaisDeclaracaoDescontoSimplificado>(linha);
                         continue;
 
                     case "19":
-                        dec.Completa = new R19_Completa();
-                        dec.Completa.Deserialize(linha);
+                        dec.Completa = carregarRegistro<R19_Completa>(linha);
                         continue;
 
                     case "21":
-                        var pj = new R21_RendimentosPJ();
-                        pj.Deserialize(linha);
-                        lstR21.Add(pj);
+                        lstR21.Add(carregarRegistro<R21_RendimentosPJ>(linha));
                         continue;
                     case "22":
-                        var r22 = new R22_RendimentosPfExteriorLeao();
-                        r22.Deserialize(linha);
-                        lstR22.Add(r22);
+                        lstR22.Add(carregarRegistro<R22_RendimentosPfExteriorLeao>(linha));
                         continue;
                     case "23":
-                        var r23 = new R23_RendimentosIsentosNaoTributaveis();
-                        r23.Deserialize(linha);
-                        lstR23.Add(r23);
+                        lstR23.Add(carregarRegistro<R23_RendimentosIsentosNaoTributaveis>(linha));
                         continue;
                     case "24":
-                        var r24 = new R24_RendimentosTributacaoExclusiva();
-                        r24.Deserialize(linha);
-                        lstR24.Add(r24);
+                        lstR24.Add(carregarRegistro<R24_RendimentosTributacaoExclusiva>(linha));
                         continue;
                     case "26":
-                        var r26 = new R26_RelacaoPagamentosEfetuados();
-                        r26.Deserialize(linha);
-                        lstR26.Add(r26);
+                        lstR26.Add(carregarRegistro<R26_RelacaoPagamentosEfetuados>(linha));
                         continue;
                     case "27":
-                        var r27 = new R27_BensDireitos();
-                        r27.Deserialize(linha);
-                        lstR27.Add(r27);
+                        lstR27.Add(carregarRegistro<R27_BensDireitos>(linha));
                         continue;
 
                     case "83":
@@ -152,11 +137,6 @@ namespace IRPF.Lib.Files
             var inst = (T)Activator.CreateInstance(typeof(T));
             inst.Deserialize(Linha);
             return inst;
-        }
-        private static void processaLinha(int i, DEC_Intermediate dec)
-        {
-           
-
         }
     }
 }
