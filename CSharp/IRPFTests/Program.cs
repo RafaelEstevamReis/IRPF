@@ -148,7 +148,9 @@ namespace IRPF.Tests
                 txt = txt.Replace("LEAO", "Leao");
                 txt = txt.Replace("FUNDO", "Fundo");
                 txt = txt.Replace("REDUC", "Reduc");
-                txt = txt.Replace("RESTIT", "Restit").Replace("RES", "Res");  // junto pra forçar ordem
+                txt = txt.Replace("RESTIT", "Restit")
+                         .Replace("REST", "Rest")
+                         .Replace("RES", "Res");  // junto pra forçar ordem
                 txt = txt.Replace("TITULAR", "Titular").Replace("TIT", "Tit");
                 txt = txt.Replace("DEPENDENTES", "Dependentes")
                          .Replace("DEPENDENTE", "Dependente")
@@ -156,6 +158,7 @@ namespace IRPF.Tests
                          .Replace("DEPEND", "Depend")
                          .Replace("DEPEN", "Depen")
                          .Replace("DEP", "Dep");  // junto pra forçar ordem
+                txt = txt.Replace("DESP", "Desp");
                 txt = txt.Replace("BENEFIC", "Benefic")
                          .Replace("BENEF", "Benef");
                 txt = txt.Replace("PAGADORA", "Pagadora")
@@ -166,7 +169,8 @@ namespace IRPF.Tests
                          .Replace("ALIQ", "Aliq")  // junto pra forçar ordem
                          .Replace("QUOTAS", "Quotas")
                          .Replace("QUOTA", "Quota");
-                txt = txt.Replace("ISENTO", "Isento");
+                txt = txt.Replace("ISENTOS", "Isentos")
+                         .Replace("ISENTO", "Isento");
                 txt = txt.Replace("EXCLUSIVO", "Exclusivo");
                 txt = txt.Replace("TOTAL", "Total").Replace("TOT", "Tot");
                 txt = txt.Replace("RURAL", "Rural");
@@ -184,7 +188,9 @@ namespace IRPF.Tests
                 txt = txt.Replace("TRANSPORTE", "Transporte");
                 txt = txt.Replace("DIVIDA", "Divida");
                 txt = txt.Replace("JUDIC", "Judic");
-                txt = txt.Replace("ANTERIOR", "Anterior");
+                txt = txt.Replace("ANTERIOR", "Anterior")
+                         .Replace("ANT", "Ant");
+                txt = txt.Replace("ATUAL", "Atual");
                 txt = txt.Replace("EFETIVA", "Efetiva");
                 txt = txt.Replace("CONTROLE", "Controle");
                 txt = txt.Replace("DOACAO", "Doacao")
@@ -196,7 +202,12 @@ namespace IRPF.Tests
                 txt = txt.Replace("DEC", "Dec");
                 txt = txt.Replace("TIPO", "Tipo");
                 txt = txt.Replace("NOME", "Nome");
+                txt = txt.Replace("PENSAO", "Pensao");
+                txt = txt.Replace("PRIVADA", "Privada");
                 txt = txt.Replace("TERC", "Terc");
+                txt = txt.Replace("JUR", "Jur");
+                txt = txt.Replace("MEDIC", "Medic");
+                txt = txt.Replace("INST", "Inst");
                 txt = txt.Replace("PARC", "Parc");
                 txt = txt.Replace("DEDUT", "Dedut");
                 txt = txt.Replace("SALARIO", "Salario");
