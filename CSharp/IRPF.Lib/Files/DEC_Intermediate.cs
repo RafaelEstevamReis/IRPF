@@ -25,7 +25,7 @@ namespace IRPF.Lib.Files
 
         #region Completa
         public R19_Completa Completa { get; private set; }
-
+        public R20_TotaisDeclaracaoDesconto TotaisDeclaracao { get; private set; }
         #endregion
 
         public R21_RendimentosPJ[] RendimentosPJ { get; private set; }
@@ -96,6 +96,9 @@ namespace IRPF.Lib.Files
 
                     case "19":
                         dec.Completa = carregarRegistro<R19_Completa>(linha);
+                        continue;
+                    case "20":
+                        dec.TotaisDeclaracao = carregarRegistro<R20_TotaisDeclaracaoDesconto>(linha);
                         continue;
 
                     case "21":
