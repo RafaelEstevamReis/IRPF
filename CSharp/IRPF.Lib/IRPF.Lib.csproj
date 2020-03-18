@@ -64,6 +64,7 @@
     <Compile Include="Classes\T9_Encerramento.cs" />
     <Compile Include="Files\DEC_Intermediate.cs" />
     <Compile Include="Files\Mapeamento.cs" />
+    <Compile Include="Helpers\Crc32.cs" />
     <Compile Include="Helpers\Hash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serialization\Attributes.cs" />

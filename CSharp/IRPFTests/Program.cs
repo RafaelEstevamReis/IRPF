@@ -40,12 +40,12 @@ namespace IRPF.Tests
         {
             var lineToCheck = line.Substring(0, line.Length - 10);
             var hashToCheck = line.Substring(line.Length - 10);
-            // 
-            var calculado = Hash.obterMd5Utf8(lineToCheck);
-
+            
             // vou testar os hashes mais comuns
             // Vou começar com MD5, depreciado, mas vai saber (10 caracteres hex) ...
+            //var calculado = Hash.obterMd5Utf8(lineToCheck);
             // Testarei CRC pois é fácil e usado em ZIPs para detecção de rros
+            var calculado = Hash.obterCrc32Utf8(lineToCheck);
             // Depois testarei a família SHA
             // 1. SHA1
             // 2. SHA256

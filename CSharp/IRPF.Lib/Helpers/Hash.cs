@@ -31,5 +31,12 @@ namespace IRPF.Lib.Helpers
                 return sBuilder.ToString();
             }
         }
+        public static string obterCrc32Utf8(string Texto)
+        {
+            // https://rosettacode.org/wiki/CRC-32#C.23
+            Crc32 crc = new Crc32();
+            var val = crc.Get(Encoding.UTF8.GetBytes(Texto));
+            return val.ToString("0000000000");
+        }
     }
 }
