@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRPFTests", "IRPFTests\IRPF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRPF.Lib", "IRPF.Lib\IRPF.Lib.csproj", "{16764528-9A28-4876-812F-7ABF68D3CE94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRPF.Lib.UnitTest", "IRPF.Lib.UnitTest\IRPF.Lib.UnitTest.csproj", "{CCDC187F-B944-4A1C-BFD2-7DD988BDA4F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{16764528-9A28-4876-812F-7ABF68D3CE94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16764528-9A28-4876-812F-7ABF68D3CE94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16764528-9A28-4876-812F-7ABF68D3CE94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCDC187F-B944-4A1C-BFD2-7DD988BDA4F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCDC187F-B944-4A1C-BFD2-7DD988BDA4F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCDC187F-B944-4A1C-BFD2-7DD988BDA4F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCDC187F-B944-4A1C-BFD2-7DD988BDA4F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
