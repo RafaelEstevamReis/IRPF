@@ -1,4 +1,5 @@
-﻿using IRPF.Lib.Serialization;
+﻿using IRPF.Lib.Helpers;
+using IRPF.Lib.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -40,6 +41,7 @@ namespace IRPF.Tests
             var lineToCheck = line.Substring(0, line.Length - 10);
             var hashToCheck = line.Substring(line.Length - 10);
             // 
+            var calculado = Hash.obterMd5Utf8(lineToCheck);
 
             // vou testar os hashes mais comuns
             // Vou começar com MD5, depreciado, mas vai saber (10 caracteres hex) ...
