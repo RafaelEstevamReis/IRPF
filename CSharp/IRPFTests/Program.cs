@@ -21,42 +21,16 @@ namespace IRPF.Tests
         }
         private static void testeProcuraOcorrenciasExemplos()
         {
-            var regs = Directory.GetFiles("Exemplo")
-                .SelectMany(f => File.ReadLines(f))
-                .GroupBy(o => o.Substring(0, 2))
-                .Select(o => new { Id = o.Key, lines = o.ToArray(), qtd = o.Count() })
-                .OrderByDescending(o => o.qtd)
-                .ToArray();
+            var files = Directory.GetFiles("Exemplo");
+            //var regs = files
+            //    .SelectMany(f => File.ReadLines(f))
+            //    .GroupBy(o => o.Substring(0, 2))
+            //    .Select(o => new { Id = o.Key, lines = o.ToArray(), qtd = o.Count() })
+            //    .OrderByDescending(o => o.qtd)
+            //    .ToArray();
 
-            var txt = string.Join(Environment.NewLine, regs.Select(o => string.Format("{0} => {1}", o.Id, o.qtd)));
-            regs = regs;
+            //var txt = string.Join(Environment.NewLine, regs.Select(o => string.Format("{0} => {1}", o.Id, o.qtd)));
 
-            /* 27 => 22
-             * 22 => 12
-             * 24 =>  9
-             * 89 =>  5
-             * 88 =>  5
-             * IR =>  4
-             * 16 =>  4
-             * 21 =>  4
-             * T9 =>  4
-             * 86 =>  4
-             * 25 =>  3
-             * 26 =>  3
-             * 17 =>  2
-             * 18 =>  2
-             * HR =>  2
-             * DR =>  2
-             * R9 =>  2
-             * 19 =>  2
-             * 20 =>  2
-             * 47 =>  2
-             * 23 =>  2
-             * 45 =>  1
-             * 90 =>  1
-             * 91 =>  1
-             * 92 =>  1
-             */
         }
         static void testeCarrega_ArquivoMapeamentos()
         {
