@@ -19,11 +19,11 @@ namespace IRPF.Lib.Helpers
         private const UInt32 s_generator = 0xEDB88320;
         #endregion
 
-        #region Constructors
-        /// <summary>
-        /// Creates a new instance of the Crc32 class.
-        /// </summary>
-        public Crc32()
+        #region table
+        private static UInt32[] m_checksumTable;
+        #endregion
+
+        static Crc32()
         {
             // Constructs the checksum lookup table. Used to optimize the checksum.
             m_checksumTable = Enumerable.Range(0, 256).Select(i =>
@@ -38,7 +38,6 @@ namespace IRPF.Lib.Helpers
                 return tableEntry;
             }).ToArray();
         }
-        #endregion
 
         #region Methods
         /// <summary>
@@ -46,7 +45,7 @@ namespace IRPF.Lib.Helpers
         /// </summary>
         /// <param name="byteStream">The byte stream to calculate the checksum for.</param>
         /// <returns>A 32-bit reversed checksum.</returns>
-        public UInt32 Get<T>(IEnumerable<T> byteStream)
+        public static UInt32 Get<T>(IEnumerable<T> byteStream)
         {
             try
             {
@@ -69,13 +68,6 @@ namespace IRPF.Lib.Helpers
         }
         #endregion
 
-        #region Fields
-        /// <summary>
-        /// Contains a cache of calculated checksum chunks.
-        /// </summary>
-        private readonly UInt32[] m_checksumTable;
-
-        #endregion
     }
     public class CrcException : Exception
     {

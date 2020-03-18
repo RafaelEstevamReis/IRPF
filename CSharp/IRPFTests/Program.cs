@@ -38,6 +38,8 @@ namespace IRPF.Tests
         }
         private static bool checkHashLine(string line)
         {
+            // Migrado para 'Hash.Valida_NRControle'
+            
             var lineToCheck = line.Substring(0, line.Length - 10);
             var hashToCheck = line.Substring(line.Length - 10);
             

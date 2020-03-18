@@ -34,9 +34,18 @@ namespace IRPF.Lib.Helpers
         public static string obterCrc32Utf8(string Texto)
         {
             // https://rosettacode.org/wiki/CRC-32#C.23
-            Crc32 crc = new Crc32();
-            var val = crc.Get(Encoding.UTF8.GetBytes(Texto));
+            //Crc32 crc = new Crc32();
+            var val = Crc32.Get(Encoding.UTF8.GetBytes(Texto));
             return val.ToString("0000000000");
+        }
+
+        public static bool Valida_NRControle(string LinhaCompleta, string NR_Controle)
+        {
+            var lineToCheck = LinhaCompleta.Substring(0, LinhaCompleta.Length - 10); // descarta os 10 zeros no final
+
+            // Testarei CRC pois é fácil e usado em ZIPs para detecção de rros
+            var calculado = obterCrc32Utf8(lineToCheck);
+            return calculado == NR_Controle;
         }
     }
 }
