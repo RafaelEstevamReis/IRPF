@@ -24,3 +24,8 @@ São arquivos de TEXTO, aonde cada linha é um registro, e a linha é composta p
 Até 2019 a documentação do arquivo está no site do projeto e presente na pasta Docs/Oficial/ com o nome LeiauteTXT
 
 Os primeiros testes para implementar a leitura estão sendo feitos criando uma declaração nova com dados de teste, exportando o arquivo e verificando o que mudou
+
+Uma questão que não achei documentação em lugar algum é sobre os registros `NR_CONTROLE`. \
+Pelo que consegui testar (ver commit fd09345) exceto no `header` (Registro ID ='IR') ele é calculado com o CRC32 da linha corrente
+
+Deve-se aplicar o [CRC32](https://rosettacode.org/wiki/CRC-32) no restante linha (em UTF-8) e depois completando com zeros à esquerda

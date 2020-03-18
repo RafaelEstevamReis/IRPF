@@ -34,7 +34,7 @@ namespace IRPF.Tests
 
             var lines0 = File.ReadAllLines(files[0]);
             lines0 = lines0;
-            bool a = checkHashLine(lines0[0]);
+            bool a = checkHashLine(lines0[1]); // o Header não carrega
         }
         private static bool checkHashLine(string line)
         {
