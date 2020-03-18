@@ -12,9 +12,9 @@ namespace IRPF.Tests
     {
         static void Main(string[] args)
         {
-            testeCarrega_ArquivoDEC();
+            //testeCarrega_ArquivoDEC();
             //testeCarrega_ArquivoMapeamentos();
-            //testeProcuraOcorrenciasExemplos();
+            testeProcuraOcorrenciasExemplos();
 
             Console.WriteLine("Fim");
             Console.ReadKey();
@@ -31,6 +31,25 @@ namespace IRPF.Tests
 
             //var txt = string.Join(Environment.NewLine, regs.Select(o => string.Format("{0} => {1}", o.Id, o.qtd)));
 
+            var lines0 = File.ReadAllLines(files[0]);
+            lines0 = lines0;
+            bool a = checkHashLine(lines0[0]);
+        }
+        private static bool checkHashLine(string line)
+        {
+            var lineToCheck = line.Substring(0, line.Length - 10);
+            var hashToCheck = line.Substring(line.Length - 10);
+            // 
+
+            // vou testar os hashes mais comuns
+            // Vou começar com MD5, depreciado, mas vai saber (10 caracteres hex) ...
+            // Testarei CRC pois é fácil e usado em ZIPs para detecção de rros
+            // Depois testarei a família SHA
+            // 1. SHA1
+            // 2. SHA256
+            // ? 512 ?
+
+            return false;
         }
         static void testeCarrega_ArquivoMapeamentos()
         {
