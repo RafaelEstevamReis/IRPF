@@ -50,6 +50,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DecTests\DecFullTest.cs" />
+    <Compile Include="DecTests\VerificaHashObjetoTest.cs" />
     <Compile Include="HelpersTests\HashTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
