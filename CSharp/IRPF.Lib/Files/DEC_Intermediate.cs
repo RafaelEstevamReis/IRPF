@@ -36,6 +36,8 @@ namespace IRPF.Lib.Files
         public R25_Dependentes[] Dependentes { get; private set; }
         public R26_RelacaoPagamentosEfetuados[] RelacaoPagamentosEfetuados { get; private set; }
         public R27_BensDireitos[] BensDireitos { get; private set; }
+        public R45_RecebidosAcumuladamente[] RecebidosAcumuladamente { get; private set; }
+        public R47_RendimentosAcumuladamenteDependente[] RendimentosAcumuladamenteDependente { get; private set; }
 
         public R83_RendimentoIsento_Tipo2[] RendimentosIsentos_Tipo2 { get; private set; }
         public R84_RendimentoIsento_Tipo3[] RendimentosIsentos_Tipo3 { get; private set; }
@@ -101,6 +103,8 @@ namespace IRPF.Lib.Files
             var lstR25 = new List<R25_Dependentes>();
             var lstR26 = new List<R26_RelacaoPagamentosEfetuados>();
             var lstR27 = new List<R27_BensDireitos>();
+            var lstR45 = new List<R45_RecebidosAcumuladamente>();
+            var lstR47 = new List<R47_RendimentosAcumuladamenteDependente>();
             var lstR83 = new List<R83_RendimentoIsento_Tipo2>();
             var lstR84 = new List<R84_RendimentoIsento_Tipo3>();
             var lstR85 = new List<R85_RendimentoIsento_Tipo4>();
@@ -157,6 +161,12 @@ namespace IRPF.Lib.Files
                     case "27":
                         lstR27.Add(carregarRegistro<R27_BensDireitos>(linha));
                         continue;
+                    case "45":
+                        lstR45.Add(carregarRegistro<R45_RecebidosAcumuladamente>(linha));
+                        continue;
+                    case "47":
+                        lstR47.Add(carregarRegistro<R47_RendimentosAcumuladamenteDependente>(linha));
+                        continue;
 
                     case "83":
                         lstR83.Add(carregarRegistro<R83_RendimentoIsento_Tipo2>(linha));
@@ -206,6 +216,8 @@ namespace IRPF.Lib.Files
             dec.Dependentes = lstR25.ToArray();
             dec.RelacaoPagamentosEfetuados = lstR26.ToArray();
             dec.BensDireitos = lstR27.ToArray();
+            dec.RecebidosAcumuladamente = lstR45.ToArray();
+            dec.RendimentosAcumuladamenteDependente = lstR47.ToArray();
             dec.RendimentosIsentos_Tipo2 = lstR83.ToArray();
             dec.RendimentosIsentos_Tipo3 = lstR84.ToArray();
             dec.RendimentosIsentos_Tipo4 = lstR85.ToArray();

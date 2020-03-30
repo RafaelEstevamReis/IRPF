@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\47_RendimentosAcumuladamenteDependente.cs" />
     <Compile Include="Classes\R17_DemaisRendimentosImpostoPago.cs" />
     <Compile Include="Classes\IR_RegistroHeader.cs" />
     <Compile Include="Classes\R16_Declarante.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="Classes\R25_Dependentes.cs" />
     <Compile Include="Classes\R26_RelacaoPagamentosEfetuados.cs" />
     <Compile Include="Classes\R27_BensDireitos.cs" />
+    <Compile Include="Classes\R45_RecebidosAcumuladamente.cs" />
     <Compile Include="Classes\R83_RendimentoIsento_Tipo2.cs" />
     <Compile Include="Classes\R84_RendimentoIsento_Tipo3.cs" />
     <Compile Include="Classes\R85_RendimentoIsento_Tipo4.cs" />
