@@ -239,7 +239,7 @@ namespace IRPF.Lib.Files
             return inst;
         }
 
-        public static string VerificaHashObjeto(IFixedLenLine Item)
+        public static string CalculaHashObjeto(IFixedLenLine Item)
         {
             using (var ms = new MemoryStream())
             {
@@ -248,6 +248,18 @@ namespace IRPF.Lib.Files
                 string line = System.Text.Encoding.Default.GetString(ms.ToArray());
 
                 return Helpers.Hash.obterCrc32Utf8(line.Substring(0, line.Length - 10 - 2)); // tira o \r\n
+            }
+        }
+        public static bool VerificaHashObjeto(IFixedLenLine Item)
+        {
+            using (var ms = new MemoryStream())
+            {
+                var sw = new StreamWriter(ms);
+                Serializer.Serialize(Item, sw);
+                string line = System.Text.Encoding.Default.GetString(ms.ToArray());
+
+                return Helpers.Hash.Valida_NRControle(line.Substring(0, line.Length - 2),    // tira o \r\n
+                                                      line.Substring(line.Length - 12, 10)); // tira o \r\n
             }
         }
     }

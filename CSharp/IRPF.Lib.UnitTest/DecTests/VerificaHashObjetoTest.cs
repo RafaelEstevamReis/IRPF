@@ -17,7 +17,9 @@ namespace IRPF.Lib.UnitTest.DecTests
             var originalLines = File.ReadAllLines(file);
             var dec = IRPF.Lib.Files.DEC_Intermediate.FromFile(file);
 
-            var hash = DEC_Intermediate.VerificaHashObjeto(dec.Declarante);
+            Assert.IsTrue(DEC_Intermediate.VerificaHashObjeto(dec.Declarante));
+
+            var hash = DEC_Intermediate.CalculaHashObjeto(dec.Declarante);
             Assert.AreEqual(dec.Declarante.NR_Controle, hash);
         }
     }
