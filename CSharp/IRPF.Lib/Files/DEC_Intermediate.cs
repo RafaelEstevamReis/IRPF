@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,6 +33,7 @@ namespace IRPF.Lib.Files
         public R22_RendimentosPfExteriorLeao[] RendimentosPfExteriorLeao { get; private set; }
         public R23_RendimentosIsentosNaoTributaveis[] RendimentosIsentosNaoTributaveis { get; private set; }
         public R24_RendimentosTributacaoExclusiva[] RendimentosTributacaoExclusiva { get; private set; }
+        public R25_Dependentes[] Dependentes { get; private set; }
         public R26_RelacaoPagamentosEfetuados[] RelacaoPagamentosEfetuados { get; private set; }
         public R27_BensDireitos[] BensDireitos { get; private set; }
 
@@ -50,6 +52,37 @@ namespace IRPF.Lib.Files
 
         public T9_Encerramento Encerramento { get; private set; }
 
+        public void ToFile(string file)
+        {
+            //using (var ms = new MemoryStream())
+            using(var fs = new FileStream(file, FileMode.Create))
+            {
+                var sw = new StreamWriter(fs);
+                
+                var fields = this.GetType().GetProperties();
+                foreach (var f in fields)
+                {
+                    var ft = f.PropertyType;
+                    if (ft.IsArray)
+                    {
+                        Array arr = (Array)f.GetValue(this);
+                        for (int i = 0; i < arr.Length; i++)
+                        {
+                            object o = arr.GetValue(i);
+                            if (o == null) continue; // vazio
+                            Serialization.Serializer.Serialize((IFixedLenLine)o, sw);
+                        }
+                    }
+                    else
+                    {
+                        object o = f.GetValue(this);
+                        if (o == null) continue; // vazio
+                        Serialization.Serializer.Serialize((IFixedLenLine)o, sw);
+                    }
+                }
+            }
+        }
+
         public static DEC_Intermediate FromFile(string file)
         {
             DEC_Intermediate dec = new DEC_Intermediate();
@@ -65,6 +98,7 @@ namespace IRPF.Lib.Files
             var lstR22 = new List<R22_RendimentosPfExteriorLeao>();
             var lstR23 = new List<R23_RendimentosIsentosNaoTributaveis>();
             var lstR24 = new List<R24_RendimentosTributacaoExclusiva>();
+            var lstR25 = new List<R25_Dependentes>();
             var lstR26 = new List<R26_RelacaoPagamentosEfetuados>();
             var lstR27 = new List<R27_BensDireitos>();
             var lstR83 = new List<R83_RendimentoIsento_Tipo2>();
@@ -80,9 +114,10 @@ namespace IRPF.Lib.Files
             var lstR91 = new List<R91_DoacoesECA>();
             var lstR92 = new List<R92_DoacoesIdoso>();
 
+            string linha;
             for (int i = 2; i < dec.lines.Length; i++)
             {
-                var linha = dec.lines[i];
+                linha = dec.lines[i];
                 if (linha.Length < 2) continue;
 
                 switch (linha.Substring(0, 2))
@@ -112,6 +147,9 @@ namespace IRPF.Lib.Files
                         continue;
                     case "24":
                         lstR24.Add(carregarRegistro<R24_RendimentosTributacaoExclusiva>(linha));
+                        continue;
+                    case "25":
+                        lstR25.Add(carregarRegistro<R25_Dependentes>(linha));
                         continue;
                     case "26":
                         lstR26.Add(carregarRegistro<R26_RelacaoPagamentosEfetuados>(linha));
@@ -165,6 +203,7 @@ namespace IRPF.Lib.Files
             dec.RendimentosPfExteriorLeao = lstR22.ToArray();
             dec.RendimentosIsentosNaoTributaveis = lstR23.ToArray();
             dec.RendimentosTributacaoExclusiva = lstR24.ToArray();
+            dec.Dependentes = lstR25.ToArray();
             dec.RelacaoPagamentosEfetuados = lstR26.ToArray();
             dec.BensDireitos = lstR27.ToArray();
             dec.RendimentosIsentos_Tipo2 = lstR83.ToArray();
@@ -187,5 +226,6 @@ namespace IRPF.Lib.Files
             inst.Deserialize(Linha);
             return inst;
         }
+
     }
 }
