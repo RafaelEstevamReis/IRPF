@@ -37,6 +37,6 @@ namespace IRPF.Lib.Classes
         public string NM_Descricao { get; set; }
 
         [Index(10), Type(TipoRegistro.N), Length(10)]
-        public int NR_Controle { get; set; }
+        public string NR_Controle { get; set; }
     }
 }

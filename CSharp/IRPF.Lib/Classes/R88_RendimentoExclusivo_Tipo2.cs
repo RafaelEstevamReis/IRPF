@@ -34,6 +34,6 @@ namespace IRPF.Lib.Classes
        public decimal VR_Valor { get; set; }
 
        [Index(9), Type(TipoRegistro.N), Length(10)]
-       public int NR_Controle { get; set; }
+       public string NR_Controle { get; set; }
     }
 }

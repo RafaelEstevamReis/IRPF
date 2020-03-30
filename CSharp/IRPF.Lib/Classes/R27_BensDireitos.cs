@@ -128,6 +128,6 @@ namespace IRPF.Lib.Classes
         public string NR_Cpf_BENEFIC { get; set; }
 
         [Index(38), Type(TipoRegistro.N), Length(10)]
-        public int NR_Controle { get; set; }
+        public string NR_Controle { get; set; }
     }
 }

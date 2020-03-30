@@ -40,6 +40,6 @@ namespace IRPF.Lib.Classes
         public decimal VR_IRRF13Salario { get; set; }
 
         [Index(11), Type(TipoRegistro.N), Length(10)]
-        public int NR_Controle { get; set; }
+        public string NR_Controle { get; set; }
     }
 }

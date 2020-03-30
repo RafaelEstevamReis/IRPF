@@ -46,6 +46,6 @@ namespace IRPF.Lib.Classes
        public decimal VR_Previdencia { get; set; }
 
        [Index(13), Type(TipoRegistro.N), Length(10)]
-       public int NR_Controle { get; set; }
+       public string NR_Controle { get; set; }
     }
 }

@@ -31,6 +31,6 @@ namespace IRPF.Lib.Classes
         public string NR_Cnpj_Fundo { get; set; }
 
         [Index(8), Type(TipoRegistro.N), Length(10)]
-        public int NR_Controle { get; set; }
+        public string NR_Controle { get; set; }
     }
 }

@@ -244,6 +244,6 @@ namespace IRPF.Lib.Classes
         public int QT_FILLER10 { get; set; }
 
         [Index(79), Type(TipoRegistro.N), Length(10)]
-        public int NR_Controle { get; set; }
+        public string NR_Controle { get; set; }
     }
 }

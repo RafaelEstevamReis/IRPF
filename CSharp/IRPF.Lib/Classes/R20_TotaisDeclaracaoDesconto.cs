@@ -223,6 +223,6 @@ namespace IRPF.Lib.Classes
         public decimal VR_Aliquota_Efetiva { get; set; }
 
         [Index(72), Type(TipoRegistro.N), Length(10)]
-        public int NR_Controle { get; set; }
+        public string NR_Controle { get; set; }
     }
 }
