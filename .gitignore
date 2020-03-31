@@ -3,3 +3,4 @@ CSharp/Docs
 bin
 obj
 *.suo
+CSharp/IRPFTests/Auxiliar.cs
