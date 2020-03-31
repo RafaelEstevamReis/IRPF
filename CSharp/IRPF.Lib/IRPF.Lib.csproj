@@ -84,6 +84,7 @@
     <Compile Include="Declaracao\ModeloSimplificada.cs" />
     <Compile Include="Declaracao\MoedaEstrangeira.cs" />
     <Compile Include="Declaracao\Pagamentos.cs" />
+    <Compile Include="Declaracao\PagamentosItens.cs" />
     <Compile Include="Declaracao\RendaVariavel.cs" />
     <Compile Include="Declaracao\RendimentosIsentos.cs" />
     <Compile Include="Declaracao\RendimentosPF.cs" />

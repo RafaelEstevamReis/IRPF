@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Generic;
 namespace IRPF.Lib.Declaracao
 {
     public class Pagamentos : IRPFBase
@@ -10,5 +11,7 @@ namespace IRPF.Lib.Declaracao
         {
             this.declaracaoIRPF = declaracaoIRPF;
         }
+
+        public PagamentosItens[] Itens { get; set; }
     }
 }
