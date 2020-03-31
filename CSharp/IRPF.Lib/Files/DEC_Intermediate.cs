@@ -15,44 +15,44 @@ namespace IRPF.Lib.Files
         string[] lines;
         private DEC_Intermediate() { }
 
-        public IR_RegistroHeader Header { get; private set; }
-        public R16_Declarante Declarante { get; private set; }
+        public IR_RegistroHeader Header { get; set; }
+        public R16_Declarante Declarante { get; set; }
 
         #region Simplificada
-        public R17_DemaisRendimentosImpostoPago DemaisRendimentosEImpostoPago { get; private set; }
-        public R18_TotaisDeclaracaoDescontoSimplificado TotaisDeclaracaoSimplificada { get; private set; }
+        public R17_DemaisRendimentosImpostoPago DemaisRendimentosEImpostoPago { get; set; }
+        public R18_TotaisDeclaracaoDescontoSimplificado TotaisDeclaracaoSimplificada { get; set; }
 
         #endregion
 
         #region Completa
-        public R19_Completa Completa { get; private set; }
-        public R20_TotaisDeclaracaoDesconto TotaisDeclaracao { get; private set; }
+        public R19_Completa Completa { get; set; }
+        public R20_TotaisDeclaracaoDesconto TotaisDeclaracao { get; set; }
         #endregion
 
-        public R21_RendimentosPJ[] RendimentosPJ { get; private set; }
-        public R22_RendimentosPfExteriorLeao[] RendimentosPfExteriorLeao { get; private set; }
-        public R23_RendimentosIsentosNaoTributaveis[] RendimentosIsentosNaoTributaveis { get; private set; }
-        public R24_RendimentosTributacaoExclusiva[] RendimentosTributacaoExclusiva { get; private set; }
-        public R25_Dependentes[] Dependentes { get; private set; }
-        public R26_RelacaoPagamentosEfetuados[] RelacaoPagamentosEfetuados { get; private set; }
-        public R27_BensDireitos[] BensDireitos { get; private set; }
-        public R45_RecebidosAcumuladamente[] RecebidosAcumuladamente { get; private set; }
-        public R47_RendimentosAcumuladamenteDependente[] RendimentosAcumuladamenteDependente { get; private set; }
+        public R21_RendimentosPJ[] RendimentosPJ { get; set; }
+        public R22_RendimentosPfExteriorLeao[] RendimentosPfExteriorLeao { get; set; }
+        public R23_RendimentosIsentosNaoTributaveis[] RendimentosIsentosNaoTributaveis { get; set; }
+        public R24_RendimentosTributacaoExclusiva[] RendimentosTributacaoExclusiva { get; set; }
+        public R25_Dependentes[] Dependentes { get; set; }
+        public R26_RelacaoPagamentosEfetuados[] RelacaoPagamentosEfetuados { get; set; }
+        public R27_BensDireitos[] BensDireitos { get; set; }
+        public R45_RecebidosAcumuladamente[] RecebidosAcumuladamente { get; set; }
+        public R47_RendimentosAcumuladamenteDependente[] RendimentosAcumuladamenteDependente { get; set; }
 
-        public R83_RendimentoIsento_Tipo2[] RendimentosIsentos_Tipo2 { get; private set; }
-        public R84_RendimentoIsento_Tipo3[] RendimentosIsentos_Tipo3 { get; private set; }
-        public R85_RendimentoIsento_Tipo4[] RendimentosIsentos_Tipo4 { get; private set; }
-        public R86_RendimentoIsento_Tipo5[] RendimentosIsentos_Tipo5 { get; private set; }
-        public R87_RendimentoIsento_Tipo6[] RendimentosIsentos_Tipo6 { get; private set; }
+        public R83_RendimentoIsento_Tipo2[] RendimentosIsentos_Tipo2 { get; set; }
+        public R84_RendimentoIsento_Tipo3[] RendimentosIsentos_Tipo3 { get; set; }
+        public R85_RendimentoIsento_Tipo4[] RendimentosIsentos_Tipo4 { get; set; }
+        public R86_RendimentoIsento_Tipo5[] RendimentosIsentos_Tipo5 { get; set; }
+        public R87_RendimentoIsento_Tipo6[] RendimentosIsentos_Tipo6 { get; set; }
 
-        public R88_RendimentoExclusivo_Tipo2[] RendimentoExclusivo_Tipo2 { get; private set; }
-        public R89_RendimentoExclusivo_Tipo3[] RendimentoExclusivo_Tipo3 { get; private set; }
+        public R88_RendimentoExclusivo_Tipo2[] RendimentoExclusivo_Tipo2 { get; set; }
+        public R89_RendimentoExclusivo_Tipo3[] RendimentoExclusivo_Tipo3 { get; set; }
 
-        public R90_RelacaoDoacoes[] RelacaoDoacoes { get; private set; }
-        public R91_DoacoesECA[] DoacoesECA { get; private set; }
-        public R92_DoacoesIdoso[] DoacoesIdoso { get; private set; }
+        public R90_RelacaoDoacoes[] RelacaoDoacoes { get; set; }
+        public R91_DoacoesECA[] DoacoesECA { get; set; }
+        public R92_DoacoesIdoso[] DoacoesIdoso { get; set; }
 
-        public T9_Encerramento Encerramento { get; private set; }
+        public T9_Encerramento Encerramento { get; set; }
 
         public void ToFile(string file)
         {
