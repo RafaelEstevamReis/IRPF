@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ClassesTests\IR_Tests\NomeArquivo.cs" />
     <Compile Include="DecTests\DecFullTest.cs" />
     <Compile Include="DecTests\VerificaHashObjetoTest.cs" />
     <Compile Include="HelpersTests\HashTests.cs" />

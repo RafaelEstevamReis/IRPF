@@ -85,6 +85,17 @@ namespace IRPF.Lib.Files
             }
         }
 
+        public string GerarNomeArquivoDEC(bool ehBackup)
+        {
+            return Header.GerarNomeArquivo(ehBackup);
+        }
+        /// <summary>
+        /// Cria um arquivo DEC vazio para testes da biblioteca
+        /// </summary>
+        public static DEC_Intermediate makeEmpty()
+        {
+            return new DEC_Intermediate();
+        }
         public static DEC_Intermediate FromFile(string file)
         {
             DEC_Intermediate dec = new DEC_Intermediate();
@@ -204,6 +215,10 @@ namespace IRPF.Lib.Files
                     case "T9":
                         dec.Encerramento = carregarRegistro<T9_Encerramento>(linha);
                         continue;
+
+                    case "HR": continue; // Agora não...
+                    case "DR": continue; // Agora não...
+                    case "R9": continue; // Agora não...
 
                     default:
                         throw new NotImplementedException(); // Notifica que ainda não terminei

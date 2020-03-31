@@ -284,6 +284,44 @@ namespace IRPF.Lib.Classes
         public string NR_TituloEleitor { get; set; }
         [Index(112), Type(TipoRegistro.C), Length(10)]
         public string NR_Controle { get; set; }
+        
+        public string GerarNomeArquivo(bool ehBackup)
+        {
+            // Exemplo de Nome:
+            // 11111111030-IRPF-A-2020-2019-ORIGI.DBK
+            // 1: CPF
+            // 2: IRPF (fixo ?)
+            // 3: "A"  (fixo ?)
+            // 4: Exercício
+            // 5: Ano base
+            // Se é retificadora ou é a original
+            StringBuilder sb = new StringBuilder();
 
+            sb.Append(CPF_Contribuinte );
+            sb.Append("-IRPF-A-" ); // ??
+            sb.AppendFormat("{0:0000}-{1:0000}-", Exercicio, AnoBase);
+
+            if(ehRetificadora())
+                sb.Append( "RETIF");
+            else
+                sb.Append("ORIGI");
+
+            if (ehBackup)
+                sb.Append( ".DBK" );
+            else
+                sb.Append(".DEC");
+
+            return sb.ToString();
+        }
+
+        public bool ehRetificadora()
+        {
+            // " " é false (verificado IRPF 2020)
+            // "1" é true  (verificado IRPF 2020)
+
+            // Vou presumir que "0" é false e usar o "1" como TRUE
+
+            return IN_Retificadora == "1";
+        }
     }
 }
