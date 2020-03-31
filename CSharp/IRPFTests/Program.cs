@@ -13,6 +13,9 @@ namespace IRPF.Tests
     {
         static void Main(string[] args)
         {
+            // Para que mais de um possa fazer testes, ocu gerar um novo arquivo "Auxiliar.cs" e ignorá-lo no Commit
+            Auxiliar._main(args);
+
             //testeCarrega_ArquivoDEC();
             //testeCarrega_ArquivoMapeamentos();
             testeProcuraOcorrenciasExemplos();
