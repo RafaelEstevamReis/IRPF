@@ -1,7 +1,7 @@
 ﻿
 namespace IRPF.Lib.Declaracao
 {
-    public class RendimentosPJComExigibilidade
+    public class RendimentosPJComExigibilidade : IRPFBase
     {
         private Identificador IdentificadorDeclaracao;
         public RendimentosPJComExigibilidade() { } // Serialização

@@ -1,7 +1,7 @@
 ﻿
 namespace IRPF.Lib.Declaracao
 {
-    public class RendaVariavel
+    public class RendaVariavel : IRPFBase
     {
     }
 }

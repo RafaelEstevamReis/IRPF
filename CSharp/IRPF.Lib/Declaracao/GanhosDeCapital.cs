@@ -1,7 +1,7 @@
 ﻿
 namespace IRPF.Lib.Declaracao
 {
-    public class GanhosCapital
+    public class GanhosCapital : IRPFBase
     {
     }
 }

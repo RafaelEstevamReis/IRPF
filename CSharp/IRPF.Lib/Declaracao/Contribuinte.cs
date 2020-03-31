@@ -1,7 +1,7 @@
 ﻿
 namespace IRPF.Lib.Declaracao
 {
-    public class Contribuinte
+    public class Contribuinte : IRPFBase
     {
         private Identificador IdentificadorDeclaracao;
 

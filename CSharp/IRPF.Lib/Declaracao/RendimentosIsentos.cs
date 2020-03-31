@@ -1,7 +1,7 @@
 ﻿
 namespace IRPF.Lib.Declaracao
 {
-    public class RendimentosIsentos
+    public class RendimentosIsentos : IRPFBase
     {
         private DeclaracaoIRPF declaracaoIRPF;
         public RendimentosIsentos() { } // Serialização

@@ -1,7 +1,7 @@
 ﻿
 namespace IRPF.Lib.Declaracao
 {
-    public class Doacoes
+    public class Doacoes : IRPFBase
     {
     }
 }

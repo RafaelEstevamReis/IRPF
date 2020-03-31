@@ -1,7 +1,7 @@
 ﻿
 namespace IRPF.Lib.Declaracao
 {
-    public class Bens
+    public class Bens : IRPFBase
     {
     }
 }

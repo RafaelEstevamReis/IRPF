@@ -78,6 +78,7 @@
     <Compile Include="Declaracao\GanhosDeCapital.cs" />
     <Compile Include="Declaracao\Identificador.cs" />
     <Compile Include="Declaracao\ImpostoPago.cs" />
+    <Compile Include="Declaracao\IRPFBase.cs" />
     <Compile Include="Declaracao\ModeloCompleta.cs" />
     <Compile Include="Declaracao\ModeloDeclaracao.cs" />
     <Compile Include="Declaracao\ModeloSimplificada.cs" />
@@ -91,6 +92,8 @@
     <Compile Include="Declaracao\RendimentosTributacaoExclusiva.cs" />
     <Compile Include="Declaracao\RendimentosPJComExigibilidade.cs" />
     <Compile Include="Declaracao\Resumo.cs" />
+    <Compile Include="Excecoes\IRPFException.cs" />
+    <Compile Include="Excecoes\PendeciasException.cs" />
     <Compile Include="Files\DEC_Intermediate.cs" />
     <Compile Include="Files\Mapeamento.cs" />
     <Compile Include="Helpers\CPF.cs" />

@@ -1,7 +1,7 @@
 ﻿
 namespace IRPF.Lib.Declaracao
 {
-    public class ImpostoPago
+    public class ImpostoPago : IRPFBase
     {
     }
 }

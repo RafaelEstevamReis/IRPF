@@ -1,7 +1,7 @@
 ﻿
 namespace IRPF.Lib.Declaracao
 {
-    public class RendimentosTributacaoExclusiva
+    public class RendimentosTributacaoExclusiva : IRPFBase
     {
         private DeclaracaoIRPF declaracaoIRPF;
         public RendimentosTributacaoExclusiva() { } // Serialização

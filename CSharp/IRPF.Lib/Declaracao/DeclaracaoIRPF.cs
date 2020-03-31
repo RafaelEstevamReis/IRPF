@@ -1,7 +1,7 @@
 ﻿
 namespace IRPF.Lib.Declaracao
 {
-    public class DeclaracaoIRPF
+    public class DeclaracaoIRPF : IRPFBase
     {
         public DeclaracaoIRPF() { } // Serialização
         public DeclaracaoIRPF(Identificador id)
@@ -36,6 +36,7 @@ namespace IRPF.Lib.Declaracao
             this.Doacoes = new Doacoes();
             this.ModeloSimplificada = new ModeloSimplificada(this);
             this.ModeloCompleta = new ModeloCompleta(this);
+            this.ModeloBase = ModeloCompleta;
         }
 
         public Identificador IdentificadorDeclaracao { get; set; }
@@ -63,6 +64,8 @@ namespace IRPF.Lib.Declaracao
         public Doacoes Doacoes { get; set; }
         public ModeloSimplificada ModeloSimplificada { get; set; }
         public ModeloCompleta ModeloCompleta { get; set; }
+
+        public ModeloDeclaracao ModeloBase { get; set; }
 
     }
 }

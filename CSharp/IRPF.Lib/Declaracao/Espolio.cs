@@ -1,7 +1,7 @@
 ﻿
 namespace IRPF.Lib.Declaracao
 {
-    public class Espolio
+    public class Espolio : IRPFBase
     {
         private Identificador IdentificadorDeclaracao;
         public Espolio() { } // Serialização

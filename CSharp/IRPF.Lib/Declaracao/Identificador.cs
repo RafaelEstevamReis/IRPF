@@ -1,7 +1,7 @@
 ﻿
 namespace IRPF.Lib.Declaracao
 {
-    public class Identificador
+    public class Identificador : IRPFBase
     {
         public enum TipoDeclaracao
         {

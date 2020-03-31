@@ -1,7 +1,7 @@
 ﻿
 namespace IRPF.Lib.Declaracao
 {
-    public class MoedaEstrangeira
+    public class MoedaEstrangeira : IRPFBase
     {
     }
 }
