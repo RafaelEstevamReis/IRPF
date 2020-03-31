@@ -31,7 +31,7 @@ namespace IRPF.Lib.Classes
        public decimal VR_Parc_Nao_Dedut { get; set; }
 
        [Index(8), Type(TipoRegistro.N), Length(1)]
-       public bool IN_Tipo_Cpf_Cnpj { get; set; }
+       public int IN_Tipo_Cpf_Cnpj { get; set; }
 
        [Index(9), Type(TipoRegistro.N), Length(10)]
        public string NR_Controle { get; set; }

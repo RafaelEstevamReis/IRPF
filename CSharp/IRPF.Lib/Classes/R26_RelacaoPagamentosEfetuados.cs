@@ -40,7 +40,7 @@ namespace IRPF.Lib.Classes
         public decimal VR_Contrib_PATR { get; set; }
 
         [Index(11), Type(TipoRegistro.N), Length(1)]
-        public bool IN_Tipo_Cpf_Cnpj { get; set; }
+        public int IN_Tipo_Cpf_Cnpj { get; set; }
 
         [Index(12), Type(TipoRegistro.C), Length(1)]
         public string IN_Tipo_Pgto { get; set; }

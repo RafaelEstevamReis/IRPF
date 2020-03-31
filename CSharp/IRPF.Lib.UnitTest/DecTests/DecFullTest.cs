@@ -22,6 +22,7 @@ namespace IRPF.Lib.UnitTest.DecTests
             Assert.AreEqual(originalLines.Length, newLines.Length);
             for (int i = 0; i < originalLines.Length; i++)
             {
+                Assert.AreEqual(originalLines[i].Length, newLines[i].Length);
                 Assert.AreEqual(originalLines[i], newLines[i]);
             }
         }
