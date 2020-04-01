@@ -90,6 +90,7 @@
     <Compile Include="Declaracao\RendimentosPF.cs" />
     <Compile Include="Declaracao\RendimentosPFDependente.cs" />
     <Compile Include="Declaracao\RendimentosPJ.cs" />
+    <Compile Include="Declaracao\RendimentosPJItem.cs" />
     <Compile Include="Declaracao\RendimentosTributacaoExclusiva.cs" />
     <Compile Include="Declaracao\RendimentosPJComExigibilidade.cs" />
     <Compile Include="Declaracao\Resumo.cs" />

@@ -9,5 +9,9 @@ namespace IRPF.Lib.Declaracao
         {
             this.IdentificadorDeclaracao = IdentificadorDeclaracao;
         }
+
+        public RendimentosPJItem[] RendimentosTitular { get; set; }
+        public RendimentosPJItem[] RendimentosDependente { get; set; }
+
     }
 }
