@@ -16,10 +16,9 @@ namespace IRPF.Lib.Declaracao
         public DateTime DataNascimento { get; set; }
         public string TituloEleitor { get; set; }
         public bool DoencaDeficiencia { get; set; }
-
         public bool ConjugueCompanheiro { get; set; }
         public string CpfConjuge { get; set; }
-
+        // Alteração de endereço já está no HEADER da declaração
         public bool Exterior { get; set; }
         // Exterior: Não
         public int TipoLogradouro { get; set; } // Tabela

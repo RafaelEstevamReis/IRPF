@@ -21,7 +21,6 @@ namespace IRPF.Lib.Files
         #region Simplificada
         public R17_DemaisRendimentosImpostoPago DemaisRendimentosEImpostoPago { get; set; }
         public R18_TotaisDeclaracaoDescontoSimplificado TotaisDeclaracaoSimplificada { get; set; }
-
         #endregion
 
         #region Completa

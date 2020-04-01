@@ -314,6 +314,11 @@ namespace IRPF.Lib.Classes_DEC
             return sb.ToString();
         }
 
+        public bool ehCompleta()
+        {
+            // Usar o mesmo do ehRetificadora
+            return IN_Completa == "1";
+        }
         public bool ehRetificadora()
         {
             // " " é false (verificado IRPF 2020)

@@ -49,7 +49,7 @@ namespace IRPF.Lib.Serialization
         override public bool Deserialize(string Line, int Offset, SerializableValue Value)
         {
             string part = Line.Substring(Offset, Value.Length);
-            Value.Object = part;//.TrimEnd();
+            Value.Object = part.TrimEnd();
             return true;
         }
     }

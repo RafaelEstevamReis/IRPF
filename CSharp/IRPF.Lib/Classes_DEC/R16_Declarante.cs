@@ -107,5 +107,22 @@ namespace IRPF.Lib.Classes_DEC
         public string NR_Telefone { get; set; }
         [Index(49), Type(TipoRegistro.C), Length(10)]
         public string NR_Controle { get; set; } /* Verificado na versão 2020 */
+
+        public bool ehDoencaDeficiencia()
+        {
+            // Usar o mesmo do Header.ehRetificadora
+            return IN_Completa == "1";
+        }
+        public bool ehConjugue()
+        {
+            // Usar o mesmo do Header.ehRetificadora
+            return IN_Conjugue == "1";
+        }
+        public bool ehMudouEndereco()
+        {
+            // Usar o mesmo do Header.ehRetificadora
+            return IN_Endereco == "1";
+            // Repete no Header
+        }
     }
 }
