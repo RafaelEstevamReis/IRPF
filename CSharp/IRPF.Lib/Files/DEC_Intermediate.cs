@@ -1,4 +1,4 @@
-﻿using IRPF.Lib.Classes;
+﻿using IRPF.Lib.Classes_DEC;
 using IRPF.Lib.Serialization;
 using System;
 using System.Collections.Generic;

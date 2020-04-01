@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IRPF.Lib.Classes
+namespace IRPF.Lib.Classes_DEC
 {
     public class R45_RecebidosAcumuladamente : IFixedLenLine
     {

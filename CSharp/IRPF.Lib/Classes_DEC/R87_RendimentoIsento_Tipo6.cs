@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IRPF.Lib.Classes
+namespace IRPF.Lib.Classes_DEC
 {
-    public class R24_RendimentosTributacaoExclusiva : IFixedLenLine
+    public class R87_RendimentoIsento_Tipo6 : IFixedLenLine
     {
         [Index(1), Type(TipoRegistro.N), Length(2)]
         public int NR_Reg { get; set; }
@@ -16,12 +16,15 @@ namespace IRPF.Lib.Classes
         public string NR_Cpf { get; set; }
 
         [Index(3), Type(TipoRegistro.N), Length(4)]
-        public int CD_Exclusivo { get; set; }
+        public int NR_Cod { get; set; }
 
         [Index(4), Type(TipoRegistro.N), Length(13, 2)]
         public decimal VR_Valor { get; set; }
 
-        [Index(5), Type(TipoRegistro.N), Length(10)]
+        [Index(5), Type(TipoRegistro.N), Length(13, 2)]
+        public decimal VR_ValorGCap { get; set; }
+
+        [Index(6), Type(TipoRegistro.N), Length(10)]
         public string NR_Controle { get; set; }
     }
 }

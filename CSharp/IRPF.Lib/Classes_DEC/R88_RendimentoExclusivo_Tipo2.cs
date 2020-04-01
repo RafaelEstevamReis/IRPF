@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IRPF.Lib.Classes
+namespace IRPF.Lib.Classes_DEC
 {
-   public class R85_RendimentoIsento_Tipo4: IFixedLenLine
+   public class R88_RendimentoExclusivo_Tipo2 : IFixedLenLine
    {
        [Index(1), Type(TipoRegistro.N), Length(2)]
        public int NR_Reg { get; set; }
@@ -19,10 +19,10 @@ namespace IRPF.Lib.Classes
        public string IN_Tipo { get; set; }
 
        [Index(4), Type(TipoRegistro.C), Length(11)]
-       public string NR_Cpf_BenefIC { get; set; }
+       public string NR_Cpf_Benefic { get; set; }
 
-       [Index(5), Type(TipoRegistro.N), Length(4)]
-       public int NR_Cod { get; set; }
+       [Index(5), Type(TipoRegistro.C), Length(4)]
+       public string NR_Cod { get; set; }
 
        [Index(6), Type(TipoRegistro.C), Length(14)]
        public string NR_Pagadora { get; set; }
@@ -31,21 +31,9 @@ namespace IRPF.Lib.Classes
        public string NM_Nome { get; set; }
 
        [Index(8), Type(TipoRegistro.N), Length(13, 2)]
-       public decimal VR_Receb { get; set; }
+       public decimal VR_Valor { get; set; }
 
-       [Index(9), Type(TipoRegistro.N), Length(13, 2)]
-       public decimal VR_13Salario { get; set; }
-
-       [Index(10), Type(TipoRegistro.N), Length(13, 2)]
-       public decimal VR_IRRF { get; set; }
-
-       [Index(11), Type(TipoRegistro.N), Length(13, 2)]
-       public decimal VR_IRRF13Salario { get; set; }
-
-       [Index(12), Type(TipoRegistro.N), Length(13, 2)]
-       public decimal VR_Previdencia { get; set; }
-
-       [Index(13), Type(TipoRegistro.N), Length(10)]
+       [Index(9), Type(TipoRegistro.N), Length(10)]
        public string NR_Controle { get; set; }
     }
 }
