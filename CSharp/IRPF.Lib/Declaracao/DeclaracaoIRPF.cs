@@ -199,19 +199,39 @@ namespace IRPF.Lib.Declaracao
                    };
             }
             #endregion
+
+            irpf.RendPJ = new RendimentosPJ();
+            irpf.RendPJ.RendimentosTitular = new RendimentosPJItem[dec.RendimentosPJ.Length];
+            for (int i = 0; i < dec.RendimentosPJ.Length; i++)
+            {
+                irpf.RendPJ.RendimentosTitular[i] = new RendimentosPJItem()
+                {
+                    NomeFontePagadora = dec.RendimentosPJ[i].NM_Pagador,
+                    NIFontePagadora = dec.RendimentosPJ[i].NR_Pagador,
+                    rendRecebidoPJ = dec.RendimentosPJ[i].VR_Rendto,
+                    contribuicaoPrevOficial = dec.RendimentosPJ[i].VR_Contrib,
+                    impostoRetidoFonte = dec.RendimentosPJ[i].VR_Imposto,
+                    decimoTerceiro = dec.RendimentosPJ[i].VR_DecTerc,
+                    IRRFDecimoTerceiro = dec.RendimentosPJ[i].VR_IRRF13Salario
+                };
+            }
+
+            #region Bens
             irpf.Bens = new Bens();
             irpf.Bens.Itens = new BensItens[dec.BensDireitos.Length];
             for (int i = 0; i < dec.BensDireitos.Length; i++)
             {
                 irpf.Bens.Itens[i] = new BensItens()
                 {
-                    Descricao =  dec.BensDireitos[i].TX_BEM,
+                    Descricao = dec.BensDireitos[i].TX_BEM,
                     ValorAnterior = dec.BensDireitos[i].VR_ANTER,
                     ValorAtual = dec.BensDireitos[i].VR_ATUAL,
                     CodigoBem = dec.BensDireitos[i].CD_BEM,
-                    Pais = dec.BensDireitos[i].IN_Exterior ?  dec.BensDireitos[i].CD_PAIS : 105,
+                    Pais = dec.BensDireitos[i].IN_Exterior ? dec.BensDireitos[i].CD_PAIS : 105,
+                    // Não sei o que fazer com os outros dados de bens (RENAVAN, Registrod de imóvel, etc..)
                 };
             }
+            #endregion
             return irpf;
         }
     }
