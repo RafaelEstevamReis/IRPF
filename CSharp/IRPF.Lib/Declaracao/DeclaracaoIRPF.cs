@@ -108,6 +108,7 @@ namespace IRPF.Lib.Declaracao
             #endregion
             var irpf = new DeclaracaoIRPF(ide);
             #region Contribuinte
+            bool isUfEx = dec.Declarante.SG_UF.Equals("EX", StringComparison.CurrentCultureIgnoreCase);
             irpf.Contribuinte = new Contribuinte()
             {
                 DataNascimento = Datas.Parse(dec.Declarante.DT_Nascim),
@@ -115,32 +116,32 @@ namespace IRPF.Lib.Declaracao
                 DoencaDeficiencia = dec.Declarante.ehDoencaDeficiencia(),
                 ConjugueCompanheiro = dec.Declarante.ehConjugue(),
                 CpfConjuge = dec.Declarante.NR_CpfConjugue,
-                Exterior = dec.Declarante.CD_EX != "",
+                Exterior = isUfEx,
                 TipoLogradouro = 0, // Lookup por nome
-                Logradouro = dec.Declarante.NM_Logradouro,
-                Numero = dec.Declarante.NR_Numero,
-                Complemento = dec.Declarante.NM_Complemento,
-                Bairro = dec.Declarante.NM_Bairro,
+                Logradouro = isUfEx ? "" : dec.Declarante.NM_Logradouro,
+                Numero = isUfEx ? "" : dec.Declarante.NR_Numero,
+                Complemento = isUfEx ? "" : dec.Declarante.NM_Complemento,
+                Bairro = isUfEx ? "" : dec.Declarante.NM_Bairro,
                 UF = 0,  // Lookup dec.Declarante.SG_UF
                 Municipio = Convert.ToInt32(dec.Declarante.COD_Municipio),
-                Cidade = dec.Declarante.NM_Municipio,
+                Cidade = isUfEx ? "" : dec.Declarante.NM_Municipio,
                 Cep = dec.Declarante.NR_CEP,
                 DDD = dec.Declarante.NR_DDDTelefone,
                 Telefone = dec.Declarante.NR_Telefone,
                 DDDCelular = dec.Declarante.NR_DDDCelular,
                 Celular = dec.Declarante.NR_Celular,
-                LogradouroExt = "",
-                NumeroExt = "",
-                ComplementoExt = "",
-                BairroExt = "",
-                CidadeExt = "",
-                CodigoExterior = 0,// "",
-                Pais = Convert.ToInt32(dec.Declarante.CD_Pais),
+                LogradouroExt = isUfEx ? dec.Declarante.NM_Logradouro : "",
+                NumeroExt = isUfEx ? dec.Declarante.NR_Numero : "",
+                ComplementoExt = isUfEx ? dec.Declarante.NM_Complemento : "",
+                BairroExt = isUfEx ? dec.Declarante.NM_Bairro : "",
+                CidadeExt = isUfEx ? dec.Declarante.NM_Municipio : "",
+                CodigoExterior = Numeros.Inteiro(dec.Declarante.CD_EX),// "",
+                Pais = isUfEx ? Convert.ToInt32(dec.Declarante.CD_Pais) : 105, // 105 => BR
                 CepExt = "",
 
                 EMail = dec.Declarante.NM_EMail,
                 NitPisPasep = dec.Declarante.NR_NitPisPasep,
-                NaturezaOcupacao = Convert.ToInt32(dec.Declarante.CD_Natur),
+                NaturezaOcupacao = Numeros.Inteiro(dec.Declarante.CD_Natur),
                 OcupacaoPrincipal = Convert.ToInt32(dec.Declarante.CD_Ocup),
                 RegistroProfissional = dec.Declarante.NR_Registroprofissional,
             };
@@ -166,7 +167,7 @@ namespace IRPF.Lib.Declaracao
                     RendRecebidoPFEXT_DEP = dec.TotaisDeclaracaoSimplificada.VR_RendPFExtDepen,
                     ResultadoTributavelAR = dec.TotaisDeclaracaoSimplificada.VR_ResNaoTrib_AR,
                     TotalResultadosTributaveis = 0, // ?
-                    DescontoSimplificado = dec.TotaisDeclaracaoSimplificada.VR_DescImp, // ? Sei não...
+                    DescontoSimplificado = dec.TotaisDeclaracaoSimplificada.VR_DescImp,
                     ImpostoRetidoFonteTitular = dec.TotaisDeclaracaoSimplificada.VR_TotFonteTitular,
                     ImpostoRetidoFonteDependentes = dec.TotaisDeclaracaoSimplificada.VR_ImpostoDependente,
                     CarneLeao = dec.TotaisDeclaracaoSimplificada.VR_Leao,
@@ -183,7 +184,7 @@ namespace IRPF.Lib.Declaracao
             }
             else
             {
-                irpf.ModeloCompleta= new ModeloCompleta(irpf)
+                irpf.ModeloCompleta = new ModeloCompleta(irpf)
                    {
                        // Base
                        ImpostoDevido = dec.TotaisDeclaracao.VR_ImpDev,
@@ -198,7 +199,19 @@ namespace IRPF.Lib.Declaracao
                    };
             }
             #endregion
-
+            irpf.Bens = new Bens();
+            irpf.Bens.Itens = new BensItens[dec.BensDireitos.Length];
+            for (int i = 0; i < dec.BensDireitos.Length; i++)
+            {
+                irpf.Bens.Itens[i] = new BensItens()
+                {
+                    Descricao =  dec.BensDireitos[i].TX_BEM,
+                    ValorAnterior = dec.BensDireitos[i].VR_ANTER,
+                    ValorAtual = dec.BensDireitos[i].VR_ATUAL,
+                    CodigoBem = dec.BensDireitos[i].CD_BEM,
+                    Pais = dec.BensDireitos[i].IN_Exterior ?  dec.BensDireitos[i].CD_PAIS : 105,
+                };
+            }
             return irpf;
         }
     }
