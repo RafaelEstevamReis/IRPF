@@ -72,6 +72,7 @@
     <Compile Include="Declaracao\Comparativo.cs" />
     <Compile Include="Declaracao\Contribuinte.cs" />
     <Compile Include="Declaracao\DeclaracaoIRPF.cs" />
+    <Compile Include="Declaracao\DeclaracaoIRPF_ArqDEC.cs" />
     <Compile Include="Declaracao\Dependentes.cs" />
     <Compile Include="Declaracao\Dividas.cs" />
     <Compile Include="Declaracao\Doacoes.cs" />

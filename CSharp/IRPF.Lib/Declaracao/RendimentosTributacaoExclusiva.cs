@@ -3,11 +3,11 @@ namespace IRPF.Lib.Declaracao
 {
     public class RendimentosTributacaoExclusiva : IRPFBase
     {
-        private DeclaracaoIRPF declaracaoIRPF;
         public RendimentosTributacaoExclusiva() { } // Serialização
-        public RendimentosTributacaoExclusiva(DeclaracaoIRPF declaracaoIRPF)
+
+        internal static RendimentosTributacaoExclusiva importarDec(Identificador ide, Files.DEC_Intermediate dec)
         {
-            this.declaracaoIRPF = declaracaoIRPF;
+            throw new System.NotImplementedException();
         }
     }
 }

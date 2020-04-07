@@ -9,5 +9,10 @@ namespace IRPF.Lib.Declaracao
         {
             this.IdentificadorDeclaracao = IdentificadorDeclaracao;
         }
+
+        internal static RendimentosPJComExigibilidade importarDec(Identificador ide, Files.DEC_Intermediate dec)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

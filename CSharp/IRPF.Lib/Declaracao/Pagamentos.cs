@@ -4,14 +4,13 @@ namespace IRPF.Lib.Declaracao
 {
     public class Pagamentos : IRPFBase
     {
-        private DeclaracaoIRPF declaracaoIRPF;
-
         public Pagamentos() { } // Serialização
-        public Pagamentos(DeclaracaoIRPF declaracaoIRPF)
-        {
-            this.declaracaoIRPF = declaracaoIRPF;
-        }
 
         public PagamentosItens[] Itens { get; set; }
+
+        internal static Pagamentos importarDec(Identificador ide, Files.DEC_Intermediate dec)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

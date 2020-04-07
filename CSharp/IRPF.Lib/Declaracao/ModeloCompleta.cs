@@ -3,11 +3,24 @@ namespace IRPF.Lib.Declaracao
 {
     public class ModeloCompleta : ModeloDeclaracao
     {
-        private DeclaracaoIRPF declaracaoIRPF;
         public ModeloCompleta() { } // Serialização
-        public ModeloCompleta(DeclaracaoIRPF declaracaoIRPF)
+
+        internal static ModeloCompleta importarDec(Identificador ide, Files.DEC_Intermediate dec)
         {
-            this.declaracaoIRPF = declaracaoIRPF;
+            return new ModeloCompleta()
+            {
+                // Base
+                ImpostoDevido = dec.TotaisDeclaracao.VR_ImpDev,
+                BaseCalculo = dec.TotaisDeclaracao.VR_BaseCalc,
+                SaldoImpostoPagar = dec.TotaisDeclaracao.VR_ImpPagar,
+                ImpostoRestituir = dec.TotaisDeclaracao.VR_ImpRest,
+                RendRecebidoExterior = 0,// ?
+                TotalRendRecebidosMaisExterior = 0, // ?
+                TotalLivroCaixa = dec.TotaisDeclaracao.VR_LivCaix, // ?
+                TotalDoacoesCampanhasEleitorais = dec.TotaisDeclaracao.VR_DoacoesCampanha,
+                // Completa
+                // TODO terminar
+            };
         }
     }
 }

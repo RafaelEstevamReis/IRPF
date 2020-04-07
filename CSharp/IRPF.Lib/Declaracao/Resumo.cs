@@ -11,5 +11,10 @@ namespace IRPF.Lib.Declaracao
             this.IdentificadorDeclaracao = IdentificadorDeclaracao;
             this.Contribuinte = Contribuinte;
         }
+
+        internal static Resumo importarDec(Identificador ide, Files.DEC_Intermediate dec)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
