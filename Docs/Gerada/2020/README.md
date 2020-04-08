@@ -10,6 +10,25 @@ Os CPFs dos dependentes são sequências de "2" e "3"
 
 Processos semelhantes foram gerados para os CNPJs que ou são sequências de núemros "1", "2", etc..
 
+### 22222222303-IRPF-A-2020-2019-ORIGI.DEC - Simplificada
+
+Arquivo gerado com dados aleatórios no IRPF versão 2020 v1.4 \
+Valores foram escolhidos para facilitar a achar campos
+
+Os dados foram gerados de acordo com o README com exemplos de dados
+
+* Contribuinte: 222.222.223-03 Olzefu Byaisno Asrim
+* Dependente: Cod 11 - 333.333.334-14 Ana Furirezu
+* Alimentando: 444.444.445-25 Artur Syonay
+* Rendimentos Recebidos PJ, titular e dependente
+* Rendimentos Isentos e Não Tributáveis do titular e dependente
+* Rendimentos Sujeitos a Trib. Exclusiva/Definitiva do titular e dependente
+* Pagamentos do titular e dependente
+* Bens e Direitos: Apartamento e Automóvel
+* Dívidas e ônus
+
+Processos semelhantes foram gerados para os CNPJs que ou são sequências de núemros "1", "2", etc..
+
 
 ## Links e Sites:
 
