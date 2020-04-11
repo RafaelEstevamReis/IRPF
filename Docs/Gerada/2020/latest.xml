@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<information>
+	<pubDate>00/04/2020 00:00</pubDate>
+	<pkgver>1.6</pkgver>
+	<pkgrel></pkgrel>
+	<severity>Opcional</severity>
+	<extra>
+		<message>{ultimaVersaoManual:"1.0", periodoEspera:5, enderecoServidorDownloadManual:"https://idg.receita.fazenda.gov.br/interface/cidadao/irpf/2020/download", enderecoServidor:"http://downloadirpf.receita.fazenda.gov.br/irpf/2020/irpf/update/", arquivoZip:"IRPF2020-@.zip", mensagem:""}</message>
+		<files>
+			<file>
+				<fileId>ECA</fileId>
+				<fileVersion>20200327</fileVersion>
+				<fileHash>-754612957</fileHash>
+				<filePath>lib/resources/eca.xml</filePath>
+				<filePackageName>ECA__20200327_20200327010133.zip</filePackageName>
+			</file>
+			<file>
+				<fileId>IDOSO</fileId>
+				<fileVersion>20200318</fileVersion>
+				<fileHash>-1962364021</fileHash>
+				<filePath>lib/resources/eidoso.xml</filePath>
+				<filePackageName>IDOSO__20200318_20200318010140.zip</filePackageName>
+			</file>
+			<file>
+				<fileId>BANCO</fileId>
+				<fileVersion>20200214</fileVersion>
+				<fileHash>464864309</fileHash>
+				<filePath>lib/resources/bancos.xml</filePath>
+				<filePackageName>BANCO__20200214_20200214162252.zip</filePackageName>
+			</file>
+			<file>
+				<fileId>BBENS</fileId>
+				<fileVersion>20200320</fileVersion>
+				<fileHash>1423162183</fileHash>
+				<filePath>lib/resources/bancos_bens.xml</filePath>
+				<filePackageName>BBENS__20200320_20200320010116.zip</filePackageName>
+			</file>
+			<file>
+				<fileId>NATOC</fileId>
+				<fileVersion>20200206</fileVersion>
+				<fileHash>-1388464830</fileHash>
+				<filePath>lib/resources/naturezasOcupacao.xml</filePath>
+				<filePackageName>NATOC__20200206_20200214162252.zip</filePackageName>
+			</file>
+			<file>
+				<fileId>PAIS</fileId>
+				<fileVersion>20200218</fileVersion>
+				<fileHash>280293192</fileHash>
+				<filePath>lib/resources/paises.xml</filePath>
+				<filePackageName>PAIS__20200218_20200218095929.zip</filePackageName>
+			</file>
+		</files>
+	</extra>
+</information>
