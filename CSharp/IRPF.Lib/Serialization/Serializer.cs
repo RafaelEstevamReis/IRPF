@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace IRPF.Lib.Serialization
 {
@@ -110,6 +111,32 @@ namespace IRPF.Lib.Serialization
                 throw new InvalidOperationException("Public property must be marked with " + typeof(T).Name + " or IgnoreAttribute. " + myType.Name + "." + prop.Name);
             }
             return p;
+        }
+
+        public static void SerializeXml<T>(T Object, string filename)
+        {
+            // https://docs.microsoft.com/pt-br/dotnet/standard/serialization/examples-of-xml-serialization
+            XmlSerializer x = new XmlSerializer(typeof(T));
+            using (TextWriter writer = new StreamWriter(filename))
+            {
+                x.Serialize(writer, Object);
+            }
+        }
+        public static T DeserializeXmlFile<T>(string filename)
+        {
+            // https://docs.microsoft.com/pt-br/dotnet/api/system.xml.serialization.xmlserializer.deserialize?view=netframework-4.8
+            // Create an instance of the XmlSerializer.
+            XmlSerializer serializer = new XmlSerializer(typeof(T));
+
+            // Declare an object variable of the type to be deserialized.
+            T i;
+
+            using (Stream reader = new FileStream(filename, FileMode.Open))
+            {
+                // Call the Deserialize method to restore the object's state.
+                i = (T)serializer.Deserialize(reader);
+            }
+            return i;
         }
     }
 }

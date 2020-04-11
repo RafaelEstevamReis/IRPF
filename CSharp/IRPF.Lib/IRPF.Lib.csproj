@@ -103,6 +103,7 @@
     <Compile Include="Excecoes\PendeciasException.cs" />
     <Compile Include="Files\DEC_Intermediate.cs" />
     <Compile Include="Files\Mapeamento.cs" />
+    <Compile Include="Files\UpdateXml.cs" />
     <Compile Include="Helpers\CPF.cs" />
     <Compile Include="Helpers\Crc32.cs" />
     <Compile Include="Helpers\Datas.cs" />
