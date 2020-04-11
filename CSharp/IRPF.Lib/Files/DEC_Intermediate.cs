@@ -35,6 +35,9 @@ namespace IRPF.Lib.Files
         public R25_Dependentes[] Dependentes { get; set; }
         public R26_RelacaoPagamentosEfetuados[] RelacaoPagamentosEfetuados { get; set; }
         public R27_BensDireitos[] BensDireitos { get; set; }
+        public R28_DividasOnus[] DividasOnus { get; set; }
+        public R32_RendimentosPJDependentes[] RendimentosPJDependentes { get; set; }
+        public R35_Alimentandos[] Alimentandos { get; set; }
         public R45_RecebidosAcumuladamente[] RecebidosAcumuladamente { get; set; }
         public R47_RendimentosAcumuladamenteDependente[] RendimentosAcumuladamenteDependente { get; set; }
 
@@ -113,6 +116,9 @@ namespace IRPF.Lib.Files
             var lstR25 = new List<R25_Dependentes>();
             var lstR26 = new List<R26_RelacaoPagamentosEfetuados>();
             var lstR27 = new List<R27_BensDireitos>();
+            var lstR28 = new List<R28_DividasOnus>();
+            var lstR32 = new List<R32_RendimentosPJDependentes>();
+            var lstR35 = new List<R35_Alimentandos>();
             var lstR45 = new List<R45_RecebidosAcumuladamente>();
             var lstR47 = new List<R47_RendimentosAcumuladamenteDependente>();
             var lstR83 = new List<R83_RendimentoIsento_Tipo2>();
@@ -171,6 +177,15 @@ namespace IRPF.Lib.Files
                     case "27":
                         lstR27.Add(carregarRegistro<R27_BensDireitos>(linha));
                         continue;
+                    case "28":
+                        lstR28.Add(carregarRegistro<R28_DividasOnus>(linha));
+                        continue;
+                    case "32":
+                        lstR32.Add(carregarRegistro<R32_RendimentosPJDependentes>(linha));
+                        continue;
+                    case "35":
+                        lstR35.Add(carregarRegistro<R35_Alimentandos>(linha));
+                        continue;
                     case "45":
                         lstR45.Add(carregarRegistro<R45_RecebidosAcumuladamente>(linha));
                         continue;
@@ -220,7 +235,7 @@ namespace IRPF.Lib.Files
                     case "R9": continue; // Agora não...
 
                     default:
-                        throw new NotImplementedException(); // Notifica que ainda não terminei
+                        throw new NotImplementedException(linha.Substring(0, 2)); // Notifica que ainda não terminei
                 }
             }
             dec.RendimentosPJ = lstR21.ToArray();
@@ -230,6 +245,9 @@ namespace IRPF.Lib.Files
             dec.Dependentes = lstR25.ToArray();
             dec.RelacaoPagamentosEfetuados = lstR26.ToArray();
             dec.BensDireitos = lstR27.ToArray();
+            dec.DividasOnus = lstR28.ToArray();
+            dec.RendimentosPJDependentes = lstR32.ToArray();
+            dec.Alimentandos = lstR35.ToArray();
             dec.RecebidosAcumuladamente = lstR45.ToArray();
             dec.RendimentosAcumuladamenteDependente = lstR47.ToArray();
             dec.RendimentosIsentos_Tipo2 = lstR83.ToArray();

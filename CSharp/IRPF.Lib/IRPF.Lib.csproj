@@ -53,6 +53,9 @@
     <Compile Include="Classes_DEC\R25_Dependentes.cs" />
     <Compile Include="Classes_DEC\R26_RelacaoPagamentosEfetuados.cs" />
     <Compile Include="Classes_DEC\R27_BensDireitos.cs" />
+    <Compile Include="Classes_DEC\R28_DividasOnus.cs" />
+    <Compile Include="Classes_DEC\R32_RendimentosPJDependentes.cs" />
+    <Compile Include="Classes_DEC\R35_Alimentandos.cs" />
     <Compile Include="Classes_DEC\R45_RecebidosAcumuladamente.cs" />
     <Compile Include="Classes_DEC\R83_RendimentoIsento_Tipo2.cs" />
     <Compile Include="Classes_DEC\R84_RendimentoIsento_Tipo3.cs" />
