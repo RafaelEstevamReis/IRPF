@@ -29,6 +29,11 @@ Os dados foram gerados de acordo com o README com exemplos de dados
 
 Processos semelhantes foram gerados para os CNPJs que ou são sequências de núemros "1", "2", etc..
 
+### 22222222303-0000000000.xml
+
+Arquivo XML da pasta Aplicação->Dados da mesma declaração que gerou o arquivo `22222222303-IRPF-A-2020-2019-ORIGI.DEC`
+
+Parece ser a seriazação completa da declaração na aplicação, notei que é preferido o uso de Atributos ao invés de Elementos
 
 ## Links e Sites:
 
