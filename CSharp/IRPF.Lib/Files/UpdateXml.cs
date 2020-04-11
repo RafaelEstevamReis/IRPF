@@ -18,11 +18,16 @@ namespace IRPF.Lib.Files
         public string pkgver { get; set; }
         public string pkgrel { get; set; }
         public string severity { get; set; }
+        public string queryDate { get; set; }
+        public string updateStatus { get; set; }
 
         public UpdateXmlExtra extra { get; set; }
     }
     public class UpdateXmlExtra
     {
+        /// <summary>
+        /// Campo JSON
+        /// </summary>
         public string message { get; set; }
         [XmlArrayItem("file")]
         public UpdateXmlFile[] files;
