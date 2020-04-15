@@ -32,14 +32,13 @@ namespace IRPF.Lib.Declaracao
                 ConjugueCompanheiro = dec.Declarante.ehConjugue(),
                 CpfConjuge = dec.Declarante.NR_CpfConjugue,
                 Exterior = isUfEx,
-                TipoLogradouro = 0, // Lookup por nome
+                TipoLogradouro = dec.Declarante.TIP_Logradouro,
                 Logradouro = isUfEx ? "" : dec.Declarante.NM_Logradouro,
                 Numero = isUfEx ? "" : dec.Declarante.NR_Numero,
                 Complemento = isUfEx ? "" : dec.Declarante.NM_Complemento,
                 Bairro = isUfEx ? "" : dec.Declarante.NM_Bairro,
                 UF = 0,  // Lookup dec.Declarante.SG_UF
                 Municipio = Convert.ToInt32(dec.Declarante.COD_Municipio),
-                Cidade = isUfEx ? "" : dec.Declarante.NM_Municipio,
                 Cep = dec.Declarante.NR_CEP,
                 DDD = dec.Declarante.NR_DDDTelefone,
                 Telefone = dec.Declarante.NR_Telefone,

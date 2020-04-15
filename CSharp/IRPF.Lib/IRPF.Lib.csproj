@@ -69,6 +69,7 @@
     <Compile Include="Classes_DEC\R92_DoacoesIdoso.cs" />
     <Compile Include="Classes_DEC\T9_Encerramento.cs" />
     <Compile Include="Declaracao\Alimentandos.cs" />
+    <Compile Include="Declaracao\AlimentandosItens.cs" />
     <Compile Include="Declaracao\AtividadeRural.cs" />
     <Compile Include="Declaracao\Bens.cs" />
     <Compile Include="Declaracao\BensItens.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Declaracao\DeclaracaoIRPF.cs" />
     <Compile Include="Declaracao\DeclaracaoIRPF_ArqDEC.cs" />
     <Compile Include="Declaracao\Dependentes.cs" />
+    <Compile Include="Declaracao\DependentesItens.cs" />
     <Compile Include="Declaracao\Dividas.cs" />
     <Compile Include="Declaracao\Doacoes.cs" />
     <Compile Include="Declaracao\Espolio.cs" />

@@ -1,14 +1,13 @@
 ﻿
+using System.Xml.Serialization;
 namespace IRPF.Lib.Declaracao
 {
     public class Dependentes : IRPFBase
     {
-        private Contribuinte Contribuinte;
         public Dependentes() { } // Serialização
-        public Dependentes(Contribuinte Contribuinte)
-        {
-            this.Contribuinte = Contribuinte;
-        }
+
+        [XmlElement("item")]
+        public DependentesItens[] Itens { get; set; }
 
         internal static Dependentes importarDec(Identificador ide, Files.DEC_Intermediate dec)
         {

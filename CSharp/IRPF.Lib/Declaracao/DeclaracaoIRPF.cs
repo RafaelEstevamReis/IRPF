@@ -1,13 +1,17 @@
 ﻿
+using System.Xml.Serialization;
 namespace IRPF.Lib.Declaracao
 {
+    [XmlRoot("classe", Namespace = "http://www.receita.fazenda.gov.br/declaracao")]
     public partial class DeclaracaoIRPF : IRPFBase
     {
+        // Para desserialziar:
+        //  var declaracao = Serializer.DeserializeXmlFile<DeclaracaoIRPF>(caminhoArquivo);
+
         public DeclaracaoIRPF() { } // Serialização
         public DeclaracaoIRPF(Identificador id)
         {
             this.IdentificadorDeclaracao = id;
-            this.CopiaIdentificador = id;
 
             instanciaAtributos();
         }
@@ -19,7 +23,7 @@ namespace IRPF.Lib.Declaracao
             this.RendPJComExigibilidade = new RendimentosPJComExigibilidade(IdentificadorDeclaracao);
             this.Espolio = new Espolio(IdentificadorDeclaracao);
             this.ImpostoPago = new ImpostoPago();
-            this.Dependentes = new Dependentes(Contribuinte);
+            this.Dependentes = new Dependentes();
             this.RendaVariavel = new RendaVariavel();
             this.Alimentandos = new Alimentandos();
             this.Bens = new Bens();
@@ -39,16 +43,20 @@ namespace IRPF.Lib.Declaracao
             this.ModeloBase = ModeloCompleta;
         }
 
+        [XmlElement("copiaIdentificador")]
         public Identificador IdentificadorDeclaracao { get; set; }
-        public Identificador CopiaIdentificador { get; set; }
+        [XmlElement("contribuinte")]
         public Contribuinte Contribuinte { get; set; }
+        [XmlElement("pagamentos")]
         public Pagamentos Pagamentos { get; set; }
         public RendimentosPJ RendPJ { get; set; }
         public RendimentosPJComExigibilidade RendPJComExigibilidade { get; set; }
         public Espolio Espolio { get; set; }
         public ImpostoPago ImpostoPago { get; set; }
+        [XmlElement("dependentes")]
         public Dependentes Dependentes { get; set; }
         public RendaVariavel RendaVariavel { get; set; }
+        [XmlElement("alimentandos")]
         public Alimentandos Alimentandos { get; set; }
         public Bens Bens { get; set; }
         public Dividas Dividas { get; set; }
@@ -61,6 +69,7 @@ namespace IRPF.Lib.Declaracao
         public RendimentosTributacaoExclusiva RendTributacaoExclusiva { get; set; }
         public Comparativo Comparativo { get; set; }
         public Resumo Resumo { get; set; }
+        [XmlElement("doacoesEleitorais")]
         public Doacoes Doacoes { get; set; }
 
         public ModeloSimplificada ModeloSimplificada
