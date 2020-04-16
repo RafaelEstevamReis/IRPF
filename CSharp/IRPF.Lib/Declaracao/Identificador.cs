@@ -22,14 +22,27 @@ namespace IRPF.Lib.Declaracao
         public string Nome { get; set; }
         [XmlAttribute("exercicio")]
         public int Exercicio { get; set; }
-        //[XmlAttribute("declaracaoRetificadora")] // Conversão de Bool ficou estranho, vai precisar de ajuste
+        [XmlIgnore]
         public bool Retificadora { get; set; }
+        [XmlAttribute("declaracaoRetificadora")]
+        public string _XML_Retificadora
+        {
+            get { return Retificadora ? "1" : "0"; }
+            set { Retificadora = value == "1"; }
+        }
+
         [XmlAttribute("numReciboDecRetif")]
         public string NumeroReciboRetificadora { get; set; }
         [XmlAttribute("numeroReciboDecAnterior")]
         public string NumeroReciboAnterior { get; set; }
-        //[XmlAttribute("enderecoDiferente")] // Conversão de Bool ficou estranho, vai precisar de ajuste
+        [XmlIgnore]
         public bool EnderecoDiferente { get; set; }
+        [XmlAttribute("enderecoDiferente")]
+        public string _XML_EnderecoDiferente
+        {
+            get { return EnderecoDiferente ? "1" : "0"; }
+            set { EnderecoDiferente = value == "1"; }
+        }
         [XmlIgnore] // Parece não ter no XML
         public string EnderecoMACRede { get; set; }
 
