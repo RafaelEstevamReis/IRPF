@@ -15,6 +15,23 @@ namespace IRPF.Lib.UnitTest.HelpersTests
             Assert.AreEqual("0473170319", Hash.obterCrc32Utf8(r16.Substring(0, r16.Length - 10)));
         }
         [TestMethod]
+        public void Helpers_HashCrc32_Registro16_OLZEU()
+        {
+            // Este teste tem 1 caractere de diferença, estou aproveitando um erro de grafia corrigido no commit 269905f9da1333eb6b0b26c73d93ccefd235de80
+            string r16_GrafiaErrada = "1622222222303OLZEFU BYAISNO ASRIM                                        RUA            CANTAREIRA                              306                        CENTRO HISTORICO DE01024900 7107SAO PAULO                               SP   105OLZEFU@EXEMPLE.COM                                                                                   3333333341411           01021993330132630167 111110NNSN            0010001N000001        9 N099111111000132          A                                          S911111111  2914851822";
+            Assert.AreEqual("2914851822", Hash.obterCrc32Utf8(r16_GrafiaErrada.Substring(0, r16_GrafiaErrada.Length - 10)));
+
+            string r16_GrafiaCorreta = "1622222222303OLZEFU BYAISNO ASRIM                                        RUA            CANTAREIRA                              306                        CENTRO HISTORICO DE01024900 7107SAO PAULO                               SP   105OLZEFU@EXAMPLE.COM                                                                                   3333333341411           01021993330132630167 111110NNSN            0010001N000001        9 N099111111000132          A                                          S911111111  0609000497";
+            Assert.AreEqual("0609000497", Hash.obterCrc32Utf8(r16_GrafiaCorreta.Substring(0, r16_GrafiaCorreta.Length - 10)));
+        }
+        [TestMethod]
+        public void Helpers_HashCrc32_Registro16_OLZEU_GRAFIA_CORRETA()
+        {
+            // registro "R16" gerado na declaração de 2020 com dados randômicos
+            string r16 = "1622222222303OLZEFU BYAISNO ASRIM                                        RUA            CANTAREIRA                              306                        CENTRO HISTORICO DE01024900 7107SAO PAULO                               SP   105OLZEFU@EXAMPLE.COM                                                                                   3333333341411           01021993330132630167 111110NNSN            0010001N000001        9 N099111111000132          A                                          S911111111  0609000497";
+            Assert.AreEqual("0609000497", Hash.obterCrc32Utf8(r16.Substring(0, r16.Length - 10)));
+        }
+        [TestMethod]
         public void Helpers_HashCrc32_Registro19()
         {
             // registro "R19" gerado na declaração de 2020 com dados randômicos
