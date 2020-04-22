@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes_DEC\47_RendimentosAcumuladamenteDependente.cs" />
+    <Compile Include="Classes_DEC\DR_ReciboEntregaDeclaracao.cs" />
+    <Compile Include="Classes_DEC\HR_HeaderRecibo.cs" />
     <Compile Include="Classes_DEC\R17_DemaisRendimentosImpostoPago.cs" />
     <Compile Include="Classes_DEC\IR_RegistroHeader.cs" />
     <Compile Include="Classes_DEC\R16_Declarante.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="Classes_DEC\R90_RelacaoDoacoes.cs" />
     <Compile Include="Classes_DEC\R91_DoacoesECA.cs" />
     <Compile Include="Classes_DEC\R92_DoacoesIdoso.cs" />
+    <Compile Include="Classes_DEC\R9_TraillerRecibo.cs" />
     <Compile Include="Classes_DEC\T9_Encerramento.cs" />
     <Compile Include="Declaracao\Alimentandos.cs" />
     <Compile Include="Declaracao\AlimentandosItens.cs" />

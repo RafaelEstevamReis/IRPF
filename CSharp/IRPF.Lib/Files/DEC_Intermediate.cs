@@ -55,6 +55,9 @@ namespace IRPF.Lib.Files
         public R92_DoacoesIdoso[] DoacoesIdoso { get; set; }
 
         public T9_Encerramento Encerramento { get; set; }
+        public HR_HeaderRecibo HeaderRecbibo { get; set; }
+        public DR_ReciboEntregaDeclaracao ReciboEntregaDeclaracao { get; set; }
+        public R9_TraillerRecibo TraillerRecibo { get; set; }
 
         public void ToFile(string file)
         {
@@ -230,9 +233,15 @@ namespace IRPF.Lib.Files
                         dec.Encerramento = carregarRegistro<T9_Encerramento>(linha);
                         continue;
 
-                    case "HR": continue; // Agora não...
-                    case "DR": continue; // Agora não...
-                    case "R9": continue; // Agora não...
+                    case "HR":
+                        dec.HeaderRecbibo = carregarRegistro<HR_HeaderRecibo>(linha);
+                        continue; 
+                    case "DR":
+                        dec.ReciboEntregaDeclaracao = carregarRegistro<DR_ReciboEntregaDeclaracao>(linha);
+                        continue;
+                    case "R9":
+                        dec.TraillerRecibo = carregarRegistro<R9_TraillerRecibo>(linha);
+                        continue;
 
                     default:
                         throw new NotImplementedException(linha.Substring(0, 2)); // Notifica que ainda não terminei
