@@ -39,7 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes_DEC\47_RendimentosAcumuladamenteDependente.cs" />
+    <Compile Include="Classes_DEC\R34_DoacoesPartidos.cs" />
+    <Compile Include="Classes_DEC\R47_RendimentosAcumuladamenteDependente.cs" />
     <Compile Include="Classes_DEC\DR_ReciboEntregaDeclaracao.cs" />
     <Compile Include="Classes_DEC\HR_HeaderRecibo.cs" />
     <Compile Include="Classes_DEC\R17_DemaisRendimentosImpostoPago.cs" />

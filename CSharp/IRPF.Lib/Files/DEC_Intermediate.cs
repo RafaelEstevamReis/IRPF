@@ -37,6 +37,7 @@ namespace IRPF.Lib.Files
         public R27_BensDireitos[] BensDireitos { get; set; }
         public R28_DividasOnus[] DividasOnus { get; set; }
         public R32_RendimentosPJDependentes[] RendimentosPJDependentes { get; set; }
+        public R34_DoacoesPartidos[] DoacoesPartidos { get; set; }
         public R35_Alimentandos[] Alimentandos { get; set; }
         public R45_RecebidosAcumuladamente[] RecebidosAcumuladamente { get; set; }
         public R47_RendimentosAcumuladamenteDependente[] RendimentosAcumuladamenteDependente { get; set; }
@@ -121,6 +122,7 @@ namespace IRPF.Lib.Files
             var lstR27 = new List<R27_BensDireitos>();
             var lstR28 = new List<R28_DividasOnus>();
             var lstR32 = new List<R32_RendimentosPJDependentes>();
+            var lstR34 = new List<R34_DoacoesPartidos>();
             var lstR35 = new List<R35_Alimentandos>();
             var lstR45 = new List<R45_RecebidosAcumuladamente>();
             var lstR47 = new List<R47_RendimentosAcumuladamenteDependente>();
@@ -185,6 +187,9 @@ namespace IRPF.Lib.Files
                         continue;
                     case "32":
                         lstR32.Add(carregarRegistro<R32_RendimentosPJDependentes>(linha));
+                        continue;
+                    case "34":
+                        lstR34.Add(carregarRegistro<R34_DoacoesPartidos>(linha));
                         continue;
                     case "35":
                         lstR35.Add(carregarRegistro<R35_Alimentandos>(linha));
@@ -256,6 +261,7 @@ namespace IRPF.Lib.Files
             dec.BensDireitos = lstR27.ToArray();
             dec.DividasOnus = lstR28.ToArray();
             dec.RendimentosPJDependentes = lstR32.ToArray();
+            dec.DoacoesPartidos = lstR34.ToArray();
             dec.Alimentandos = lstR35.ToArray();
             dec.RecebidosAcumuladamente = lstR45.ToArray();
             dec.RendimentosAcumuladamenteDependente = lstR47.ToArray();
