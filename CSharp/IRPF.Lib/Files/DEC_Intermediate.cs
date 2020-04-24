@@ -36,6 +36,7 @@ namespace IRPF.Lib.Files
         public R26_RelacaoPagamentosEfetuados[] RelacaoPagamentosEfetuados { get; set; }
         public R27_BensDireitos[] BensDireitos { get; set; }
         public R28_DividasOnus[] DividasOnus { get; set; }
+        public R30_EspolioInventariante Inventariante { get; set; }
         public R32_RendimentosPJDependentes[] RendimentosPJDependentes { get; set; }
         public R34_DoacoesPartidos[] DoacoesPartidos { get; set; }
         public R35_Alimentandos[] Alimentandos { get; set; }
@@ -185,6 +186,9 @@ namespace IRPF.Lib.Files
                     case "28":
                         lstR28.Add(carregarRegistro<R28_DividasOnus>(linha));
                         continue;
+                    case "30":
+                        dec.Inventariante = carregarRegistro<R30_EspolioInventariante>(linha);
+                        continue; 
                     case "32":
                         lstR32.Add(carregarRegistro<R32_RendimentosPJDependentes>(linha));
                         continue;

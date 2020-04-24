@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes_DEC\R30_EspolioInventariante.cs" />
     <Compile Include="Classes_DEC\R34_DoacoesPartidos.cs" />
     <Compile Include="Classes_DEC\R47_RendimentosAcumuladamenteDependente.cs" />
     <Compile Include="Classes_DEC\DR_ReciboEntregaDeclaracao.cs" />
