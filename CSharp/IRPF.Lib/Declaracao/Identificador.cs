@@ -27,8 +27,8 @@ namespace IRPF.Lib.Declaracao
         [XmlAttribute("declaracaoRetificadora")]
         public string _XML_Retificadora
         {
-            get { return Retificadora ? "1" : "0"; }
-            set { Retificadora = value == "1"; }
+            get { return Helpers.ConversoesXML.BoolN_Get(Retificadora); }
+            set { Retificadora = Helpers.ConversoesXML.BoolN_Set(value); }
         }
 
         [XmlAttribute("numReciboDecRetif")]
@@ -40,8 +40,8 @@ namespace IRPF.Lib.Declaracao
         [XmlAttribute("enderecoDiferente")]
         public string _XML_EnderecoDiferente
         {
-            get { return EnderecoDiferente ? "1" : "0"; }
-            set { EnderecoDiferente = value == "1"; }
+            get { return Helpers.ConversoesXML.BoolN_Get(EnderecoDiferente); }
+            set { EnderecoDiferente = Helpers.ConversoesXML.BoolN_Set(value); }
         }
         [XmlIgnore] // Parece não ter no XML
         public string EnderecoMACRede { get; set; }
