@@ -9,7 +9,12 @@ namespace IRPF.Lib.Helpers
 {
     public class ConversoesXML
     {
-        private static readonly NumberFormatInfo formatDecimalXML = new NumberFormatInfo() { NumberDecimalSeparator = ",", NumberGroupSeparator = "." };
+        private static readonly NumberFormatInfo formatDecimalXML = new NumberFormatInfo()
+        {
+            NumberDecimalSeparator = ",",
+            NumberGroupSeparator = ".",
+            NumberDecimalDigits = 2,
+        };
 
         /// <summary>
         /// Leitura de Datas no formato dd/MM/yyyy
