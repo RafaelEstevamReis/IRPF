@@ -58,6 +58,7 @@ namespace IRPF.Lib.Declaracao
         public RendaVariavel RendaVariavel { get; set; }
         [XmlElement("alimentandos")]
         public Alimentandos Alimentandos { get; set; }
+        [XmlElement("bens")]
         public Bens Bens { get; set; }
         public Dividas Dividas { get; set; }
         public AtividadeRural AtividadeRural { get; set; }

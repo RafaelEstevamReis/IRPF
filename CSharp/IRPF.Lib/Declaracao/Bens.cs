@@ -1,8 +1,10 @@
 ﻿
+using System.Xml.Serialization;
 namespace IRPF.Lib.Declaracao
 {
     public class Bens : IRPFBase
     {
+        [XmlElement("item")]
         public BensItens[] Itens { get; set; }
 
         internal static Bens importarDec(Identificador ide, Files.DEC_Intermediate dec)
