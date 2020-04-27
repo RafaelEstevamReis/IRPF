@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,11 @@ namespace IRPF.Lib.Helpers
 {
     public class ConversoesXML
     {
+        private static readonly NumberFormatInfo formatDecimalXML = new NumberFormatInfo() { NumberDecimalSeparator = ",", NumberGroupSeparator = "." };
+
+        /// <summary>
+        /// Leitura de Datas no formato dd/MM/yyyy
+        /// </summary>
         public static DateTime Datas_Set(string Valor)
         {
             if (Valor.Length == 10)
@@ -16,6 +22,9 @@ namespace IRPF.Lib.Helpers
             }
             throw new Exception();
         }
+        /// <summary>
+        /// Leitura de Datas no formato dd/MM/yyyy
+        /// </summary>
         public static string Datas_Get(DateTime Valor)
         {
             return Valor.ToString("dd/MM/yyyy");
@@ -51,6 +60,15 @@ namespace IRPF.Lib.Helpers
         public static string BoolT_Get(bool Valor)
         {
             return Valor ? "S" : "N";
+        }
+
+        public static string Decimal_Get(decimal ValorPago)
+        {
+            return ValorPago.ToString(formatDecimalXML);
+        }
+        public static decimal Decimal_Set(string value)
+        {
+            return decimal.Parse(value, formatDecimalXML);
         }
     }
 }
