@@ -21,10 +21,22 @@ namespace IRPF.Lib.Declaracao
         public string NomeBeneficiario { get; set; }
         [XmlAttribute("niBeneficiario")]
         public string NIBeneficiario { get; set; }
-        //[XmlAttribute("valorPago")] // Dá treta com formato PT-BR
+        [XmlIgnore]
         public decimal ValorPago { get; set; }
-        //[XmlAttribute("parcelaNaoDedutivel")] // Dá treta com formato PT-BR
+        [XmlAttribute("valorPago")] // Dá treta com formato PT-BR
+        public string XML_ValorPago
+        {
+            get { return Helpers.ConversoesXML.Decimal_Get(ValorPago); }
+            set { ValorPago = Helpers.ConversoesXML.Decimal_Set(value); }
+        }
+        [XmlIgnore]
         public decimal ParcelaNaoDedutivel { get; set; }
+        [XmlAttribute("parcelaNaoDedutivel")] // Dá treta com formato PT-BR
+        public string XML_ParcelaNaoDedutivel
+        {
+            get { return Helpers.ConversoesXML.Decimal_Get(ParcelaNaoDedutivel); }
+            set { ParcelaNaoDedutivel = Helpers.ConversoesXML.Decimal_Set(value); }
+        }
         [XmlAttribute("nitEmpregadoDomestico")]
         public string NITEmpregadoDomestico { get; set; }
         [XmlAttribute("tipo")]
