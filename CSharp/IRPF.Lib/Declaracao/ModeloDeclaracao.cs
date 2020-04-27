@@ -1,5 +1,4 @@
-﻿
-namespace IRPF.Lib.Declaracao
+﻿namespace IRPF.Lib.Declaracao
 {
     public class ModeloDeclaracao : IRPFBase
     {

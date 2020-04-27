@@ -1,5 +1,5 @@
-﻿
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
+
 namespace IRPF.Lib.Declaracao
 {
     public class PagamentosItens

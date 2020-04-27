@@ -1,6 +1,6 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
+
 namespace IRPF.Lib.Declaracao
 {
     public class Pagamentos : IRPFBase

@@ -1,14 +1,13 @@
-﻿
+﻿using System.Xml.Serialization;
+
 namespace IRPF.Lib.Declaracao
 {
     public class RendimentosPJ : IRPFBase
     {
         public RendimentosPJ() { } // Serialização
-
         public RendimentosPJItem[] RendimentosTitular { get; set; }
         public RendimentosPJItem[] RendimentosDependente { get; set; }
-
-
+        
         internal static RendimentosPJ importarDec(Identificador ide, Files.DEC_Intermediate dec)
         {
             var RendPJ = new RendimentosPJ();

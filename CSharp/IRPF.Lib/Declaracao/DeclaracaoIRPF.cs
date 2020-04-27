@@ -1,5 +1,5 @@
-﻿
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
+
 namespace IRPF.Lib.Declaracao
 {
     [XmlRoot("classe", Namespace = "http://www.receita.fazenda.gov.br/declaracao")]
@@ -49,6 +49,7 @@ namespace IRPF.Lib.Declaracao
         public Contribuinte Contribuinte { get; set; }
         [XmlElement("pagamentos")]
         public Pagamentos Pagamentos { get; set; }
+        [XmlElement("rendPJ")]
         public RendimentosPJ RendPJ { get; set; }
         public RendimentosPJComExigibilidade RendPJComExigibilidade { get; set; }
         public Espolio Espolio { get; set; }

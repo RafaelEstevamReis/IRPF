@@ -1,6 +1,6 @@
-﻿
-using System;
+﻿using System;
 using System.Xml.Serialization;
+
 namespace IRPF.Lib.Declaracao
 {
     public class Alimentandos : IRPFBase
