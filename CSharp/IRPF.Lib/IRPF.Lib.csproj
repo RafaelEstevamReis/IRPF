@@ -108,6 +108,7 @@
     <Compile Include="Declaracao\Resumo.cs" />
     <Compile Include="Excecoes\IRPFException.cs" />
     <Compile Include="Excecoes\PendeciasException.cs" />
+    <Compile Include="Files\DEC_Ajustes.cs" />
     <Compile Include="Files\DEC_Intermediate.cs" />
     <Compile Include="Files\Mapeamento.cs" />
     <Compile Include="Files\UpdateXml.cs" />
