@@ -106,6 +106,8 @@ namespace IRPF.Lib.Files
         public static DEC_Intermediate FromFile(string file)
         {
             DEC_Intermediate dec = new DEC_Intermediate();
+            if (!ValidaNomeArquivo(file)) throw new InvalidOperationException("Arquivo inválido");
+
             dec.lines = File.ReadAllLines(file);
             // Id "IR"
             dec.Header = new IR_RegistroHeader();
@@ -312,6 +314,47 @@ namespace IRPF.Lib.Files
                 return Helpers.Hash.Valida_NRControle(line.Substring(0, line.Length - 2),    // tira o \r\n
                                                       line.Substring(line.Length - 12, 10)); // tira o \r\n
             }
+        }
+
+        public static bool ValidaNomeArquivo(string FileName)
+        {
+            if (string.IsNullOrEmpty(FileName)) throw new ArgumentException("Path inválido");
+
+            var fi = new FileInfo(FileName);
+            if (!fi.Exists) throw new FileNotFoundException();
+
+            // precisa checar o nome do arquivo pra ver se está correto
+
+            // Exemplo de Nome:
+            string[] extensoesValidas = { ".DEC", ".DBK", ".BKP" };
+            if (!extensoesValidas.Contains(fi.Extension.ToUpper())) throw new InvalidOperationException("Extensão inválida para o arquivo");
+
+            // 11111111030-IRPF-A-2020-2019-ORIGI.DBK
+            // 22222222303-IRPF-A-2020-2019-RETIF.REC
+            if (fi.Name.Length != 38) return false;
+
+            // 1: CPF
+            string cpf = fi.Name.Substring(0, 11);
+            if (!Helpers.CPF.ValidaCPF(cpf)) return false;
+            // 2: IRPF (fixo ?)
+            // 3: "A"  (fixo ?)
+            if (fi.Name.Substring(11, 8) != "-IRPF-A-") return false;
+            // 4: Exercício
+            int Ex;
+            if (!int.TryParse(fi.Name.Substring(19, 4), out Ex)) return false;
+            // 5: Ano base
+            int AB;
+            if (!int.TryParse(fi.Name.Substring(24, 4), out AB)) return false;
+
+            if (AB != Ex - 1) return false;
+
+            // Se é retificadora ou é a original
+            string tipo = fi.Name.Substring(29, 5);
+            
+            // Cuidado, agora retorna TRUE
+            if (tipo == "ORIGI") return true;
+            if (tipo == "RETIF") return true;
+            return false;
         }
     }
 }
