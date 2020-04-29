@@ -66,6 +66,27 @@ namespace IRPF.Lib.Helpers
                 throw new CrcException("Could not read the stream out as bytes.", e);
             }
         }
+        public static UInt32 Get<T>(IEnumerable<T> byteStream, UInt32 pLong)
+        {
+            try
+            {
+                // Initialize checksumRegister to 0xFFFFFFFF and calculate the checksum.
+                return ~byteStream.Aggregate(pLong ^ 0xFFFFFFFF, (checksumRegister, currentByte) =>
+                          (m_checksumTable[(checksumRegister & 0xFF) ^ Convert.ToByte(currentByte)] ^ (checksumRegister >> 8)));
+            }
+            catch (FormatException e)
+            {
+                throw new CrcException("Could not read the stream out as bytes.", e);
+            }
+            catch (InvalidCastException e)
+            {
+                throw new CrcException("Could not read the stream out as bytes.", e);
+            }
+            catch (OverflowException e)
+            {
+                throw new CrcException("Could not read the stream out as bytes.", e);
+            }
+        }
         #endregion
 
     }

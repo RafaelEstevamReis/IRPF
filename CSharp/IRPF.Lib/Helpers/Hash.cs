@@ -39,6 +39,17 @@ namespace IRPF.Lib.Helpers
             return val.ToString("0000000000");
         }
 
+        public static string obterCrc32Utf8Linhas(string[] Linhas)
+        {
+            UInt32 acumulado = 0;
+            foreach (var linha in Linhas)
+            {
+                var val = Crc32.Get(Encoding.UTF8.GetBytes(linha), acumulado);
+                acumulado += val;
+            }
+            return acumulado.ToString("0000000000");
+        }
+
         public static bool Valida_NRControle(string LinhaCompleta, string NR_Controle)
         {
             var lineToCheck = LinhaCompleta.Substring(0, LinhaCompleta.Length - 10); // descarta os 10 zeros no final
