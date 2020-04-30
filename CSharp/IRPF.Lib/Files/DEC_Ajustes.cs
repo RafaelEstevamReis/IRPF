@@ -20,6 +20,9 @@ namespace IRPF.Lib.Files
             int idxIR = 0; // fixo
             int idxR9 = -1; // não sei se tem
 
+            // Hash da declaração '2'
+            //   4122185819
+
             // Arruma todos os campos, exceto o HEADER e o TRAILLER
             var linesCalcular = lines
                 .Where(l => !l.StartsWith("HR")
@@ -33,7 +36,9 @@ namespace IRPF.Lib.Files
                     // zera HASH
                     linesCalcular[i] = linesCalcular[i].Substring(0, 101)
                                        + "0000000000"
-                                       + linesCalcular[i].Substring(111);
+                                       + linesCalcular[i].Substring(111, 872)
+                                       + "0000000000";
+                    continue; // mantém zero
                 }
                 // Para cada linha, o Checksum tá no final
 

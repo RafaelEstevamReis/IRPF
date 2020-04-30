@@ -41,13 +41,7 @@ namespace IRPF.Lib.Helpers
 
         public static string obterCrc32Utf8Linhas(string[] Linhas)
         {
-            UInt32 acumulado = 0;
-            foreach (var linha in Linhas)
-            {
-                var val = Crc32.Get(Encoding.UTF8.GetBytes(linha), acumulado);
-                acumulado += val;
-            }
-            return acumulado.ToString("0000000000");
+            return obterCrc32Utf8(string.Join("", Linhas));
         }
 
         public static bool Valida_NRControle(string LinhaCompleta, string NR_Controle)
