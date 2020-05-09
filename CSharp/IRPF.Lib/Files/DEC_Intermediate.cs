@@ -60,34 +60,48 @@ namespace IRPF.Lib.Files
         public HR_HeaderRecibo HeaderRecbibo { get; set; }
         public DR_ReciboEntregaDeclaracao ReciboEntregaDeclaracao { get; set; }
         public R9_TraillerRecibo TraillerRecibo { get; set; }
-
+        
         public void ToFile(string file)
         {
             //using (var ms = new MemoryStream())
             using(var fs = new FileStream(file, FileMode.Create))
             {
-                var sw = new StreamWriter(fs);
-                
-                var fields = this.GetType().GetProperties();
-                foreach (var f in fields)
+                gravaDecStream(this, fs);
+            }
+        }
+        protected static IEnumerable<string> toLines(DEC_Intermediate dec)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                gravaDecStream(dec, ms);
+                ms.Position = 0;
+                StreamReader sr = new StreamReader(ms, Encoding.UTF8);
+                while (!sr.EndOfStream) yield return sr.ReadLine();
+            }
+        }
+        private static void gravaDecStream(DEC_Intermediate dec, Stream fs)
+        {
+            var sw = new StreamWriter(fs);
+
+            var fields = dec.GetType().GetProperties();
+            foreach (var f in fields)
+            {
+                var ft = f.PropertyType;
+                if (ft.IsArray)
                 {
-                    var ft = f.PropertyType;
-                    if (ft.IsArray)
+                    Array arr = (Array)f.GetValue(dec);
+                    for (int i = 0; i < arr.Length; i++)
                     {
-                        Array arr = (Array)f.GetValue(this);
-                        for (int i = 0; i < arr.Length; i++)
-                        {
-                            object o = arr.GetValue(i);
-                            if (o == null) continue; // vazio
-                            Serialization.Serializer.Serialize((IFixedLenLine)o, sw);
-                        }
-                    }
-                    else
-                    {
-                        object o = f.GetValue(this);
+                        object o = arr.GetValue(i);
                         if (o == null) continue; // vazio
                         Serialization.Serializer.Serialize((IFixedLenLine)o, sw);
                     }
+                }
+                else
+                {
+                    object o = f.GetValue(dec);
+                    if (o == null) continue; // vazio
+                    Serialization.Serializer.Serialize((IFixedLenLine)o, sw);
                 }
             }
         }
@@ -314,6 +328,16 @@ namespace IRPF.Lib.Files
                 return Helpers.Hash.Valida_NRControle(line.Substring(0, line.Length - 2),    // tira o \r\n
                                                       line.Substring(line.Length - 12, 10)); // tira o \r\n
             }
+        }
+
+        public static void GravarArquivoDecEntrega(DEC_Intermediate dadosDec, string FilePath)
+        {
+           
+        }
+        private void prepararEntrega()
+        {
+            Header.NR_Hash = new string('0', 10);
+            Header.NR_Controle = new string('0', 10);
         }
 
         public static bool ValidaNomeArquivo(string FileName)
