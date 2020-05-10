@@ -117,6 +117,7 @@
     <Compile Include="Helpers\CPF.cs" />
     <Compile Include="Helpers\Crc32.cs" />
     <Compile Include="Helpers\Datas.cs" />
+    <Compile Include="Helpers\Extensoes.cs" />
     <Compile Include="Helpers\Hash.cs" />
     <Compile Include="Helpers\Numeros.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
