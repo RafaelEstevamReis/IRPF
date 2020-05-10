@@ -21,6 +21,11 @@ namespace IRPF.Lib.Classes_DEC
        [Index(4), Type(TipoRegistro.C), Length(11)]
        public string NR_Cpf_BenefIC { get; set; }
 
+       /*
+          19=Transferências patrimoniais – meação e divórcio
+          20=Ganhos líquidos de ações até R$ 20.000,00
+          21=Ganhos líquidos com ouro até R$ 20.000,00
+        */
        [Index(5), Type(TipoRegistro.N), Length(4)]
        public int NR_COD { get; set; }
 
