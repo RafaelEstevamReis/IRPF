@@ -29,6 +29,13 @@ Os dados foram gerados de acordo com o README com exemplos de dados
 
 Processos semelhantes foram gerados para os CNPJs que ou são sequências de núemros "1", "2", etc..
 
+#### Diferença entre o DEC e o DBK
+
+A diferença entre os arquivos é:
+* O NR_HASH não muda
+* o NR_CONTROLE muda
+* o DEC tem os registros HR, DR e R9
+
 ### 22222222303-0000000000.xml
 
 Arquivo XML da pasta Aplicação->Dados da mesma declaração que gerou o arquivo `22222222303-IRPF-A-2020-2019-ORIGI.DEC`
