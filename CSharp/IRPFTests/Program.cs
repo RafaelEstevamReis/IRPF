@@ -1,6 +1,5 @@
-﻿using IRPF.Lib.Serialization;
-using System;
-using System.IO;
+﻿using System;
+using System.Linq;
 
 namespace IRPF.Tests
 {
@@ -14,44 +13,32 @@ namespace IRPF.Tests
             Console.WriteLine("Fim");
             Console.ReadKey();
         }
-        static void testeSerializacao()
+
+        static void Exemplo_Manipula_ArquivoDEC()
         {
-            var tSer = new testeSerializable()
-            {
-                Campo1 = "A",
-                Campo2 = "B",
-                Campo3 = "C",
-                Campo4 = "D",
-                Pular = 1,
-            };
+            // Carrega arquivo DEC de exemplo
+            string pathLeitura = "Exemplo\\22222222303-IRPF-A-2020-2019-ORIGI.DBK";
+            string pathEscrita = "Teste\\22222222303-IRPF-A-2020-2019-ORIGI.DBK";
+            var dec = Lib.Files.DEC_Intermediate.FromFile(pathLeitura);
 
-            var data = tSer.ReadObject();
+            // Valores esperados para o arquivo de exemplo do commit df31f61
+            // IR HASH: 0021677088
+            // IR NR_C: 4183433249
+            Console.WriteLine("Verifica NR_HASH: " + dec.Header.NR_Hash);
+            Console.WriteLine("Verifica NR_CONTROLE: " + dec.Header.NR_Controle);
 
-            using (var ms = new MemoryStream())
-            {
-                var sw = new StreamWriter(ms);
-                tSer.Serialize(sw);
+            Console.Write("Novo Nome: ");
+            string nome = Console.ReadLine();
 
-                ms.Position = 0;
-                StreamReader sr = new StreamReader(ms);
-                Console.WriteLine(sr.ReadToEnd());
-            }
+            // Seta campos
+            dec.Header.NN_Nome =
+                dec.Declarante.NM_Nome = nome.ToUpper();
+            // Recaclula o que for necessário (trabalho em progresso)
+            dec.TotalizaDeclaracao();
 
+            // Grava arquivo 
+            Lib.Files.DEC_Intermediate.GravarArquivoDecBackup(dec, pathEscrita);
         }
     }
 
-    public class testeSerializable : IFixedLenLine
-    {
-        [Index(0), Length(4), Type(TipoRegistro.C)]
-        public string Campo1 { get; set; }
-        [Index(3), Length(4), Type(TipoRegistro.C)]
-        public string Campo2 { get; set; }
-        [Index(2), Length(4), Type(TipoRegistro.C)]
-        public object Pular { get; set; }
-        [Ignore]
-        public string Campo3 { get; set; }
-        [Index(1), Length(4), Type(TipoRegistro.C)]
-        public string Campo4 { get; set; }
-
-    }
 }
