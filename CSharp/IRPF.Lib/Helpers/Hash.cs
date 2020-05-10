@@ -47,10 +47,13 @@ namespace IRPF.Lib.Helpers
         public static bool Valida_NRControle(string LinhaCompleta, string NR_Controle)
         {
             var lineToCheck = LinhaCompleta.Substring(0, LinhaCompleta.Length - 10); // descarta os 10 zeros no final
-
-            // Testarei CRC pois é fácil e usado em ZIPs para detecção de rros
             var calculado = obterCrc32Utf8(lineToCheck);
             return calculado == NR_Controle;
+        }
+        public static string Arruma_NRControle(string LinhaCompleta)
+        {
+            var lineToCheck = LinhaCompleta.Substring(0, LinhaCompleta.Length - 10); // descarta os 10 zeros no final
+            return lineToCheck + obterCrc32Utf8(lineToCheck);
         }
     }
 }
