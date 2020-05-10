@@ -21,6 +21,7 @@ namespace IRPF.Lib.Classes_DEC
        [Index(4), Type(TipoRegistro.C), Length(11)]
        public string NR_Cpf_BenefIC { get; set; }
 
+       /* Cod: 11 = Pensão, aposentadoria ou reforma por doença grave ou por acidente */
        [Index(5), Type(TipoRegistro.N), Length(4)]
        public int NR_Cod { get; set; }
 

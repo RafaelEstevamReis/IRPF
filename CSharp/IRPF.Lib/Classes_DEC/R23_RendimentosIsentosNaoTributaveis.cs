@@ -9,14 +9,27 @@ namespace IRPF.Lib.Classes_DEC
 {
     public class R23_RendimentosIsentosNaoTributaveis : IFixedLenLine
     {
+        public R23_RendimentosIsentosNaoTributaveis() { }
+        public R23_RendimentosIsentosNaoTributaveis(IR_RegistroHeader header)
+        {
+            this.NR_Controle = "";
+            this.NR_Reg = 23;
+            this.NR_Cpf = header.CPF_Contribuinte;
+        }
+
         [Index(1), Type(TipoRegistro.N), Length(2)]
         public int NR_Reg { get; set; }
 
         [Index(2), Type(TipoRegistro.C), Length(11)]
         public string NR_Cpf { get; set; }
 
+        /*
+           19 = Transferências patrimoniais – meação e divórcio
+           20=Ganhos líquidos de ações até R$ 20.000,00
+           21=Ganhos líquidos com ouro até R$ 20.000,00
+         */
         [Index(3), Type(TipoRegistro.N), Length(4)]
-        public string CD_Isento { get; set; }
+        public int CD_Isento { get; set; }
 
         [Index(4), Type(TipoRegistro.N), Length(13, 2)]
         public decimal VR_Valor { get; set; }

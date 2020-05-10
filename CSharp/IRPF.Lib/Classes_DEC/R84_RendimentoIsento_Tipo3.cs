@@ -21,6 +21,19 @@ namespace IRPF.Lib.Classes_DEC
        [Index(4), Type(TipoRegistro.C), Length(11)]
        public string NR_Cpf_BenefIC { get; set; }
 
+       /*
+          1 = Bolsas de estudo e de pesquisa caracterizada como doação
+          2=Bolsas de médico-residente ou de participante do Pronatec
+          4=Indenizações por rescisão de contrato de trabalho, PDV e FGTS
+          9=Lucros e dividendos recebidos
+          10=Parcela isenta de aposentadoria de maior de 65 anos
+          12=Rendimentos de poupanças e letras hipotecárias
+          13=Rendimentos de sócio de ME ou optante pelo Simples, exceto pró-labore
+          14=Transferências patrimoniais – doações e heranças
+          16=Imposto de anos anteriores compensado judicialmente
+          17=75%
+          18=Incorporação de reservas de capital
+        */
        [Index(5), Type(TipoRegistro.N), Length(4)]
        public int NR_Cod { get; set; }
 

@@ -15,6 +15,11 @@ namespace IRPF.Lib.Classes_DEC
         [Index(2), Type(TipoRegistro.C), Length(11)]
         public string NR_Cpf { get; set; }
 
+        /*
+           05=Lucro na alienação de bens de pequeno valor
+           06=Lucro na alienação do único imóvel
+           07=Lucro na alienação de outros bens imóvel.
+         */
         [Index(3), Type(TipoRegistro.N), Length(4)]
         public int NR_Cod { get; set; }
 
