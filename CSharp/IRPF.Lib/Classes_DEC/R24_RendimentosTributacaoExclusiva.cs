@@ -9,6 +9,14 @@ namespace IRPF.Lib.Classes_DEC
 {
     public class R24_RendimentosTributacaoExclusiva : IFixedLenLine
     {
+        public R24_RendimentosTributacaoExclusiva() { }
+        public R24_RendimentosTributacaoExclusiva(IR_RegistroHeader Header)
+        {
+            this.NR_Reg = 24;
+            this.NR_Cpf = Header.CPF_Contribuinte;
+            this.NR_Controle = "";
+        }
+
         [Index(1), Type(TipoRegistro.N), Length(2)]
         public int NR_Reg { get; set; }
 

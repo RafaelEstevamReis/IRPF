@@ -14,7 +14,7 @@ namespace IRPF.Lib.Files
         {
             // Totaliza tudo ... (header por último)            
             r23_TotalizaISentos();
-
+            r24_TotalizaTributacaoExclusiva();
 
             r17_DemaisRendimentosEImpostoPago();
             // O Header está no final pois utiliza valores totalizados em outros campos
@@ -25,7 +25,8 @@ namespace IRPF.Lib.Files
 
         private void r17_DemaisRendimentosEImpostoPago()
         {
-            
+            // Esta guia não é validada,
+            //  o software do IRPF vai carregar a declaração e recalcular tudo            
         }
 
         private void ir_TotalizaHeader()
@@ -231,6 +232,64 @@ namespace IRPF.Lib.Files
             RendimentosIsentosNaoTributaveis = unitarios
                 .Union(acumulados)
                 .ToArray();
+        }
+        private void r24_TotalizaTributacaoExclusiva()
+        {
+            Dictionary<int, decimal> dicValores = new Dictionary<int, decimal>();
+
+            // Zera todos
+            for (int i = 1; i <= 12; i++) dicValores.Add(i, 0);
+
+            // São os campos próprios (calculados) e os 88, 89
+
+            // 01: Décimo terceiro do Titular => R21
+            if (RendimentosPJ != null)
+            {
+                dicValores[1] = RendimentosPJ.Sum(o => o.VR_DecTerc);
+            }
+            // 02: Ganhos de Capital          => 
+            //--
+            // 03: Ganhos de Capital Estrangeira =>
+            //--
+            // 04: Ganhos de Capital em espécie  =>
+            //--
+            // 05: Ganhos Renda Variável  => 
+            //--
+            // 07: RRA
+            //--
+            // 08: Décimo terceiro dos Dependentes => R32
+            if (RendimentosPJDependentes != null)
+            {
+                dicValores[8] = RendimentosPJDependentes.Sum(o => o.VR_DecTerc);
+            }
+            // 09: RRA Dependentes
+            //--
+            // 06: Rendimentos Aplicações => R88
+            // 10: JCP     => R88
+            // 11: RendPLR => R88
+            if (RendimentoExclusivo_Tipo2 != null)
+            {
+                foreach (var v in RendimentoExclusivo_Tipo2)
+                {
+                    dicValores[v.NR_Cod] += v.VR_Valor;
+                }
+            }
+            // 12: Outros  => R89
+            if (RendimentoExclusivo_Tipo3 != null) dicValores[12] = RendimentoExclusivo_Tipo3.Sum(o => o.VR_Valor);
+
+            var lst = new List<Classes_DEC.R24_RendimentosTributacaoExclusiva>();
+            foreach (var pair in dicValores)
+            {
+                if (pair.Value > 0)
+                {
+                    lst.Add(new Classes_DEC.R24_RendimentosTributacaoExclusiva(Header)
+                    {
+                        CD_Exclusivo = pair.Key,
+                        VR_Valor = pair.Value
+                    });
+                }
+            }
+            RendimentosTributacaoExclusiva = lst.ToArray();
         }
 
         private void t9_TotalizaEncerramento()

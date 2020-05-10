@@ -22,7 +22,7 @@ namespace IRPF.Lib.Classes_DEC
        public string NR_Cpf_Benefic { get; set; }
 
        [Index(5), Type(TipoRegistro.C), Length(4)]
-       public string NR_Cod { get; set; }
+       public int NR_Cod { get; set; }
 
        [Index(6), Type(TipoRegistro.C), Length(14)]
        public string NR_Pagadora { get; set; }
