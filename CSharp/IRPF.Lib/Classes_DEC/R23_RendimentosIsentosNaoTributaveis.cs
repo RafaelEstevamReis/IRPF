@@ -23,6 +23,18 @@ namespace IRPF.Lib.Classes_DEC
         [Index(2), Type(TipoRegistro.C), Length(11)]
         public string NR_Cpf { get; set; }
 
+        /* Há dois conjuntos de registros
+         * a. Unitários, são registros aonde aqui é o local original
+         *  > 03, 08, 23, 24 e 25
+         * b. Totalizados, são registros aonde aqui ficam os totais
+         *  > R40: 22
+         *  > R52: 15
+         *  > R83: 19, 20 e 21
+         *  > R84: 1, 2, 4, 9, 10, 12, 13, 14, 16, 17 e 18
+         *  > R85: 11
+         *  > R86: 26
+         *  > R87: 5, 6 e 7
+         */
         [Index(3), Type(TipoRegistro.N), Length(4)]
         public int CD_Isento { get; set; }
 

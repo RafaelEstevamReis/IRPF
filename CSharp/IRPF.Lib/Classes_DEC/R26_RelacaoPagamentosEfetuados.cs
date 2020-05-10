@@ -47,5 +47,20 @@ namespace IRPF.Lib.Classes_DEC
 
         [Index(13), Type(TipoRegistro.N), Length(10)]
         public string NR_Controle { get; set; }
+
+        public bool ehDespesaMedica()
+        {
+            int[] codigos = 
+                {
+                    09, // PAGAMENTO_FONOAUDIOLOGO_BR
+                    10, // PAGAMENTO_MEDICO_BR
+                    11, // PAGAMENTO_DENTISTA_BR
+                    12, // PAGAMENTO_PSICOLOGO_BR
+                    13, // PAGAMENTO_FISIOTERAPEUTA_BR
+                    14, // PAGAMENTO_TERAPEUTA_OCUPACIONAL_BR
+                    26, // PAGAMENTO_PLANOSAUDE_BR
+                };
+            return codigos.Contains(CD_Pagto);
+        }
     }
 }
