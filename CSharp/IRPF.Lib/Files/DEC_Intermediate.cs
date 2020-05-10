@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace IRPF.Lib.Files
 {
-    public class DEC_Intermediate
+    public partial class DEC_Intermediate
     {
         string[] lines;
         private DEC_Intermediate() { }
