@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using IRPF.Lib.Helpers;
+using System.Text;
 
 namespace IRPF.Lib.UnitTest.HelpersTests
 {
@@ -51,6 +52,40 @@ namespace IRPF.Lib.UnitTest.HelpersTests
             // registro "R19" gerado na declaração de 2020 com dados randômicos
             string rT9 = "T9111111110300000170000100000000000000100001000010000000000000010000300002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000100001000000000000000000000000000000000003765855037";
             Assert.IsTrue(Hash.Valida_NRControle(rT9, "3765855037"));
+        }
+
+        [TestMethod]
+        public void Helpers_HashCrc32_Ascii127()
+        {
+            string txt = "0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ-abcdefghijklmnopqrstuvwxyz";
+            Assert.AreEqual("1164571807", Hash.obterCrc32Utf8(txt));
+
+            // Hash com todos os caracteres ASCII127
+            StringBuilder sb = new StringBuilder();
+            for (char c = '\0'; c < 128; c++)
+            {
+                sb.Append(c);
+            }
+            Assert.AreEqual("0610602327", Hash.obterCrc32Utf8(sb.ToString()));
+
+            txt = "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz"
+                + "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz"
+                + "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz"
+                + "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz"
+                + "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz";
+            Assert.AreEqual("1918949460", Hash.obterCrc32Utf8(txt));
+        }
+        [TestMethod]
+        public void Helpers_HashCrc32_ArrayLinhas()
+        {
+            // Certifica que o Array de linhas é igual ao calculo concatenado do teste Helpers_HashCrc32_Ascii127
+            string[] arr = { "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz", // Acum: 2808346969
+                             "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz", // Acum: 3915510840
+                             "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz", // Acum: 1930397578
+                             "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz", // Acum: 3367836050
+                             "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz" };
+
+            Assert.AreEqual("1918949460", Hash.obterCrc32Utf8Linhas(arr));
         }
     }
 }
