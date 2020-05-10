@@ -1,4 +1,6 @@
-﻿using System;
+﻿using IRPF.Lib.Serialization;
+using IRPF.Lib.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +12,139 @@ namespace IRPF.Lib.Files
     {
         public void TotalizaDeclaracao()
         {
-            // Totaliza tudo ...
+            // Totaliza tudo ... (header por último)            
+            r23_TotalizaISentos();
+
+
+            r17_DemaisRendimentosEImpostoPago();
+            // O Header está no final pois utiliza valores totalizados em outros campos
+            ir_TotalizaHeader();
+            // Contadores de encerrametnos
+            t9_TotalizaEncerramento();
         }
 
+        private void r17_DemaisRendimentosEImpostoPago()
+        {
+            
+        }
+
+        private void ir_TotalizaHeader()
+        {
+            // Ainda não está completo
+
+            #region Fontes Pagadoras
+            // Busca
+            var fontes = new List<Tuple<string, decimal>>();
+            if (RendimentosPJ != null)
+            {
+                fontes.AddRange(RendimentosPJ
+                    .Select(r => new Tuple<string, decimal>(r.NR_Pagador, r.VR_Rendto)));
+            }
+            if (RendimentosPJDependentes != null)
+            {
+                fontes.AddRange(RendimentosPJDependentes
+                    .Select(r => new Tuple<string, decimal>(r.NR_Pagador, r.VR_Rendto)));
+            }
+            // Agrega e Ordena
+            fontes = fontes
+                .GroupBy(g => g.Item1)
+                .Select(r => new Tuple<string, decimal>(r.Key, r.Sum(o => o.Item2 )))
+                .OrderByDescending( i => i.Item2)
+                .ToList();
+            // Seta campos
+            Header.NR_BaseFonteMaior = fontes.Count > 0 ? fontes[0].Item1 : "";
+            Header.NR_BaseFonteDois = fontes.Count > 1 ? fontes[1].Item1 : "";
+            Header.NR_BaseFonteTres = fontes.Count > 2 ? fontes[2].Item1 : "";
+            Header.NR_BaseFonteQuatro = fontes.Count > 3 ? fontes[3].Item1 : "";
+            #endregion
+
+            #region Dependentes
+            // Zera
+            Tuple<string, string>[] rankingRendimentos = new Tuple<string, string>[0];
+ 
+            if (Dependentes != null && Dependentes.Length > 0)
+            {
+                var dicDependentes = Dependentes
+                    .Select(d => new { 
+                        cpf = d.NI_Depend,
+                        nasc = d.DT_Nascim
+                    })
+                    .ToDictionary(k => k.cpf, e => e.nasc);
+
+                rankingRendimentos = RendimentosPJDependentes
+                    .Select(o => new Tuple<string, decimal>(o.Cpf_Benef, o.VR_Rendto))
+                    .OrderByDescending(o => o.Item2)
+                    .Select(d => new Tuple<string, string>(d.Item1,
+                                                           dicDependentes.Get(d.Item1, "")))
+                    .ToArray();
+            }
+            Header.NR_CPFDepeRendMaior = leTupla(rankingRendimentos, 0).Item1;
+            Header.DT_NasDepeRendMaior = leTupla(rankingRendimentos, 0).Item2;
+
+            Header.NR_CPFDepeRendDois = leTupla(rankingRendimentos, 1).Item1;
+            Header.DT_NasDepeRendDois = leTupla(rankingRendimentos, 1).Item2;
+
+            Header.NR_CPFDepeRendTres = leTupla(rankingRendimentos, 2).Item1;
+            Header.DT_NasDepeRendTres = leTupla(rankingRendimentos, 2).Item2;
+
+            Header.NR_CPFDepeRendQuatro = leTupla(rankingRendimentos, 3).Item1;
+            Header.DT_NasDepeRendQuatro = leTupla(rankingRendimentos, 3).Item2;
+
+            Header.NR_CPFDepeRendCinco = leTupla(rankingRendimentos, 4).Item1;
+            Header.DT_NasDepeRendCinco = leTupla(rankingRendimentos, 4).Item2;
+
+            Header.NR_CPFDepeRendSeis = leTupla(rankingRendimentos, 5).Item1;
+            Header.DT_NasDepeRendSeis = leTupla(rankingRendimentos, 5).Item2;
+            #endregion
+
+            #region VR_TotalPagamentos e Depsesas médicas
+            Header.NR_BaseBenefDespMedMaior =
+                 Header.NR_BaseBenefDespMedDois = "";
+            Header.VR_TotalPagamentos = 0;
+            
+            if(RelacaoPagamentosEfetuados != null)
+            {
+                Header.VR_TotalPagamentos = RelacaoPagamentosEfetuados.Sum(o => o.VR_Pagto);
+
+                var pagMed = RelacaoPagamentosEfetuados
+                    .Where(r => r.ehDespesaMedica())
+                    .Where(r => r.VR_Pagto >= r.VR_Reduc)
+                    .GroupBy(g => g.NR_Benef)
+                    .Select(g => new Tuple<string, decimal>(
+                                    g.Key, g.Sum(o => o.VR_Pagto - o.VR_Reduc)))
+                    .OrderByDescending(o => o.Item2)
+                    .ToArray();
+
+                if (pagMed.Length > 0) Header.NR_BaseBenefDespMedMaior = pagMed[0].Item1;
+                if (pagMed.Length > 1) Header.NR_BaseBenefDespMedDois = pagMed[1].Item1;
+            }
+            #endregion
+
+            if (RendimentosIsentosNaoTributaveis != null)
+            {
+                Header.VR_TotalIsentos = RendimentosIsentosNaoTributaveis.Sum(o => o.VR_Valor);
+            }
+
+            //Header.IN_EntregaObrigatoria = EhEntregaObrigatoria(); // TODO Implementar
+            Header.IN_EntregaObrigatoria = Header.IN_EntregaObrigatoria;
+
+            if (Header.ehCompleta())
+            {
+                Header.VR_ImpDevido = TotaisDeclaracao.VR_ImpDev; 
+            }
+            else
+            {
+                Header.VR_ImpDevido = TotaisDeclaracaoSimplificada.VR_ImpDevido; 
+            }
+
+
+        }
+
+        private Tuple<string, string> leTupla(Tuple<string, string>[] items, int index)
+        {
+            if (items.Length <= index) return new Tuple<string, string>(string.Empty, string.Empty);
+            return items[index];
+        }
 
         private void r23_TotalizaISentos()
         {
@@ -99,6 +231,101 @@ namespace IRPF.Lib.Files
             RendimentosIsentosNaoTributaveis = unitarios
                 .Union(acumulados)
                 .ToArray();
+        }
+
+        private void t9_TotalizaEncerramento()
+        {
+            //Encerramento.QT_Total - Basicamente a contagem de linhas
+            Encerramento.QT_R16 = contar(Declarante);
+            Encerramento.QT_R17 = contar(DemaisRendimentosEImpostoPago);
+            Encerramento.QT_R18 = contar(TotaisDeclaracaoSimplificada);
+            Encerramento.QT_R19 = contar(Completa);
+            Encerramento.QT_R20 = contar(TotaisDeclaracao);
+
+            Encerramento.QT_R21 = contar(RendimentosPJ);
+            Encerramento.QT_R22 = contar(RendimentosPfExteriorLeao);
+            Encerramento.QT_R23 = contar(RendimentosIsentosNaoTributaveis);
+            Encerramento.QT_R24 = contar(RendimentosTributacaoExclusiva);
+            Encerramento.QT_R25 = contar(Dependentes);
+            Encerramento.QT_R26 = contar(RelacaoPagamentosEfetuados);
+            Encerramento.QT_R27 = contar(BensDireitos);
+            Encerramento.QT_R28 = contar(DividasOnus);
+            //Encerramento.QT_R29 Não existe
+            Encerramento.QT_R30 = contar(Inventariante);
+            //Encerramento.QT_R31 Não existe
+            Encerramento.QT_R32 = contar(RendimentosPJDependentes);
+            //Encerramento.QT_R33 Não existe
+            Encerramento.QT_R34 = contar(DoacoesPartidos);
+            Encerramento.QT_R35 = contar(Alimentandos);
+            //Encerramento.QT_R36 Não existe
+            //Encerramento.QT_R37 Não existe
+            Encerramento.QT_R38 = 0; // TODO: Não implementado
+            Encerramento.QT_R39 = 0; // TODO: Não implementado
+            Encerramento.QT_R40 = 0; // TODO: Não implementado
+            Encerramento.QT_R41 = 0; // TODO: Não implementado
+            Encerramento.QT_R42 = 0; // TODO: Não implementado
+            Encerramento.QT_R43 = 0; // TODO: Não implementado
+            //Encerramento.QT_R44 Não existe
+            Encerramento.QT_R45 = contar(RecebidosAcumuladamente);
+            Encerramento.QT_R46 = 0; // TODO: Não implementado
+            Encerramento.QT_R47 = contar(RendimentosAcumuladamenteDependente);
+            Encerramento.QT_R48 = 0; // TODO: Não implementado
+            Encerramento.QT_R49 = 0; // TODO: Não implementado
+            Encerramento.QT_R50 = 0; // TODO: Não implementado
+            Encerramento.QT_R51 = 0; // TODO: Não implementado
+            Encerramento.QT_R52 = 0; // TODO: Não implementado
+            Encerramento.QT_R53 = 0; // TODO: Não implementado
+            Encerramento.QT_R54 = 0; // TODO: Não implementado
+            Encerramento.QT_R55 = 0; // TODO: Não implementado
+            Encerramento.QT_R56 = 0; // TODO: Não implementado
+            //Encerramento.QT_R57 Não existe
+            Encerramento.QT_R58 = 0; // TODO: Não implementado
+            Encerramento.QT_R59 = 0; // TODO: Não implementado
+            Encerramento.QT_R60 = 0; // TODO: Não implementado
+            Encerramento.QT_R61 = 0; // TODO: Não implementado
+            Encerramento.QT_R62 = 0; // TODO: Não implementado
+            Encerramento.QT_R63 = 0; // TODO: Não implementado
+            Encerramento.QT_R64 = 0; // TODO: Não implementado
+            Encerramento.QT_R65 = 0; // TODO: Não implementado
+            Encerramento.QT_R66 = 0; // TODO: Não implementado
+            Encerramento.QT_R67 = 0; // TODO: Não implementado
+            Encerramento.QT_R68 = 0; // TODO: Não implementado
+            Encerramento.QT_R69 = 0; // TODO: Não implementado
+            Encerramento.QT_R70 = 0; // TODO: Não implementado
+            Encerramento.QT_R71 = 0; // TODO: Não implementado
+            Encerramento.QT_R72 = 0; // TODO: Não implementado
+            Encerramento.QT_R73 = 0; // TODO: Não implementado
+            Encerramento.QT_R74 = 0; // TODO: Não implementado
+            Encerramento.QT_R75 = 0; // TODO: Não implementado
+            //Encerramento.QT_R76 Não existe
+            //Encerramento.QT_R77 Não existe
+            //Encerramento.QT_R78 Não existe
+            //Encerramento.QT_R79 Não existe
+            Encerramento.QT_R80 = 0; // TODO: Não implementado
+            Encerramento.QT_R81 = 0; // TODO: Não implementado
+            //Encerramento.QT_R82 Não existe
+            Encerramento.QT_R83 = contar(RendimentosIsentos_Tipo2);
+            Encerramento.QT_R84 = contar(RendimentosIsentos_Tipo3);
+            Encerramento.QT_R85 = contar(RendimentosIsentos_Tipo4);
+            Encerramento.QT_R86 = contar(RendimentosIsentos_Tipo5);
+            Encerramento.QT_R87 = contar(RendimentosIsentos_Tipo6);
+            Encerramento.QT_R88 = contar(RendimentoExclusivo_Tipo2);
+            Encerramento.QT_R89 = contar(RendimentoExclusivo_Tipo3);
+
+            Encerramento.QT_R90 = contar(RelacaoDoacoes);
+            Encerramento.QT_R91 = contar(DoacoesECA);
+            Encerramento.QT_R92 = contar(DoacoesIdoso);
+        }
+
+        private static int contar(Array array)
+        {
+            if (array == null) return 0;
+            return array.Length;
+        }
+        private static int contar(IFixedLenLine item)
+        {
+            if (item == null) return 0;
+            return 1;
         }
 
     }
