@@ -41,7 +41,7 @@ namespace IRPF.Lib.Helpers
 
         public static string obterCrc32Utf8Linhas(string[] Linhas)
         {
-            return obterCrc32Utf8(string.Join("", Linhas));
+            return obterCrc32Utf8(string.Join(string.Empty, Linhas));
         }
 
         public static bool Valida_NRControle(string LinhaCompleta, string NR_Controle)

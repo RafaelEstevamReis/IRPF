@@ -60,11 +60,11 @@ namespace IRPF.Lib.Files
         public HR_HeaderRecibo HeaderRecbibo { get; set; }
         public DR_ReciboEntregaDeclaracao ReciboEntregaDeclaracao { get; set; }
         public R9_TraillerRecibo TraillerRecibo { get; set; }
-        
+
         public void ToFile(string file)
         {
             //using (var ms = new MemoryStream())
-            using(var fs = new FileStream(file, FileMode.Create))
+            using (var fs = new FileStream(file, FileMode.Create))
             {
                 gravaDecStream(this, fs);
             }
@@ -204,7 +204,7 @@ namespace IRPF.Lib.Files
                         continue;
                     case "30":
                         dec.Inventariante = carregarRegistro<R30_EspolioInventariante>(linha);
-                        continue; 
+                        continue;
                     case "32":
                         lstR32.Add(carregarRegistro<R32_RendimentosPJDependentes>(linha));
                         continue;
@@ -260,7 +260,7 @@ namespace IRPF.Lib.Files
 
                     case "HR":
                         dec.HeaderRecbibo = carregarRegistro<HR_HeaderRecibo>(linha);
-                        continue; 
+                        continue;
                     case "DR":
                         dec.ReciboEntregaDeclaracao = carregarRegistro<DR_ReciboEntregaDeclaracao>(linha);
                         continue;
@@ -330,14 +330,57 @@ namespace IRPF.Lib.Files
             }
         }
 
-        public static void GravarArquivoDecEntrega(DEC_Intermediate dadosDec, string FilePath)
+        public static void GravarArquivoDecBackup(DEC_Intermediate dadosDec, string FilePath)
         {
-           
+            // Pega nome do Arquivo, são os 8 primeiros caracteres, Concatenar direto o CPF ?
+            string nomeArquivo = dadosDec.GerarNomeArquivoDEC(true).ToUpper();
+            var partesNome = nomeArquivo.Split('.');
+            nomeArquivo = partesNome[0].Substring(0, 8) + "." + partesNome[1];
+            // Apaga o NR_HASH e NR_CONTROLE
+            dadosDec.zerarHeader();
+            string[] linhasArrumadas = arrumaControleLinhas(toLines(dadosDec), false).ToArray(); // false => SEM IR
+
+            string fileHash = Helpers.Hash.obterCrc32Utf8(string.Join(string.Empty, linhasArrumadas));
+            // Dados esperados para o 22222222303-IRPF-A-2020-2019-ORIGI.DBK do commit df31f61
+            // IR HASH: 0021677088
+            // IR NR_C: 4183433249
+            dadosDec.Header.NR_Hash = fileHash;
+
+            // Pega novamente as linhas porém contendo o Header
+            linhasArrumadas = arrumaControleLinhas(toLines(dadosDec), true, nomeArquivo).ToArray(); // true => COM IR
+
+            File.WriteAllLines(FilePath, linhasArrumadas);
         }
-        private void prepararEntrega()
+        private void zerarHeader()
         {
             Header.NR_Hash = new string('0', 10);
             Header.NR_Controle = new string('0', 10);
+        }
+        private static IEnumerable<string> arrumaControleLinhas(IEnumerable<string> linhas, bool CalculaIR, string NomeArquivoRegIR = null)
+        {
+            if (CalculaIR && NomeArquivoRegIR == null) throw new ArgumentNullException("NomeArquivoRegIR");
+            foreach (var l in linhas)
+            {
+                if (l.StartsWith("IR"))
+                {
+                    if (CalculaIR && NomeArquivoRegIR != null)
+                    {
+                        var lineToCheck = l.Substring(0, l.Length - 10); // descarta os 10 zeros no final
+                        var linha = lineToCheck + Helpers.Hash.obterCrc32Utf8(NomeArquivoRegIR + lineToCheck);
+
+                        yield return linha;
+                    }
+                    continue;
+                }
+                if (l.StartsWith("HR")) continue;
+                if (l.StartsWith("DR")) continue;
+                if (l.StartsWith("R9")) continue;
+                yield return Helpers.Hash.Arruma_NRControle(l);
+            }
+        }
+        public static void GravarArquivoDecEntrega(DEC_Intermediate dadosDec, string FilePath)
+        {
+            throw new NotImplementedException();
         }
 
         public static bool ValidaNomeArquivo(string FileName)
@@ -374,7 +417,7 @@ namespace IRPF.Lib.Files
 
             // Se é retificadora ou é a original
             string tipo = fi.Name.Substring(29, 5);
-            
+
             // Cuidado, agora retorna TRUE
             if (tipo == "ORIGI") return true;
             if (tipo == "RETIF") return true;
