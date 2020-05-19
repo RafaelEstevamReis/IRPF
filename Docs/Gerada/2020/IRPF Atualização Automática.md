@@ -112,6 +112,7 @@ Conteúdo do campo `message` formatado:
    "mensagem":""
 }
 ```
+Obs: Foram inseridas aspas faltantes na mensagem original
 
 Arquivo [latest.xml](latest.xml) capturado foi salvo nesta mesma pasta
 
