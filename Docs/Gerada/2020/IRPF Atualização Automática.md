@@ -120,12 +120,12 @@ Uma busca pelo conteúdo do XML me levou até o repositório de uma biblioteca c
 
 -------
 
-Me preocupa o fato de que a transmissão é feita de forma insegura (Sem usa HTTPS), os dados podem ser manipulados para forçar a aplicação a baixar e executar código arbitrário
+Me preocupa o fato de que a transmissão é feita de forma insegura (sem o uso do HTTPS), os dados podem ser manipulados para forçar a aplicação a baixar e executar código arbitrário
 
 Exemplo de ataque:
 ~~~
 Com um envenenamento simples (até local) de DNS, a requisição pode ser redirecionada instruindo uma atualização a aprtir de um servidor que não seja o da receita, então um arquivo preparado será instalado e executado
 ~~~
 
-Eu não verifiquei se o IRPF aceita qualquer endereço de atualização recebido no XML ou se ele obriga (internamente ?) que o URL contenha `fazenda.gov.br`
+Eu não verifiquei se o IRPF aceita qualquer endereço de atualização recebido no XML ou se ele obriga (internamente ?) que o URL contenha, por exemplo, `fazenda.gov.br`
 
