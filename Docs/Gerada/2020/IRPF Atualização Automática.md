@@ -101,6 +101,18 @@ Content-Type: text/xml
 </information>
 ~~~
 
+Conteúdo do campo `message` formatado:
+```json
+{
+   "ultimaVersaoManual":"1.0",
+   "periodoEspera":5,
+   "enderecoServidorDownloadManual":"https://idg.receita.fazenda.gov.br/interface/cidadao/irpf/2020/download",
+   "enderecoServidor":"http://downloadirpf.receita.fazenda.gov.br/irpf/2020/irpf/update/",
+   "arquivoZip":"IRPF2020-@.zip",
+   "mensagem":""
+}
+```
+
 Arquivo [latest.xml](latest.xml) capturado foi salvo nesta mesma pasta
 
 Uma busca pelo conteúdo do XML me levou até o repositório de uma biblioteca chamada [JUPAR](https://github.com/MasterEx/jupar). Veja o [blog do Periklis Ntanasis](https://masterex.github.io/archive/2011/12/25/jupar.html)
