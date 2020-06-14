@@ -9,6 +9,14 @@ namespace IRPF.Lib.Classes_DEC
 {
     public class R27_BensDireitos : IFixedLenLine
     {
+        public R27_BensDireitos() { }
+        public R27_BensDireitos(IR_RegistroHeader header)
+        {
+            this.NR_Controle = "";
+            this.NR_Reg = 27;
+            this.NR_Cpf = header.CPF_Contribuinte;
+        }
+
         public enum UnidadeMedida
         {
             MetroQuadrado = 0,
