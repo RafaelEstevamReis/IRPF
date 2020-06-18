@@ -9,6 +9,16 @@ namespace IRPF.Lib.Classes_DEC
 {
     public class R86_RendimentoIsento_Tipo5 : IFixedLenLine
     {
+        public R86_RendimentoIsento_Tipo5() { }
+        public R86_RendimentoIsento_Tipo5(IR_RegistroHeader Header)
+        {
+            NR_Reg = 86;
+            NR_Cpf = Header.CPF_Contribuinte;
+            IN_Tipo = "T";
+            NR_Cpf_BenefIC = Header.CPF_Contribuinte;
+            NR_Cod = 26;
+        }
+
         [Index(1), Type(TipoRegistro.N), Length(2)]
         public int NR_Reg { get; set; }
 

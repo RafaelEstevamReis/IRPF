@@ -8,7 +8,17 @@ using System.Threading.Tasks;
 namespace IRPF.Lib.Classes_DEC
 {
    public  class R84_RendimentoIsento_Tipo3 : IFixedLenLine
-   {
+   {  
+       public R84_RendimentoIsento_Tipo3() { }
+       public R84_RendimentoIsento_Tipo3(IR_RegistroHeader Header, int Codigo)
+       {
+           NR_Reg = 86;
+           NR_Cpf = Header.CPF_Contribuinte;
+           IN_Tipo = "T";
+           NR_Cpf_BenefIC = Header.CPF_Contribuinte;
+           NR_Cod = Codigo;
+       }
+
        [Index(1), Type(TipoRegistro.N), Length(2)]
        public int NR_Reg { get; set; }
 
