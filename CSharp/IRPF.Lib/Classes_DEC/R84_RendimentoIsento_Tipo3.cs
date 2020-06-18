@@ -12,7 +12,7 @@ namespace IRPF.Lib.Classes_DEC
        public R84_RendimentoIsento_Tipo3() { }
        public R84_RendimentoIsento_Tipo3(IR_RegistroHeader Header, int Codigo)
        {
-           NR_Reg = 86;
+           NR_Reg = 84;
            NR_Cpf = Header.CPF_Contribuinte;
            IN_Tipo = "T";
            NR_Cpf_BenefIC = Header.CPF_Contribuinte;
