@@ -9,6 +9,15 @@ namespace IRPF.Lib.Classes_DEC
 {
    public class R88_RendimentoExclusivo_Tipo2 : IFixedLenLine
    {
+       public R88_RendimentoExclusivo_Tipo2() { }
+       public R88_RendimentoExclusivo_Tipo2(IR_RegistroHeader Header, int Codigo)
+       {
+           NR_Reg = 88;
+           NR_Cpf = Header.CPF_Contribuinte;
+           IN_Tipo = "T";
+           NR_Cpf_Benefic = Header.CPF_Contribuinte;
+           NR_Cod = Codigo;
+       }
        [Index(1), Type(TipoRegistro.N), Length(2)]
        public int NR_Reg { get; set; }
 
