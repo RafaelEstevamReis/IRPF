@@ -77,6 +77,7 @@ namespace IRPF.Lib.Serialization
             var dVal = Convert.ToDecimal(Value.Object);
 
             int inteiros = Value.Length - Value.Decimals;
+            if (dVal < 0) inteiros--;
             string mascara = new string('0', inteiros) + "." + new string('0', Value.Decimals);
 
             var sVal = dVal.ToString(mascara, System.Globalization.CultureInfo.InvariantCulture).Replace(".", "");

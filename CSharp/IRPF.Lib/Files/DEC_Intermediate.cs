@@ -40,6 +40,8 @@ namespace IRPF.Lib.Files
         public R32_RendimentosPJDependentes[] RendimentosPJDependentes { get; set; }
         public R34_DoacoesPartidos[] DoacoesPartidos { get; set; }
         public R35_Alimentandos[] Alimentandos { get; set; }
+        public R42_RendaVar_FII[] RendaVar_FII { get; set; }
+        public R43_RendaVar_Totais_FII RendaVarTotais_FII { get; set; }
         public R45_RecebidosAcumuladamente[] RecebidosAcumuladamente { get; set; }
         public R47_RendimentosAcumuladamenteDependente[] RendimentosAcumuladamenteDependente { get; set; }
 
@@ -141,6 +143,7 @@ namespace IRPF.Lib.Files
             var lstR32 = new List<R32_RendimentosPJDependentes>();
             var lstR34 = new List<R34_DoacoesPartidos>();
             var lstR35 = new List<R35_Alimentandos>();
+            var lstR42 = new List<R42_RendaVar_FII>();
             var lstR45 = new List<R45_RecebidosAcumuladamente>();
             var lstR47 = new List<R47_RendimentosAcumuladamenteDependente>();
             var lstR83 = new List<R83_RendimentoIsento_Tipo2>();
@@ -214,6 +217,12 @@ namespace IRPF.Lib.Files
                     case "35":
                         lstR35.Add(carregarRegistro<R35_Alimentandos>(linha));
                         continue;
+                    case "42":
+                        lstR42.Add(carregarRegistro<R42_RendaVar_FII>(linha));
+                        continue;
+                    case "43":
+                        dec.RendaVarTotais_FII = carregarRegistro<R43_RendaVar_Totais_FII>(linha);
+                        continue;
                     case "45":
                         lstR45.Add(carregarRegistro<R45_RecebidosAcumuladamente>(linha));
                         continue;
@@ -283,6 +292,7 @@ namespace IRPF.Lib.Files
             dec.RendimentosPJDependentes = lstR32.ToArray();
             dec.DoacoesPartidos = lstR34.ToArray();
             dec.Alimentandos = lstR35.ToArray();
+            dec.RendaVar_FII = lstR42.ToArray();
             dec.RecebidosAcumuladamente = lstR45.ToArray();
             dec.RendimentosAcumuladamenteDependente = lstR47.ToArray();
             dec.RendimentosIsentos_Tipo2 = lstR83.ToArray();
