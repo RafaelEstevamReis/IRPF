@@ -340,7 +340,7 @@ namespace IRPF.Lib.Files
             }
         }
 
-        public static void GravarArquivoDecBackup(DEC_Intermediate dadosDec, string FilePath)
+        public static string GravarArquivoDecBackup(DEC_Intermediate dadosDec, string FilePath)
         {
             // Pega nome do Arquivo, são os 8 primeiros caracteres, Concatenar direto o CPF ?
             string nomeArqOr = dadosDec.GerarNomeArquivoDEC(true).ToUpper();
@@ -360,7 +360,10 @@ namespace IRPF.Lib.Files
             // Pega novamente as linhas porém contendo o Header
             linhasArrumadas = arrumaControleLinhas(toLines(dadosDec), true, nomeArquivo).ToArray(); // true => COM IR
 
-            File.WriteAllLines(FilePath + "\\" + nomeArqOr, linhasArrumadas);
+            string nomeFinal = FilePath + "\\" + nomeArqOr;
+            File.WriteAllLines(nomeFinal, linhasArrumadas);
+
+            return nomeFinal;
         }
         private void zerarHeader()
         {
