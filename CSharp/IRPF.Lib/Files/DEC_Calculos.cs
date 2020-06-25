@@ -49,8 +49,8 @@ namespace IRPF.Lib.Files
             // Agrega e Ordena
             fontes = fontes
                 .GroupBy(g => g.Item1)
-                .Select(r => new Tuple<string, decimal>(r.Key, r.Sum(o => o.Item2 )))
-                .OrderByDescending( i => i.Item2)
+                .Select(r => new Tuple<string, decimal>(r.Key, r.Sum(o => o.Item2)))
+                .OrderByDescending(i => i.Item2)
                 .ToList();
             // Seta campos
             Header.NR_BaseFonteMaior = fontes.Count > 0 ? fontes[0].Item1 : "";
@@ -62,11 +62,12 @@ namespace IRPF.Lib.Files
             #region Dependentes
             // Zera
             Tuple<string, string>[] rankingRendimentos = new Tuple<string, string>[0];
- 
+
             if (Dependentes != null && Dependentes.Length > 0)
             {
                 var dicDependentes = Dependentes
-                    .Select(d => new { 
+                    .Select(d => new
+                    {
                         cpf = d.NI_Depend,
                         nasc = d.DT_Nascim
                     })
@@ -102,8 +103,8 @@ namespace IRPF.Lib.Files
             Header.NR_BaseBenefDespMedMaior =
                  Header.NR_BaseBenefDespMedDois = "";
             Header.VR_TotalPagamentos = 0;
-            
-            if(RelacaoPagamentosEfetuados != null)
+
+            if (RelacaoPagamentosEfetuados != null)
             {
                 Header.VR_TotalPagamentos = RelacaoPagamentosEfetuados.Sum(o => o.VR_Pagto);
 
@@ -131,11 +132,11 @@ namespace IRPF.Lib.Files
 
             if (Header.ehCompleta())
             {
-                Header.VR_ImpDevido = TotaisDeclaracao.VR_ImpDev; 
+                Header.VR_ImpDevido = TotaisDeclaracao.VR_ImpDev;
             }
             else
             {
-                Header.VR_ImpDevido = TotaisDeclaracaoSimplificada.VR_ImpDevido; 
+                Header.VR_ImpDevido = TotaisDeclaracaoSimplificada.VR_ImpDevido;
             }
 
 
@@ -215,7 +216,7 @@ namespace IRPF.Lib.Files
             #endregion
 
             // Junta com os R23 unitários de códigos 03, 08, 23, 24 e 25
-            int[] itens = {03, 08, 23, 24, 25};
+            int[] itens = { 03, 08, 23, 24, 25 };
             var unitarios = RendimentosIsentosNaoTributaveis
                 .Where(r => itens.Contains(r.CD_Isento))
                 .ToArray();
@@ -235,10 +236,10 @@ namespace IRPF.Lib.Files
         }
         private void r24_TotalizaTributacaoExclusiva()
         {
-            Dictionary<int, decimal> dicValores = new Dictionary<int, decimal>();
+            var dicValores = new Dictionary<int, decimal>();
 
             // Zera todos
-            for (int i = 1; i <= 12; i++) dicValores.Add(i, 0);
+            //for (int i = 1; i <= 12; i++) dicValores.Add(i, 0);
 
             // São os campos próprios (calculados) e os 88, 89
 
@@ -254,7 +255,12 @@ namespace IRPF.Lib.Files
             // 04: Ganhos de Capital em espécie  =>
             //--
             // 05: Ganhos Renda Variável  => 
-            //--
+            if (RendimentosTributacaoExclusiva != null)
+            {
+                dicValores[5] = RendimentosTributacaoExclusiva
+                    .Where(o => o.CD_Exclusivo == 5)
+                    .Sum(o => o.VR_Valor);
+            }            
             // 07: RRA
             //--
             // 08: Décimo terceiro dos Dependentes => R32
@@ -271,25 +277,21 @@ namespace IRPF.Lib.Files
             {
                 foreach (var v in RendimentoExclusivo_Tipo2)
                 {
+                    if (!dicValores.ContainsKey(v.NR_Cod)) dicValores.Add(v.NR_Cod, 0);
                     dicValores[v.NR_Cod] += v.VR_Valor;
                 }
             }
             // 12: Outros  => R89
             if (RendimentoExclusivo_Tipo3 != null) dicValores[12] = RendimentoExclusivo_Tipo3.Sum(o => o.VR_Valor);
 
-            var lst = new List<Classes_DEC.R24_RendimentosTributacaoExclusiva>();
-            foreach (var pair in dicValores)
-            {
-                //if (pair.Value > 0) // se tem, coloca mesmo zerado
-                //{
-                    lst.Add(new Classes_DEC.R24_RendimentosTributacaoExclusiva(Header)
+            RendimentosTributacaoExclusiva = dicValores
+                .Where(o => o.Value > 0)
+                .Select(pair => new Classes_DEC.R24_RendimentosTributacaoExclusiva(Header)
                     {
                         CD_Exclusivo = pair.Key,
                         VR_Valor = pair.Value
-                    });
-                //}
-            }
-            RendimentosTributacaoExclusiva = lst.ToArray();
+                    })
+                .ToArray();
         }
 
         private void t9_TotalizaEncerramento()
@@ -322,8 +324,8 @@ namespace IRPF.Lib.Files
             Encerramento.QT_R39 = 0; // TODO: Não implementado
             Encerramento.QT_R40 = 0; // TODO: Não implementado
             Encerramento.QT_R41 = 0; // TODO: Não implementado
-            Encerramento.QT_R42 = 0; // TODO: Não implementado
-            Encerramento.QT_R43 = 0; // TODO: Não implementado
+            Encerramento.QT_R42 = contar(RendaVar_FII);
+            Encerramento.QT_R43 = contar(RendaVarTotais_FII);
             //Encerramento.QT_R44 Não existe
             Encerramento.QT_R45 = contar(RecebidosAcumuladamente);
             Encerramento.QT_R46 = 0; // TODO: Não implementado
