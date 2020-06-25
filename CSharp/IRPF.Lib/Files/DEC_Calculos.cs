@@ -280,14 +280,14 @@ namespace IRPF.Lib.Files
             var lst = new List<Classes_DEC.R24_RendimentosTributacaoExclusiva>();
             foreach (var pair in dicValores)
             {
-                if (pair.Value > 0)
-                {
+                //if (pair.Value > 0) // se tem, coloca mesmo zerado
+                //{
                     lst.Add(new Classes_DEC.R24_RendimentosTributacaoExclusiva(Header)
                     {
                         CD_Exclusivo = pair.Key,
                         VR_Valor = pair.Value
                     });
-                }
+                //}
             }
             RendimentosTributacaoExclusiva = lst.ToArray();
         }
