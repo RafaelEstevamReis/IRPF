@@ -1,6 +1,7 @@
-.svn
 CSharp/Docs
+*.suo
 bin
 obj
-*.suo
+.svn
+.vs
 CSharp/IRPFTests/Auxiliar.cs
