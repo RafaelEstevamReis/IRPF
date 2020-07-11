@@ -34,12 +34,5 @@ Os arquivos deste repositório estarão separados entre:
    a. O objetivo não é refazer de forma OpenSource todo o software, é apenas gerar bibliotecas para documentar, e para criar um ecossistema \
    b. Infelizmente é pouco provável que tenhamos todo o software [liberado como OpenSource](https://tiinside.com.br/12/06/2012/justica-nega-recurso-a-ativista-do-software-livre-para-declaracao-do-ir/)
 
-Da licença
-
-Ainda não decidi a licença adequada por dois motivos:
-1. Eventual discordância de informações, uma vez que estarão disponíveis (na íntegra ou através de links) arquivos fornecidos por terceiros (a RFB)
-2. Grande leque de licenças
-
-Uma vez decidido qual será a licença, este documento será atualizado
 
 
