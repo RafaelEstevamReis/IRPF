@@ -8,6 +8,8 @@ A documentação será separada por questões de Licenças e confiabilidade
 
 Dentro da Pasta, o arquivo de leia-me irá destacar as fontes e detalhes de cada arquivo
 
+A licença do repositório não se aplica aos arquivos da documentação oficial, cada arquivo poderá ter sua própria licença e estão coletados apas para facilidade de consulta
+
 ## Gerada
 
 É a pasta aonde toda a documentação não-oficial será colocada.
