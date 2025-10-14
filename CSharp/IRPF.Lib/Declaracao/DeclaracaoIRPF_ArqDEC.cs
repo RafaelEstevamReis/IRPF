@@ -27,7 +27,7 @@ namespace IRPF.Lib.Declaracao
             irpf.Contribuinte = new Contribuinte()
             {
                 DataNascimento = Datas.Parse(dec.Declarante.DT_Nascim),
-                TituloEleitor = dec.Declarante.NR_TituloEleitor,
+                //TituloEleitor = dec.Declarante.NR_TituloEleitor, // Mudou o R16
                 DoencaDeficiencia = dec.Declarante.ehDoencaDeficiencia(),
                 ConjugueCompanheiro = dec.Declarante.ehConjugue(),
                 CpfConjuge = dec.Declarante.NR_CpfConjugue,

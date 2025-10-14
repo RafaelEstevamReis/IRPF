@@ -15,7 +15,7 @@ namespace IRPF.Lib.Files
 
             if (PathArquivoDEC.ToUpper().EndsWith(".DEC"))
             {
-                DEC_Intermediate.GravarArquivoDecEntrega(dec, PathArquivoDEC);
+                //DEC_Intermediate.GravarArquivoDecEntrega(dec, PathArquivoDEC);
             }
             else
             {

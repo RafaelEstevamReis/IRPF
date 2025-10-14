@@ -400,11 +400,7 @@ namespace IRPF.Lib.Files
                 yield return Helpers.Hash.Arruma_NRControle(l);
             }
         }
-        public static void GravarArquivoDecEntrega(DEC_Intermediate dadosDec, string FilePath)
-        {
-            throw new NotImplementedException();
-        }
-
+     
         public static bool ValidaNomeArquivo(string FileName)
         {
             if (string.IsNullOrEmpty(FileName)) throw new ArgumentException("Path inválido");
