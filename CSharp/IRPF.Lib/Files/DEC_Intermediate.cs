@@ -40,6 +40,7 @@ namespace IRPF.Lib.Files
         public R32_RendimentosPJDependentes[] RendimentosPJDependentes { get; set; }
         public R34_DoacoesPartidos[] DoacoesPartidos { get; set; }
         public R35_Alimentandos[] Alimentandos { get; set; }
+        public R37_RndimentosAplicacoesFinanceirasExterior[] AplicacoesFinanceirasExteriors { get; set; }
         public R42_RendaVar_FII[] RendaVar_FII { get; set; }
         public R43_RendaVar_Totais_FII RendaVarTotais_FII { get; set; }
         public R45_RecebidosAcumuladamente[] RecebidosAcumuladamente { get; set; }
@@ -143,6 +144,7 @@ namespace IRPF.Lib.Files
             var lstR32 = new List<R32_RendimentosPJDependentes>();
             var lstR34 = new List<R34_DoacoesPartidos>();
             var lstR35 = new List<R35_Alimentandos>();
+            var lstR37 = new List<R37_RndimentosAplicacoesFinanceirasExterior>();
             var lstR42 = new List<R42_RendaVar_FII>();
             var lstR45 = new List<R45_RecebidosAcumuladamente>();
             var lstR47 = new List<R47_RendimentosAcumuladamenteDependente>();
@@ -216,6 +218,9 @@ namespace IRPF.Lib.Files
                         continue;
                     case "35":
                         lstR35.Add(carregarRegistro<R35_Alimentandos>(linha));
+                        continue;
+                    case "37":
+                        lstR37.Add(carregarRegistro<R37_RndimentosAplicacoesFinanceirasExterior>(linha));
                         continue;
                     case "42":
                         lstR42.Add(carregarRegistro<R42_RendaVar_FII>(linha));
@@ -298,6 +303,7 @@ namespace IRPF.Lib.Files
             dec.RendimentosPJDependentes = lstR32.ToArray();
             dec.DoacoesPartidos = lstR34.ToArray();
             dec.Alimentandos = lstR35.ToArray();
+            dec.AplicacoesFinanceirasExteriors = lstR37.ToArray();
             dec.RendaVar_FII = lstR42.ToArray();
             dec.RecebidosAcumuladamente = lstR45.ToArray();
             dec.RendimentosAcumuladamenteDependente = lstR47.ToArray();
