@@ -132,7 +132,7 @@ namespace IRPF.Lib.Files
 
             if (Header.ehCompleta())
             {
-                Header.VR_ImpDevido = TotaisDeclaracao.VR_ImpDev;
+                Header.VR_ImpDevido = TotaisDeclaracao.VR_ImpDev1;
             }
             else
             {

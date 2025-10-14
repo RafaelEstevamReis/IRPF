@@ -63,10 +63,10 @@ namespace IRPF.Lib.Classes_DEC
         public decimal VR_DedImposto { get; set; }
 
         [Index(20), Type(TipoRegistro.N), Length(13, 2)]
-        public decimal VR_ImpDev { get; set; }
+        public decimal VR_ImpDev1 { get; set; }
 
         [Index(21), Type(TipoRegistro.N), Length(13, 2)]
-        public decimal VR_ContPatronal { get; set; }
+        public decimal VR_CONTRIBPREV { get; set; }
 
         [Index(22), Type(TipoRegistro.N), Length(13, 2)]
         public decimal VR_ImpDev2 { get; set; }
@@ -218,7 +218,12 @@ namespace IRPF.Lib.Classes_DEC
         [Index(71), Type(TipoRegistro.N), Length(5, 2)]
         public decimal VR_Aliquota_Efetiva { get; set; }
 
-        [Index(72), Type(TipoRegistro.N), Length(10)]
+        [Index(72), Type(TipoRegistro.N), Length(13, 2)]
+        public decimal VR_BASE_CALCULO_LEI_14754 { get; set; }
+        [Index(73), Type(TipoRegistro.N), Length(13, 2)]
+        public decimal VR_IMPOSTO_DEVIDO_LEI_14754 { get; set; }
+
+        [Index(74), Type(TipoRegistro.N), Length(10)]
         public string NR_Controle { get; set; }
     }
 }

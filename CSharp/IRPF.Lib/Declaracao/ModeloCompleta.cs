@@ -9,7 +9,7 @@
             return new ModeloCompleta()
             {
                 // Base
-                ImpostoDevido = dec.TotaisDeclaracao.VR_ImpDev,
+                ImpostoDevido = dec.TotaisDeclaracao.VR_ImpDev1,
                 BaseCalculo = dec.TotaisDeclaracao.VR_BaseCalc,
                 SaldoImpostoPagar = dec.TotaisDeclaracao.VR_ImpPagar,
                 ImpostoRestituir = dec.TotaisDeclaracao.VR_ImpRest,
