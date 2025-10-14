@@ -67,14 +67,23 @@ namespace IRPF.Lib.Serialization
         }
         public static SerializationResult Deserialize(this IFixedLenLine Object, string line)
         {
+            string objectName = Object.GetType().Name;
             var serResult = new SerializationResult();
             var data = ReadObject(Object);
 
+            // Expected Size
+            var size = data.Sum(o => o.Length);
+            if (size != line.Length)
+            {
+                serResult.Errors.Add(new Exception($"[{objectName}] Invalid LINE Size. Expected: {size} Actual: {line.Length}"));
+            }
+
+            // Missing Index
             for (int idx = data.Min(o => o.Index); idx <= data.Max(o => o.Index); idx++)
             {
                 if (!data.Select(o => o.Index).Contains(idx))
                 {
-                    //throw new InvalidOperationException("Index " + idx + " is missing");
+                    serResult.Errors.Add(new InvalidOperationException($"[{objectName}] Index " + idx + " is missing"));
                 }
             }
 
@@ -89,15 +98,18 @@ namespace IRPF.Lib.Serialization
                     }
                     else
                     {
-                        serResult.Errors.Add(new Exception("Failed to deserialize field " + val.Name));
+                        serResult.Errors.Add(new Exception($"[{objectName}] Failed to deserialize field " + val.Name));
                     }
                 }
                 catch (Exception ex)
                 {
-                    serResult.Errors.Add(new Exception("Error serializing field " + val.Name, ex));
+                    serResult.Errors.Add(new Exception($"[{objectName}] Error serializing field " + val.Name, ex));
                 }
                 offset += val.Length;
             }
+
+            foreach (var e in serResult.Errors) Console.WriteLine($"[ERR] {e.Message}");
+
             return serResult;
         }
 
