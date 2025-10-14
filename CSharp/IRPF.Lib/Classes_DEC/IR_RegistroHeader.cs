@@ -88,13 +88,13 @@ namespace IRPF.Lib.Classes_DEC
         public string IN_Gerada { get; set; }
         [Index(18), Type(TipoRegistro.C), Length(10)]
         public string NR_ReciboUltimaDecExAtual { get; set; }
-        [Index(19), Type(TipoRegistro.N), Length(1)]
-        public PlataformaPgd IN_PlataformaPgd { get; set; }
+        [Index(19), Type(TipoRegistro.C), Length(1)]
+        public string FILLER1 { get; set; }
         [Index(20), Type(TipoRegistro.C), Length(14)]
         public string Nome_SO { get; set; }
         [Index(21), Type(TipoRegistro.C), Length(7)]
         public string Versao_SO { get; set; }
-        [Index(22), Type(TipoRegistro.C), Length(9)]
+        [Index(22), Type(TipoRegistro.C), Length(9)] // Verificado e bate na versão 2025
         public string Versao_JVM { get; set; }
         [Index(23), Type(TipoRegistro.C), Length(10)]
         public string NR_ReciboDeclaracaoTransmitida { get; set; }
@@ -111,9 +111,9 @@ namespace IRPF.Lib.Classes_DEC
         [Index(29), Type(TipoRegistro.N), Length(1)]
         public Seguranca IN_Seguranca { get; set; }
         [Index(30), Type(TipoRegistro.N), Length(2)]
-        public string IN_ImpostoPago_8 { get; set; } // Não faço ideia do que seja
+        public string IN_ImpostoPago { get; set; } // Indicador se teve imposto pago
         [Index(31), Type(TipoRegistro.N), Length(1)]
-        public int IN_ImpostoAntecipado_11 { get; set; } // Não faço ideia do que seja
+        public int IN_ImpostoAntecipado { get; set; } // Indicador se teve imposto antecipado
         [Index(32), Type(TipoRegistro.N), Length(1)]
         public bool IN_MudaEndereco { get; set; }
         [Index(33), Type(TipoRegistro.C), Length(8)]
@@ -125,7 +125,7 @@ namespace IRPF.Lib.Classes_DEC
         [Index(36), Type(TipoRegistro.N), Length(4)]
         public int NR_Agencia { get; set; }
         [Index(37), Type(TipoRegistro.C), Length(1)]
-        public string FILLER1 { get; set; }
+        public string IN_SOBREPARTILHA { get; set; }
         [Index(38), Type(TipoRegistro.N), Length(8)]
         public string DataTransitoJulgadoLavratura { get; set; }
         [Index(39), Type(TipoRegistro.N), Length(13, 2)]
@@ -202,7 +202,7 @@ namespace IRPF.Lib.Classes_DEC
         [Index(72), Type(TipoRegistro.C), Length(11)]
         public string FILLER2 { get; set; }
         [Index(73), Type(TipoRegistro.C), Length(12)]
-        public string ENDERECO_MAC { get; set; } // Verificado e bate na versão 2020
+        public string ENDERECO_MAC { get; set; } // Verificado e bate na versão 2025
         [Index(74), Type(TipoRegistro.C), Length(8)]
         public string DT_CondNaoResidente { get; set; }
         [Index(75), Type(TipoRegistro.C), Length(11)]
@@ -210,78 +210,187 @@ namespace IRPF.Lib.Classes_DEC
         [Index(76), Type(TipoRegistro.N), Length(3)]
         public int IN_CritObrigat { get; set; }
         [Index(77), Type(TipoRegistro.N), Length(13, 2)]
-        public decimal VR_TotalRendTribPfPjTitDep { get; set; } // Verificado e bate na versão 2020
-        [Index(78), Type(TipoRegistro.C), Length(14)]
-        public string CNPJ_PrevComplementar1 { get; set; }
-        [Index(79), Type(TipoRegistro.C), Length(14)]
-        public string CNPJ_PrevComplementar2 { get; set; }
-        [Index(80), Type(TipoRegistro.N), Length(13, 2)]
+        public decimal VR_TotalRendTribPfPjTitDep { get; set; }
+
+        [Index(78), Type(TipoRegistro.C), Length(11)]
+        public string FILLER3 { get; set; }
+        [Index(79), Type(TipoRegistro.C), Length(1)]
+        public string IN_CONFIABILIDADE { get; set; }
+        [Index(80), Type(TipoRegistro.N), Length(2)]
+        public int TP_INICIADA { get; set; }
+        [Index(82), Type(TipoRegistro.N), Length(2)]
+        public int TP_TRANSMITIDA { get; set; }
+        [Index(83), Type(TipoRegistro.C), Length(11)]
+        public string NR_CPF_TRANSMISSAO { get; set; }
+        [Index(84), Type(TipoRegistro.N), Length(1)]
+        public int IN_CPF_TRANSMISSAO_PERFIL { get; set; }
+
+        [Index(85), Type(TipoRegistro.N), Length(13, 2)]
         public decimal VR_TotalIsentos { get; set; }
-        [Index(81), Type(TipoRegistro.N), Length(13, 2)]
+        [Index(86), Type(TipoRegistro.N), Length(13, 2)]
         public decimal VR_TotalExclusivo { get; set; }
-        [Index(82), Type(TipoRegistro.N), Length(13, 2)]
-        public decimal VR_TotalPagamentos { get; set; }  // Verificado e bate na versão 2020
-        [Index(83), Type(TipoRegistro.C), Length(13)]
-        public string NR_Conta { get; set; }
-        [Index(84), Type(TipoRegistro.C), Length(2)]
-        public string NR_DVConta { get; set; }
-        [Index(85), Type(TipoRegistro.N), Length(1)]
-        public bool IN_DVContaRevalidar { get; set; }
-        [Index(86), Type(TipoRegistro.N), Length(2)]
-        public int CD_NaturezaOcupacao { get; set; }  // Verificado e bate na versão 2020
-        [Index(87), Type(TipoRegistro.C), Length(11)]
-        public string NR_CpfEmpregadaDomesticaMaior { get; set; }
-        [Index(88), Type(TipoRegistro.C), Length(11)]
-        public string NR_NitEmpregadaDomesticaMaior { get; set; }
-        [Index(89), Type(TipoRegistro.C), Length(11)]
-        public string NR_CpfEmpregadaDomesticaDois { get; set; }
-        [Index(90), Type(TipoRegistro.C), Length(11)]
-        public string NR_NitEmpregadaDomesticaDois { get; set; }
-        [Index(91), Type(TipoRegistro.C), Length(11)]
-        public string NR_CpfEmpregadaDomesticaTres { get; set; }
-        [Index(92), Type(TipoRegistro.C), Length(11)]
-        public string NR_NitEmpregadaDomesticaTres { get; set; }
-        [Index(93), Type(TipoRegistro.N), Length(1)]
-        public InicioDeclaracao TP_Iniciada { get; set; }
-        [Index(94), Type(TipoRegistro.N), Length(1)]
-        public bool IN_UtilizouPGD { get; set; }
-        [Index(95), Type(TipoRegistro.N), Length(1)]
-        public bool IN_UtilizouAPP { get; set; }
-        [Index(96), Type(TipoRegistro.N), Length(1)]
-        public bool IN_UtilizouOnline { get; set; }
-        [Index(97), Type(TipoRegistro.N), Length(1)]
-        public bool IN_UtilizouRascunho { get; set; }
-        [Index(98), Type(TipoRegistro.N), Length(1)]
-        public bool IN_UtilizouPrePreenchida { get; set; }
-        [Index(99), Type(TipoRegistro.N), Length(1)]
-        public bool IN_UtilizouAssistidaFontePagadora { get; set; }
-        [Index(100), Type(TipoRegistro.N), Length(1)]
-        public bool IN_UtilizouAssistidaPlanoSaude { get; set; }
-        [Index(101), Type(TipoRegistro.N), Length(1)]
-        public bool IN_UtilizouSalvarRecuperarOnline { get; set; }
-        [Index(102), Type(TipoRegistro.N), Length(1)]
-        public bool IN_UtilizouTransmitida { get; set; }
-        [Index(103), Type(TipoRegistro.C), Length(14)]
-        public string NR_PagamentoDedutivelMaiorUm { get; set; }
-        [Index(104), Type(TipoRegistro.C), Length(14)]
-        public string NR_PagamentoDedutivelMaiorDois { get; set; }
-        [Index(105), Type(TipoRegistro.C), Length(14)]
-        public string NR_PagamentoDedutivelMaiorTres { get; set; }
-        [Index(106), Type(TipoRegistro.C), Length(14)]
-        public string NR_PagamentoDedutivelMaiorQuatro { get; set; }
-        [Index(107), Type(TipoRegistro.C), Length(14)]
-        public string NR_PagamentoDedutivelMaiorCinco { get; set; }
-        [Index(108), Type(TipoRegistro.C), Length(14)]
-        public string NR_PagamentoDedutivelMaiorSeis { get; set; }
-        [Index(109), Type(TipoRegistro.C), Length(14)]
-        public string NR_PagamentoFUNPRESP { get; set; }
-        [Index(110), Type(TipoRegistro.C), Length(3)]
-        public string VersaoTestePGD { get; set; }
-        [Index(111), Type(TipoRegistro.C), Length(13)]
-        public string NR_TituloEleitor { get; set; }
-        [Index(112), Type(TipoRegistro.C), Length(10)]
+        [Index(87), Type(TipoRegistro.N), Length(13, 2)]
+        public decimal VR_TotalPagamentos { get; set; }
+        [Index(88), Type(TipoRegistro.C), Length(1)]
+        public string IN_PROCESSO_ATUALIZACAO_BEM { get; set; }
+        [Index(89), Type(TipoRegistro.C), Length(12)]
+        public string FILLER4 { get; set; }
+
+        [Index(90), Type(TipoRegistro.C), Length(2)]
+        public string NR_DV_CONTA { get; set; }
+        [Index(91), Type(TipoRegistro.N), Length(1)]
+        public int IN_DV_CONTA { get; set; }
+        [Index(92), Type(TipoRegistro.N), Length(2)]
+        public int CD_NATUR { get; set; }
+
+        [Index(93), Type(TipoRegistro.C), Length(11)]
+        public string NR_CPF_EMPREGADA_DOMESTICA_MAIOR { get; set; }
+        [Index(94), Type(TipoRegistro.C), Length(11)]
+        public string NR_NIT_EMP_DOM_MAIOR { get; set; }
+
+        [Index(95), Type(TipoRegistro.C), Length(11)]
+        public string NR_CPF_EMPREGADA_DOMESTICA_DOIS { get; set; }
+        [Index(96), Type(TipoRegistro.C), Length(11)]
+        public string NR_NIT_EMP_DOM_DOIS { get; set; }
+
+        [Index(97), Type(TipoRegistro.C), Length(11)]
+        public string NR_CPF_EMPREGADA_DOMESTICA_TRES { get; set; }
+        [Index(98), Type(TipoRegistro.C), Length(11)]
+        public string NR_NIT_EMP_DOM_TRES { get; set; }
+        [Index(99), Type(TipoRegistro.C), Length(1)]
+        public string FILLER5 { get; set; }
+
+        [Index(100), Type(TipoRegistro.C), Length(1)]
+        public string IN_UTILIZOU_PGD { get; set; }
+        [Index(101), Type(TipoRegistro.C), Length(1)]
+        public string IN_UTILIZOU_APP { get; set; }
+        [Index(102), Type(TipoRegistro.C), Length(1)]
+        public string IN_UTILIZOU_ONLINE { get; set; }
+        [Index(103), Type(TipoRegistro.C), Length(1)]
+        public string IN_UTILIZOU_RASCUNHO { get; set; }
+        [Index(104), Type(TipoRegistro.C), Length(1)]
+        public string IN_UTILIZOU_PRE_PREENCHIDA { get; set; }
+        [Index(105), Type(TipoRegistro.C), Length(1)]
+        public string IN_UTILIZOU_ASSISTIDA_FONTE_PAGADORA { get; set; }
+        [Index(106), Type(TipoRegistro.C), Length(1)]
+        public string IN_UTILIZOU_ASSISTIDA_PLANO_SAUDE { get; set; }
+        [Index(107), Type(TipoRegistro.C), Length(1)]
+        public string IN_UTILIZOU_SALVAR_RECUPERAR_ONLINE { get; set; }
+        [Index(108), Type(TipoRegistro.C), Length(1)]
+        public string FILLER6 { get; set; }
+
+        [Index(110), Type(TipoRegistro.C), Length(14)]
+        public string NR_PAGAMENTO_DEDUTIVEL_MAIOR_UM { get; set; }
+        [Index(111), Type(TipoRegistro.C), Length(14)]
+        public string NR_PAGAMENTO_DEDUTIVEL_MAIOR_DOIS { get; set; }
+        [Index(112), Type(TipoRegistro.C), Length(14)]
+        public string NR_PAGAMENTO_DEDUTIVEL_MAIOR_TRES { get; set; }
+        [Index(113), Type(TipoRegistro.C), Length(14)]
+        public string NR_PAGAMENTO_DEDUTIVEL_MAIOR_QUATRO { get; set; }
+        [Index(114), Type(TipoRegistro.C), Length(14)]
+        public string NR_PAGAMENTO_DEDUTIVEL_MAIOR_CINCO { get; set; }
+        [Index(115), Type(TipoRegistro.C), Length(14)]
+        public string NR_PAGAMENTO_DEDUTIVEL_MAIOR_SEIS { get; set; }
+        [Index(116), Type(TipoRegistro.C), Length(27)]
+        public string FILLER { get; set; }
+
+        [Index(118), Type(TipoRegistro.C), Length(1)]
+        public string IN_TIPO_CONTA { get; set; }
+        [Index(119), Type(TipoRegistro.C), Length(20)]
+        public string NR_CONTA { get; set; }
+
+        [Index(120), Type(TipoRegistro.C), Length(1)]
+        public string IN_SOCIAL { get; set; }
+        [Index(121), Type(TipoRegistro.C), Length(1)]
+        public string IN_CLWEB { get; set; }
+        [Index(122), Type(TipoRegistro.C), Length(1)]
+        public string IN_ISENCAO_GCAP_TITULAR { get; set; }
+        [Index(123), Type(TipoRegistro.C), Length(1)]
+        public string IN_ISENCAO_GCAP_MAIOR { get; set; }
+        [Index(124), Type(TipoRegistro.C), Length(1)]
+        public string IN_ISENCAO_GCAP_DOIS { get; set; }
+        [Index(125), Type(TipoRegistro.C), Length(1)]
+        public string IN_ISENCAO_GCAP_TRES { get; set; }
+        [Index(126), Type(TipoRegistro.C), Length(1)]
+        public string IN_ISENCAO_GCAP_QUATRO { get; set; }
+        [Index(127), Type(TipoRegistro.C), Length(1)]
+        public string IN_ISENCAO_GCAP_CINCO { get; set; }
+        [Index(128), Type(TipoRegistro.C), Length(1)]
+        public string IN_ISENCAO_GCAP_SEIS { get; set; }
+        [Index(130), Type(TipoRegistro.C), Length(2)]
+        public string IN_FICHA_1 { get; set; }
+        [Index(131), Type(TipoRegistro.C), Length(2)]
+        public string IN_COD_FICHA_1 { get; set; }
+        [Index(132), Type(TipoRegistro.C), Length(14)]
+        public string CNPJ_MAIOR_VALOR_1 { get; set; }
+        [Index(133), Type(TipoRegistro.C), Length(2)]
+        public string IN_FICHA_2 { get; set; }
+        [Index(134), Type(TipoRegistro.C), Length(2)]
+        public string IN_COD_FICHA_2 { get; set; }
+        [Index(135), Type(TipoRegistro.C), Length(14)]
+        public string CNPJ_MAIOR_VALOR_2 { get; set; }
+        [Index(136), Type(TipoRegistro.C), Length(2)]
+        public string IN_FICHA_3 { get; set; }
+        [Index(137), Type(TipoRegistro.C), Length(2)]
+        public string IN_COD_FICHA_3 { get; set; }
+        [Index(138), Type(TipoRegistro.C), Length(14)]
+        public string CNPJ_MAIOR_VALOR_3 { get; set; }
+        [Index(139), Type(TipoRegistro.C), Length(2)]
+        public string IN_FICHA_4 { get; set; }
+        [Index(140), Type(TipoRegistro.C), Length(2)]
+        public string IN_COD_FICHA_4 { get; set; }
+        [Index(141), Type(TipoRegistro.C), Length(14)]
+        public string CNPJ_MAIOR_VALOR_4 { get; set; }
+        [Index(142), Type(TipoRegistro.C), Length(2)]
+        public string IN_FICHA_5 { get; set; }
+        [Index(143), Type(TipoRegistro.C), Length(2)]
+        public string IN_COD_FICHA_5 { get; set; }
+        [Index(144), Type(TipoRegistro.C), Length(14)]
+        public string CNPJ_MAIOR_VALOR_5 { get; set; }
+        [Index(145), Type(TipoRegistro.C), Length(2)]
+        public string IN_FICHA_6 { get; set; }
+        [Index(146), Type(TipoRegistro.C), Length(2)]
+        public string IN_COD_FICHA_6 { get; set; }
+        [Index(147), Type(TipoRegistro.C), Length(14)]
+        public string CNPJ_MAIOR_VALOR_6 { get; set; }
+        [Index(148), Type(TipoRegistro.C), Length(2)]
+        public string IN_FICHA_7 { get; set; }
+        [Index(149), Type(TipoRegistro.C), Length(2)]
+        public string IN_COD_FICHA_7 { get; set; }
+        [Index(151), Type(TipoRegistro.C), Length(14)]
+        public string CNPJ_MAIOR_VALOR_7 { get; set; }
+        [Index(152), Type(TipoRegistro.C), Length(2)]
+        public string IN_FICHA_8 { get; set; }
+        [Index(153), Type(TipoRegistro.C), Length(2)]
+        public string IN_COD_FICHA_8 { get; set; }
+        [Index(154), Type(TipoRegistro.C), Length(14)]
+        public string CNPJ_MAIOR_VALOR_8 { get; set; }
+        [Index(155), Type(TipoRegistro.C), Length(2)]
+        public string IN_FICHA_9 { get; set; }
+        [Index(156), Type(TipoRegistro.C), Length(2)]
+        public string IN_COD_FICHA_9 { get; set; }
+        [Index(157), Type(TipoRegistro.C), Length(14)]
+        public string CNPJ_MAIOR_VALOR_9 { get; set; }
+        [Index(158), Type(TipoRegistro.C), Length(2)]
+        public string IN_FICHA_10 { get; set; }
+        [Index(159), Type(TipoRegistro.C), Length(2)]
+        public string IN_COD_FICHA_10 { get; set; }
+        [Index(160), Type(TipoRegistro.C), Length(14)]
+        public string CNPJ_MAIOR_VALOR_10 { get; set; }
+
+        [Index(161), Type(TipoRegistro.C), Length(8)]
+        public string DT_RETORNO_PAIS { get; set; }
+
+        [Index(162), Type(TipoRegistro.C), Length(17)]
+        public string NR_PROCESSO_ATUALIZACAO_BEM { get; set; }
+        [Index(163), Type(TipoRegistro.C), Length(8)]
+        public string NR_PROCESSO_ATUALIZACAO_BEM_FILLER { get; set; }
+        [Index(164), Type(TipoRegistro.C), Length(3)]
+        public string VERSAOTESTEPGD { get; set; }
+
+        [Index(165), Type(TipoRegistro.C), Length(10)]
         public string NR_Controle { get; set; }
-        
+
         public string GerarNomeArquivo(bool ehBackup)
         {
             // Exemplo de Nome:
@@ -294,17 +403,17 @@ namespace IRPF.Lib.Classes_DEC
             // Se é retificadora ou é a original
             StringBuilder sb = new StringBuilder();
 
-            sb.Append(CPF_Contribuinte );
-            sb.Append("-IRPF-A-" ); // ??
+            sb.Append(CPF_Contribuinte);
+            sb.Append("-IRPF-A-"); // ??
             sb.AppendFormat("{0:0000}-{1:0000}-", Exercicio, AnoBase);
 
-            if(ehRetificadora())
-                sb.Append( "RETIF");
+            if (ehRetificadora())
+                sb.Append("RETIF");
             else
                 sb.Append("ORIGI");
 
             if (ehBackup)
-                sb.Append( ".DBK" );
+                sb.Append(".DBK");
             else
                 sb.Append(".DEC");
 
