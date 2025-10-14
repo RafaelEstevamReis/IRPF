@@ -322,7 +322,7 @@ namespace IRPF.Lib.Files
             {
                 var sw = new StreamWriter(ms);
                 Serializer.Serialize(Item, sw);
-                string line = System.Text.Encoding.Default.GetString(ms.ToArray());
+                string line = Encoding.Default.GetString(ms.ToArray());
 
                 return Helpers.Hash.obterCrc32Utf8(line.Substring(0, line.Length - 10 - 2)); // tira o \r\n
             }
@@ -333,7 +333,7 @@ namespace IRPF.Lib.Files
             {
                 var sw = new StreamWriter(ms);
                 Serializer.Serialize(Item, sw);
-                string line = System.Text.Encoding.Default.GetString(ms.ToArray());
+                string line = Encoding.Default.GetString(ms.ToArray());
 
                 return Helpers.Hash.Valida_NRControle(line.Substring(0, line.Length - 2),    // tira o \r\n
                                                       line.Substring(line.Length - 12, 10)); // tira o \r\n
