@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
@@ -6,6 +6,10 @@
 		<ImplicitUsings>disable</ImplicitUsings>
 		<Nullable>disable</Nullable>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.9" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\IRPF.Lib\IRPF.Lib.csproj" />

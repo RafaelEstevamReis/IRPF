@@ -1,11 +1,13 @@
 ﻿using IRPF.Tests;
 using System;
+using System.IO;
+using System.Text;
+using System.Xml;
 
 // Para que mais de um possa fazer testes, ocu gerar um novo arquivo "Auxiliar.cs" e ignorá-lo no Commit
 Auxiliar._main(args);
 
 Console.WriteLine("Fim");
-Console.ReadKey();
 
 void Exemplo_Manipula_ArquivoDEC()
 {
@@ -31,4 +33,58 @@ void Exemplo_Manipula_ArquivoDEC()
 
     // Grava arquivo 
     IRPF.Lib.Files.DEC_Intermediate.GravarArquivoDecBackup(dec, pathEscrita);
+}
+void GeraDocumentacaoLayoutDadosDIRPFYYYY_xml(string arquivoXml, string arquivoMD)
+{
+    Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+
+    // Leitura original como UTF-8 (com mojibake dentro)
+    string corruptedText = File.ReadAllText(arquivoXml, Encoding.UTF8);
+    // Reversão: 1252 bytes -> UTF-8 string
+    byte[] bytes1 = Encoding.GetEncoding(1252).GetBytes(corruptedText);
+    string xmlContent = Encoding.UTF8.GetString(bytes1);
+
+    var sb = new StringBuilder();
+    var settings = new XmlReaderSettings { IgnoreWhitespace = true, IgnoreComments = true };
+    using (var stringReader = new StringReader(xmlContent))
+    using (var reader = XmlReader.Create(stringReader, settings))
+    {
+        reader.ReadToFollowing("file");
+
+        while (reader.ReadToFollowing("tipo"))
+        {
+            string tipoNome = reader.GetAttribute("nome");
+            string tipoObs = reader.GetAttribute("obs") ?? "";
+
+            sb.AppendLine($"## Tipo: {tipoNome}");
+            if (!string.IsNullOrEmpty(tipoObs))
+            {
+                sb.AppendLine($"{tipoObs}");
+            }
+            sb.AppendLine();
+
+            // Start table
+            sb.AppendLine("| Nome | Formato | Tamanho | Observação |");
+            sb.AppendLine("|------|---------|---------|------------|");
+
+            if (reader.ReadToDescendant("campo"))
+            {
+                do
+                {
+                    string campoNome = reader.GetAttribute("nome") ?? "";
+                    string formato = reader.GetAttribute("formato") ?? "";
+                    string tam = reader.GetAttribute("tam") ?? "";
+                    string obs = reader.GetAttribute("obs") ?? "";
+
+                    // Remove pipes para não quebrar a tabela
+                    obs = obs.Replace("|", "\\|");
+
+                    sb.AppendLine($"| {campoNome} | {formato} | {tam} | {obs} |");
+                } while (reader.ReadToNextSibling("campo"));
+            }
+            sb.AppendLine();
+        }
+    }
+
+    File.WriteAllText(arquivoMD, sb.ToString());
 }
