@@ -1,12 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>NET8</TargetFramework>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\IRPF.Lib\IRPF.Lib.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\IRPF.Lib\IRPF.Lib.csproj" />
+	</ItemGroup>
 
 </Project>
