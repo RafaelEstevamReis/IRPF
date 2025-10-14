@@ -4,9 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace IRPF.Lib.Files
 {
@@ -153,10 +151,8 @@ namespace IRPF.Lib.Files
             var lstR85 = new List<R85_RendimentoIsento_Tipo4>();
             var lstR86 = new List<R86_RendimentoIsento_Tipo5>();
             var lstR87 = new List<R87_RendimentoIsento_Tipo6>();
-
             var lstR88 = new List<R88_RendimentoExclusivo_Tipo2>();
             var lstR89 = new List<R89_RendimentoExclusivo_Tipo3>();
-
             var lstR90 = new List<R90_RelacaoDoacoes>();
             var lstR91 = new List<R91_DoacoesECA>();
             var lstR92 = new List<R92_DoacoesIdoso>();
@@ -372,7 +368,7 @@ namespace IRPF.Lib.Files
             // Pega novamente as linhas porém contendo o Header
             linhasArrumadas = arrumaControleLinhas(toLines(dadosDec), true, nomeArquivo).ToArray(); // true => COM IR
 
-            string nomeFinal = FilePath + "\\" + nomeArqOr;
+            string nomeFinal = Path.Combine(FilePath, nomeArqOr);
             File.WriteAllLines(nomeFinal, linhasArrumadas);
 
             return nomeFinal;
