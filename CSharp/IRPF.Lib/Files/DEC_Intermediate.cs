@@ -278,7 +278,13 @@ namespace IRPF.Lib.Files
                         continue;
 
                     default:
+#if DEBUG
+                        Console.WriteLine($"[MIS] Falta Registro {linha[..2]}: {linha}");
+                        break;
+#else
                         throw new NotImplementedException(linha.Substring(0, 2)); // Notifica que ainda não terminei
+#endif
+
                 }
             }
             dec.RendimentosPJ = lstR21.ToArray();
