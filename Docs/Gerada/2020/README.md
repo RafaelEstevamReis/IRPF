@@ -1,4 +1,4 @@
-# Arquivos Gerados referentes à 2020    
+# Arquivos Gerados referentes à 2020
 
 ## Arquivos do repositório:
 
