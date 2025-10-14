@@ -28,13 +28,13 @@ namespace IRPF.Lib.Classes_DEC
         [Index(11), Type(TipoRegistro.C), Length(40)]
         public string NM_Municipio { get; set; }
         [Index(12), Type(TipoRegistro.C), Length(2)]
-        public string SG_UF { get; set; } /* Verificado na versão 2020 */
+        public string SG_UF { get; set; }
         [Index(13), Type(TipoRegistro.C), Length(3)]
         public string CD_EX { get; set; }
         [Index(14), Type(TipoRegistro.C), Length(3)]
         public string CD_Pais { get; set; }
         [Index(15), Type(TipoRegistro.C), Length(90)]
-        public string NM_EMail { get; set; } /* Verificado na versão 2020 */
+        public string NM_EMail { get; set; }
         [Index(16), Type(TipoRegistro.C), Length(11)]
         public string NR_NitPisPasep { get; set; }
         [Index(17), Type(TipoRegistro.C), Length(11)]
@@ -42,41 +42,41 @@ namespace IRPF.Lib.Classes_DEC
         [Index(18), Type(TipoRegistro.C), Length(4)]
         public string NR_DDDTelefone { get; set; }
         [Index(19), Type(TipoRegistro.C), Length(9)]
-        public string Filler { get; set; }
+        public string Filler1 { get; set; }
         [Index(20), Type(TipoRegistro.N), Length(8)]
         public string DT_Nascim { get; set; }
-        [Index(21), Type(TipoRegistro.C), Length(13)]
-        public string NR_TituloEleitor { get; set; }
+        [Index(21), Type(TipoRegistro.N), Length(13, 2)]
+        public decimal VR_PREJUIZO_ANO_ANTERIOR_LEI_14754 { get; set; }
         [Index(22), Type(TipoRegistro.C), Length(3)]
         public string CD_Ocup { get; set; }
-        //[Index(23), Type(TipoRegistro.C), Length(150)]
-        //public string NM_Ocup { get; set; }
-        [Index(24), Type(TipoRegistro.C), Length(2)]
+        [Index(23), Type(TipoRegistro.C), Length(2)]
         public string CD_Natur { get; set; }
-        //[Index(25), Type(TipoRegistro.C), Length(130)]
-        //public string NM_Natur { get; set; }
-        [Index(26), Type(TipoRegistro.N), Length(1)]
+        [Index(24), Type(TipoRegistro.N), Length(1)]
         public int NR_Cotas { get; set; }
-        [Index(27), Type(TipoRegistro.C), Length(1)]
+        [Index(25), Type(TipoRegistro.C), Length(1)]
         public string IN_Completa { get; set; }
-        [Index(28), Type(TipoRegistro.C), Length(1)]
+        [Index(26), Type(TipoRegistro.C), Length(1)]
         public string IN_Retificadora { get; set; }
-        [Index(29), Type(TipoRegistro.C), Length(1)]
+        [Index(27), Type(TipoRegistro.C), Length(1)]
         public string IN_Gerado { get; set; }
-        [Index(30), Type(TipoRegistro.C), Length(1)]
+        [Index(28), Type(TipoRegistro.C), Length(1)]
         public string IN_Endereco { get; set; }
-        [Index(31), Type(TipoRegistro.C), Length(12)]
+        [Index(29), Type(TipoRegistro.C), Length(12)]
         public string NR_ControleOriginal { get; set; }
-        [Index(32), Type(TipoRegistro.C), Length(3)]
+        [Index(30), Type(TipoRegistro.C), Length(3)]
         public string NR_Banco { get; set; }
-        [Index(33), Type(TipoRegistro.C), Length(4)]
+        [Index(31), Type(TipoRegistro.C), Length(4)]
         public string NR_Agencia { get; set; }
-        [Index(34), Type(TipoRegistro.C), Length(1)]
+        [Index(32), Type(TipoRegistro.C), Length(1)]
         public string IN_DoencaDeficiencia { get; set; }
-        [Index(35), Type(TipoRegistro.C), Length(1)]
+        [Index(33), Type(TipoRegistro.C), Length(1)]
         public string IN_Preenchida { get; set; }
-        [Index(36), Type(TipoRegistro.C), Length(13)]
-        public string NR_Conta { get; set; }
+        [Index(34), Type(TipoRegistro.N), Length(8)]
+        public string DT_DIA_UTIL_RECIBO { get; set; }
+        [Index(35), Type(TipoRegistro.C), Length(4)]
+        public string Filler2 { get; set; }
+        [Index(36), Type(TipoRegistro.C), Length(1)]
+        public string IN_PROCESSO_ATUALIZACAO_BEM { get; set; }
         [Index(37), Type(TipoRegistro.C), Length(2)]
         public string NR_DVConta { get; set; }
         [Index(38), Type(TipoRegistro.C), Length(1)]
@@ -84,7 +84,7 @@ namespace IRPF.Lib.Classes_DEC
         [Index(39), Type(TipoRegistro.C), Length(1)]
         public string IN_DebitoPrimeiraCota { get; set; }
         [Index(40), Type(TipoRegistro.C), Length(14)]
-        public string NR_FontePrincipal { get; set; } /* Verificado na versão 2020 */
+        public string NR_FontePrincipal { get; set; }
         [Index(41), Type(TipoRegistro.C), Length(10)]
         public string NR_ReciboUltimaDecAnoAnterior { get; set; }
         [Index(42), Type(TipoRegistro.C), Length(1)]
@@ -99,9 +99,30 @@ namespace IRPF.Lib.Classes_DEC
         public string NR_Celular { get; set; }
         [Index(47), Type(TipoRegistro.C), Length(1)]
         public string IN_Conjugue { get; set; }
-        [Index(48), Type(TipoRegistro.C), Length(11)]
+        [Index(48), Type(TipoRegistro.C), Length(11)]  /* Verificado na versão 2025 */
         public string NR_Telefone { get; set; }
-        [Index(49), Type(TipoRegistro.C), Length(10)]
+
+        [Index(49), Type(TipoRegistro.C), Length(1)]
+        public string IN_TIPO_CONTA { get; set; }
+        [Index(50), Type(TipoRegistro.C), Length(20)]
+        public string NR_Conta { get; set; }
+        [Index(51), Type(TipoRegistro.C), Length(17)]
+        public string NR_NUMERO_PROCESSO { get; set; }
+        [Index(52), Type(TipoRegistro.C), Length(11)]
+        public string CPF_RESPONSAVEL { get; set; }
+        [Index(53), Type(TipoRegistro.N), Length(14)]
+        public string NR_DATA_HORA_ORIGINAL_RETIFICADORA { get; set; }
+        [Index(54), Type(TipoRegistro.C), Length(300)]
+        public string TX_MENSAGEM_RECIBO { get; set; }
+        [Index(55), Type(TipoRegistro.C), Length(1)]
+        public string IN_RETORNO_PAIS { get; set; }
+        [Index(56), Type(TipoRegistro.C), Length(8)]
+        public string DT_RETORNO_PAIS { get; set; }
+        [Index(57), Type(TipoRegistro.C), Length(17)]
+        public string NR_PROCESSO_ATUALIZACAO_BEM { get; set; }
+        [Index(58), Type(TipoRegistro.C), Length(8)]
+        public string NR_PROCESSO_ATUALIZACAO_BEM_FILLER { get; set; }
+        [Index(59), Type(TipoRegistro.C), Length(10)]
         public string NR_Controle { get; set; } /* Verificado na versão 2020 */
 
         public bool ehDoencaDeficiencia()
