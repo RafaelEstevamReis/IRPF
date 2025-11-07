@@ -1,78 +1,75 @@
-﻿using System;
+﻿namespace IRPF.Lib.Helpers;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace IRPF.Lib.Helpers
+/// <summary>
+/// Performs 32-bit reversed cyclic redundancy checks.
+/// https://rosettacode.org/wiki/CRC-32#C.23
+/// </summary>
+public class Crc32
 {
+    #region Constants
     /// <summary>
-    /// Performs 32-bit reversed cyclic redundancy checks.
-    /// https://rosettacode.org/wiki/CRC-32#C.23
+    /// Generator polynomial (modulo 2) for the reversed CRC32 algorithm. 
     /// </summary>
-    public class Crc32
+    private const UInt32 s_generator = 0xEDB88320;
+    #endregion
+
+    #region table
+    private static UInt32[] m_checksumTable;
+    #endregion
+
+    static Crc32()
     {
-        #region Constants
-        /// <summary>
-        /// Generator polynomial (modulo 2) for the reversed CRC32 algorithm. 
-        /// </summary>
-        private const UInt32 s_generator = 0xEDB88320;
-        #endregion
-
-        #region table
-        private static UInt32[] m_checksumTable;
-        #endregion
-
-        static Crc32()
+        // Constructs the checksum lookup table. Used to optimize the checksum.
+        m_checksumTable = Enumerable.Range(0, 256).Select(i =>
         {
-            // Constructs the checksum lookup table. Used to optimize the checksum.
-            m_checksumTable = Enumerable.Range(0, 256).Select(i =>
+            var tableEntry = (uint)i;
+            for (var j = 0; j < 8; ++j)
             {
-                var tableEntry = (uint)i;
-                for (var j = 0; j < 8; ++j)
-                {
-                    tableEntry = ((tableEntry & 1) != 0)
-                        ? (s_generator ^ (tableEntry >> 1)) 
-                        : (tableEntry >> 1);
-                }
-                return tableEntry;
-            }).ToArray();
-        }
-
-        #region Methods
-        /// <summary>
-        /// Calculates the checksum of the byte stream.
-        /// </summary>
-        /// <param name="byteStream">The byte stream to calculate the checksum for.</param>
-        /// <returns>A 32-bit reversed checksum.</returns>
-        public static UInt32 Get<T>(IEnumerable<T> byteStream)
-        {
-            try
-            {
-                // Initialize checksumRegister to 0xFFFFFFFF and calculate the checksum.
-                return ~byteStream.Aggregate(0xFFFFFFFF, (checksumRegister, currentByte) => 
-                          (m_checksumTable[(checksumRegister & 0xFF) ^ Convert.ToByte(currentByte)] ^ (checksumRegister >> 8)));
+                tableEntry = ((tableEntry & 1) != 0)
+                    ? (s_generator ^ (tableEntry >> 1)) 
+                    : (tableEntry >> 1);
             }
-            catch (FormatException e)
-            {
-                throw new CrcException("Could not read the stream out as bytes.", e);
-            }
-            catch (InvalidCastException e)
-            {
-                throw new CrcException("Could not read the stream out as bytes.", e);
-            }
-            catch (OverflowException e)
-            {
-                throw new CrcException("Could not read the stream out as bytes.", e);
-            }
-        }
-        #endregion
-
+            return tableEntry;
+        }).ToArray();
     }
-    public class CrcException : Exception
+
+    #region Methods
+    /// <summary>
+    /// Calculates the checksum of the byte stream.
+    /// </summary>
+    /// <param name="byteStream">The byte stream to calculate the checksum for.</param>
+    /// <returns>A 32-bit reversed checksum.</returns>
+    public static UInt32 Get<T>(IEnumerable<T> byteStream)
     {
-        public CrcException(string Message, Exception Inner)
-            : base(Message, Inner)
-        { }
+        try
+        {
+            // Initialize checksumRegister to 0xFFFFFFFF and calculate the checksum.
+            return ~byteStream.Aggregate(0xFFFFFFFF, (checksumRegister, currentByte) => 
+                      (m_checksumTable[(checksumRegister & 0xFF) ^ Convert.ToByte(currentByte)] ^ (checksumRegister >> 8)));
+        }
+        catch (FormatException e)
+        {
+            throw new CrcException("Could not read the stream out as bytes.", e);
+        }
+        catch (InvalidCastException e)
+        {
+            throw new CrcException("Could not read the stream out as bytes.", e);
+        }
+        catch (OverflowException e)
+        {
+            throw new CrcException("Could not read the stream out as bytes.", e);
+        }
     }
+    #endregion
+
+}
+public class CrcException : Exception
+{
+    public CrcException(string Message, Exception Inner)
+        : base(Message, Inner)
+    { }
 }

@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace IRPF.Lib.Helpers;
 
-namespace IRPF.Lib.Helpers
+using System;
+
+public static class Datas
 {
-    public static class Datas
+    public static DateTime Parse(string Data)
     {
-        public static DateTime Parse(string Data)
+        if (Data.Length == 8)
         {
-            if (Data.Length == 8)
-            {
-                return DateTime.ParseExact(Data, "ddMMyyyy", System.Globalization.CultureInfo.InvariantCulture);
-            }
-            throw new Exception();
+            return DateTime.ParseExact(Data, "ddMMyyyy", System.Globalization.CultureInfo.InvariantCulture);
         }
+        throw new Exception();
     }
 }
