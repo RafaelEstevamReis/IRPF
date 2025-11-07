@@ -11,7 +11,7 @@ public class NomeArquivo
     {
         string nomeGerado = "11111111030-IRPF-A-2020-2019-ORIGI.DBK";
 
-        Files.DEC_Intermediate dec = Files.DEC_Intermediate.makeEmpty();
+        Files.DEC2025_Intermediate dec = Files.DEC2025_Intermediate.makeEmpty();
         dec.Header = new IR_RegistroHeader();
         dec.Header.CPF_Contribuinte = "11111111030";
         dec.Header.Exercicio = 2020;

@@ -24,7 +24,7 @@
         public decimal DividasExercicioAtual { get; set; }
         public decimal TotalImpostoRetidoNaFonte { get; set; }
 
-        internal static ModeloSimplificada importarDec(Identificador ide, Files.DEC_Intermediate dec)
+        internal static ModeloSimplificada importarDec(Identificador ide, Files.DEC2025_Intermediate dec)
         {
             return new ModeloSimplificada()
             {

@@ -7,7 +7,7 @@ namespace IRPF.Lib.IRPF2025.Declaracao
         [XmlElement("item")]
         public BensItens[] Itens { get; set; }
 
-        internal static Bens importarDec(Identificador ide, Files.DEC_Intermediate dec)
+        internal static Bens importarDec(Identificador ide, Files.DEC2025_Intermediate dec)
         {
             var bens = new Bens();
             bens.Itens = new BensItens[dec.BensDireitos.Length];

@@ -14,7 +14,7 @@ void Exemplo_Manipula_ArquivoDEC()
     // Carrega arquivo DEC de exemplo
     string pathLeitura = "Exemplo\\22222222303-IRPF-A-2020-2019-ORIGI.DBK";
     string pathEscrita = "Teste\\22222222303-IRPF-A-2020-2019-ORIGI.DBK";
-    var dec = IRPF.Lib.Files.DEC_Intermediate.FromFile(pathLeitura);
+    var dec = IRPF.Lib.Files.DEC2025_Intermediate.FromFile(pathLeitura);
 
     // Valores esperados para o arquivo de exemplo do commit df31f61
     // IR HASH: 0021677088
@@ -32,7 +32,7 @@ void Exemplo_Manipula_ArquivoDEC()
     dec.TotalizaDeclaracao();
 
     // Grava arquivo 
-    IRPF.Lib.Files.DEC_Intermediate.GravarArquivoDecBackup(dec, pathEscrita);
+    IRPF.Lib.Files.DEC2025_Intermediate.GravarArquivoDecBackup(dec, pathEscrita);
 }
 void GeraDocumentacaoLayoutDadosDIRPFYYYY_xml(string arquivoXml, string arquivoMD)
 {

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using IRPF.Lib.IRPF2025.Classes_DEC;
 
-partial class DEC_Intermediate
+partial class DEC2025_Intermediate
 {
     public void TotalizaDeclaracao()
     {

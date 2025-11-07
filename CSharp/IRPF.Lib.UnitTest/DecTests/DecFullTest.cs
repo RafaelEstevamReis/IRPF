@@ -13,7 +13,7 @@ public class DecFullTest
         if (!File.Exists(file)) Assert.Inconclusive();
 
         var originalLines = File.ReadAllLines(file);
-        var dec = IRPF.Lib.Files.DEC_Intermediate.FromFile(file);
+        var dec = IRPF.Lib.Files.DEC2025_Intermediate.FromFile(file);
 
         dec.ToFile("test.tmp");
         var newLines = File.ReadAllLines("test.tmp");
@@ -32,7 +32,7 @@ public class DecFullTest
         if (!File.Exists(file)) Assert.Inconclusive();
 
         var originalLines = File.ReadAllLines(file);
-        var dec = IRPF.Lib.Files.DEC_Intermediate.FromFile(file);
+        var dec = IRPF.Lib.Files.DEC2025_Intermediate.FromFile(file);
 
         dec.ToFile("test.tmp");
         var newLines = File.ReadAllLines("test.tmp");

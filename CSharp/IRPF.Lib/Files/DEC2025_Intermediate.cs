@@ -8,10 +8,10 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-public partial class DEC_Intermediate
+public partial class DEC2025_Intermediate
 {
     string[] lines;
-    private DEC_Intermediate() { }
+    private DEC2025_Intermediate() { }
 
     public IR_RegistroHeader Header { get; set; }
     public R16_Declarante Declarante { get; set; }
@@ -70,7 +70,7 @@ public partial class DEC_Intermediate
             gravaDecStream(this, fs);
         }
     }
-    protected static IEnumerable<string> toLines(DEC_Intermediate dec)
+    protected static IEnumerable<string> toLines(DEC2025_Intermediate dec)
     {
         using (MemoryStream ms = new MemoryStream())
         {
@@ -80,7 +80,7 @@ public partial class DEC_Intermediate
             while (!sr.EndOfStream) yield return sr.ReadLine();
         }
     }
-    private static void gravaDecStream(DEC_Intermediate dec, Stream fs)
+    private static void gravaDecStream(DEC2025_Intermediate dec, Stream fs)
     {
         var sw = new StreamWriter(fs);
 
@@ -114,13 +114,13 @@ public partial class DEC_Intermediate
     /// <summary>
     /// Cria um arquivo DEC vazio para testes da biblioteca
     /// </summary>
-    public static DEC_Intermediate makeEmpty()
+    public static DEC2025_Intermediate makeEmpty()
     {
-        return new DEC_Intermediate();
+        return new DEC2025_Intermediate();
     }
-    public static DEC_Intermediate FromFile(string file)
+    public static DEC2025_Intermediate FromFile(string file)
     {
-        DEC_Intermediate dec = new DEC_Intermediate();
+        DEC2025_Intermediate dec = new DEC2025_Intermediate();
         if (!ValidaNomeArquivo(file)) throw new InvalidOperationException("Arquivo inválido");
 
         dec.lines = File.ReadAllLines(file);
@@ -348,7 +348,7 @@ public partial class DEC_Intermediate
         }
     }
 
-    public static string GravarArquivoDecBackup(DEC_Intermediate dadosDec, string FilePath)
+    public static string GravarArquivoDecBackup(DEC2025_Intermediate dadosDec, string FilePath)
     {
         // Pega nome do Arquivo, são os 8 primeiros caracteres, Concatenar direto o CPF ?
         string nomeArqOr = dadosDec.GerarNomeArquivoDEC(true).ToUpper();

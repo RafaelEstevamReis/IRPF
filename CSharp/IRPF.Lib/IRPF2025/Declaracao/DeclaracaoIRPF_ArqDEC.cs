@@ -6,7 +6,7 @@ namespace IRPF.Lib.Declaracao
 {
     partial class DeclaracaoIRPF
     {
-        public static DeclaracaoIRPF fromArquivoDEC(Files.DEC_Intermediate dec)
+        public static DeclaracaoIRPF fromArquivoDEC(Files.DEC2025_Intermediate dec)
         {
             #region Identificador
             var ide = new Identificador()

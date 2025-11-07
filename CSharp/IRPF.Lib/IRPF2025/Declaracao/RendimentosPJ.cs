@@ -8,7 +8,7 @@ namespace IRPF.Lib.IRPF2025.Declaracao
         public RendimentosPJItem[] RendimentosTitular { get; set; }
         public RendimentosPJItem[] RendimentosDependente { get; set; }
         
-        internal static RendimentosPJ importarDec(Identificador ide, Files.DEC_Intermediate dec)
+        internal static RendimentosPJ importarDec(Identificador ide, Files.DEC2025_Intermediate dec)
         {
             var RendPJ = new RendimentosPJ();
             RendPJ.RendimentosTitular = new RendimentosPJItem[dec.RendimentosPJ.Length];

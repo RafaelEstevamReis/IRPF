@@ -4,7 +4,7 @@
     {
         public ModeloCompleta() { } // Serialização
 
-        internal static ModeloCompleta importarDec(Identificador ide, Files.DEC_Intermediate dec)
+        internal static ModeloCompleta importarDec(Identificador ide, Files.DEC2025_Intermediate dec)
         {
             return new ModeloCompleta()
             {

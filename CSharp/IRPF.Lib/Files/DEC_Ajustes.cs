@@ -4,7 +4,7 @@ public class DEC_Ajustes
 {
     public static void CorrigeChecksums(string PathArquivoDEC)
     {            
-        DEC_Intermediate dec = DEC_Intermediate.FromFile(PathArquivoDEC);
+        DEC2025_Intermediate dec = DEC2025_Intermediate.FromFile(PathArquivoDEC);
 
         if (PathArquivoDEC.ToUpper().EndsWith(".DEC"))
         {
@@ -12,7 +12,7 @@ public class DEC_Ajustes
         }
         else
         {
-            DEC_Intermediate.GravarArquivoDecBackup(dec, PathArquivoDEC);
+            DEC2025_Intermediate.GravarArquivoDecBackup(dec, PathArquivoDEC);
         }
     }
 

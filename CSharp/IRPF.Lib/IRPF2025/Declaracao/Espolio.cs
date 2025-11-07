@@ -9,7 +9,7 @@
             this.IdentificadorDeclaracao = IdentificadorDeclaracao;
         }
 
-        internal static Espolio importarDec(Identificador ide, Files.DEC_Intermediate dec)
+        internal static Espolio importarDec(Identificador ide, Files.DEC2025_Intermediate dec)
         {
             throw new System.NotImplementedException();
         }

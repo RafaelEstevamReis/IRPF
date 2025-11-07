@@ -8,7 +8,7 @@ namespace IRPF.Lib.IRPF2025.Declaracao
         [XmlElement("item")]
         public AlimentandosItens[] Itens { get; set; }
 
-        internal static Alimentandos importarDec(Identificador ide, Files.DEC_Intermediate dec)
+        internal static Alimentandos importarDec(Identificador ide, Files.DEC2025_Intermediate dec)
         {
             throw new NotImplementedException();
         }

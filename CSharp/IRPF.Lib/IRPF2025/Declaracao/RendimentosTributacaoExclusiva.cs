@@ -4,7 +4,7 @@
     {
         public RendimentosTributacaoExclusiva() { } // Serialização
 
-        internal static RendimentosTributacaoExclusiva importarDec(Identificador ide, Files.DEC_Intermediate dec)
+        internal static RendimentosTributacaoExclusiva importarDec(Identificador ide, Files.DEC2025_Intermediate dec)
         {
             throw new System.NotImplementedException();
         }
