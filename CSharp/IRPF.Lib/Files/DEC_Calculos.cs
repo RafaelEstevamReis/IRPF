@@ -5,6 +5,7 @@ using IRPF.Lib.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using IRPF.Lib.IRPF2025.Classes_DEC;
 
 partial class DEC_Intermediate
 {
@@ -148,13 +149,13 @@ partial class DEC_Intermediate
 
     private void r23_TotalizaISentos()
     {
-        var lst = new List<Classes_DEC.R23_RendimentosIsentosNaoTributaveis>();
+        var lst = new List<R23_RendimentosIsentosNaoTributaveis>();
 
         // gera novos R23
         #region dos registros 83 até 87
         foreach (var r83 in RendimentosIsentos_Tipo2)
         {
-            lst.Add(new Classes_DEC.R23_RendimentosIsentosNaoTributaveis(Header)
+            lst.Add(new R23_RendimentosIsentosNaoTributaveis(Header)
             {
                 CD_Isento = r83.NR_COD, // 19, 20 e 21
                 VR_Valor = r83.VR_Valor
@@ -162,7 +163,7 @@ partial class DEC_Intermediate
         }
         foreach (var r84 in RendimentosIsentos_Tipo3)
         {
-            lst.Add(new Classes_DEC.R23_RendimentosIsentosNaoTributaveis(Header)
+            lst.Add(new R23_RendimentosIsentosNaoTributaveis(Header)
             {
                 CD_Isento = r84.NR_Cod, // 1, 2, 4, 9, 10, 12, 13, 14, 16, 17 e 18
                 VR_Valor = r84.VR_Valor
@@ -170,7 +171,7 @@ partial class DEC_Intermediate
         }
         foreach (var r85 in RendimentosIsentos_Tipo4) // TODO FIXME: Não verificado
         {
-            lst.Add(new Classes_DEC.R23_RendimentosIsentosNaoTributaveis(Header)
+            lst.Add(new R23_RendimentosIsentosNaoTributaveis(Header)
             {
                 CD_Isento = r85.NR_Cod, // Apenas 11
                 VR_Valor = r85.VR_Receb + r85.VR_IRRF13Salario, // TODO FIXME: Não verificado
@@ -178,7 +179,7 @@ partial class DEC_Intermediate
         }
         foreach (var r86 in RendimentosIsentos_Tipo5)
         {
-            lst.Add(new Classes_DEC.R23_RendimentosIsentosNaoTributaveis(Header)
+            lst.Add(new R23_RendimentosIsentosNaoTributaveis(Header)
             {
                 CD_Isento = r86.NR_Cod, // Apenas 26
                 VR_Valor = r86.VR_Valor
@@ -186,7 +187,7 @@ partial class DEC_Intermediate
         }
         foreach (var r87 in RendimentosIsentos_Tipo6)
         {
-            lst.Add(new Classes_DEC.R23_RendimentosIsentosNaoTributaveis(Header)
+            lst.Add(new R23_RendimentosIsentosNaoTributaveis(Header)
             {
                 CD_Isento = r87.NR_Cod, // 5, 6 e 7
                 // Para os rendimentos 05, 06 e 07, é apresentado o somatório de VALOR + VALORGCAP.
@@ -221,7 +222,7 @@ partial class DEC_Intermediate
 
         var acumulados = lst
             .GroupBy(o => o.CD_Isento)
-            .Select(g => new Classes_DEC.R23_RendimentosIsentosNaoTributaveis(Header)
+            .Select(g => new R23_RendimentosIsentosNaoTributaveis(Header)
             {
                 CD_Isento = g.Key,
                 VR_Valor = g.Sum(r => r.VR_Valor)
@@ -284,7 +285,7 @@ partial class DEC_Intermediate
 
         RendimentosTributacaoExclusiva = dicValores
             .Where(o => o.Value > 0)
-            .Select(pair => new Classes_DEC.R24_RendimentosTributacaoExclusiva(Header)
+            .Select(pair => new R24_RendimentosTributacaoExclusiva(Header)
                 {
                     CD_Exclusivo = pair.Key,
                     VR_Valor = pair.Value

@@ -1,6 +1,6 @@
 ﻿namespace IRPF.Lib.Files;
 
-using IRPF.Lib.Classes_DEC;
+using IRPF.Lib.IRPF2025.Classes_DEC;
 using IRPF.Lib.Serialization;
 using System;
 using System.Collections.Generic;

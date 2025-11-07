@@ -1,0 +1,11 @@
+﻿namespace IRPF.Lib.IRPF2025.Declaracao
+{
+    public class RendimentosIsentos : IRPFBase
+    {
+        public RendimentosIsentos() { } // Serialização
+        internal static RendimentosIsentos importarDec(Identificador ide, Files.DEC_Intermediate dec)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+}
