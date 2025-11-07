@@ -1,7 +1,5 @@
-﻿
-namespace IRPF.Lib.Excecoes
+﻿namespace IRPF.Lib.Excecoes;
+
+public class PendeciasException : IRPFException
 {
-    public class PendeciasException : IRPFException
-    {
-    }
 }

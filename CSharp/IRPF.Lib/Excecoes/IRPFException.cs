@@ -1,8 +1,7 @@
-﻿using System;
+﻿namespace IRPF.Lib.Excecoes;
 
-namespace IRPF.Lib.Excecoes
+using System;
+
+public class IRPFException : Exception
 {
-    public class IRPFException : Exception
-    {
-    }
 }
